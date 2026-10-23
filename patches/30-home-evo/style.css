@@ -7,7 +7,7 @@
 }
 .rbu-home-hero *, .rbu-home-hero *::before, .rbu-home-hero *::after { box-sizing: border-box; }
 .rbu-home-hero-in {
-  max-width: 1120px; min-height: min(560px, calc(100vh - 160px)); margin: 0 auto;
+  max-width: 1120px; min-height: min(560px, calc(100vh - 200px)); margin: 0 auto;
   display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); column-gap: 48px; align-items: center;
 }
 .rbu-home-hero p { margin: 0; }
