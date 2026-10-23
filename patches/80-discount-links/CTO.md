@@ -28,7 +28,7 @@ https://www.racebox.pro/store/?code=XXXX&utm_source=newsletter&utm_medium=email&
 The script treats `code`, `discount`, `coupon` and `promo` as a discount code on every storefront page. Other links may already use one of these names for something else (a password-reset or confirmation link, a payment return, an order link, a partner link). The mirror has none of the account, payment or order pages, so this could not be checked here.
 
 - **Ask the CTO to confirm** that no existing URL, including URLs in emails the back end sends, uses `code=`, `discount=`, `coupon=` or `promo=`.
-- To be safe, the script ignores these paths and leaves their address bar alone: `/webapp/...`, `/api/...`, `/payment/...`, `/order/...`, `/orders/...`, `/store/payment/...`, `/store/pay/...`, `/store/order/...`, `/store/orders/...`, `/store/proforma/...`. The real payment and order paths are not known here. Check them and edit `EXCLUDED` at the top of the script.
+- To be safe, the script ignores these paths and leaves their address bar alone: `/webapp/...`, `/api/...`, `/payment/...`, `/order/...`, `/orders/...`, `/store/payment/...`, `/store/pay/...`, `/store/order/...`, `/store/orders/...`, `/store/proforma/...`. Also `/account...` (for example `/account-verify`, `/account-delete-confirm`) and `/store/checkout-complete/...`. /account-verify is the email-confirmation page (1,247 entries a month in Clarity) and /store/checkout-complete/{id} is the order-complete page; check what parameters their links use. The payment-return paths are not known here. Check them and edit `EXCLUDED` at the top of the script.
 - A value that is not a valid code (for example a long token with other characters, or one longer than 40 characters) is ignored, but its parameter is still removed from the address bar on storefront pages. That is another reason to keep these names off account links.
 
 ### What the visitor sees
@@ -36,11 +36,11 @@ The script treats `code`, `discount`, `coupon` and `promo` as a discount code on
 A small dark notice with a Dismiss button. It is announced politely to screen readers and does not take focus. It never covers the page:
 
 - **On /store/checkout** it sits in the page flow, at the top of the order summary under "Your order" (above the "Cart is empty" message when the cart is empty). It scrolls with the page, so it cannot hide the form, the cart or the "I have a discount code" link. It stays until dismissed or until the page is reloaded. On a phone the order summary is below the form, so a sighted visitor meets the notice when they scroll to their order. Screen reader users hear it at once.
-- **On every other page** it is a toast under the header. It closes by itself: after 10 seconds for the "saved" message, after 20 seconds for the longer "Your discount code is XXXX" message (the countdown pauses while the toast is hovered or focused, or while the cookie banner or a dialog covers the page). Escape closes it from anywhere on the page. While it is shown, the browser keeps a focused element clear of it when it scrolls the element into view (`scroll-padding-top` on `<html>`, set by the script and removed again).
+- **On every other page** it is a toast under the header. It closes by itself: after 10 seconds for the "saved" message, after 20 seconds for the longer "Your discount code is XXXX" message (the countdown pauses while the toast is hovered with a mouse or focused (on touch screens a tap does not pause it, because the browser leaves :hover stuck after a tap), or while the cookie banner or a dialog covers the page). Escape closes it from anywhere on the page. On phones the toast is capped at the screen width (`max-width: calc(100vw - 32px)`), so it stays on screen on pages whose content is wider than the phone (the Mini, Mini S and Micro pages, /info/return-instructions). While it is shown, the browser keeps a focused element clear of it when it scrolls the element into view (`scroll-padding-top` on `<html>`, set by the script and removed again).
 
 | When | Message | Saved code |
 |---|---|---|
-| Code arrives on a storefront page | Discount code XXXX saved. It's applied automatically at checkout. | kept |
+| Code arrives on a storefront page | Discount code XXXX saved. We'll enter it for you at checkout, on the items it applies to. | kept |
 | Checkout, cart has items, code accepted | Discount code XXXX applied. | cleared |
 | Accepted but `discountApplies` is false | Discount code XXXX was added, but it doesn't apply to the items in your cart. | cleared |
 | Code refused | Discount code XXXX couldn't be applied to this order. | cleared |
@@ -68,7 +68,7 @@ It goes through the site's own code path, so the cart updates as if the customer
 
 If any of these names change in the store package, update the script.
 
-**Back end.** Nothing required. Two options for later:
+**Back end.** Nothing new for the links. A link code goes through the same `applyDiscountCode` call as a typed code, so the store's own discount rules decide what it applies to. Before release, do change set 10 back-end step 3: the newsletter code must not apply to the EVO pre-order (the live popup says it "does not apply to accessories or products in pre-order"). Two options for later:
 - Accept `?code=` on the server as well (keep it in the session and apply it when the cart is built). That also covers browsers with storage blocked.
 - Send an analytics event when a link code is applied. The order already reports the coupon (`trackSuccessfulCheckout` reads `items[0].discountCode.code`).
 
@@ -86,6 +86,7 @@ Use test codes from the store admin: one valid (10%), one invalid, one that does
 - [ ] Same on a laptop (1280 px) and a tablet (768 px).
 - [ ] Press Tab until Dismiss has focus, then Enter or Escape: the notice closes and focus goes back to where it came from.
 - [ ] Cart with only an accessory, open `?code=VALID`: check which message shows and that the cart reads "Not Applicable". Tell the owner if the server refuses instead.
+- [ ] Cart with only RaceBox EVO (pre-order), open `/store/checkout?code=NEWSLETTER` (a newsletter 10% code): the EVO line stays at 339, and the notice says the code doesn't apply or couldn't be applied.
 - [ ] Apply code A by hand, then open `/store/?code=B` and go to checkout: notice "already has a discount code", A still applied.
 - [ ] Apply code A by hand, open `/store/checkout?code=a` (same code, other letter case): notice shows the code as the cart shows it, nothing is posted.
 - [ ] Empty cart, open `/store/checkout?code=VALID`: notice "saved" above the "Cart is empty" message, no request posted. Add a product: applied on the next checkout load.
@@ -93,6 +94,8 @@ Use test codes from the store admin: one valid (10%), one invalid, one that does
 - [ ] Change the shipping country while the code is being applied: the code ends up applied (or saved for the next visit), never lost.
 - [ ] EU visitor (cookie banner shown), open `/store/?code=VALID`: the toast is still there after you answer the banner.
 - [ ] Toast on a phone, then Tab through the page while it is shown: a focused link is never left hidden behind it. Escape closes it from anywhere.
+- [ ] /products/racebox-mini?code=BLACKFRIDAY25 at 360 x 640 and 390 x 844: the whole toast, its full message and the Dismiss (x) button are on screen.
+- [ ] Phone 390 x 844, /store/?code=TEST10: tap the toast's text and wait. It still closes by itself after about 10 s.
 - [ ] Instagram and Facebook in-app browsers (half of /store/ traffic): link, add to cart, checkout.
 - [ ] Safari with "Block all cookies": toast "Your discount code is XXXX. Enter it at checkout." stays about 20 seconds. No script errors from this change.
 - [ ] **Existing links:** open a password-reset or confirmation link from a real account email, and a payment return link. Their parameters (even if named `code`) are untouched, no notice, no stored code. Also test every email the back end sends that contains a link with `code=`, `discount=`, `coupon=` or `promo=`.

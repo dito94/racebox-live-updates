@@ -4,7 +4,7 @@
  <head>
  	<title>RaceBox Magnetic USB Cable | RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=fb33e3d657" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -45,7 +45,7 @@
 +	<div class="rbu-pdp-in">
 +		<div class="rbu-pdp-media"><img src="/product-image/racebox-magnetic-usb-cable.png" alt="RaceBox Magnetic USB Cable" width="200" height="200" /></div>
 +		<div class="rbu-pdp-body">
-+			<h1 class="rbu-pdp-name" id="rbu-pdp-name">RaceBox Magnetic USB Cable</h1>
++			<p class="rbu-pdp-name" id="rbu-pdp-name">RaceBox Magnetic USB Cable</p>
 +			<ul class="reddot rbu-pdp-points">
 +				<li>Right angle USB Type-C</li>
 +				<li>Magnetic Quick Release</li>
@@ -85,6 +85,6 @@
  </div>
  
  <script defer src="/assets/v-1776405836/js/country-select.js" nonce="RHdVtkO4fHpkfNAJLpWlebEvT+M="></script>
-+<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
++<script src="/assets/rb-updates/rb-updates.js?v=fb33e3d657" defer></script>
  </body>
  </html>

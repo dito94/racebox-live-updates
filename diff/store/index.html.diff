@@ -4,7 +4,7 @@
  <head>
  	<title>Store | RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=fb33e3d657" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -49,7 +49,7 @@
 +
 +				<div class="rbu-card-status"><span class="rbu-badge">Pre-order</span> Ships March&nbsp;2027</div>
 +
-+				<p class="rbu-price rbu-price--pre rbu-price--sm"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note">Pre-order price. $449.00 after pre-order.</span></p>
++				<p class="rbu-price rbu-price--pre rbu-price--sm"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note" aria-hidden="true">Pre-order price. $449.00 after pre-order.</span></p>
 +
 +				<div class="buttons">
 +					<a href="/products/racebox-evo" class="see-more">See More</a>
@@ -175,6 +175,6 @@
  </div>
  
  <script defer src="/assets/v-1776405836/js/country-select.js" nonce="XvZU3v9x2wfsJ/FdB7cYgfp5AXE="></script>
-+<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
++<script src="/assets/rb-updates/rb-updates.js?v=fb33e3d657" defer></script>
  </body>
  </html>

@@ -27,7 +27,7 @@ All values are ones the page already prints: the image and bullets from the prod
 					{% if availability_warning %}<p class="rbu-pdp-stock">{{availability_warning}}</p>{% endif %}
 				</div>
 				<div class="rbu-pdp-actions">
-					<form method="post" action="/store/add-to-cart" class="js-add-to-cart" data-sku="{{sku}}" data-name="{{product_name}}" data-price="{{price}}" data-currency="{{currency_code}}">
+					<form method="post" action="/store/add-to-cart" class="js-add-to-cart" data-sku="{{sku}}" data-name="{{product_name}}" data-price="{{price_raw}}" data-currency="{{currency}}">
 						<input type="hidden" name="product" value="{{product_id}}" />
 						<button class="submit">Add to cart</button>
 					</form>
@@ -41,6 +41,8 @@ All values are ones the page already prints: the image and bullets from the prod
 ```
 
 Device template (RaceBox, Mini, Mini S, Micro): `<h1 class="rbu-pdp-name" id="rbu-pdp-name">`. Accessory template: the same element as `<p class="rbu-pdp-name" id="rbu-pdp-name">{{product_name}}</p>`.
+
+Built example (RaceBox, US): `{{offer_title}}` = `Limited Time Offer`, `{{price_was}}` = `$509.00`, `{{price_now}}` = `$399.00`, `{{availability_warning}}` = `Limited Stock`, `{{sku}}` = `RB01`, `{{price_raw}}` = `399`, `{{currency}}` = `USD`, `{{product_id}}` = `5fbcc249279fe9d96341a620`. Accessories have no offer: they show only `<strong>$20.00</strong>`, with no label, no struck price and no hidden words.
 
 Image on the four device pages (RaceBox, Mini, Mini S, Micro): replace the first line of the media block with the `<picture>` below. The accessory pages keep the `<img>` of the snippet above. Built example (RaceBox):
 
@@ -56,8 +58,6 @@ The files are in `patches/50-pdp-first-screen/static/img/`. Upload them to `/ass
 | Mini | `pdp-racebox-mini-400.webp`, `-800.webp`, `-1200.webp`, `-800.png` | 800 x 751 | `cut-mini-angle` |
 | Mini S | `pdp-racebox-mini-s-400.webp`, `-800.webp`, `-800.png` | 800 x 759 | `cut-mini-s` |
 | Micro | `pdp-racebox-micro-400.webp`, `-800.webp`, `-800.png` | 800 x 471 | `cut-micro-front` |
-
-Built example (RaceBox, US): `{{offer_title}}` = `Limited Time Offer`, `{{price_was}}` = `$509.00`, `{{price_now}}` = `$399.00`, `{{availability_warning}}` = `Limited Stock`, `{{sku}}` = `RB01`, `{{price}}` = `399`, `{{product_id}}` = `5fbcc249279fe9d96341a620`. Accessories have no offer: they show only `<strong>$20.00</strong>`, with no label, no struck price and no hidden words.
 
 Notes:
 - **Prices:** print exactly what the buy section prints, under the same condition. Show the struck price only when the buy section shows one.
@@ -75,7 +75,7 @@ Notes:
 
   Which four points to show on these pages is a content choice. The rule above is the default.
 - **Image, accessory pages:** the store card image, `/product-image/*.png` (200 x 200, transparent). It is shown at 200 CSS px, its real size, so it stays sharp on 1x screens. On 2x screens it is soft; if the owner wants it sharper, export 400 x 400 files and add `srcset="... 400w"`.
-- **Image, device pages (RaceBox, Mini, Mini S, Micro):** the 200 px store PNG would be soft in the large grey panel, so these four pages use the redesign's cut-outs (see the table above). The browser picks the 400, 800 or 1200 px webp for the screen. The PNG is only the fallback for browsers without webp. The image fills the panel (88% wide, at most 85% tall, `object-fit: contain`) and is placed inside it, so it never makes the block taller. Keep the `width` and `height` of the PNG on the `<img>`.
+- **Image, device pages (RaceBox, Mini, Mini S, Micro):** the 200 px store PNG would be soft in the large grey panel, so these four pages use the redesign's cut-outs (see the table above). The browser picks the 400, 800 or 1200 px webp for the screen. The PNG is only the fallback for browsers without webp. On 1x screens the 400 px file is used, on 2x screens the 800 px file (both sharp); on 3x screens the 1200 px file where it exists (RaceBox, Mini), else the 800 px file. The image fills the panel (88% wide, at most 85% tall, `object-fit: contain`) and is placed inside it, so it never makes the block taller. Keep the `width` and `height` of the PNG on the `<img>`.
 - **Phones and `sizes`:** the hero is hidden below 1001 px, but a browser still fetches the picture it picks. With `sizes="... 100vw"` a phone with a 3x screen fetched the 1200 px file (80 to 99 KB) for an image nobody sees. So `sizes` says `(min-width: 1001px) 400px, 1px`: a phone fetches only the smallest file (about 18 KB, measured at 1x and 3x). Keep the `1px`. Do not add `loading="lazy"`: on desktop the image is in the first screen.
 - **Heading:** on RaceBox, Mini, Mini S and Micro the name is an `h1`, like every section title on these pages. On the 8 accessory pages the intro just below (`section.other-product-info`) already has `<h1>{{product_name}}</h1>`, so there the hero name is a `<p>` with the same class (same look). It still names the section. The hero is hidden on phones, so the phone outline is unchanged.
 - **Accessory pages repeat their intro (owner question):** on the 8 accessory pages the intro section below the photo (`section.other-product-info`) shows the same image, name and bullets as the new block, so on desktop the product shows twice, about one screen apart. Phones are unaffected (the block is hidden there). Options: (a) keep it as is; (b) on desktop (min-width: 1001px), hide that section with `.rbu-pdp ~ .other-product-info { display: none; }` and show all of the card's bullets, plus the section's subtitle `<p class="text">`, in the block. Option (b) changes existing content, so it needs the owner's OK.

@@ -4,7 +4,7 @@
  <head>
  	<title>RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=fb33e3d657" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -56,7 +56,7 @@
 +				<figcaption>Photos show the current RaceBox. EVO keeps the same shape; EVO photos follow before shipping.</figcaption>
 +			</figure>
 +			<div class="rbu-home-evo-buy">
-+				<p class="rbu-price rbu-price--pre rbu-price--lg"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note">Pre-order price. $449.00 after pre-order.</span></p>
++				<p class="rbu-price rbu-price--pre rbu-price--lg"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note" aria-hidden="true">Pre-order price. $449.00 after pre-order.</span></p>
 +				<p class="rbu-home-evo-actions">
 +					<a class="rbu-btn rbu-btn--pre" href="/products/racebox-evo">Pre-order EVO</a>
 +					<a class="rbu-home-evo-link rbu-focus" href="/products/racebox#evo-vs-racebox">Compare with the RaceBox</a>
@@ -82,6 +82,6 @@
  <a href="#" class="newsletter-popup-trigger fixed ">Get 10% off!</a>
  <script src="/assets/v-1776405836/js/newsletter-subscribe-popup.js" nonce="2dMomI4oUPmZwx0IrCmHlY8oTZU="></script>
 -			</body>
-+			<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
++			<script src="/assets/rb-updates/rb-updates.js?v=fb33e3d657" defer></script>
 +</body>
  </html>

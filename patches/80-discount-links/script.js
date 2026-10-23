@@ -15,7 +15,8 @@
   // Pages where code=, discount=, coupon= or promo= may already mean something else (account emails, password
   // resets, payment returns). A link code is never read there and the address bar is left alone. The mirror has none
   // of these pages: the CTO checks the real paths (see CTO.md).
-  var EXCLUDED = /^\/(?:webapp|api|payment|order|orders)(?:\/|$)|^\/store\/(?:payment|pay|order|orders|proforma)(?:\/|$)/i;
+  var EXCLUDED = /^\/(?:webapp|api|payment|order|orders|account(?:-[a-z-]+)?)(?:\/|$)|^\/store\/(?:payment|pay|order|orders|proforma|checkout-complete)(?:\/|$)/i;
+  var HOVER = window.matchMedia ? window.matchMedia('(hover: hover)') : { matches: true }; // a tap on a touch screen leaves :hover stuck on the toast
   var SHORT_MS = 10000, LONG_MS = 20000; // how long a toast stays: a short line, a longer one
   var memory = null; // the code for this page only, when storage is blocked
   var stored = true;  // false when the code from the link could not be saved
@@ -176,7 +177,7 @@
   function releaseFocusClear() {
     if (padInline !== null) { document.documentElement.style.scrollPaddingTop = padInline; padInline = null; }
   }
-  // The countdown runs only while the notice can be read: not while it is hovered or focused, and not while the
+  // The countdown runs only while the notice can be read: not while it is hovered with a mouse or focused, and not while the
   // cookie banner or a dialog covers the page (EU visitors meet the cookie banner on arrival).
   function layerOpen() {
     var layers = document.querySelectorAll('#cookie-consent-popup, .modal-container');
@@ -189,7 +190,7 @@
   function tick() {
     ticker = null;
     if (!toast || left <= 0) return;
-    if (!toast.matches(':hover') && !toast.contains(document.activeElement) && !layerOpen()) left -= 1000;
+    if (!(HOVER.matches && toast.matches(':hover')) && !toast.contains(document.activeElement) && !layerOpen()) left -= 1000;
     if (left <= 0) { removeToast(false); return; }
     ticker = setTimeout(tick, 1000);
   }
@@ -231,7 +232,7 @@
   var say = {
     // "saved" only when it really was: with storage blocked the code can't follow the visitor to checkout
     saved: function (c) {
-      if (stored) notice('Discount code ', c, ' saved. It\u2019s applied automatically at checkout.', 'saved');
+      if (stored) notice('Discount code ', c, ' saved. We\u2019ll enter it for you at checkout, on the items it applies to.', 'saved');
       else notice('Your discount code is ', c, '. Enter it at checkout.', 'saved', LONG_MS);
     },
     applied: function (c) { notice('Discount code ', c, ' applied.', 'ok'); },

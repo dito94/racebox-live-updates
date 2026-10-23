@@ -6,17 +6,17 @@
 +<head>
 +	<title>RaceBox EVO Pre-order: 25 Hz Standalone Lap Timer | RaceBox</title>
 +	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=fb33e3d657" type="text/css" rel="stylesheet" media="all" />
 +		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
 +	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
 +	<link href="/favicon.ico" rel="shortcut icon" />
 +	<link href="/favicon.ico" rel="icon" sizes="16x16 32x32 64x64" />
 +	<meta name="viewport" content="width=device-width, initial-scale=1">
 +
-+	<meta name="description" content="Pre-order RaceBox EVO, the standalone lap timer and drag meter with its own colour screen, now with 25 Hz GPS. $339.00 pre-order price, $449.00 after pre-order. Ships March 2027.">
++	<meta name="description" content="Pre-order RaceBox EVO: lap timer and drag meter with its own screen and 25 Hz GPS. Ships March 2027. $339.00 pre-order price, $449.00 after pre-order.">
 +	<link rel="canonical" href="https://www.racebox.pro/products/racebox-evo">
 +	<meta property="og:title" content="RaceBox EVO Pre-order: 25 Hz Standalone Lap Timer | RaceBox">
-+	<meta property="og:description" content="Pre-order RaceBox EVO, the standalone lap timer and drag meter with its own colour screen, now with 25 Hz GPS. $339.00 pre-order price, $449.00 after pre-order. Ships March 2027.">
++	<meta property="og:description" content="Pre-order RaceBox EVO: lap timer and drag meter with its own screen and 25 Hz GPS. Ships March 2027. $339.00 pre-order price, $449.00 after pre-order.">
 +	<meta property="og:url" content="https://www.racebox.pro/products/racebox-evo">
 +	<script type="application/ld+json">
 +{
@@ -106,7 +106,7 @@
 +			<figcaption>Photos show the current RaceBox. EVO keeps the same shape; EVO photos follow before shipping.</figcaption>
 +		</figure>
 +		<div class="rbu-evo-buy" id="rbu-evo-buy">
-+			<p class="rbu-price rbu-price--pre rbu-price--lg"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note">Pre-order price. $449.00 after pre-order.</span></p>
++			<p class="rbu-price rbu-price--pre rbu-price--lg"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note" aria-hidden="true">Pre-order price. $449.00 after pre-order.</span></p>
 +			<div class="rbu-evo-actions">
 +				<form method="post" action="/store/add-to-cart" class="js-add-to-cart" data-sku="EVO_SKU" data-name="RaceBox EVO" data-price="339" data-currency="USD"><input type="hidden" name="product" value="EVO_PRODUCT_ID" /><button class="rbu-btn rbu-btn--pre rbu-evo-cta">Pre-order now</button></form>
 +				<a class="rbu-evo-more rbu-focus" href="#rbu-evo-how">How pre-ordering works</a>
@@ -148,9 +148,9 @@
 +	<div class="rbu-evo-wrap">
 +		<p class="rbu-evo-intro">Same windscreen-mounted shape and four-button controls. EVO moves to 25&nbsp;Hz GPS.</p>
 +		<div class="rbu-evo-table-scroll" role="region" aria-label="RaceBox and RaceBox EVO compared" tabindex="0">
-+			<table class="rbu-evo-table rbu-evo-vs">
++			<table class="rbu-evo-table rbu-evo-vs"><caption class="rbu-sr">RaceBox and RaceBox EVO compared</caption>
 +				<thead><tr><th scope="col"><span class="rbu-sr">Feature</span></th><th scope="col">RaceBox</th><th scope="col">RaceBox EVO</th></tr></thead>
-+				<tbody><tr><th scope="row">GPS update rate</th><td>10&nbsp;Hz</td><td>25&nbsp;Hz</td></tr><tr><th scope="row">Battery</th><td>Up to 8 hours driving, Wi-Fi off</td><td>Larger, figure TBA</td></tr><tr><th scope="row">Storage</th><td>256 drag and 128 track sessions</td><td>More, figure TBA</td></tr><tr><th scope="row">Availability</th><td>Dispatch within <strong>5 business days</strong></td><td>Pre-order, ships March&nbsp;2027</td></tr></tbody>
++				<tbody><tr><th scope="row">GPS update rate</th><td>10&nbsp;Hz</td><td>25&nbsp;Hz</td></tr><tr><th scope="row">Battery</th><td>Up to 8 hours of driving (Wi-Fi off)</td><td>Larger than the original RaceBox. Final figure TBA</td></tr><tr><th scope="row">Storage</th><td>256 drag sessions and 128 track sessions</td><td>Larger than the original RaceBox. Final figure TBA</td></tr><tr><th scope="row">Availability</th><td>Dispatch within <strong>5 business days</strong></td><td>Pre-order, ships March&nbsp;2027</td></tr></tbody>
 +			</table>
 +		</div>
 +		<p class="rbu-evo-link-row"><a class="rbu-evo-more rbu-focus" href="/products/racebox#evo-vs-racebox">See EVO and RaceBox side by side</a></p>
@@ -170,7 +170,7 @@
 +<!-- rb-updates: 10 evo-page -->
 +<section class="rbu-evo-band" aria-labelledby="rbu-evo-faq-title">
 +	<h2 id="rbu-evo-faq-title">Pre-order questions</h2>
-+	<div class="rbu-evo-wrap rbu-evo-faq"><details class="rbu-evo-faq-item" open><summary>When does RaceBox EVO ship?</summary><p>March&nbsp;2027. You can cancel any time before it ships for a full refund.</p></details><details class="rbu-evo-faq-item"><summary>Will I be charged now?</summary><p>Yes. Pre-orders are paid in full at checkout, at the pre-order price.</p></details><details class="rbu-evo-faq-item"><summary>Can I cancel my pre-order?</summary><p>Yes, any time before it ships, for a full refund of everything you paid. Contact us with your order number. After delivery you still have 14 days to change your mind.</p></details><details class="rbu-evo-faq-item"><summary>Will you keep me updated while I wait?</summary><p>Yes. We email production updates while you wait. If the ship date moves, we email you the new date before the old one passes: keep your place or cancel for a full refund.</p></details><details class="rbu-evo-faq-item"><summary>Should I wait for EVO or buy the RaceBox now?</summary><p>If you want it before March&nbsp;2027, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz. EVO adds 25&nbsp;Hz GPS, a larger battery and more storage. On a motorcycle, the Mini S is the better fit: EVO is built for cars.</p></details><details class="rbu-evo-faq-item"><summary>Will my RaceBox accessories fit EVO?</summary><p>EVO has the same shape as the original RaceBox. Which accessories fit is confirmed before it ships.</p></details><details class="rbu-evo-faq-item"><summary>What will EVO cost after pre-order?</summary><p>449 (USD or EUR) once pre-orders close. Pre-orders pay 339.</p></details></div>
++	<div class="rbu-evo-wrap rbu-evo-faq"><details class="rbu-evo-faq-item" open><summary>When does RaceBox EVO ship?</summary><p>March&nbsp;2027. You can cancel any time before it ships for a full refund.</p></details><details class="rbu-evo-faq-item"><summary>Will I be charged now?</summary><p>Yes. Pre-orders are paid in full at checkout, at the pre-order price.</p></details><details class="rbu-evo-faq-item"><summary>Can I cancel my pre-order?</summary><p>Yes, any time before it ships, for a full refund of everything you paid. Contact us with your order number. After delivery you still have 14 days to change your mind.</p></details><details class="rbu-evo-faq-item"><summary>Will you keep me updated while I wait?</summary><p>Yes. We email production updates while you wait. If the ship date moves, we email you the new date before the old one passes: keep your place or cancel for a full refund.</p></details><details class="rbu-evo-faq-item"><summary>Should I wait for EVO or buy the RaceBox now?</summary><p>If you want it before March&nbsp;2027, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz. EVO adds 25&nbsp;Hz GPS, a larger battery and more storage. On a motorcycle, the Mini S is the better fit: EVO is built for cars.</p></details><details class="rbu-evo-faq-item"><summary>Will my RaceBox accessories fit EVO?</summary><p>EVO has the same shape as the original RaceBox. Which accessories fit is confirmed before it ships.</p></details><details class="rbu-evo-faq-item"><summary>What will EVO cost after pre-order?</summary><p>$449.00 once pre-orders close. Pre-orders pay $339.00.</p></details></div>
 +</section>
 +<!-- rb-updates: 10 evo-page -->
 +<section class="rbu-evo-band rbu-evo-band--mist" aria-labelledby="rbu-evo-sooner-title">
@@ -283,6 +283,6 @@
 +</div>
 +
 +<script defer src="/assets/v-1776405836/js/country-select.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
-+<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
++<script src="/assets/rb-updates/rb-updates.js?v=fb33e3d657" defer></script>
 +</body>
 +</html>
