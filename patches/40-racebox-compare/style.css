@@ -42,12 +42,12 @@
 .rbu-cmp .rbu-price { font-size: 1rem; }
 .rbu-cmp .rbu-price-note { font-family: var(--rbu-font-light); }
 .rbu-cmp form.js-add-to-cart { margin: 0; }
-/* Both buttons in the last row use the live button shape (main.css button.submit: pill, uppercase RaceBox-Regular),
-   so the table's Add to cart looks like the buy section's, the sticky Add to cart bar's and the first-screen one's,
-   and Pre-order EVO matches it in violet. 44 px tall for touch. */
+/* Both buttons in the last row use the live button look (main.css button.submit: pill, uppercase RaceBox-Regular, 19.2 px),
+   so the table's Add to cart matches the buy section's, the sticky Add to cart bar's and the first-screen one's, and
+   Pre-order EVO matches it in violet. 44 px tall for touch (the live one is 34). */
 .rbu-cmp form.js-add-to-cart button.submit, .rbu-cmp .rbu-cmp-buy .rbu-btn {
   display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; height: auto; min-height: 44px;
-  margin: 0; padding: 0 30px; border: 0; border-radius: 22px; font: 1.125rem/1.1 var(--rbu-font); letter-spacing: normal;
+  margin: 0; padding: 0 30px; border: 0; border-radius: 22px; font: 1.2rem/1.1 var(--rbu-font); letter-spacing: normal;
   text-transform: uppercase; text-decoration: none; color: #fff;
 }
 /* The live red #ea2127 gives white text 4.4:1; #e32026 looks the same and reaches 4.7:1 (WCAG AA) */
@@ -63,6 +63,8 @@
   .rbu-cmp h2 { text-align: left; padding-left: 30px; }
   .rbu-cmp .rbu-cmp-lede, .rbu-cmp .rbu-cmp-note { margin-left: 0; text-align: left; padding-left: 30px; }
   .rbu-cmp-table th, .rbu-cmp-table td { padding-left: 16px; padding-right: 16px; }
+  /* narrower columns: keep "Pre-order EVO" on one line from 700 px */
+  .rbu-cmp form.js-add-to-cart button.submit, .rbu-cmp .rbu-cmp-buy .rbu-btn { padding: 0 22px; }
 }
 
 /* Phones: stack each row; the two products stay side by side */
@@ -82,7 +84,7 @@
   .rbu-cmp-table tbody td::before { content: attr(data-label); content: attr(data-label) / ""; display: block; margin-bottom: 2px; font: .6875rem/1.3 var(--rbu-font-light); letter-spacing: .08em; text-transform: uppercase; color: var(--rbu-text-2); }
   .rbu-cmp-buy th { padding-top: 16px; }
   .rbu-cmp-buy td { padding-top: 10px; padding-bottom: 18px; }
-  .rbu-cmp .rbu-cmp-buy .rbu-btn, .rbu-cmp .rbu-cmp-buy button.submit { width: 100%; padding: 6px 10px; font-size: .9375rem; white-space: normal; text-align: center; line-height: 1.2; }
+  .rbu-cmp .rbu-cmp-buy .rbu-btn, .rbu-cmp form.js-add-to-cart button.submit { width: 100%; padding: 6px 8px; font-size: .875rem; white-space: normal; text-align: center; line-height: 1.2; }
 }
 
 /* main.css sets html { scroll-behavior: smooth }, so the link from the home page and the EVO page glides about

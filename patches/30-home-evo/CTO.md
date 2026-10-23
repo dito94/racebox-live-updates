@@ -7,9 +7,14 @@
 **Where:** inside `section.front-introduction`, right after the closing `</div>` of `div.topimg` and before
 `<h1><a id="what-is-racebox"></a>Introducing RaceBox</h1>`.
 
-Why there: it is the first thing under the photo (on phones the price and the Pre-order button are in the first screen at
-390 x 844 and 768 x 1024). On desktop the site-wide EVO bar (change set 20) already puts the pre-order in the first screen,
-so the photo stays as it is. The white card sits on the section's red centre line like the live headings do.
+Why there: it is the first thing under the photo (on phones the price, the Pre-order button and the "Compare" link are in the
+first screen at 390 x 844 and 768 x 1024, with or without the EVO bar of change set 20 above them). On desktop the site-wide
+EVO bar (change set 20) puts the pre-order in the first screen, so the live photo (which fills most of a desktop screen) stays
+as it is. The white card sits on the section's red centre line like the live headings do.
+
+Two details keep it high on phones and tablets, and clear of the live fixed "Get 10% off!" tab (bottom left, 160 x 42 px):
+the terms line sits under the buttons, not above them, and the section's top margin is -40 px (the photo's own bottom margin is
+72 px, which leaves 32 px). Keep both when you port it.
 
 **HTML** (from the built page; values in `{{ }}` come from the store back end):
 
@@ -32,11 +37,11 @@ so the photo stays as it is. The white card sits on the section's red centre lin
 			</figure>
 			<div class="rbu-home-evo-buy">
 				<p class="rbu-price rbu-price--pre rbu-price--lg"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>{{evo_price_after}}</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>{{evo_price_preorder}}</strong><span class="rbu-price-note">Pre-order price. {{evo_price_after}} after pre-order.</span></p>
-				<p class="rbu-home-evo-terms">Paid in full at checkout, at the pre-order price. Cancel any time before it ships for a full refund.</p>
 				<p class="rbu-home-evo-actions">
 					<a class="rbu-btn rbu-btn--pre" href="/products/racebox-evo">Pre-order EVO</a>
 					<a class="rbu-home-evo-link rbu-focus" href="/products/racebox#evo-vs-racebox">Compare with the RaceBox</a>
 				</p>
+				<p class="rbu-home-evo-terms">Paid in full at checkout, at the pre-order price. Cancel any time before it ships for a full refund.</p>
 			</div>
 		</div>
 	</section>
@@ -54,6 +59,12 @@ They show the current RaceBox; the caption says so.
 **CSS:** section `30-home-evo/style.css` in `rb-updates.css`. It uses the shared tokens and `.rbu-price`, `.rbu-badge`,
 `.rbu-btn--pre`, `.rbu-focus` from `00-core`. No JavaScript.
 
+**Open question for the owner (desktop first screen):** the photo is as tall as the screen on desktop, so the card starts
+below the first screen at 1280 x 720 to 1920 x 1080 (it is at 739 to 1012 px from the top). The offer is in the first screen
+there through the EVO bar (change set 20). If the owner wants the offer inside the photo like the redesign's hero, add a compact
+strip (badge, price, Pre-order EVO) over the bottom of `div.topimg` from 1001 px up, or crop the photo's height. Both change
+the live hero, so we left it. On phones and tablets (68 % of visits) the offer is in the first screen already.
+
 **Back end:** none beyond the EVO prices and ship window above. The Pre-order button links to `/products/racebox-evo`
 (change set 10); "Compare with the RaceBox" links to `/products/racebox#evo-vs-racebox` (change set 40).
 
@@ -63,5 +74,8 @@ They show the current RaceBox; the caption says so.
 - [ ] Prices: struck {{evo_price_after}} then {{evo_price_preorder}} in violet, with "Pre-order price. ... after pre-order." under them.
       An EU visitor sees euros (`449.00 €`, `339.00 €`).
 - [ ] Pre-order EVO opens `/products/racebox-evo`; "Compare with the RaceBox" opens the RaceBox page at the comparison table.
+      With "reduce motion" on in the system settings the page lands on the table at once, with no long glide (change set 40 CSS).
+- [ ] Phone (390 x 844) and tablet (768 x 1024): the "Compare with the RaceBox" link is not under the "Get 10% off!" tab,
+      with and without the EVO bar above (change set 20). The terms line under it may be partly behind the tab: that is fine.
 - [ ] Keyboard: Tab reaches both links in order, with a dark focus ring.
 - [ ] No horizontal scroll at 320 to 1920 px; zoom 200 % still reads well.

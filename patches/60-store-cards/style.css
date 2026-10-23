@@ -1,11 +1,16 @@
 /* 60 store-cards: the whole store card opens its product page.
    The product name is the card's one link (.rbu-card-link). Its ::after stretches over the card, so a tap on the
-   image, name, bullets or price follows it. See More and Add to cart are lifted above it and work as before.
+   image, name, bullets or price follows it. See More and Add to cart are lifted above it, with a small margin
+   around them, and work as before.
    main.css already gives the card a pointer cursor and a grey rounded hover; this makes that promise true. */
 div.products-list > div { isolation: isolate; }          /* keeps the stretched link inside its card, under fixed bars */
 .rbu-card-link { color: inherit; text-decoration: none; }
 .rbu-card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 20px; }
 div.products-list > div .buttons { position: relative; z-index: 2; }
+/* A safety margin around the two buttons: a slightly missed tap does nothing, as on the original, instead of opening
+   the product. z-index -1 keeps this area behind the buttons (inside .buttons' own stacking context) but above the
+   stretched link, so the buttons stay clickable. It stops short of the card edge at the bottom (card padding 20px). */
+div.products-list > div .buttons::before { content: ""; position: absolute; z-index: -1; inset: -8px -10px -16px; }
 
 /* Hover and keyboard focus on the card: the name is underlined in the brand red, the photo lifts a little */
 .rbu-card-link:hover, .rbu-card-link:focus-visible {

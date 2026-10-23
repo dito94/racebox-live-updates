@@ -67,11 +67,12 @@
 .rbu-evo-new h3 { margin: 16px 0 8px; font: 1.0625rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
 .rbu-evo-new p { font: .9375rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
 
-/* The photo: a dark band like the live "topimg" banners, with an honest caption */
+/* The photo: full width like the live "topimg" banners (cropped to 560 px tall on wide screens, the RaceBox stays in
+   view), with an honest caption on a dark strip under it */
 .rbu-evo-photo { padding: 0; background: #020202; border-bottom: 2px solid #fff; }
-.rbu-evo-photo figure { margin: 0 auto; max-width: 1120px; text-align: center; }
-.rbu-evo-photo img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: cover; }
-.rbu-evo-photo figcaption { padding: 10px 20px 14px; font: .8125rem/1.45 var(--rbu-font-light); color: #c9c9cf; }
+.rbu-evo-photo figure { margin: 0; text-align: center; }
+.rbu-evo-photo img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: cover; object-position: 50% 24%; }
+.rbu-evo-photo figcaption { max-width: 1120px; margin: 0 auto; padding: 10px 20px 14px; font: .8125rem/1.45 var(--rbu-font-light); color: #c9c9cf; }
 
 /* ---- How pre-ordering works ------------------------------------------------------------------------------------ */
 .rbu-evo-steps { list-style: none; margin: 8px 0 28px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
@@ -139,6 +140,11 @@
 
 /* ---- Sticky bar (the live bottom-popup-element, phones only like on every product page) ------------------------ */
 .rbu-evo-sticky { z-index: 50; }
+/* While the bar is off screen (until the hero has scrolled away; always from 1000 px, where main.css keeps it at
+   bottom: -200px) its button must not take keyboard focus. visibility leaves the tab order; it flips after the slide. */
+#add-to-cart-popup.rbu-evo-sticky { visibility: hidden; transition: bottom .5s ease, visibility 0s linear .5s; }
+#add-to-cart-popup.rbu-evo-sticky.visible { visibility: visible; transition: bottom .5s ease, visibility 0s linear 0s; }
+@media (min-width: 1000px) { #add-to-cart-popup.rbu-evo-sticky, #add-to-cart-popup.rbu-evo-sticky.visible { visibility: hidden; } }
 .rbu-evo-sticky > div { align-items: center; gap: 12px; }
 #add-to-cart-popup.rbu-evo-sticky .left { flex: 1 1 auto; min-width: 0; white-space: normal; line-height: 1.3; }
 .rbu-evo-sticky .left .rbu-price { flex-direction: column-reverse; align-items: flex-start; gap: 2px; }
@@ -158,9 +164,15 @@ button.submit.rbu-submit-pre:focus-visible { outline: 2px solid var(--rbu-ink); 
 button.submit.rbu-submit-pre::after { content: ""; position: absolute; left: 0; right: 0; top: -5px; bottom: -5px; }
 
 /* ---- Store card ------------------------------------------------------------------------------------------------ */
-div.products-list > div.rbu-card-evo .rbu-card-status { margin: 20px 0; text-align: center; font: .9375rem/1.4 var(--rbu-font-light); color: var(--rbu-text-2); }
-div.products-list > div.rbu-card-evo .rbu-card-status .rbu-badge { margin-right: 6px; vertical-align: 1px; }
-div.products-list > div.rbu-card-evo .rbu-price { margin: 0 0 16px; text-align: center; font-size: 1rem; }
+/* The status row and the price block take the same room as the live cards' "Limited Stock" row (19 px + 20 px margins)
+   and price line, so the rows line up across a row of cards. */
+div.products-list > div.rbu-card-evo .rbu-card-status {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 6px; min-height: 19px; margin: 20px 0;
+  text-align: center; font: .9375rem/19px var(--rbu-font-light); color: var(--rbu-text-2);
+}
+div.products-list > div.rbu-card-evo .rbu-card-status .rbu-badge { margin: -2px 0; }
+div.products-list > div.rbu-card-evo .rbu-price { margin: 0 0 6px; font-size: 1rem; }
+@media (min-width: 1001px) { div.products-list > div.rbu-card-evo .rbu-price { text-align: center; } }
 div.products-list > div.rbu-card-evo .rbu-price-later { font-size: 18px; }
 div.products-list > div.rbu-card-evo .rbu-price-now { font-size: 24px; }
 div.products-list > div.rbu-card-evo .rbu-price-note { font-size: .8125rem; }
@@ -171,6 +183,26 @@ div.products-list > div.rbu-card-evo .rbu-price-note { font-size: .8125rem; }
   header nav.top .micon > ul > li { margin: 0 2px; }
   header nav.top .micon > ul > li > a { padding: 0 11px; }
 }
+
+/* ---- Phone menu: with the extra "Racebox EVO" item the open list is taller than a sideways phone. It scrolls inside
+   the window instead of running off the bottom (live: overflow hidden, max-height 500 px). 100px = shipping banner +
+   nav top; --rbu-bar-h (set by 20 evo-banner, 0 when that set is absent) is the pre-order bar. ---- */
+@media (max-width: 940px) {
+  header nav.top .micon > input:checked ~ ul {
+    max-height: min(500px, calc(100vh - 100px - var(--rbu-bar-h, 0px)));
+    max-height: min(500px, calc(100dvh - 100px - var(--rbu-bar-h, 0px)));
+    overflow: hidden auto; overscroll-behavior: contain;
+  }
+}
+
+/* ---- Jumping to a section of this page ------------------------------------------------------------------------- */
+/* main.css hides and shifts any :target (a trick for old empty <a id> markers). Undo it here, or the hero link "How
+   pre-ordering works" lands on a blank screen. */
+.rbu-evo-page main :target { position: static; top: auto; visibility: visible; }
+/* The fixed header is 115 px tall (86 px on phones). Links and backward Tab (WCAG 2.4.11) leave the target clear of it,
+   with a 10 px gap. There is no pre-order bar on this page, so no --rbu-bar-h here. */
+html:has(body.rbu-evo-page) { scroll-padding-top: 125px; }
+@media (max-width: 940px) { html:has(body.rbu-evo-page) { scroll-padding-top: 96px; } }
 
 /* ---- Phones and tablets ---------------------------------------------------------------------------------------- */
 @media (max-width: 1000px) {

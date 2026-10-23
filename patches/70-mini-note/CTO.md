@@ -37,6 +37,10 @@ Add one row directly after the "Built-in storage" row. Its note spans the Mini a
 
 If the table ever gets another product column after Mini S, add one more `<td>&nbsp;</td>` at the end of this row.
 
+### Open question for the owner: the "Standalone Device" row
+
+In the comparison table, the row "Standalone Device" shows **no** for the Mini S, two rows above the new note, which says the Mini S "also records on its own". Both are in the owner's own words and nothing here was changed. The row seems to mean "has its own screen and buttons", which only the original RaceBox has, but a reader can take it the other way. Suggested fix, owner to decide: rename the row to "Screen and controls on the device" (yes / no / no), or leave it. This change set does not edit that row.
+
 ### CSS
 
 In `rb-updates.css`, section `70-mini-note/style.css`:
@@ -54,3 +58,4 @@ No JavaScript. No back-end change.
 - [ ] The "Mini S" link opens the Mini S page.
 - [ ] `/products` at 390 px, 768 px and 1280 px: the note sits under the Mini and Mini S columns, right below "Built-in storage". No horizontal scroll.
 - [ ] Text contrast: ink `#2c2c2c` on `#f1f1f3` is 12.8:1, on white 14:1.
+- [ ] The "Mini S" link sits inside a sentence, so it keeps its text size as its click area (WCAG 2.5.8 allows this for links in running text). Check it has a visible focus ring when you Tab to it.

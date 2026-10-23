@@ -4,13 +4,17 @@ One line on tablets and desktops, two on phones. The whole bar opens /products/r
 ("Pre-order EVO") stretches over the bar. Not on the checkout (nothing should pull a buyer away from paying) and not on
 the EVO page itself. The price is rbu.evo_price_html in the page's currency; style.css shows it as
 "$339.00 ($449.00 struck, after pre-order)".
+
+The bar is the FIRST child of <header>, so keyboard users reach it first, as it appears on screen (it sits above the
+menu). style.css lays the header out in normal flow (banner, bar, nav) so each part follows the real height of the one
+above it, even when a visitor's own text spacing makes the bar taller.
 """
 import rbu
 
 MARK = '<!-- rb-updates: 20 evo-banner -->'
 SKIP = {'store/checkout.html', 'products/racebox-evo.html'}
-# The live shipping banner, whatever its text (it changes per country)
-SHIPPING = r'(<div class="shipping-info-banner">.*?</div>)'
+# The bar goes first inside the live <header> (one per page), whether or not the page has a shipping banner
+HEADER = r'(<header>)'
 
 
 def bar_html(cur):
@@ -37,7 +41,7 @@ def apply(site):
 
         def edit(html, rel):
             cur = rbu.page_currency(html)
-            return rbu.re_sub(html, SHIPPING, lambda m: m.group(1) + bar_html(cur), count=1, where=rel)
+            return rbu.re_sub(html, HEADER, lambda m: m.group(1) + bar_html(cur), count=1, where=rel)
         site.edit(rel, edit)
         done += 1
     if done < 40:

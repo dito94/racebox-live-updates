@@ -35,11 +35,11 @@ def section_html(cur):
 			</figure>
 			<div class="rbu-home-evo-buy">
 				{rbu.evo_price_html(cur, size='lg')}
-				<p class="rbu-home-evo-terms">{terms}</p>
 				<p class="rbu-home-evo-actions">
 					<a class="rbu-btn rbu-btn--pre" href="{rbu.esc(e['path'])}">Pre-order EVO</a>
 					<a class="rbu-home-evo-link rbu-focus" href="/products/racebox#evo-vs-racebox">Compare with the RaceBox</a>
 				</p>
+				<p class="rbu-home-evo-terms">{terms}</p>
 			</div>
 		</div>
 	</section>

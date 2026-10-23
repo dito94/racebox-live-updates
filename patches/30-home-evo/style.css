@@ -2,8 +2,9 @@
    Sits inside section.front-introduction (grey with the red centre line); the white card covers the line like the
    live headings do, so the line runs from the photo into the card and on to "Introducing RaceBox". */
 /* The negative top margin takes the photo's 72 px bottom margin (main.css .topimg) down to 32 px: the red line still runs
-   from the photo into the card, and on phones and tablets the price, Pre-order EVO and "Compare with the RaceBox" sit
-   higher in the first screen, clear of the live fixed "Get 10% off!" tab at 390 x 844 and 768 x 1024. */
+   from the photo into the card. Together with the terms line sitting under the buttons (not above them), the price,
+   Pre-order EVO and "Compare with the RaceBox" sit high in the phone and tablet first screen, clear of the live fixed
+   "Get 10% off!" tab (bottom left, 160 x 42 px), also when the EVO bar of change set 20 adds 30 to 40 px above. */
 .rbu-home-evo { position: relative; margin: -40px 0 72px; padding: 0 20px; }
 .rbu-home-evo *, .rbu-home-evo *::before, .rbu-home-evo *::after { box-sizing: border-box; }
 .rbu-home-evo-card {
@@ -24,7 +25,7 @@
 .rbu-home-evo .rbu-home-evo-tagline { margin-top: 14px; font: 1.25rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
 .rbu-home-evo .rbu-home-evo-lede { margin-top: 8px; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
 .rbu-home-evo-buy .rbu-price { margin-top: 24px; }
-.rbu-home-evo .rbu-home-evo-terms { margin-top: 12px; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-home-evo .rbu-home-evo-terms { margin-top: 14px; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
 .rbu-home-evo .rbu-home-evo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; margin-top: 22px; }
 .rbu-home-evo-link {
   display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--rbu-ink);

@@ -1,20 +1,39 @@
 /* 20 evo-banner: the RaceBox EVO pre-order bar in the header, right under the shipping banner.
-   The header is fixed, so the bar has a set height per width (--rbu-bar-h) and the nav and <main> move down by exactly
-   that much: nothing shifts after load and nothing is covered. One line from 768 px, two lines on phones, three below
-   360 px. Hidden when the window is very short (phones held sideways), where the fixed header already takes a third
-   of the screen. Quiet: violet wash, ink text, the price in the pre-order violet. */
+   The live header is fixed, with the shipping banner and the nav placed by hand (absolute / top: 20px). With the bar the
+   header is laid out in normal flow instead: shipping banner, bar, nav, one under the other, so each follows the real
+   height of the one above. The bar's height is a minimum (--rbu-bar-h, per width): at normal text spacing it is exactly
+   that, so nothing shifts after load and <main> clears it. If a visitor's own text spacing (WCAG 1.4.12) makes the bar
+   taller, it grows and pushes the nav down instead of overlapping it. One line from 768 px, two lines on phones, three
+   below 360 px. 44 px tall on phones and touch screens, 30 px with a mouse. Hidden when the window is very short
+   (phones held sideways, 200% zoom on a laptop), where the fixed header already takes a third of the screen.
+   Quiet: violet wash, ink text, the price in the pre-order violet. */
 :root { --rbu-bar-h: 30px; }
-@media (max-width: 767px) { :root { --rbu-bar-h: 40px; } }
-@media (max-width: 359px) { :root { --rbu-bar-h: 56px; } }
+@media (max-width: 767px), (pointer: coarse) { :root { --rbu-bar-h: 44px; } }
+@media (max-width: 359px) { :root { --rbu-bar-h: 58px; } }
 @media (max-height: 520px) { :root { --rbu-bar-h: 0px; } }
 
+/* The header in normal flow. The bar is the first child in the HTML (first for keyboard users, as on screen) but
+   shown second: banner (order 1), bar (2), nav (3). The live offsets (banner absolute, nav top: 20px) are undone. */
+header:has(.rbu-evo-bar) { display: flex; flex-direction: column; height: auto; }
+/* In flow the banner is as tall as its text (min 16 px + its 2 px padding, 20 px as today); its own font matches the text's
+   so no stray strut makes it 21 px */
+header:has(.rbu-evo-bar) > .shipping-info-banner { order: 1; position: static; height: auto; min-height: 16px; font: 12px/16px "RaceBox-Light", "RaceBox", sans-serif; }
+header:has(.rbu-evo-bar) > .rbu-evo-bar { order: 2; }
+header:has(.rbu-evo-bar) > nav.top { order: 3; }
+header:has(.rbu-evo-bar):has(.shipping-info-banner) > nav.top { top: 0; }
+/* A flex item contains its floats. The floated logo (38 px with its -2 px top margin) would make the desktop nav 3 px
+   taller than today (98 px, not 95 px), so its margin box is trimmed to the 35 px menu line. The logo itself is unchanged. */
+@media (min-width: 941px) { header:has(.rbu-evo-bar) > nav.top .logo { margin-bottom: -3px; } }
+/* The live Android app strip (not on these pages today) keeps its place under the nav */
+header:has(.rbu-evo-bar) > .android-app-link { order: 4; }
+header:has(.rbu-evo-bar):has(.shipping-info-banner) > .android-app-link { top: 10px; }
+
 header .rbu-evo-bar {
-  position: absolute; top: 0; left: 0; right: 0; z-index: 1; box-sizing: border-box; height: var(--rbu-bar-h);
-  display: flex; align-items: center; justify-content: center; padding: 0 16px;
+  position: relative; box-sizing: border-box; min-height: var(--rbu-bar-h);
+  display: flex; align-items: center; justify-content: center; padding: 2px 16px;
   background: var(--rbu-violet-wash); border-bottom: 1px solid #ddd2f8;
   font: 13px/16px var(--rbu-font-light); color: var(--rbu-ink); text-align: center;
 }
-header .shipping-info-banner + .rbu-evo-bar { top: 20px; }
 header .rbu-evo-bar-in { max-width: 100%; }
 header .rbu-evo-bar strong { font-family: var(--rbu-font); font-weight: normal; }
 
@@ -38,9 +57,9 @@ header .rbu-evo-bar:hover { background: #ebe3fc; }
 header .rbu-evo-bar a.rbu-evo-bar-link:focus { outline: none; }
 header .rbu-evo-bar:focus-within { outline: 2px solid var(--rbu-ink); outline-offset: -3px; }
 
-/* The live header moves down by the bar's height: the nav (logo, menu, cart) and the page under the fixed header */
-header:has(.rbu-evo-bar) > nav.top { top: var(--rbu-bar-h); }
-header:has(.shipping-info-banner):has(.rbu-evo-bar) > nav.top { top: calc(20px + var(--rbu-bar-h)); }
+/* <main> clears the fixed header: the live offsets plus the bar. Same :has() selectors main.css uses. At normal text
+   spacing this is exact (no layout shift). With bigger text spacing the header grows and covers a few pixels of the
+   page top rather than text overlapping text. */
 body header:has(.rbu-evo-bar) ~ main { margin-top: calc(65px + var(--rbu-bar-h)); }
 body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: calc(85px + var(--rbu-bar-h)); }
 @media (min-width: 939px) {
@@ -51,7 +70,7 @@ body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: ca
 /* Phones: price on the first line, ship date and link on the second. "RaceBox" before EVO is left to screen readers
    so the first line fits a 360 px screen. */
 @media (max-width: 767px) {
-  header .rbu-evo-bar { padding: 0 12px; font-size: 12.5px; }
+  header .rbu-evo-bar { padding: 2px 12px; font-size: 12.5px; }
   header .rbu-evo-bar .rbu-price-now { font-size: 13.5px; }
   header .rbu-evo-bar-brand { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   header .rbu-evo-bar-tail { display: block; margin-top: 4px; }
@@ -59,6 +78,6 @@ body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: ca
 }
 
 /* Hidden on very short windows (phones held sideways, 200% zoom on a laptop) and in browsers without :has(), which
-   the header offsets need (as the live header's own do). Last, so it wins over the rules above. */
+   the header layout and offsets need (as the live header's own do). Last, so it wins over the rules above. */
 @media (max-height: 520px) { header .rbu-evo-bar { display: none; } }
 @supports not selector(:has(a)) { header .rbu-evo-bar { display: none; } }

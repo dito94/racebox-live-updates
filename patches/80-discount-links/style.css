@@ -1,6 +1,10 @@
 /* 80 discount-links: the notice that confirms a code from a link (saved, applied, couldn't be applied).
-   Fixed under the header (the script sets top from the header's real height), so it never moves the page.
-   Above page content and the "Get 10% off!" button, below the open menu (header z-index 100) and the modals (200). */
+   Two forms, one look:
+   - toast (every page except checkout): fixed under the header (the script sets top from the header's real height),
+     so it never moves the page; it closes by itself. Above page content and the "Get 10% off!" button, below the open
+     menu (header z-index 100) and the modals (200).
+   - in the page flow (.rbu-toast--flow, /store/checkout only): a block at the top of the order summary. It scrolls
+     with the page and stays until dismissed, so it never covers the form or the cart. */
 .rbu-toast {
   position: fixed; z-index: 90; top: 128px; right: 20px; width: 420px; max-width: calc(100% - 32px); box-sizing: border-box;
   display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 16px; border-radius: 8px;
@@ -22,6 +26,9 @@
 .rbu-toast-close svg { display: block; width: 18px; height: 18px; }
 @media (max-width: 1000px) {
   .rbu-toast { top: 94px; left: 16px; right: 16px; width: auto; max-width: none; }
+}
+.rbu-toast.rbu-toast--flow {
+  position: static; z-index: auto; width: auto; max-width: none; margin: 0 0 14px; box-shadow: none; animation: none;
 }
 @keyframes rbu-toast-in { from { opacity: 0; transform: translateY(-6px); } }
 @media (prefers-reduced-motion: reduce) { .rbu-toast { animation: none; } }

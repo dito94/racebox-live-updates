@@ -56,8 +56,19 @@ Variables:
   heading lands below the fixed header and the EVO bar.
 - From 700 px up it is a normal 3-column table. Below 700 px each row stacks: the row label on top, RaceBox and EVO side by
   side, each with a small label. The `role` attributes keep it a table for screen readers in that layout: keep them.
-- The table's Add to cart uses the live form but is drawn like the EVO button next to it, in a darker red (#c4161c):
-  white on the brand red #ea2127 is 4.4:1, under the 4.5:1 minimum.
+- The table's Add to cart uses the live form and the live button look: the pill shape and uppercase RaceBox-Regular 19.2 px of
+  `main.css button.submit`, so it sits right with the sticky "Add to cart" bar and the buy section's button, which show on the
+  same screen. Two differences, on purpose: it is 44 px tall (the live one is 34 px; 44 px is the touch minimum) and its red is
+  #e32026, not #ea2127. White on #ea2127 is 4.4:1, under the 4.5:1 minimum for text this size; #e32026 is 4.7:1 and looks the
+  same. The "Pre-order EVO" button next to it takes the same pill shape (in violet) so the two buttons in the row match.
+  Below 700 px both buttons are 14 px so each fits one line in its half-width column.
+- **Core need (00-core, other pages):** the shared `.rbu-btn` is a 4 px-radius, sentence-case rectangle, and the live
+  `button.submit` is a pill. Pick one shape for the whole site and apply it to `.rbu-btn` too, so Pre-order EVO on the EVO page, home
+  page and banner matches the live Add to cart buttons. Here the table already follows the live pill.
+- **Reduced motion:** `main.css` has `html { scroll-behavior: smooth }` and no `prefers-reduced-motion` rule, so the links from the
+  home page and the EVO page glide about 2,500 px down to this table. The last rule in `style.css` sets
+  `html { scroll-behavior: auto }` for visitors who ask for less motion. It applies to the whole site: move it to `00-core` or
+  into `main.css` so it does not depend on this page's CSS.
 
 **Facts and sources.** RaceBox column: tech specs page first (`/products/racebox/tech-specs`), then the RaceBox page and the FAQ.
 EVO column: `patches/evo.json` (TBA where it says TBA). The live pages disagree on some RaceBox figures, so the table leaves
@@ -77,6 +88,11 @@ those figures out until the owner confirms them:
 - [ ] `/products/racebox#evo-vs-racebox` (desktop and phone): the page scrolls to the table and the heading is visible below the
       header and the EVO bar (not hidden, not under the header).
 - [ ] RaceBox price, dispatch line and Add to cart match the buy section. Add to cart puts one RaceBox in the cart.
+- [ ] Add to cart in the table looks like the sticky "Add to cart" bar and the buy section's button (pill, uppercase, same red to
+      the eye), and the Pre-order EVO button next to it has the same shape in violet.
+- [ ] Reduce motion on (system setting, or DevTools "Emulate prefers-reduced-motion"): the link from the home page
+      ("Compare with the RaceBox") and `/products/racebox#evo-vs-racebox` land on the table at once, with no glide. With it off, the
+      page still scrolls smoothly.
 - [ ] EVO: struck {{evo_price_after}}, {{evo_price_preorder}} in violet, "Pre-order. Ships March 2027.", violet Pre-order EVO button to
       `/products/racebox-evo`; the column header "RaceBox EVO" links there too.
 - [ ] EU visitor: both columns in euros.

@@ -5,7 +5,10 @@ the store card's image and bullets (store/index.html, the same product data) and
 add-to-cart form and currency note. On phones (max-width 1000px, the site's breakpoint) the hero is hidden, so the top
 banner stays first and phones look exactly as today. On desktop the top banner simply follows the hero.
 
-Everything is read from the live markup, so a changed template stops the build instead of printing a wrong price.
+Everything is read from the live markup, so a changed template stops the build instead of printing a wrong price
+(price, add-to-cart form, price note, country link and the stock note are all anchors).
+Key points: the card's bullets, at most 4; a fit warning ("Not Compatible with ...") is never the one that is cut.
+The struck price gets hidden words for screen readers ("Regular price", "Offer price").
 """
 import os
 import re
@@ -52,6 +55,25 @@ def store_cards():
     return cards
 
 
+# The brief asks for 2-4 key points. Store cards print 3 to 5 bullets. Four accessory pages have 5, and on two of them
+# (RB04, RB05) the last one is the fit warning ("Not Compatible with RaceBox Mini"), which a buyer must not miss.
+MAX_POINTS = 4
+COMPAT = re.compile(r'not compatible|, not mini', re.I)
+
+
+def key_points(points):
+    """At most MAX_POINTS bullets, in card order. A compatibility line is never the one that gets cut."""
+    if len(points) <= MAX_POINTS:
+        return points
+    keep = [i for i, p in enumerate(points) if COMPAT.search(p)][:MAX_POINTS]
+    for i in range(len(points)):
+        if len(keep) >= MAX_POINTS:
+            break
+        if i not in keep:
+            keep.append(i)
+    return [points[i] for i in sorted(keep)]
+
+
 def buy_parts(html, where):
     """What the page's own buy section shows: price (and struck price), offer title, stock note, form, notes."""
     buy = _one(r'<section class="buy" id="buy-section">(.*?)</section>', html, where, 'buy section').group(1)
@@ -63,7 +85,11 @@ def buy_parts(html, where):
         title, was = None, None
         now = _one(r'<p class="price">[^<]*<strong>([^<]*)</strong></p>', buy, where, 'price').group(1)
     stock = re.search(r'<div class="availability-warning">([^<]*)</div>', buy)
-    form = _one(r'<form method="post" action="/store/add-to-cart" id="checkout-form" class="js-add-to-cart"'
+    if not stock and 'availability-warning' in buy:
+        # The stock note changed shape (another class, nested markup): stop, don't drop "Limited Stock" silently.
+        raise rbu.AnchorError(f'{where}: availability note found in the buy section but not in the expected markup '
+                              '<div class="availability-warning">text</div>')
+    form =_one(r'<form method="post" action="/store/add-to-cart" id="checkout-form" class="js-add-to-cart"'
                 r'( data-sku="[^"]*" data-name="[^"]*" data-price="[^"]*" data-currency="[^"]*")>\s*'
                 r'(<input type="hidden" name="product" value="[^"]*" />)\s*<button class="submit">Add to cart</button>',
                 buy, where, 'add-to-cart form')
@@ -78,11 +104,13 @@ def buy_parts(html, where):
 
 def hero_html(card, b):
     img, name, points = card
-    points_html = ''.join(f'\n\t\t\t\t<li>{p}</li>' for p in points)
+    points_html = ''.join(f'\n\t\t\t\t<li>{p}</li>' for p in key_points(points))
     if b['was']:
+        # The words in .rbu-sr are for screen readers: without them "$249.00 $219.00" reads as two prices.
         price = (f'\n\t\t\t\t<p class="rbu-pdp-offer">{b["title"]}</p>'
                  f'\n\t\t\t\t<div class="rbu-pdp-price-row">'
-                 f'\n\t\t\t\t\t<p class="rbu-pdp-price"><s>{b["was"]}</s> <strong>{b["now"]}</strong></p>')
+                 f'\n\t\t\t\t\t<p class="rbu-pdp-price"><s><span class="rbu-sr">Regular price </span>{b["was"]}</s> '
+                 f'<strong><span class="rbu-sr">Offer price </span>{b["now"]}</strong></p>')
     else:
         price = (f'\n\t\t\t\t<div class="rbu-pdp-price-row">'
                  f'\n\t\t\t\t\t<p class="rbu-pdp-price"><strong>{b["now"]}</strong></p>')

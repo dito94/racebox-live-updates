@@ -9,10 +9,10 @@
 **Head.** Replace the RaceBox title, description, canonical, Open Graph tags and JSON-LD with:
 
 ```html
-<title>RaceBox EVO: 25 Hz Standalone Lap Timer | Pre-order</title>
+<title>RaceBox EVO Pre-order: 25 Hz Standalone Lap Timer | RaceBox</title>
 <meta name="description" content="Pre-order RaceBox EVO, the standalone lap timer and drag meter with its own colour screen, now with 25 Hz GPS. {{evo_preorder_price}} pre-order price, {{evo_price_after}} after pre-order. Ships March 2027.">
 <link rel="canonical" href="https://www.racebox.pro/products/racebox-evo">
-<meta property="og:title" content="RaceBox EVO: 25 Hz Standalone Lap Timer | Pre-order">
+<meta property="og:title" content="RaceBox EVO Pre-order: 25 Hz Standalone Lap Timer | RaceBox">
 <meta property="og:description" content="(same as the description)">
 <meta property="og:url" content="https://www.racebox.pro/products/racebox-evo">
 <script type="application/ld+json">
@@ -93,13 +93,13 @@ The Product JSON-LD has no reviews or rating (EVO has none yet). Its Offer is `P
 <!-- rb-updates: 10 evo-page -->
 <section class="rbu-evo-band rbu-evo-band--pink" aria-labelledby="rbu-evo-new-title">
 	<h2 id="rbu-evo-new-title">What's new</h2>
-	<p class="rbu-evo-intro">Two and a half times the update rate. Same RaceBox.</p>
+	<p class="rbu-evo-intro">Same shape you know. Now at 25&nbsp;Hz.</p>
 	<ol class="rbu-evo-new"><li><span class="rbu-evo-new-n" aria-hidden="true">01</span><h3>25 Hz, on the dash</h3><p>25&nbsp;Hz GPS instead of 10&nbsp;Hz, with live lap, sector and drag results on its own colour screen.</p></li><li><span class="rbu-evo-new-n" aria-hidden="true">02</span><h3>Bigger battery</h3><p>A larger battery than the original RaceBox. Capacity and runtime are confirmed before shipping.</p></li><li><span class="rbu-evo-new-n" aria-hidden="true">03</span><h3>More storage</h3><p>More room for sessions on the device itself. The final figure is confirmed before shipping.</p></li><li><span class="rbu-evo-new-n" aria-hidden="true">04</span><h3>Same shape you know</h3><p>The windscreen-mounted design and four-button controls of the original RaceBox.</p></li></ol>
 </section>
 <div class="rbu-evo-photo">
 	<figure>
 		<picture>
-			<source type="image/webp" srcset="/assets/rb-updates/img/evo-windscreen-640.webp 640w, /assets/rb-updates/img/evo-windscreen-1024.webp 1024w, /assets/rb-updates/img/evo-windscreen-1600.webp 1600w" sizes="(min-width: 1001px) 960px, 100vw" />
+			<source type="image/webp" srcset="/assets/rb-updates/img/evo-windscreen-640.webp 640w, /assets/rb-updates/img/evo-windscreen-1024.webp 1024w, /assets/rb-updates/img/evo-windscreen-1600.webp 1600w, /assets/rb-updates/img/evo-windscreen-2048.webp 2048w" sizes="100vw" />
 			<img src="/assets/rb-updates/img/evo-windscreen-1024.jpg" width="1024" height="683" loading="lazy" decoding="async" alt="The current RaceBox on its windscreen suction mount, above a car's infotainment screen" />
 		</picture>
 		<figcaption>Photos show the current RaceBox. EVO keeps the same shape; EVO photos follow before shipping.</figcaption>
@@ -183,11 +183,15 @@ Notes on the page:
 - The price block (`.rbu-price`) is the shared one from 00 core. The struck price is labelled "after pre-order" in words and for screen readers. It must never read "was", "save" or "% off".
 - `#add-to-cart-popup` is the live sticky bar. Like on every product page, main.css shows it on phones only. It tracks `#rbu-evo-buy` (the hero buy block).
 - "See EVO and RaceBox side by side" links to `/products/racebox#evo-vs-racebox`. Change set 40 adds that table to the RaceBox page.
-- Copy that is not in evo.json: "What's new" intro ("Two and a half times the update rate. Same RaceBox.": 25 Hz vs 10 Hz) and the EVO or RaceBox table. RaceBox figures in that table come from /products/racebox/tech-specs (battery "up to 8 hours driving with WiFi off", "256 drag sessions, 128 track sessions"). The RaceBox product page itself says 2000 mAh and 400 sessions; the tech-specs page says 2500 mAh and 256 + 128 sessions. I used the tech-specs page. Please fix whichever is wrong.
+- The sticky bar's button is out of the keyboard tab order while the bar is off screen (`visibility: hidden` until `.visible`, always hidden from 1000 px, where main.css keeps the bar at `bottom: -200px`). The live RaceBox bar does not do this; only this new markup does.
+- Jumping to a section: main.css has `:target { position: relative; top: -169px; visibility: hidden }` (a trick for old empty `<a id>` markers). On this page it would blank the whole "How pre-ordering works" section when the hero link is clicked, so the CSS undoes it for `main :target`. Any new `id` target you add to this page is covered by the same rule. The page also has `scroll-padding-top` (125 px, 96 px up to 940 px wide) so links and backward Tab leave the target clear of the fixed header. There is no pre-order bar on this page, so no `--rbu-bar-h` in it.
+- Copy that is not in evo.json: the EVO or RaceBox table and the "What's new" intro ("Same shape you know. Now at 25 Hz.", built from the evo.json tagline and the fourth highlight's title). RaceBox figures in that table come from /products/racebox/tech-specs (battery "up to 8 hours driving with WiFi off", "256 drag sessions, 128 track sessions"). The RaceBox product page itself says 2000 mAh and 400 sessions; the tech-specs page says 2500 mAh and 256 + 128 sessions. I used the tech-specs page. Please fix whichever is wrong.
+
+- Owner decision, left as is: the photos on this page, the store card and the JSON-LD `image` are the current RaceBox (EVO has no photos yet). The page captions them honestly; the store card says it only in the image's alt text. If the owner wants it visible on the card, add a short note to the card's status row; if not, drop `image` from the JSON-LD until EVO photos exist.
 
 **Images.** Copy `assets/rb-updates/img/` (from `patches/10-evo-page/static/img/`):
 - `evo-angle-400/800/1200.webp` and `evo-angle-800.png`: hero (current RaceBox cut-out, transparent)
-- `evo-windscreen-640/1024/1600.webp` and `evo-windscreen-1024.jpg`: photo band
+- `evo-windscreen-640/1024/1600/2048.webp` and `evo-windscreen-1024.jpg`: photo band. It is full width like the live banners (`sizes="100vw"`, so a 1920 px screen loads the 2048 px file), cropped to 560 px tall on wide screens with `object-position: 50% 24%` to keep the RaceBox in view.
 - `evo-card-200.png` and `evo-card-400.png`: store card (200 x 200, like the other card images)
 
 All of them show the current RaceBox and are captioned or labelled that way. Replace them when EVO photos exist.
@@ -215,6 +219,10 @@ All of them show the current RaceBox and are captioned or labelled that way. Rep
 
 The badge and ship month sit where other cards show "Limited Stock". The button is the live pill in violet (violet means pre-order, nothing else).
 
+### 2b. Leave the newsletter popup off the EVO page
+
+The site layout ends with a three-part newsletter partial: `<div class="modal-container" id="newsletter-subscribe-popup">...</div>`, the floating `<a href="#" class="newsletter-popup-trigger fixed">Get 10% off!</a>` and `<script src=".../newsletter-subscribe-popup.js">`. Do not render it on the EVO template (a flag on the layout, or leave the partial out of this template). Why: its code "does not apply to accessories or products in pre-order", the red "% off" tab floats right beside the EVO price (and covers the key terms on small phones), and the script also opens the popup by itself 5 seconds after load. CSS cannot hide it: the script shows the tab with an inline `display: block`. The built page marks the spot with `<!-- rb-updates: 10 evo-page: no newsletter popup on this page -->`. The same goes for any seasonal discount tab (main.css also styles `.black-friday-popup-trigger`). Owner question: if the owner wants newsletter sign-up on this page after all, the popup text needs to say the code is not for EVO.
+
 ### 3. Menu and footer (site layout, every page)
 
 Header menu: add the item right after "Racebox" in **both** lists (the flat list and the "Products" dropdown). On the EVO page give the link `class="current"`, like the other product pages.
@@ -231,15 +239,17 @@ Footer, first column: right after `<li><a href="/products/racebox">RaceBox</a></
 
 With one more item, the flat desktop menu (shown from 1460 px) would wrap under the logo between 1460 and 1549 px. The CSS section "Header menu" tightens the item spacing between 1460 and 1599 px so it stays on one line.
 
+The phone menu (up to 940 px wide) has ten items now, which is taller than a phone held sideways (844 x 390): "Buy RaceBox" ran off the bottom of the screen and could not be reached, because the header is fixed and the list is `overflow: hidden; max-height: 500px`. The CSS section "Phone menu" lets the open list scroll inside the window: `max-height: min(500px, 100dvh - 100px - var(--rbu-bar-h, 0px))` with `overflow: hidden auto` (100 px = shipping banner plus the top of the nav; `--rbu-bar-h` is the pre-order bar from change set 20, 0 when it is absent). It only applies to the open list (`.micon > input:checked ~ ul`), not to the Products dropdown.
+
 ### CSS and JS
 
-`rb-updates.css`, section `10-evo-page/style.css`: page frame, hero, what's new, photo band, how pre-ordering works, tables, FAQ, need it sooner, the inline EVO price (`.rbu-price-inline`, also used by 20), sticky bar, violet pill button (`.rbu-submit-pre`), store card, header menu, phones. No JS: the FAQ is `<details>`, the sticky bar uses the live `bottom-popup-element.js`.
+`rb-updates.css`, section `10-evo-page/style.css`: page frame, hero, what's new, photo band, how pre-ordering works, tables, FAQ, need it sooner, the inline EVO price (`.rbu-price-inline`, also used by 20), sticky bar, violet pill button (`.rbu-submit-pre`), store card (its status row and price block take the same height as the live cards' "Limited Stock" row and price, so rows line up; the price is centred only from 1001 px, like the live price), header menu, phone menu, jumping to a section (`:target` and `scroll-padding-top`), phones. No JS: the FAQ is `<details>`, the sticky bar uses the live `bottom-popup-element.js`.
 
 ### Back end
 
 1. Create the EVO product: name "RaceBox EVO", pre-order price 339 USD / 339 EUR, price after pre-order 449 USD / 449 EUR, flagged as pre-order (as the Mini S pre-order was). Put its SKU and id in place of `EVO_SKU` and `EVO_PRODUCT_ID`.
 2. Checkout, order confirmation and order emails should say "Pre-order, ships March 2027" for this line.
-3. The newsletter popup says the 10% code "does not apply to accessories or products in pre-order". Make sure the checkout enforces that for EVO.
+3. The newsletter popup says the 10% code "does not apply to accessories or products in pre-order". Make sure the checkout enforces that for EVO. The popup itself is not shown on the EVO page (section 2b).
 4. Route `/products/racebox-evo` to the new template, and add it to the sitemap if there is one.
 5. Pages must be served as UTF-8 (the live server already does: EU prices print "339.00 €").
 6. When pre-orders close: change the price to 449, remove the struck price and the pre-order wording, and update the JSON-LD availability.
@@ -250,7 +260,13 @@ With one more item, the flat desktop menu (shown from 1460 px) would wrap under 
 - [ ] Desktop 1280 x 720 and phone 390 x 844: name, price (449 struck, 339, "Pre-order price. 449 after pre-order."), violet Pre-order button, "Ships March 2027" and the three key terms are visible without scrolling.
 - [ ] Pre-order now adds EVO to the cart at 339 in the visitor currency; the cart and checkout say pre-order.
 - [ ] EU visitor: every EVO price shows "339.00 €" and "449.00 €"; `data-currency="EUR"`.
-- [ ] Phone: scroll past the hero; the sticky bar shows $339.00 / ~~$449.00~~ after pre-order and a violet PRE-ORDER button, with "Get 10% off!" above it, not on it.
+- [ ] Phone: scroll past the hero; the sticky bar shows $339.00 / ~~$449.00~~ after pre-order and a violet PRE-ORDER button. There is no "Get 10% off!" tab on this page, and no popup opens after 5 seconds.
+- [ ] Click "How pre-ordering works" in the hero (phone 390 x 844 and desktop 1280 x 720): the section shows, with its heading below the header, not hidden and not under it.
+- [ ] Shift+Tab backwards from the footer through the page (1280 x 720 and 390 x 844): every focused control is below the header and on screen.
+- [ ] Tab through the page at 1280 x 720: focus never goes to the sticky bar's PRE-ORDER button (it is off screen). On a phone it does once the bar has slid in.
+- [ ] Open the phone menu held sideways (844 x 390 and 667 x 375): the list scrolls and "Buy RaceBox" can be reached.
+- [ ] /store/ at 768, 1280 and 1440 px: the EVO card's status row, price and buttons line up with the RaceBox card next to it (within 1 px); from 1001 px the price is centred like the others, below that it is left-aligned like the others.
+- [ ] Photo band at 1920 x 1080: full width, no black bars at the sides.
 - [ ] FAQ items open and close with mouse, Enter and Space.
 - [ ] /store/: EVO is the first card, same layout as the others, violet PRE-ORDER button, badge "Pre-order Ships March 2027".
 - [ ] Menu: "Racebox EVO" after "Racebox" in the flat list (wide desktop), in the Products dropdown (laptop) and in the phone menu; menu stays on one line at 1460-1600 px. Footer shows "RaceBox EVO".

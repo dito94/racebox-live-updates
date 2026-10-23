@@ -18,12 +18,12 @@ All values are ones the page already prints: the image and bullets from the prod
 		<div class="rbu-pdp-body">
 			<h1 class="rbu-pdp-name" id="rbu-pdp-name">{{product_name}}</h1>
 			<ul class="reddot rbu-pdp-points">
-				{% for item in store_card_bullets %}<li>{{item}}</li>{% endfor %}
+				{% for item in hero_bullets %}<li>{{item}}</li>{% endfor %}
 			</ul>
 			<div class="rbu-pdp-buy">
 				{% if limited_time_offer %}<p class="rbu-pdp-offer">{{offer_title}}</p>{% endif %}
 				<div class="rbu-pdp-price-row">
-					<p class="rbu-pdp-price">{% if limited_time_offer %}<s>{{price_was}}</s> {% endif %}<strong>{{price_now}}</strong></p>
+					<p class="rbu-pdp-price">{% if limited_time_offer %}<s><span class="rbu-sr">Regular price </span>{{price_was}}</s> <strong><span class="rbu-sr">Offer price </span>{{price_now}}</strong>{% else %}<strong>{{price_now}}</strong>{% endif %}</p>
 					{% if availability_warning %}<p class="rbu-pdp-stock">{{availability_warning}}</p>{% endif %}
 				</div>
 				<div class="rbu-pdp-actions">
@@ -40,25 +40,36 @@ All values are ones the page already prints: the image and bullets from the prod
 </section>
 ```
 
-Built example (RaceBox, US): `{{offer_title}}` = `Limited Time Offer`, `{{price_was}}` = `$509.00`, `{{price_now}}` = `$399.00`, `{{availability_warning}}` = `Limited Stock`, `{{sku}}` = `RB01`, `{{price}}` = `399`, `{{product_id}}` = `5fbcc249279fe9d96341a620`. Accessories have no offer: they show only `<strong>$20.00</strong>`, with no label and no struck price.
+Built example (RaceBox, US): `{{offer_title}}` = `Limited Time Offer`, `{{price_was}}` = `$509.00`, `{{price_now}}` = `$399.00`, `{{availability_warning}}` = `Limited Stock`, `{{sku}}` = `RB01`, `{{price}}` = `399`, `{{product_id}}` = `5fbcc249279fe9d96341a620`. Accessories have no offer: they show only `<strong>$20.00</strong>`, with no label, no struck price and no hidden words.
 
 Notes:
 - **Prices:** print exactly what the buy section prints, under the same condition. Show the struck price only when the buy section shows one.
+- **Hidden words (`rbu-sr`):** without them a screen reader reads "$249.00 $219.00" as two prices. With them it reads "Regular price $249.00 Offer price $219.00". The class `rbu-sr` is in the shared core CSS. Owner to confirm the wording: "was" is banned only for EVO, so "Regular price" and "Offer price" are fine, but the owner may prefer other words. The live buy section has the same bare pair of prices; the same two spans would fix it there too.
 - **Form:** the same form as the buy section, without `id="checkout-form"` (ids must be unique; that id only matters on the checkout page). `store-assets/js/analytics.js` binds every `form.js-add-to-cart`, so the hero sends the same `add_to_cart` event.
 - **Out of stock:** if the buy section shows something other than the Add to cart form, show the same thing here. Never show a button the buy section doesn't have.
-- **Bullets:** the hero prints the store card's full list (3 to 5 items). On three accessories the fifth item is the compatibility warning ("Not Compatible with RaceBox Mini"), so don't cut the list.
-- **Image:** the store card image, `/product-image/*.png` (200 x 200, transparent). The Micro's card uses `racebox-micro-200.png`.
-- **Heading:** the name is an `h1`, like every section title on these pages. It is hidden on phones, so the phone outline is unchanged.
+- **Bullets (`hero_bullets`), 2 to 4 items:** the store card's bullets in card order, at most 4. If the card has a fifth bullet that is a fit warning ("Not Compatible with RaceBox Mini"), the warning stays and the last ordinary bullet goes: first three plus the warning. Four accessory cards have 5 bullets (the other 8 pages have 3 or 4 and show all of them):
+
+  | Page | Left out of the hero (still on the store card) | Fifth bullet is a fit warning? |
+  |---|---|---|
+  | External GPS Antenna (RB04) | Supports GPS/GLONASS/SBAS | yes, kept |
+  | Suction Cup (RB05) | Compatible with GoPro | yes, kept |
+  | Spare Mini Accessories (RB03) | USB-C Water/Dust covers for extra protection | no |
+  | Magnetic USB Cable (RB06) | Length - 1m (3.3ft) | no |
+
+  Which four points to show on these pages is a content choice. The rule above is the default.
+- **Image:** the store card image, `/product-image/*.png` (200 x 200, transparent). The Micro's card uses `racebox-micro-200.png`. It is shown at 200 CSS px, its real size, so it stays sharp on 1x screens. On 2x screens it is soft; if the owner wants it sharper, export 400 x 400 files and add `srcset="... 400w"`. Nothing else changes.
+- **Heading:** the name is an `h1`, like every section title on these pages. It is hidden on phones, so the phone outline is unchanged. On the 8 accessory pages the page's own intro section also has an `h1` with the same name, so desktop readers get two identical h1s. That is the same pattern as the rest of the live site (every section title is an `h1`), so it is left as it is.
 
 ### 2. CSS
 
 In `rb-updates.css`, section `50-pdp-first-screen/style.css`. It holds:
 - the block's layout. It is hidden at `max-width: 1000px`, the site's own breakpoint.
 - the button in `#e32026`. The live red `#ea2127` gives white text 4.4:1, under WCAG AA; `#e32026` looks the same and reaches 4.7:1.
-- a fix for `#buy-section`. main.css has `:target { visibility: hidden; top: -169px }` for the old empty `<a id>` anchors. Without the fix, the link `#buy-section` would hide the whole buy section. The fix keeps it visible and adds `scroll-margin-top: 120px` (85px on phones), so the section stops under the fixed header.
+- a larger click area for "Switch country" in the block (44 px tall; it is a 15 px line of text). It is a pseudo-element, so nothing moves and the focus ring stays tight around the words.
+- a fix for `#buy-section`. main.css has `:target { visibility: hidden; top: -169px }` for the old empty `<a id>` anchors. Without the fix, the link `#buy-section` would hide the whole buy section. The fix keeps it visible and adds a scroll margin so the section stops just under the fixed header.
 - `scroll-behavior: auto` for visitors who prefer reduced motion.
 
-**If the site-wide EVO banner goes inside the fixed header**, raise `#buy-section { scroll-margin-top }` by the banner's height (120px + 48px = 168px).
+**Scroll margin rule (always applies):** `#buy-section { scroll-margin-top: calc(120px + var(--rbu-bar-h, 0px)); }`, and `calc(90px + var(--rbu-bar-h, 0px))` at `max-width: 940px`. Change set 20 puts the EVO banner inside the fixed header and sets `--rbu-bar-h` (30 px on desktop, 40 px on phones, 0 on very short windows). The `0px` fallback keeps the page right when set 20 is not applied. Any other anchor target under the fixed header needs the same `var(--rbu-bar-h, 0px)`.
 
 No JavaScript. The sticky `#add-to-cart-popup` needs no change: main.css already keeps it off-screen from 1000px up, so it never shows next to the hero. On phones it works as before.
 
@@ -68,11 +79,13 @@ Nothing new. The template needs the store card's image and bullet list on the pr
 
 ### How to test
 
-- [ ] Desktop 1280x720, 1366x768, 1440x900, 1920x1080, 1024x768: name, image, price and Add to cart are visible without scrolling, also with the 48px EVO banner. Measured here: the lowest button bottom is at 551px (Mini page, with banner).
+- [ ] Desktop 1280x720, 1366x768, 1440x900, 1920x1080, 1024x768: name, image, price and Add to cart are visible without scrolling, also with the EVO banner (30 px) and with a 48 px banner. Measured here with a 48 px banner: the lowest button bottom is at 551px (Mini page).
 - [ ] The video or photo shows right below the block. Phones (390 px) and tablets (768 px) look exactly as before; full-page screenshots were pixel-identical here.
 - [ ] Prices match the buy section on every product page. Struck price only on RaceBox, Mini, Mini S and Micro. Test one EU country: `349.00 €` format, "Euro" in the note.
+- [ ] Screen reader (or the accessibility tree) on the Mini: the price reads "Regular price $249.00 Offer price $219.00". On an accessory it reads just the price.
+- [ ] 2 to 4 key points on every page. The Suction Cup and the External GPS Antenna still show "Not Compatible with RaceBox Mini".
 - [ ] Add to cart in the hero adds the product: it posts `product={{product_id}}` to `/store/add-to-cart`, and analytics records the same `add_to_cart` event as the bottom button.
-- [ ] "Delivery, payment and returns" scrolls to the buy section and the section stays visible.
-- [ ] "Switch country" in the hero opens the country picker.
+- [ ] "Delivery, payment and returns" scrolls to the buy section and the section stays visible. With the EVO banner on, the section's top edge is below the whole header (no part of it hidden), at 1280x720 and 1366x768, on the Mini and on an accessory.
+- [ ] "Switch country" in the hero opens the country picker, also when you click just above or below the words.
 - [ ] Tab from the top of the page: the hero's links and button get a visible focus ring.
 - [ ] No horizontal scroll and no new console errors.

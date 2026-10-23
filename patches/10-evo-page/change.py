@@ -106,13 +106,13 @@ def whats_new(e):
 {MARK}
 <section class="rbu-evo-band rbu-evo-band--pink" aria-labelledby="rbu-evo-new-title">
 	<h2 id="rbu-evo-new-title">What's new</h2>
-	<p class="rbu-evo-intro">Two and a half times the update rate. Same RaceBox.</p>
+	<p class="rbu-evo-intro">Same shape you know. Now at 25&nbsp;Hz.</p>
 	<ol class="rbu-evo-new">{items}</ol>
 </section>
 <div class="rbu-evo-photo">
 	<figure>
 		<picture>
-			<source type="image/webp" srcset="{IMG}/evo-windscreen-640.webp 640w, {IMG}/evo-windscreen-1024.webp 1024w, {IMG}/evo-windscreen-1600.webp 1600w" sizes="(min-width: 1001px) 960px, 100vw" />
+			<source type="image/webp" srcset="{IMG}/evo-windscreen-640.webp 640w, {IMG}/evo-windscreen-1024.webp 1024w, {IMG}/evo-windscreen-1600.webp 1600w, {IMG}/evo-windscreen-2048.webp 2048w" sizes="100vw" />
 			<img src="{IMG}/evo-windscreen-1024.jpg" width="1024" height="683" loading="lazy" decoding="async" alt="The current RaceBox on its windscreen suction mount, above a car's infotainment screen" />
 		</picture>
 		<figcaption>{rbu.esc(e['imageNote'])}</figcaption>
@@ -319,7 +319,7 @@ def apply(site):
             + sticky(e, cur))
     site.new_page(
         PAGE, TEMPLATE,
-        title='RaceBox EVO: 25 Hz Standalone Lap Timer | Pre-order',
+        title='RaceBox EVO Pre-order: 25 Hz Standalone Lap Timer | RaceBox',
         description=(f'Pre-order RaceBox EVO, the standalone lap timer and drag meter with its own colour screen, now '
                      f'with 25 Hz GPS. {rbu.money(now, cur)} pre-order price, {rbu.money(later, cur)} after '
                      f'pre-order. Ships {e["shipWindow"]}.'),
@@ -330,6 +330,18 @@ def apply(site):
     for leftover in ('RB01', '5fbcc249279fe9d96341a620', 'front-video'):
         if leftover in page.split('<main>', 1)[1].split('</main>', 1)[0]:
             raise rbu.AnchorError(f'{PAGE}: RaceBox leftover {leftover!r} in <main>')
+
+    # The newsletter "Get 10% off!" partial (popup, floating tab and its script) is left out of this page: its code "does
+    # not apply to accessories or products in pre-order", the tab would float beside the EVO price, and the script opens
+    # the popup by itself after 5 seconds. (CSS can't hide it: the script shows the tab with an inline style.)
+    def no_newsletter(html, rel):
+        def drop(m):
+            if 'newsletter-popup-trigger' not in m.group(0) or len(m.group(0)) > 4000:
+                raise rbu.AnchorError(f'{rel}: the newsletter popup partial is not what was expected')
+            return f'{MARK.replace(" -->", ": no newsletter popup on this page -->")}\n'
+        return rbu.re_sub(html, r'[ \t]*<div class="modal-container" id="newsletter-subscribe-popup".*?'
+                                r'<script src="[^"]*/newsletter-subscribe-popup\.js"[^>]*></script>\n?', drop, count=1, where=rel)
+    site.edit(PAGE, no_newsletter)
 
     def store(html, rel):
         return rbu.re_sub(html, r'(<h1>RaceBox Lap Timers and Drag Meters</h1>\s*<div class="content products-list">)',

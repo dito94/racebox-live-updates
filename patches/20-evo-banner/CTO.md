@@ -2,11 +2,10 @@
 
 **What and why.** A slim violet bar in the header tells every visitor that EVO pre-orders are open and links to the EVO page. One link, no popup, not dismissible.
 
-**Where.** Site layout template, inside `<header>`, right after the shipping banner (`<div class="shipping-info-banner">...</div>`). On every page except the checkout (`/store/checkout`: nothing should pull a buyer away from paying) and the EVO page itself (`/products/racebox-evo`).
+**Where.** Site layout template, as the **first child of `<header>`** (before `<nav class="top">`). On every page except the checkout (`/store/checkout`: nothing should pull a buyer away from paying) and the EVO page itself (`/products/racebox-evo`).
 
-**Why under the shipping banner (and above the menu).**
+**On screen it sits under the shipping banner and above the menu.** In the HTML it comes first, so a keyboard user reaches it first, in the order it is drawn (it is above the logo). The CSS shows it second: shipping banner, bar, nav.
 - The shipping banner stays exactly where it is today, at the very top.
-- The bar has a set height, so the menu and the page move down by a known amount. Nothing jumps after the page loads.
 - An open phone menu still drops straight down from the menu bar, so the bar never covers it.
 - The two notices read as one strip of announcements above the menu, as on most shops.
 
@@ -29,15 +28,20 @@ The price is the shared price block from 00 core. CSS shows it in its "inline" f
 The whole bar is clickable: the link's `::before` stretches over the bar. Keyboard focus outlines the whole bar.
 
 **CSS** (`rb-updates.css`, section `20-evo-banner/style.css`; it needs section 10 for `.rbu-price-inline`):
-- `--rbu-bar-h`: the bar height, 30 px (768 px and up), 40 px (phones), 56 px (below 360 px), 0 on windows less than 521 px tall.
-- The bar sits at `top: 20px` (under the 20 px shipping banner).
-- The live header offsets grow by `--rbu-bar-h`: `nav.top` from `top: 20px` to `calc(20px + var(--rbu-bar-h))`; `<main>` margin-top from 85 / 120 px to `calc(85px / 120px + var(--rbu-bar-h))`. Same `:has()` selectors as main.css uses today.
-- Hidden on very short windows (phones held sideways, 200% zoom on a laptop), where the fixed header already takes a third of the screen, and in browsers without `:has()` (the header offsets need it, as the live ones do).
+- **The header is laid out in normal flow** when it holds the bar: `header:has(.rbu-evo-bar)` is a flex column, height auto. Shipping banner (`order: 1`, made `position: static`, as tall as its text), bar (`order: 2`), nav (`order: 3`, `top: 0`). Each part follows the real height of the one above. This matters when a visitor sets their own text spacing (WCAG 1.4.12, line height 1.5, letter spacing .12em, word spacing .16em): the bar and the shipping text grow, and the nav moves down with them instead of text overlapping text.
+- `--rbu-bar-h` is the bar's **minimum** height (`min-height`), per width: 30 px with a mouse from 768 px up; 44 px on phones (up to 767 px) and on touch screens (`pointer: coarse`), so the link is a 44 px target there; 58 px below 360 px (three lines); 0 on windows less than 521 px tall. At normal spacing the bar is exactly that tall, so nothing shifts after load.
+- Slim-bar exception: with a mouse at 768 px and wider the bar (and its link) is 30 px tall, under the 44 px rule for new controls. It passes WCAG 2.5.8 (24 px). A taller bar would stop being slim on desktop; touch screens get the 44 px bar.
+- `<main>` keeps the live offsets plus the bar: `margin-top: calc(85px / 120px + var(--rbu-bar-h))` (65 / 100 px with no shipping banner). Same `:has()` selectors as main.css uses today. With user text spacing the header can grow past that and cover a few pixels of the top of the page; nothing overlaps.
+- On desktop the floated logo would make the nav 3 px taller inside the flex header (98 px, not 95 px); `nav.top .logo { margin-bottom: -3px }` from 941 px keeps the live nav height. The nav is the same height as the live one at every width (checked 320 to 1920).
+- The live `.android-app-link` strip (not on any page today) keeps its place under the nav (`order: 4`, `top: 10px`).
+- Hidden on very short windows (phones held sideways, 200% zoom on a laptop: 640 x 360, 683 x 384, 720 x 450, 844 x 390), where the fixed header already takes a third of the screen, and in browsers without `:has()` (the header layout needs it, as the live offsets do). There the header is exactly the live one. Decision kept on purpose: a fixed 30 to 44 px bar on a 360 px tall window costs about a tenth of the screen, and the EVO page stays linked from the menu, footer and store. If the owner wants the bar there too, remove the two `max-height: 520px` rules and the `--rbu-bar-h: 0px` line; the menu rule in change set 10 follows `--rbu-bar-h` by itself.
 - No JS.
 
-If you move other anchors below the fixed header (for example `scroll-margin-top` on `#buy-section` in change set 50), add `var(--rbu-bar-h)` to them.
+If you move other anchors below the fixed header (for example `scroll-margin-top` on `#buy-section` in change set 50), add `var(--rbu-bar-h)` to them. The EVO page has no bar, so it does not (its `scroll-padding-top` is in change set 10).
 
-**Back end.** None. If a country has no shipping banner, the bar still works (it moves to `top: 0`). Pages must be served as UTF-8 for the "€" sign (the live server already does).
+**Back end.** None. If a country has no shipping banner, the bar still works (it is simply the first thing in the header). Pages must be served as UTF-8 for the "€" sign (the live server already does).
+
+**Known limit.** At 320 px the live shipping text ("Free shipping to United States for all orders over $300.00.") wraps to two lines. The banner now grows with it (before, the second line ran over the nav), so the header is about 17 px taller than `<main>` expects and covers the top of the page at that width. Fix it with a shorter shipping text, or add 17 px to the `<main>` offsets below 340 px.
 
 **When pre-orders close.** Remove the bar (or change it to "RaceBox EVO is here", without the struck price).
 
@@ -45,9 +49,12 @@ If you move other anchors below the fixed header (for example `scroll-margin-top
 
 - [ ] Home, store, a product page, an info page: the bar is under the grey shipping banner, nothing overlaps; logo, menu, cart and the shipping text are all visible and clickable.
 - [ ] Not on /store/checkout and not on /products/racebox-evo.
-- [ ] Phone 390 x 844: two lines, "Ships March 2027 · Pre-order EVO ›" on the second line. Open the menu: all items, including "Racebox EVO" and "Buy RaceBox", are on screen.
-- [ ] Desktop 1280 x 720 and 1920 x 1080: one line, centred.
+- [ ] Phone 390 x 844: two lines, "Ships March 2027 · Pre-order EVO ›" on the second line, bar 44 px tall. Open the menu: all items, including "Racebox EVO" and "Buy RaceBox", are on screen.
+- [ ] Desktop 1280 x 720 and 1920 x 1080: one line, centred, 30 px tall.
 - [ ] Click anywhere on the bar: /products/racebox-evo opens. Tab to it: the whole bar gets an outline.
+- [ ] Press Tab once on /store/: the bar's "Pre-order EVO" link is the first stop, before the logo (390 and 1280 px wide).
+- [ ] Text spacing (WCAG 1.4.12): on /store/ add `* { line-height: 1.5 !important; letter-spacing: .12em !important; word-spacing: .16em !important } p { margin-bottom: 2em !important }` (bookmarklet or devtools) at 390, 768 and 1280 px wide. The shipping banner, the bar and the nav sit one under the other: no text over text, all the bar's text inside the bar.
 - [ ] EU visitor: "339.00 € (449.00 € after pre-order)".
-- [ ] Phone held sideways (844 x 390): no bar, header as today.
+- [ ] Phone held sideways (844 x 390): no bar, header as today. Open the menu: it scrolls and "Buy RaceBox" can be reached.
+- [ ] Touch tablet (iPad 768 x 1024): bar is 44 px tall.
 - [ ] Page load: the page under the header does not move after it appears (Lighthouse CLS unchanged).
