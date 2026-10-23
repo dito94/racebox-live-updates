@@ -9,9 +9,12 @@ Everything is read from the live markup, so a changed template stops the build i
 (price, add-to-cart form, price note, country link and the stock note are all anchors).
 Key points: the card's bullets, at most 4; a fit warning ("Not Compatible with ...") is never the one that is cut.
 The struck price gets hidden words for screen readers ("Regular price", "Offer price").
+Image: the four device pages use the redesign's high-resolution cut-outs (static/img/pdp-*); the store card's 200 px PNG
+would be soft in the large panel. Accessory pages keep the store PNG.
 """
 import os
 import re
+import struct
 
 import rbu
 
@@ -29,6 +32,17 @@ PAGES = [
     'products/racebox-suction-cup.html',
     'products/spare-mini-accessories.html',
 ]
+
+# Device pages: slug of the cut-out files in static/img (pdp-<slug>-400.webp, -800.webp, -800.png) and the widths of
+# the webp files. 1200 exists only for the RaceBox and the Mini (the other two cut-outs are 1062 and 932 px wide).
+IMG = '/assets/rb-updates/img'
+STATIC_IMG = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static', 'img')
+CUTOUTS = {
+    'products/racebox.html': ('racebox', (400, 800, 1200)),
+    'products/racebox-mini.html': ('racebox-mini', (400, 800, 1200)),
+    'products/racebox-mini-s.html': ('racebox-mini-s', (400, 800)),
+    'products/racebox-micro.html': ('racebox-micro', (400, 800)),
+}
 
 # The pristine store page: the card data (image, bullets) per SKU, as the server prints it on /store/.
 STORE = os.path.join(rbu.LIVE, 'original', 'store', 'index.html')
@@ -74,6 +88,25 @@ def key_points(points):
     return [points[i] for i in sorted(keep)]
 
 
+def cutout_html(rel, name):
+    """<picture> for a device page: webp at 400/800(/1200) w, the 800 px PNG as fallback, with its real size."""
+    slug, widths = CUTOUTS[rel]
+    for w in widths:
+        if not os.path.isfile(os.path.join(STATIC_IMG, f'pdp-{slug}-{w}.webp')):
+            raise rbu.AnchorError(f'{rel}: missing static/img/pdp-{slug}-{w}.webp')
+    png = os.path.join(STATIC_IMG, f'pdp-{slug}-800.png')
+    if not os.path.isfile(png):
+        raise rbu.AnchorError(f'{rel}: missing static/img/pdp-{slug}-800.png')
+    with open(png, 'rb') as f:
+        head = f.read(24)
+    if head[:8] != b'\x89PNG\r\n\x1a\n':
+        raise rbu.AnchorError(f'{rel}: {png} is not a PNG')
+    w, h = struct.unpack('>II', head[16:24])
+    srcset = ', '.join(f'{IMG}/pdp-{slug}-{x}.webp {x}w' for x in widths)
+    return (f'<picture><source type="image/webp" srcset="{srcset}" sizes="(min-width: 1001px) 400px, 1px">'
+            f'<img src="{IMG}/pdp-{slug}-800.png" width="{w}" height="{h}" alt="{name}" /></picture>')
+
+
 def buy_parts(html, where):
     """What the page's own buy section shows: price (and struck price), offer title, stock note, form, notes."""
     buy = _one(r'<section class="buy" id="buy-section">(.*?)</section>', html, where, 'buy section').group(1)
@@ -102,7 +135,7 @@ def buy_parts(html, where):
                 note=re.sub(r'\s+', ' ', note).strip(), switch=switch)
 
 
-def hero_html(card, b):
+def hero_html(card, b, name_tag='h1', cutout=None):
     img, name, points = card
     points_html = ''.join(f'\n\t\t\t\t<li>{p}</li>' for p in key_points(points))
     if b['was']:
@@ -117,13 +150,17 @@ def hero_html(card, b):
     if b['stock']:
         price += f'\n\t\t\t\t\t<p class="rbu-pdp-stock">{b["stock"]}</p>'
     price += '\n\t\t\t\t</div>'
+    if cutout:
+        media = f'<div class="rbu-pdp-media rbu-pdp-media--cut">{cutout}</div>'
+    else:
+        media = f'<div class="rbu-pdp-media"><img src="{img}" alt="{name}" width="200" height="200" /></div>'
     return (
         '<!-- rb-updates: 50 pdp-first-screen -->\n'
         '<section class="rbu-pdp" aria-labelledby="rbu-pdp-name">\n'
         '\t<div class="rbu-pdp-in">\n'
-        f'\t\t<div class="rbu-pdp-media"><img src="{img}" alt="{name}" width="200" height="200" /></div>\n'
+        f'\t\t{media}\n'
         '\t\t<div class="rbu-pdp-body">\n'
-        f'\t\t\t<h1 class="rbu-pdp-name" id="rbu-pdp-name">{name}</h1>\n'
+        f'\t\t\t<{name_tag} class="rbu-pdp-name" id="rbu-pdp-name">{name}</{name_tag}>\n'
         f'\t\t\t<ul class="reddot rbu-pdp-points">{points_html}\n\t\t\t</ul>\n'
         f'\t\t\t<div class="rbu-pdp-buy">{price}\n'
         '\t\t\t\t<div class="rbu-pdp-actions">\n'
@@ -147,7 +184,16 @@ def apply(site):
         b = buy_parts(html, rel)
         if b['sku'] not in cards:
             raise rbu.AnchorError(f'{rel}: no store card for {b["sku"]}')
-        return rbu.insert_before(html, '<section class="top-banner', hero_html(cards[b['sku']], b), where=rel)
+        card = cards[b['sku']]
+        # Accessory pages: the intro just below already has <h1>{name}</h1>. There the hero's name is a <p> (same class,
+        # same look, still labels the section), so desktop screen readers don't get the same h1 twice.
+        name_tag = 'h1'
+        if '<section class="other-product-info">' in html:
+            if not re.search(r'<section class="other-product-info">\s*<h1>' + re.escape(card[1]) + r'</h1>', html):
+                raise rbu.AnchorError(f'{rel}: other-product-info h1 does not match the store card name {card[1]!r}')
+            name_tag = 'p'
+        cutout = cutout_html(rel, card[1]) if rel in CUTOUTS else None
+        return rbu.insert_before(html, '<section class="top-banner', hero_html(card, b, name_tag, cutout), where=rel)
 
     for rel in PAGES:
         site.edit(rel, edit)

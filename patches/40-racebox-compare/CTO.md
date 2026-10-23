@@ -32,7 +32,7 @@ comparison next, before the box contents and the buy section.
 				<tr role="row"><th scope="row" role="rowheader">App connection</th><td role="cell" data-label="RaceBox">Wi-Fi</td><td role="cell" data-label="EVO" class="rbu-cmp-evo">TBA</td></tr>
 				<tr role="row"><th scope="row" role="rowheader">Third-party apps</th><td role="cell" data-label="RaceBox">Official RaceBox app only. Recorded data can be exported to other software</td><td role="cell" data-label="EVO" class="rbu-cmp-evo">TBA</td></tr>
 				<tr role="row"><th scope="row" role="rowheader">Fits RaceBox accessories</th><td role="cell" data-label="RaceBox">Yes</td><td role="cell" data-label="EVO" class="rbu-cmp-evo">TBA, confirmed before shipping</td></tr>
-				<tr role="row" class="rbu-cmp-buy"><th scope="row" role="rowheader">Price and availability</th><td role="cell" data-label="RaceBox"><p class="rbu-cmp-price">{{price}}</p><p class="rbu-cmp-avail">Dispatch within {{dispatch_days}} business days.</p><form method="post" action="/store/add-to-cart" class="js-add-to-cart" data-sku="{{sku}}" data-name="RaceBox" data-price="{{price_raw}}" data-currency="{{currency}}"><input type="hidden" name="product" value="{{product_id}}" /><button class="submit">Add to cart</button></form></td><td role="cell" data-label="EVO" class="rbu-cmp-evo"><p class="rbu-price rbu-price--pre"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>{{evo_price_after}}</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>{{evo_price_preorder}}</strong><span class="rbu-price-note">Pre-order price. {{evo_price_after}} after pre-order.</span></p><p class="rbu-cmp-avail">Pre-order. Ships {{evo_ship_window}}.</p><a class="rbu-btn rbu-btn--pre" href="/products/racebox-evo">Pre-order EVO</a></td></tr>
+				<tr role="row" class="rbu-cmp-buy"><th scope="row" role="rowheader">Price and availability</th><td role="cell" data-label="RaceBox"><p class="rbu-cmp-price">{{price_now}}</p><p class="rbu-cmp-avail">Dispatch within {{dispatch_days}} business days.</p><form method="post" action="/store/add-to-cart" class="js-add-to-cart" data-sku="{{sku}}" data-name="RaceBox" data-price="{{price_raw}}" data-currency="{{currency}}"><input type="hidden" name="product" value="{{product_id}}" /><button class="submit">Add to cart</button></form></td><td role="cell" data-label="EVO" class="rbu-cmp-evo"><p class="rbu-price rbu-price--pre"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>{{evo_price_after}}</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>{{evo_preorder_price}}</strong><span class="rbu-price-note" aria-hidden="true">Pre-order price. {{evo_price_after}} after pre-order.</span></p><p class="rbu-cmp-avail">Pre-order. Ships {{evo_ship_window}}.</p><a class="rbu-btn rbu-btn--pre" href="/products/racebox-evo">Pre-order EVO</a></td></tr>
 			</tbody>
 		</table>
 	</div>
@@ -41,19 +41,20 @@ comparison next, before the box contents and the buy section.
 ```
 
 Variables:
-- `{{price}}`, `{{price_raw}}`, `{{currency}}`, `{{sku}}`, `{{product_id}}`: the RaceBox's own values, the same ones the buy
+- `{{price_now}}` (`$399.00`), `{{price_raw}}` (`399`), `{{currency}}` (`USD`), `{{sku}}`, `{{product_id}}`: the RaceBox's own values, the same ones the buy
   section (`#buy-section`) uses. The form is the buy section's add-to-cart form without `id="checkout-form"` (that id stays
   unique). Show the form under the same conditions as the buy section's form (stock, country).
 - `{{dispatch_days}}`: the dispatch time the buy section shows ("Dispatch within 5 business days"). Leave the line out when the
   buy section doesn't show it.
-- `{{evo_price_preorder}}`, `{{evo_price_after}}`, `{{evo_ship_window}}`: as on the EVO page (339, 449, March 2027).
+- `{{evo_preorder_price}}`, `{{evo_price_after}}`, `{{evo_ship_window}}`: as on the EVO page (339, 449, March 2027).
 - Only the current RaceBox price is shown, not the struck "was" price of the buy section, so the table never shows two struck
   prices that mean different things (EVO's struck price is the price after pre-order).
 
 **CSS:** section `40-racebox-compare/style.css` in `rb-updates.css`. No JavaScript.
 - The live `main.css` rule `:target { position: relative; top: -169px; visibility: hidden }` hides any element that a link
-  points to. The CSS undoes it for `#evo-vs-racebox` and uses `scroll-margin-top` (160 px desktop, 140 px phone) so the
+  points to. The CSS undoes it for `#evo-vs-racebox` and uses `scroll-margin-top` (`calc(130px + var(--rbu-bar-h, 0px))`, and `calc(96px + var(--rbu-bar-h, 0px))` up to 940 px, where the header gets shorter) so the
   heading lands below the fixed header and the EVO bar.
+- The "Upgrade" tags in the EVO column are dark red (`--rbu-red-dark`, 5.6:1 on the EVO column tint), not violet: violet is for pre-order only.
 - From 700 px up it is a normal 3-column table. Below 700 px each row stacks: the row label on top, RaceBox and EVO side by
   side, each with a small label. The `role` attributes keep it a table for screen readers in that layout: keep them.
 - The table's Add to cart uses the live form and the live button look: the pill shape and uppercase RaceBox-Regular 19.2 px of
@@ -62,23 +63,21 @@ Variables:
   #e32026, not #ea2127. White on #ea2127 is 4.4:1, under the 4.5:1 minimum for text this size; #e32026 is 4.7:1 and looks the
   same. The "Pre-order EVO" button next to it takes the same pill shape (in violet) so the two buttons in the row match.
   Below 700 px both buttons are 14 px so each fits one line in its half-width column.
-- **Core need (00-core, other pages):** the shared `.rbu-btn` is a 4 px-radius, sentence-case rectangle, and the live
-  `button.submit` is a pill. Pick one shape for the whole site and apply it to `.rbu-btn` too, so Pre-order EVO on the EVO page, home
-  page and banner matches the live Add to cart buttons. Here the table already follows the live pill.
 - **Reduced motion:** `main.css` has `html { scroll-behavior: smooth }` and no `prefers-reduced-motion` rule, so the links from the
   home page and the EVO page glide about 2,500 px down to this table. The last rule in `style.css` sets
   `html { scroll-behavior: auto }` for visitors who ask for less motion. It applies to the whole site: move it to `00-core` or
   into `main.css` so it does not depend on this page's CSS.
 
 **Facts and sources.** RaceBox column: tech specs page first (`/products/racebox/tech-specs`), then the RaceBox page and the FAQ.
-EVO column: `patches/evo.json` (TBA where it says TBA). The live pages disagree on some RaceBox figures, so the table leaves
-those figures out until the owner confirms them:
+EVO column: `patches/evo.json` (TBA where it says TBA). The live pages disagree on some RaceBox figures. The table leaves
+out the screen size and the battery capacity until the owner confirms them, and uses the tech specs page for storage:
 - Screen size: 2.4" on the RaceBox page, 2.5" on the tech specs page. The table says "Colour LCD, 320 x 240". Add the size
   once confirmed.
 - Battery: 2000 mAh on the RaceBox page, 2500 mAh on the tech specs page. The table uses "Up to 8 hours of driving (Wi-Fi off)",
   which both pages support.
 - Storage: "up to 400 racing sessions" on the RaceBox page, "256 drag sessions ... 128 track sessions" on the tech specs page.
-  The table uses the tech specs figure.
+  The table uses the tech specs figure. The RaceBox page then shows both ("up to 400 racing sessions" in The technology, 256 + 128 in
+  this table); the owner's answer fixes both.
 - Also different (not in the table): charging time (2 hours vs less than 3 hours) and GNSS systems (Galileo/Beidou vs SBAS).
 
 **Back end:** none beyond the variables above. The EVO links go to `/products/racebox-evo` (change set 10).
@@ -93,7 +92,7 @@ those figures out until the owner confirms them:
 - [ ] Reduce motion on (system setting, or DevTools "Emulate prefers-reduced-motion"): the link from the home page
       ("Compare with the RaceBox") and `/products/racebox#evo-vs-racebox` land on the table at once, with no glide. With it off, the
       page still scrolls smoothly.
-- [ ] EVO: struck {{evo_price_after}}, {{evo_price_preorder}} in violet, "Pre-order. Ships March 2027.", violet Pre-order EVO button to
+- [ ] EVO: struck {{evo_price_after}}, {{evo_preorder_price}} in violet, "Pre-order. Ships March 2027.", violet Pre-order EVO button to
       `/products/racebox-evo`; the column header "RaceBox EVO" links there too.
 - [ ] EU visitor: both columns in euros.
 - [ ] Phone (390 px): rows stack, RaceBox and EVO side by side, no sideways scrolling, both buttons full width of their column.

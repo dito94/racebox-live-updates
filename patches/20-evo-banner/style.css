@@ -28,8 +28,9 @@ header:has(.rbu-evo-bar):has(.shipping-info-banner) > nav.top { top: 0; }
 header:has(.rbu-evo-bar) > .android-app-link { order: 4; }
 header:has(.rbu-evo-bar):has(.shipping-info-banner) > .android-app-link { top: 10px; }
 
+/* Capped at the screen width: where page content is wider than a phone (Mini, Mini S, Micro, return instructions), mobile browsers widen the fixed header to 484-596 px, which would centre the bar's text partly off screen. */
 header .rbu-evo-bar {
-  position: relative; box-sizing: border-box; min-height: var(--rbu-bar-h);
+  position: relative; box-sizing: border-box; min-height: var(--rbu-bar-h); max-width: 100vw;
   display: flex; align-items: center; justify-content: center; padding: 2px 16px;
   background: var(--rbu-violet-wash); border-bottom: 1px solid #ddd2f8;
   font: 13px/16px var(--rbu-font-light); color: var(--rbu-ink); text-align: center;
@@ -57,14 +58,22 @@ header .rbu-evo-bar:hover { background: #ebe3fc; }
 header .rbu-evo-bar a.rbu-evo-bar-link:focus { outline: none; }
 header .rbu-evo-bar:focus-within { outline: 2px solid var(--rbu-ink); outline-offset: -3px; }
 
-/* <main> clears the fixed header: the live offsets plus the bar. Same :has() selectors main.css uses. At normal text
-   spacing this is exact (no layout shift). With bigger text spacing the header grows and covers a few pixels of the
-   page top rather than text overlapping text. */
-body header:has(.rbu-evo-bar) ~ main { margin-top: calc(65px + var(--rbu-bar-h)); }
-body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: calc(85px + var(--rbu-bar-h)); }
+/* <main> clears the fixed header: the live offsets plus the bar, plus --rbu-hdr-grow (set by script.js: how much the bar
+   and the shipping banner have grown past their normal height because of the visitor's own text spacing, WCAG 1.4.12;
+   0 at normal spacing). Same :has() selectors main.css uses. At normal text spacing this is exact (no layout shift). */
+body header:has(.rbu-evo-bar) ~ main { margin-top: calc(65px + var(--rbu-bar-h) + var(--rbu-hdr-grow, 0px)); }
+body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: calc(85px + var(--rbu-bar-h) + var(--rbu-hdr-grow, 0px)); }
 @media (min-width: 939px) {
-  body header:has(.rbu-evo-bar) ~ main { margin-top: calc(100px + var(--rbu-bar-h)); }
-  body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: calc(120px + var(--rbu-bar-h)); }
+  body header:has(.rbu-evo-bar) ~ main { margin-top: calc(100px + var(--rbu-bar-h) + var(--rbu-hdr-grow, 0px)); }
+  body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: calc(120px + var(--rbu-bar-h) + var(--rbu-hdr-grow, 0px)); }
+}
+
+/* Live anchor jumps: main.css shifts every :target up by the old header height (169 px; 90 px up to 940 px wide; 205 px for the /features headings). Add the bar, or the linked heading lands under the taller header. */
+body header:has(.rbu-evo-bar) ~ main :target, body header:has(.rbu-evo-bar) ~ main .hash-target { top: calc(-169px - var(--rbu-bar-h) - var(--rbu-hdr-grow, 0px)); }
+body.page-features header:has(.rbu-evo-bar) ~ main h2 a:target { top: calc(-205px - var(--rbu-bar-h) - var(--rbu-hdr-grow, 0px)); }
+@media (max-width: 940px) {
+  body header:has(.rbu-evo-bar) ~ main :target, body header:has(.rbu-evo-bar) ~ main .hash-target,
+  body.page-features header:has(.rbu-evo-bar) ~ main h2 a:target { top: calc(-90px - var(--rbu-bar-h) - var(--rbu-hdr-grow, 0px)); }
 }
 
 /* Phones: price on the first line, ship date and link on the second. "RaceBox" before EVO is left to screen readers

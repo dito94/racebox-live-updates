@@ -43,7 +43,7 @@
   ["Will you keep me updated while I wait?", "Yes. We email production updates while you wait. If the ship date moves, we email you the new date before the old one passes: keep your place or cancel for a full refund."],
   ["Should I wait for EVO or buy the RaceBox now?", "If you want it before March 2027, the RaceBox ships now, with the same shape and controls at 10 Hz. EVO adds 25 Hz GPS, a larger battery and more storage. On a motorcycle, the Mini S is the better fit: EVO is built for cars."],
   ["Will my RaceBox accessories fit EVO?", "EVO has the same shape as the original RaceBox. Which accessories fit is confirmed before it ships."],
-  ["What will EVO cost after pre-order?", "449 (USD or EUR) once pre-orders close. Pre-orders pay 339."]
+  ["What will EVO cost after pre-order?", "{after} once pre-orders close. Pre-orders pay {now}."]
  ],
  "imageNote": "Photos show the current RaceBox. EVO keeps the same shape; EVO photos follow before shipping."
 }

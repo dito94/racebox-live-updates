@@ -36,7 +36,7 @@ the terms line sits under the buttons, not above them, and the section's top mar
 				<figcaption>Photos show the current RaceBox. EVO keeps the same shape; EVO photos follow before shipping.</figcaption>
 			</figure>
 			<div class="rbu-home-evo-buy">
-				<p class="rbu-price rbu-price--pre rbu-price--lg"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>{{evo_price_after}}</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>{{evo_price_preorder}}</strong><span class="rbu-price-note">Pre-order price. {{evo_price_after}} after pre-order.</span></p>
+				<p class="rbu-price rbu-price--pre rbu-price--lg"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>{{evo_price_after}}</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>{{evo_preorder_price}}</strong><span class="rbu-price-note" aria-hidden="true">Pre-order price. {{evo_price_after}} after pre-order.</span></p>
 				<p class="rbu-home-evo-actions">
 					<a class="rbu-btn rbu-btn--pre" href="/products/racebox-evo">Pre-order EVO</a>
 					<a class="rbu-home-evo-link rbu-focus" href="/products/racebox#evo-vs-racebox">Compare with the RaceBox</a>
@@ -48,7 +48,7 @@ the terms line sits under the buttons, not above them, and the section's top mar
 ```
 
 Variables:
-- `{{evo_price_preorder}}` and `{{evo_price_after}}`: the EVO pre-order price (339) and the price after pre-order (449), in the
+- `{{evo_preorder_price}}` and `{{evo_price_after}}`: the EVO pre-order price (339) and the price after pre-order (449), in the
   visitor's currency, formatted like other store prices (`$339.00`, `339.00 €`). Same values as the EVO product page.
 - `{{evo_ship_window}}`: `March 2027`.
 
@@ -60,18 +60,20 @@ They show the current RaceBox; the caption says so.
 `.rbu-btn--pre`, `.rbu-focus` from `00-core`. No JavaScript.
 
 **Open question for the owner (desktop first screen):** the photo is as tall as the screen on desktop, so the card starts
-below the first screen at 1280 x 720 to 1920 x 1080 (it is at 739 to 1012 px from the top). The offer is in the first screen
+below the first screen at 1280 x 720 to 1920 x 1080 (its top is at 729 px at 1280 x 720 and 1002 px at 1920 x 1080, with the EVO bar). The offer is in the first screen
 there through the EVO bar (change set 20). If the owner wants the offer inside the photo like the redesign's hero, add a compact
 strip (badge, price, Pre-order EVO) over the bottom of `div.topimg` from 1001 px up, or crop the photo's height. Both change
-the live hero, so we left it. On phones and tablets (68 % of visits) the offer is in the first screen already.
+the live hero, so we left it. On phones (68 % of visits) and tablets (3 %) the offer is in the first screen already.
 
 **Back end:** none beyond the EVO prices and ship window above. The Pre-order button links to `/products/racebox-evo`
 (change set 10); "Compare with the RaceBox" links to `/products/racebox#evo-vs-racebox` (change set 40).
 
+Before release: the cancellation line comes from patches/evo.json and must match the live T&C. See 10-evo-page CTO.md, Back end item 7.
+
 **How to test**
 - [ ] `/` on a phone (390 px wide): the EVO card is under the photo; price and Pre-order button visible without scrolling.
 - [ ] Desktop (1280, 1440, 1920): two columns, text left, RaceBox image right; red line runs from the photo into the card.
-- [ ] Prices: struck {{evo_price_after}} then {{evo_price_preorder}} in violet, with "Pre-order price. ... after pre-order." under them.
+- [ ] Prices: struck {{evo_price_after}} then {{evo_preorder_price}} in violet, with "Pre-order price. ... after pre-order." under them.
       An EU visitor sees euros (`449.00 €`, `339.00 €`).
 - [ ] Pre-order EVO opens `/products/racebox-evo`; "Compare with the RaceBox" opens the RaceBox page at the comparison table.
       With "reduce motion" on in the system settings the page lands on the table at once, with no long glide (change set 40 CSS).

@@ -66,6 +66,11 @@
 .rbu-evo-new-n { display: block; font: 1.75rem/1 var(--rbu-font-light); letter-spacing: .08em; color: var(--rbu-red-dark); }
 .rbu-evo-new h3 { margin: 16px 0 8px; font: 1.0625rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
 .rbu-evo-new p { font: .9375rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+/* Desktop: the same 40 px side margin as the product-page hero (50 pdp-first-screen .rbu-pdp) until the 1120 px frame fits */
+@media (min-width: 1001px) {
+  .rbu-evo-page main section.rbu-evo-hero { padding-left: 40px; padding-right: 40px; }
+  .rbu-evo-new { width: calc(100% - 40px); }
+}
 
 /* The photo: full width like the live "topimg" banners (cropped to 560 px tall on wide screens, the RaceBox stays in
    view), with an honest caption on a dark strip under it */
@@ -203,6 +208,8 @@ div.products-list > div.rbu-card-evo .rbu-price-note { font-size: .8125rem; }
    with a 10 px gap. There is no pre-order bar on this page, so no --rbu-bar-h here. */
 html:has(body.rbu-evo-page) { scroll-padding-top: 125px; }
 @media (max-width: 940px) { html:has(body.rbu-evo-page) { scroll-padding-top: 96px; } }
+/* The phone sticky bar (up to 81 px tall, shown from the end of the hero to the bottom of the page) must not hide what Tab scrolls to (WCAG 2.4.11). */
+@media (max-width: 999px) { html:has(body.rbu-evo-page) { scroll-padding-bottom: 90px; } }
 
 /* ---- Phones and tablets ---------------------------------------------------------------------------------------- */
 @media (max-width: 1000px) {

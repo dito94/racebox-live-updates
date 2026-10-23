@@ -150,9 +150,10 @@ def how(e, cur, rb):
 
 
 def versus(e, rb):
+    spec = dict(e['specs'])
     rows = [('GPS update rate', '10&nbsp;Hz', '25&nbsp;Hz'),
-            ('Battery', 'Up to 8 hours driving, Wi-Fi off', 'Larger, figure TBA'),
-            ('Storage', '256 drag and 128 track sessions', 'More, figure TBA'),
+            ('Battery', 'Up to 8 hours of driving (Wi-Fi off)', nb(spec['Battery'])),
+            ('Storage', '256 drag sessions and 128 track sessions', nb(spec['Storage'])),
             ('Availability', rb['dispatch'], f'Pre-order, ships {nb(e["shipWindow"])}')]
     trs = ''.join(f'<tr><th scope="row">{k}</th><td>{a}</td><td>{b}</td></tr>' for k, a, b in rows)
     return f'''
@@ -162,7 +163,7 @@ def versus(e, rb):
 	<div class="rbu-evo-wrap">
 		<p class="rbu-evo-intro">Same windscreen-mounted shape and four-button controls. EVO moves to 25&nbsp;Hz GPS.</p>
 		<div class="rbu-evo-table-scroll" role="region" aria-label="RaceBox and RaceBox EVO compared" tabindex="0">
-			<table class="rbu-evo-table rbu-evo-vs">
+			<table class="rbu-evo-table rbu-evo-vs"><caption class="rbu-sr">RaceBox and RaceBox EVO compared</caption>
 				<thead><tr><th scope="col"><span class="rbu-sr">Feature</span></th><th scope="col">RaceBox</th><th scope="col">RaceBox EVO</th></tr></thead>
 				<tbody>{trs}</tbody>
 			</table>
@@ -191,9 +192,14 @@ def specs(e):
 </section>'''
 
 
-def faq(e):
+def faq(e, cur):
+    now, later = rbu.evo_prices(cur)
+    # evo.json answers may carry {after} and {now}: the prices in the page currency, formatted like every other price.
+    qa = [(q, a.replace('{after}', rbu.money(later, cur)).replace('{now}', rbu.money(now, cur))) for q, a in e['faq']]
+    if any('{' in a for _, a in qa):
+        raise rbu.AnchorError('evo.json faq: unknown placeholder')
     items = ''.join(f'<details class="rbu-evo-faq-item"{" open" if i == 0 else ""}><summary>{rbu.esc(q)}</summary>'
-                    f'<p>{nb(a)}</p></details>' for i, (q, a) in enumerate(e['faq']))
+                    f'<p>{nb(a)}</p></details>' for i, (q, a) in enumerate(qa))
     return f'''
 {MARK}
 <section class="rbu-evo-band" aria-labelledby="rbu-evo-faq-title">
@@ -315,14 +321,14 @@ def apply(site):
     rb = racebox_facts(tpl)
     cur = rb['cur']
     now, later = rbu.evo_prices(cur)
-    main = (hero(e, cur, rb) + whats_new(e) + how(e, cur, rb) + versus(e, rb) + specs(e) + faq(e) + sooner(e, rb)
+    main = (hero(e, cur, rb) + whats_new(e) + how(e, cur, rb) + versus(e, rb) + specs(e) + faq(e, cur) + sooner(e, rb)
             + sticky(e, cur))
     site.new_page(
         PAGE, TEMPLATE,
         title='RaceBox EVO Pre-order: 25 Hz Standalone Lap Timer | RaceBox',
-        description=(f'Pre-order RaceBox EVO, the standalone lap timer and drag meter with its own colour screen, now '
-                     f'with 25 Hz GPS. {rbu.money(now, cur)} pre-order price, {rbu.money(later, cur)} after '
-                     f'pre-order. Ships {e["shipWindow"]}.'),
+        description=(f'Pre-order RaceBox EVO: lap timer and drag meter with its own screen and 25 Hz GPS. '
+                     f'Ships {e["shipWindow"]}. {rbu.money(now, cur)} pre-order price, {rbu.money(later, cur)} after '
+                     f'pre-order.'),
         canonical_path=e['path'], main_html=main, jsonld=jsonld(e, cur), body_class='page-front rbu-evo-page')
     # The template's own header video (section.top-banner) is gone with its <main>; nothing else of the RaceBox page
     # may remain in it.
