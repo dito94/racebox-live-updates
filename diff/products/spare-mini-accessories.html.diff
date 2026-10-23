@@ -4,7 +4,7 @@
  <head>
  	<title>Spare RaceBox Mini Accessories | RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=fb33e3d657" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=4b1fc82992" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -35,22 +35,24 @@
  							<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
  							<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
  							<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
-@@ -78,7 +85,35 @@
+@@ -78,7 +85,37 @@
  						</header>
  	
  	<main>
 -    <section class="top-banner" role="banner"><picture>
 +    <!-- rb-updates: 50 pdp-first-screen -->
-+<section class="rbu-pdp" aria-labelledby="rbu-pdp-name">
++<section class="rbu-pdp rbu-pdp--accessory" aria-labelledby="rbu-pdp-name">
 +	<div class="rbu-pdp-in">
 +		<div class="rbu-pdp-media"><img src="/product-image/raebox-mini-accessories.png" alt="Spare RaceBox Mini Accessories" width="200" height="200" /></div>
 +		<div class="rbu-pdp-body">
-+			<p class="rbu-pdp-name" id="rbu-pdp-name">Spare RaceBox Mini Accessories</p>
++			<h1 class="rbu-pdp-name" id="rbu-pdp-name">Spare RaceBox Mini Accessories</h1>
++			<p class="rbu-pdp-sub">Set of spare accessories for RaceBox Mini and Mini S</p>
 +			<ul class="reddot rbu-pdp-points">
 +				<li>Hook&#039;n&#039;loop self-adhesive tape</li>
 +				<li>Scratch-protect self-adhesive tape</li>
 +				<li>High-grip temperature-resistant silicone pad</li>
 +				<li>USB-C to USB-A charging cable</li>
++				<li>USB-C Water/Dust covers for extra protection</li>
 +			</ul>
 +			<div class="rbu-pdp-buy">
 +				<div class="rbu-pdp-price-row">
@@ -72,7 +74,7 @@
  																					<source media="(min-width:1281px)" srcset="/assets/v-1776405835/img/hdrs/1-1920w.webp 1920w" sizes="1920px" type="image/webp" />
  			<source media="(min-width:1281px)" srcset="/assets/v-1776405835/img/hdrs/1-1920w.jpg 1920w" sizes="1920px" type="image/jpeg" />
  																		<source media="(min-width:1001px)" srcset="/assets/v-1776405835/img/hdrs/1-1280w.webp 1280w" sizes="1280px" type="image/webp" />
-@@ -159,6 +194,8 @@
+@@ -159,6 +196,8 @@
  				<ul>
  									<li><a href="/features">Features</a></li>
  					<li><a href="/products/racebox">RaceBox</a></li>
@@ -81,10 +83,10 @@
  					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
  					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
  					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
-@@ -273,5 +310,6 @@
+@@ -273,5 +312,6 @@
  </div>
  
  <script defer src="/assets/v-1776405836/js/country-select.js" nonce="9elymokT0CYdwJYrryqqAOf5yzI="></script>
-+<script src="/assets/rb-updates/rb-updates.js?v=fb33e3d657" defer></script>
++<script src="/assets/rb-updates/rb-updates.js?v=4b1fc82992" defer></script>
  </body>
  </html>

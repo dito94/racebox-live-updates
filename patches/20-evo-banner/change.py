@@ -2,7 +2,7 @@
 
 One line on tablets and desktops, two on phones. The whole bar opens /products/racebox-evo: its one link
 ("Pre-order EVO") stretches over the bar. Not on the checkout (nothing should pull a buyer away from paying) and not on
-the EVO page itself. The price is rbu.evo_price_html in the page's currency; style.css shows it as
+the EVO page itself or the home page (its EVO hero, change set 30, carries the offer). The price is rbu.evo_price_html in the page's currency; style.css shows it as
 "$339.00 ($449.00 struck, after pre-order)".
 
 The bar is the FIRST child of <header>, so keyboard users reach it first, as it appears on screen (it sits above the
@@ -12,7 +12,8 @@ above it, even when a visitor's own text spacing makes the bar taller.
 import rbu
 
 MARK = '<!-- rb-updates: 20 evo-banner -->'
-SKIP = {'store/checkout.html', 'products/racebox-evo.html'}
+# The home page opens with the EVO hero (change set 30), so the bar would only repeat it there.
+SKIP = {'store/checkout.html', 'products/racebox-evo.html', 'index.html'}
 # The bar goes first inside the live <header> (one per page), whether or not the page has a shipping banner
 HEADER = r'(<header>)'
 

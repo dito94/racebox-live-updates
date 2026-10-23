@@ -1,53 +1,66 @@
-/* 30 home-evo: RaceBox EVO pre-order section on the home page, below the top photo.
-   Sits inside section.front-introduction (grey with the red centre line); the white card covers the line like the
-   live headings do, so the line runs from the photo into the card and on to "Introducing RaceBox". */
-/* The negative top margin takes the photo's 72 px bottom margin (main.css .topimg) down to 32 px: the red line still runs
-   from the photo into the card. Together with the terms line sitting under the buttons (not above them), the price,
-   Pre-order EVO and "Compare with the RaceBox" sit high in the phone and tablet first screen, clear of the live fixed
-   "Get 10% off!" tab (bottom left, 160 x 42 px), also when the EVO bar of change set 20 adds 30 to 40 px above. */
-.rbu-home-evo { position: relative; margin: -40px 0 72px; padding: 0 20px; }
-.rbu-home-evo *, .rbu-home-evo *::before, .rbu-home-evo *::after { box-sizing: border-box; }
-.rbu-home-evo-card {
-  max-width: 960px; margin: 0 auto; padding: 44px 48px 40px; background: #fff; border-radius: 8px;
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 48px;
-  grid-template-areas: "copy media" "buy media"; align-items: center;
+/* 30 home-evo: the home page opens with a dark RaceBox EVO launch hero (all screen sizes), in place of the large photo.
+   Live fonts (RaceBox-Light capitals for the name, RaceBox-Regular text); violet marks the pre-order, as everywhere.
+   Colours on the dark band: text #fff and #c3c8cf (11:1), pre-order price #c4adff (9:1), caption #a3aab4 (7.6:1). */
+.rbu-home-hero {
+  position: relative; overflow: hidden; color: #fff; padding: 56px 40px 64px;
+  background: radial-gradient(55% 75% at 74% 52%, rgba(109, 63, 214, .42) 0%, rgba(109, 63, 214, 0) 70%), #0e1013;
 }
-.rbu-home-evo-copy { grid-area: copy; align-self: end; }
-.rbu-home-evo-media { grid-area: media; margin: 0; text-align: center; }
-.rbu-home-evo-buy { grid-area: buy; align-self: start; }
-.rbu-home-evo p { margin: 0; }
-.rbu-home-evo-flag { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font: .875rem/1.4 var(--rbu-font-light); color: var(--rbu-text-2); }
-.rbu-home-evo .rbu-home-evo-name {
-  margin: 14px 0 0; padding: 0; background: none; color: var(--rbu-ink); text-align: left;
-  font: 2.25rem/1.1 var(--rbu-font-light); letter-spacing: .18em; text-transform: uppercase;
+.rbu-home-hero *, .rbu-home-hero *::before, .rbu-home-hero *::after { box-sizing: border-box; }
+.rbu-home-hero-in {
+  max-width: 1120px; min-height: min(560px, calc(100vh - 160px)); margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); column-gap: 48px; align-items: center;
 }
-.rbu-home-evo-name span { font-family: var(--rbu-font); }
-.rbu-home-evo .rbu-home-evo-tagline { margin-top: 14px; font: 1.25rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
-.rbu-home-evo .rbu-home-evo-lede { margin-top: 8px; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
-.rbu-home-evo-buy .rbu-price { margin-top: 24px; }
-.rbu-home-evo .rbu-home-evo-terms { margin-top: 14px; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
-.rbu-home-evo .rbu-home-evo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; margin-top: 22px; }
-.rbu-home-evo-link {
-  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--rbu-ink);
+.rbu-home-hero p { margin: 0; }
+.rbu-home-hero-flag { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font: .9375rem/1.4 var(--rbu-font-light); color: #c3c8cf; }
+.rbu-home-hero .rbu-badge { background: rgba(196, 173, 255, .16); color: #d9cbff; }
+.rbu-home-hero .rbu-home-hero-name {
+  margin: 18px 0 0; padding: 0; background: none; color: #fff; text-align: left;
+  font: 3.25rem/1.05 var(--rbu-font-light); letter-spacing: .16em; text-transform: uppercase;
+}
+.rbu-home-hero-name span { font-family: var(--rbu-font); }
+.rbu-home-hero .rbu-home-hero-tagline { margin-top: 18px; font: 1.375rem/1.35 var(--rbu-font); color: #fff; }
+.rbu-home-hero .rbu-home-hero-lede { margin-top: 8px; font: 1.0625rem/1.5 var(--rbu-font-light); color: #c3c8cf; }
+/* The shared price block, recoloured for the dark band */
+.rbu-home-hero .rbu-price { margin-top: 26px; color: #fff; }
+.rbu-home-hero .rbu-price-later { color: #c3c8cf; }
+.rbu-home-hero .rbu-price--pre .rbu-price-now { color: #c4adff; }
+.rbu-home-hero .rbu-price-note { color: #c3c8cf; }
+.rbu-home-hero .rbu-home-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px; margin-top: 24px; }
+.rbu-home-hero .rbu-btn--pre { min-height: 52px; padding: 0 36px; font-size: 1.0625rem; }
+.rbu-home-hero .rbu-btn--pre:hover { background: #7f55ea; }
+.rbu-home-hero-link {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: #fff;
   font: 1rem/1.3 var(--rbu-font); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
 }
-.rbu-home-evo-link::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); flex: none; }
-.rbu-home-evo-link:hover { color: var(--rbu-red-dark); text-decoration-thickness: 2px; }
-.rbu-home-evo-media img { display: block; width: 100%; max-width: 440px; height: auto; margin: 0 auto; }
-.rbu-home-evo-media figcaption { max-width: 360px; margin: 10px auto 0; font: .8125rem/1.45 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-home-hero-link::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); flex: none; }
+.rbu-home-hero-link:hover { color: #d9cbff; text-decoration-thickness: 2px; }
+.rbu-home-hero a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; box-shadow: none; }
+.rbu-home-hero .rbu-home-hero-terms { margin-top: 18px; max-width: 460px; font: .875rem/1.5 var(--rbu-font-light); color: #c3c8cf; }
+.rbu-home-hero-media { margin: 0; text-align: center; }
+.rbu-home-hero-media img { display: block; width: 100%; max-width: 600px; height: auto; margin: 0 auto; }
+.rbu-home-hero-media figcaption { max-width: 380px; margin: 14px auto 0; font: .8125rem/1.45 var(--rbu-font-light); color: #a3aab4; }
+
+/* "Introducing RaceBox" lost the photo that sat above it (main.css gives page-front banner sections no top padding) */
+.rbu-home-hero + section.front-introduction { padding-top: 72px; }
 
 @media (max-width: 1000px) {
-  .rbu-home-evo-card { padding: 36px 32px 32px; column-gap: 32px; }
-  .rbu-home-evo .rbu-home-evo-name { font-size: 1.875rem; }
+  .rbu-home-hero { padding: 40px 32px 48px; }
+  .rbu-home-hero-in { column-gap: 32px; min-height: 0; }
+  .rbu-home-hero .rbu-home-hero-name { font-size: 2.5rem; }
 }
 @media (max-width: 699px) {
-  .rbu-home-evo { margin-bottom: 48px; padding: 0 16px; }
-  .rbu-home-evo-card { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "buy" "media"; padding: 28px 20px 24px; }
-  .rbu-home-evo .rbu-home-evo-name { font-size: 1.75rem; letter-spacing: .14em; }
-  .rbu-home-evo .rbu-home-evo-tagline { font-size: 1.125rem; }
-  .rbu-home-evo-buy .rbu-price { margin-top: 20px; }
-  .rbu-home-evo .rbu-home-evo-actions { justify-content: center; }
-  .rbu-home-evo .rbu-home-evo-actions .rbu-btn { flex: 1 1 100%; }
-  .rbu-home-evo-media { margin-top: 28px; }
-  .rbu-home-evo-media img { max-width: 320px; }
+  /* Phones: the offer first (price and Pre-order EVO in the first screen), the photo after it */
+  .rbu-home-hero { padding: 28px 20px 36px; background: radial-gradient(90% 45% at 50% 82%, rgba(109, 63, 214, .40) 0%, rgba(109, 63, 214, 0) 70%), #0e1013; }
+  .rbu-home-hero-in { grid-template-columns: minmax(0, 1fr); }
+  .rbu-home-hero .rbu-home-hero-name { margin-top: 14px; font-size: 2.125rem; letter-spacing: .12em; }
+  .rbu-home-hero .rbu-home-hero-tagline { margin-top: 12px; font-size: 1.1875rem; }
+  .rbu-home-hero .rbu-home-hero-lede { font-size: 1rem; }
+  .rbu-home-hero .rbu-price { margin-top: 18px; }
+  .rbu-home-hero .rbu-home-hero-actions { margin-top: 18px; gap: 6px 0; }
+  .rbu-home-hero .rbu-home-hero-actions .rbu-btn { flex: 1 1 100%; }
+  .rbu-home-hero-link { margin: 0 auto; }
+  .rbu-home-hero .rbu-home-hero-terms { margin-top: 12px; }
+  .rbu-home-hero-media { margin-top: 28px; }
+  .rbu-home-hero-media img { max-width: 360px; }
+  .rbu-home-hero + section.front-introduction { padding-top: 48px; }
 }

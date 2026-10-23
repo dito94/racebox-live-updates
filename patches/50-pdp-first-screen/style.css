@@ -56,3 +56,28 @@
 @media (max-width: 940px) { #buy-section { scroll-margin-top: calc(90px + var(--rbu-bar-h, 0px)); } }
 /* The purchase-details link jumps a long way down; main.css scrolls smoothly, which reduced-motion users opt out of */
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Accessory pages: the intro's one-line description, under the name */
+.rbu-pdp-sub { margin: -2px 0 14px; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+/* Desktop page flow. Without this the full-width header video or photo sat right under the product block.
+   Device pages (RaceBox, Mini, Mini S, Micro): product block, then the description, then the header video or photo,
+   which takes the place of the photo that opens "The technology" (hidden on desktop, so two large pictures never sit
+   back to back). The video becomes a cropped band. Only the visual order changes: the video has no focusable content,
+   so keyboard and screen-reader order stay hero, description, specs.
+   Accessory pages: the header photo is the same generic RaceBox shot on all eight, and the intro section repeats the
+   product block (name, image, points), so both are hidden on desktop; the block shows the intro's subtitle and all
+   points. Phones are untouched (the block itself is hidden there). Browsers without :has() keep today's order. */
+@media (min-width: 1001px) {
+  main:has(> .rbu-pdp--device) { display: flex; flex-direction: column; }
+  main:has(> .rbu-pdp--device) > .rbu-pdp { order: -3; }
+  main:has(> .rbu-pdp--device) > section.what-racebox-does { order: -2; }
+  main:has(> .rbu-pdp--device) > section.top-banner { order: -1; }
+  main:has(> .rbu-pdp--device) > section.top-banner video,
+  main:has(> .rbu-pdp--device) > section.top-banner img { display: block; width: 100%; height: min(72vh, 640px); max-height: none; object-fit: cover; }
+  main:has(> .rbu-pdp--device) > section.tech-specs.with-banner > .topimg { display: none; }
+  main:has(> .rbu-pdp--device) > section.tech-specs.with-banner { padding-top: 72px; }
+  main:has(> .rbu-pdp--accessory) > section.top-banner,
+  main:has(> .rbu-pdp--accessory) > section.other-product-info { display: none; }
+  .rbu-pdp--accessory { padding-bottom: 56px; }
+}

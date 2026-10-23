@@ -11,10 +11,10 @@ server variables to fill in, and a test checklist.
 |---|---|---|---|
 | 00 | Shared styles and script: one CSS file and one JS file loaded on every page | site layout | [00-core](patches/00-core/CTO.md) |
 | 10 | New RaceBox EVO pre-order page; EVO card first in the store; "Racebox EVO" in the menu and footer | `/products/racebox-evo`, `/store/`, layout | [10-evo-page](patches/10-evo-page/CTO.md) |
-| 20 | Slim EVO pre-order bar under the shipping banner, linking to the EVO page | every page except checkout and the EVO page | [20-evo-banner](patches/20-evo-banner/CTO.md) |
-| 30 | EVO pre-order section on the home page, right after the top photo | `/` | [30-home-evo](patches/30-home-evo/CTO.md) |
+| 20 | Slim EVO pre-order bar under the shipping banner, linking to the EVO page | every page except home, checkout and the EVO page | [20-evo-banner](patches/20-evo-banner/CTO.md) |
+| 30 | The home page opens with a dark EVO pre-order hero, in place of the large photo (all screen sizes) | `/` | [30-home-evo](patches/30-home-evo/CTO.md) |
 | 40 | "RaceBox vs RaceBox EVO" spec comparison; the EVO column links to the pre-order page | `/products/racebox#evo-vs-racebox` | [40-racebox-compare](patches/40-racebox-compare/CTO.md) |
-| 50 | Desktop (1001 px and wider): name, photo, price and Add to cart in the first screen of every product page; the header video or photo moves below. Phones unchanged | 4 device pages + 8 accessory pages | [50-pdp-first-screen](patches/50-pdp-first-screen/CTO.md) |
+| 50 | Desktop (1001 px and wider): name, photo, price and Add to cart in the first screen of every product page. Device pages: the header video moves below the description, in place of the specs photo. Accessory pages: the generic photo and the repeated intro are hidden. Phones unchanged | 4 device pages + 8 accessory pages | [50-pdp-first-screen](patches/50-pdp-first-screen/CTO.md) |
 | 60 | The whole image and name of each store card open the product page | `/store/` | [60-store-cards](patches/60-store-cards/CTO.md) |
 | 70 | "The Mini records only while your phone stays connected. The Mini S also records on its own." | `/products/racebox-mini`, `/products` | [70-mini-note](patches/70-mini-note/CTO.md) |
 | 80 | Links can carry a discount code (`?code=XXXX`); it is saved and entered at checkout automatically | every page, `/store/checkout` | [80-discount-links](patches/80-discount-links/CTO.md) |
@@ -43,8 +43,8 @@ Ships March 2027. All EVO facts come from one file, [patches/evo.json](patches/e
 5. **Mini S "Standalone Device: no"** in the `/products` table vs the new sentence "The Mini S also records on its
    own". Rename the row (e.g. "Screen and controls on the device") or keep it.
 6. Smaller ones, each described in its CTO.md: the Mini note shows twice on desktop (top block and next to the
-   price); accessory pages repeat their intro below the new top block on desktop; the home EVO section starts below
-   the first screen on desktop (the bar carries the offer there); EVO photos are the current RaceBox, captioned.
+   price); EVO photos are the current RaceBox, captioned; the home page no longer shows its large top photo (the
+   EVO hero replaces it; easy to bring back lower on the page).
 7. **Site red for small text.** The live red #ea2127 is 4.42:1 against white, just under the WCAG AA 4.5:1 for small
    text, on every footer link and See More link. The new footer "RaceBox EVO" link and the EVO card's See More match
    their neighbours, so they inherit it. A site-wide fix is a slightly darker red for small text (#e32026 reaches

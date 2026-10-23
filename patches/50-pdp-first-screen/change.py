@@ -3,7 +3,11 @@
 A compact product hero goes at the top of <main>, before section.top-banner. It reuses what the page already prints:
 the store card's image and bullets (store/index.html, the same product data) and the buy section's price, stock note,
 add-to-cart form and currency note. On phones (max-width 1000px, the site's breakpoint) the hero is hidden, so the top
-banner stays first and phones look exactly as today. On desktop the top banner simply follows the hero.
+banner stays first and phones look exactly as today.
+Desktop layout (CSS only, style.css): on the four device pages the header video or photo moves below the product
+description and takes the place of the photo that opens the tech specs (that photo is hidden on desktop), so the page
+reads product, description, video, specs. On the eight accessory pages the generic header photo and the intro section
+(which repeats the product) are hidden on desktop; the hero carries the intro's subtitle and all of the card's points.
 
 Everything is read from the live markup, so a changed template stops the build instead of printing a wrong price
 (price, add-to-cart form, price note, country link and the stock note are all anchors).
@@ -135,9 +139,13 @@ def buy_parts(html, where):
                 note=re.sub(r'\s+', ' ', note).strip(), switch=switch)
 
 
-def hero_html(card, b, name_tag='h1', cutout=None):
+def hero_html(card, b, cutout=None, subtitle=None):
     img, name, points = card
-    points_html = ''.join(f'\n\t\t\t\t<li>{p}</li>' for p in key_points(points))
+    # Device pages: at most MAX_POINTS. Accessory pages: all of them, because the intro that lists them is hidden on desktop.
+    shown = key_points(points) if cutout else points
+    points_html = ''.join(f'\n\t\t\t\t<li>{p}</li>' for p in shown)
+    variant = 'device' if cutout else 'accessory'
+    sub_html = f'\t\t\t<p class="rbu-pdp-sub">{subtitle}</p>\n' if subtitle else ''
     if b['was']:
         # The words in .rbu-sr are for screen readers: without them "$249.00 $219.00" reads as two prices.
         price = (f'\n\t\t\t\t<p class="rbu-pdp-offer">{b["title"]}</p>'
@@ -156,11 +164,12 @@ def hero_html(card, b, name_tag='h1', cutout=None):
         media = f'<div class="rbu-pdp-media"><img src="{img}" alt="{name}" width="200" height="200" /></div>'
     return (
         '<!-- rb-updates: 50 pdp-first-screen -->\n'
-        '<section class="rbu-pdp" aria-labelledby="rbu-pdp-name">\n'
+        f'<section class="rbu-pdp rbu-pdp--{variant}" aria-labelledby="rbu-pdp-name">\n'
         '\t<div class="rbu-pdp-in">\n'
         f'\t\t{media}\n'
         '\t\t<div class="rbu-pdp-body">\n'
-        f'\t\t\t<{name_tag} class="rbu-pdp-name" id="rbu-pdp-name">{name}</{name_tag}>\n'
+        f'\t\t\t<h1 class="rbu-pdp-name" id="rbu-pdp-name">{name}</h1>\n'
+        f'{sub_html}'
         f'\t\t\t<ul class="reddot rbu-pdp-points">{points_html}\n\t\t\t</ul>\n'
         f'\t\t\t<div class="rbu-pdp-buy">{price}\n'
         '\t\t\t\t<div class="rbu-pdp-actions">\n'
@@ -185,15 +194,18 @@ def apply(site):
         if b['sku'] not in cards:
             raise rbu.AnchorError(f'{rel}: no store card for {b["sku"]}')
         card = cards[b['sku']]
-        # Accessory pages: the intro just below already has <h1>{name}</h1>. There the hero's name is a <p> (same class,
-        # same look, still labels the section), so desktop screen readers don't get the same h1 twice.
-        name_tag = 'h1'
-        if '<section class="other-product-info">' in html:
-            if not re.search(r'<section class="other-product-info">\s*<h1>' + re.escape(card[1]) + r'</h1>', html):
-                raise rbu.AnchorError(f'{rel}: other-product-info h1 does not match the store card name {card[1]!r}')
-            name_tag = 'p'
         cutout = cutout_html(rel, card[1]) if rel in CUTOUTS else None
-        return rbu.insert_before(html, '<section class="top-banner', hero_html(card, b, name_tag, cutout), where=rel)
+        subtitle = None
+        if not cutout:
+            # Accessory pages: on desktop the intro (h1, subtitle, image, points) is hidden because it repeats the hero,
+            # so the hero takes its subtitle. Both name the product with an h1, but only one of them is ever displayed:
+            # the hero on desktop, the intro on phones.
+            intro = _one(r'<section class="other-product-info">\s*<h1>([^<]*)</h1>\s*<p class="text">(.*?)</p>', html, rel,
+                         'accessory intro (h1 and subtitle)')
+            if intro.group(1) != card[1]:
+                raise rbu.AnchorError(f'{rel}: other-product-info h1 {intro.group(1)!r} is not the store card name {card[1]!r}')
+            subtitle = re.sub(r'\s+', ' ', intro.group(2)).strip()
+        return rbu.insert_before(html, '<section class="top-banner', hero_html(card, b, cutout, subtitle), where=rel)
 
     for rel in PAGES:
         site.edit(rel, edit)
