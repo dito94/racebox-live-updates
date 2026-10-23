@@ -1,8 +1,13 @@
-## 20 EVO pre-order banner (every page)
+## 20 EVO pre-order banner (every page except home, checkout and the EVO page)
 
-**What and why.** A slim violet bar in the header tells every visitor that EVO pre-orders are open and links to the EVO page. One link, no popup, not dismissible.
+**What and why.** A slim violet bar in the header tells visitors that EVO pre-orders are open and links to the EVO page. One link, no popup, not dismissible. The home page has no bar: it opens with the EVO hero (change set 30), which carries the whole offer, so a bar above it would only say the same thing twice.
 
-**Where.** Site layout template, as the **first child of `<header>`** (before `<nav class="top">`). On every page except the checkout (`/store/checkout`: nothing should pull a buyer away from paying) and the EVO page itself (`/products/racebox-evo`).
+**Where.** Site layout template, as the **first child of `<header>`** (before `<nav class="top">`). On every page except three:
+- the home page (`/`, `index.html`): its EVO hero carries the offer (change set 30);
+- the checkout (`/store/checkout`): nothing should pull a buyer away from paying;
+- the EVO page itself (`/products/racebox-evo`).
+
+On those three pages the header has no bar. Nothing else is needed to switch the bar off there: the CSS rules all start with `header:has(.rbu-evo-bar)`, and the script stops at once when the header has no bar.
 
 **On screen it sits under the shipping banner and above the menu.** In the HTML it comes first, so a keyboard user reaches it first, in the order it is drawn (it is above the logo). The CSS shows it second: shipping banner, bar, nav.
 - The shipping banner stays exactly where it is today, at the very top.
@@ -44,14 +49,17 @@ If you move other anchors below the fixed header (for example `scroll-margin-top
 
 **Back end.** None. If a country has no shipping banner, the bar still works (it is simply the first thing in the header). Pages must be served as UTF-8 for the "€" sign (the live server already does).
 
-**Known limit.** The live shipping text changes with the country and sometimes wraps to two lines. At 320 px the US text ("Free shipping to United States for all orders over $300.00.") wraps. At normal phone widths it wraps for countries with long names: "Free shipping to Bosnia and Herzegovina for all orders over 300.00 €." wraps at 360 to 390 px, and "United Arab Emirates" at 360 and 375 px. The banner now grows with its text (before, the second line ran over the nav), so the header is 16 px taller on those pages. The script (`--rbu-hdr-grow`) moves `<main>` down by the same amount, so nothing is covered (checked at 320, 360, 375 and 390 px). Without JS, or without `ResizeObserver`, the header is 17 px taller than `<main>` expects there (nav bottom 146 px, main top 129 px at 390 px) and covers the top of the page. A shorter shipping text for every country (for example "Free shipping over $300.00") keeps the header at its normal height and fixes both.
+**Known limit.** The live shipping text changes with the country and sometimes wraps to two lines. At 320 px the US text ("Free shipping to United States for all orders over $300.00.") wraps. At normal phone widths it wraps for countries with long names: "Free shipping to Bosnia and Herzegovina for all orders over 300.00 €." wraps at 360 to 390 px, and "United Arab Emirates" at 360 and 375 px. The banner now grows with its text (before, the second line ran over the nav), so the header is 16 px taller on those pages. The script (`--rbu-hdr-grow`) moves `<main>` down by the same amount, so nothing is covered (checked at 320, 360, 375 and 390 px). Without JS, or without `ResizeObserver`, the header is 17 px taller than `<main>` expects there (nav bottom 146 px, main top 129 px at 390 px) and covers the top of the page. A shorter shipping text for every country (for example "Free shipping over $300.00") keeps the header at its normal height and fixes both. The home page has no bar, so it keeps the live header: there a long shipping text still wraps over the nav, as it does today.
 
 **When pre-orders close.** Remove the bar (or change it to "RaceBox EVO is here", without the struck price).
 
 ### How to test
 
-- [ ] Home, store, a product page, an info page: the bar is under the grey shipping banner, nothing overlaps; logo, menu, cart and the shipping text are all visible and clickable.
-- [ ] Not on /store/checkout and not on /products/racebox-evo.
+Use a page that has the bar for these checks (for example /store/). The home page has none.
+
+- [ ] Store, a product page, an info page: the bar is under the grey shipping banner, nothing overlaps; logo, menu, cart and the shipping text are all visible and clickable.
+- [ ] Not on the home page (`/`), not on /store/checkout and not on /products/racebox-evo. On the home page the space under the header is the live one: no gap, nothing hidden.
+- [ ] The home page still shows the offer: the EVO hero (change set 30) is the first thing under the header.
 - [ ] Phone 390 x 844: two lines, "Ships March 2027 · Pre-order EVO ›" on the second line, bar 44 px tall. Open the menu: all items, including "Racebox EVO" and "Buy RaceBox", are on screen.
 - [ ] Desktop 1280 x 720 and 1920 x 1080: one line, centred, 30 px tall.
 - [ ] Click anywhere on the bar: /products/racebox-evo opens. Tab to it: the whole bar gets an outline.

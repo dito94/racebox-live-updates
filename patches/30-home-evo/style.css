@@ -1,6 +1,6 @@
 /* 30 home-evo: the home page opens with a dark RaceBox EVO launch hero (all screen sizes), in place of the large photo.
    Live fonts (RaceBox-Light capitals for the name, RaceBox-Regular text); violet marks the pre-order, as everywhere.
-   Colours on the dark band: text #fff and #c3c8cf (11:1), pre-order price #c4adff (9:1), caption #a3aab4 (7.6:1). */
+   Colours on the dark band: text #fff and #c3c8cf (11:1), pre-order price #c4adff (9.8:1), caption #a3aab4 (8.1:1). */
 .rbu-home-hero {
   position: relative; overflow: hidden; color: #fff; padding: 56px 40px 64px;
   background: radial-gradient(55% 75% at 74% 52%, rgba(109, 63, 214, .42) 0%, rgba(109, 63, 214, 0) 70%), #0e1013;
