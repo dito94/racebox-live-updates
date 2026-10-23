@@ -97,7 +97,9 @@ def evo_price_html(cur, size='', note=True):
     now, later = evo_prices(cur)
     later_s = money(later, cur)
     cls = 'rbu-price rbu-price--pre' + (f' rbu-price--{size}' if size else '')
-    note_html = (f'<span class="rbu-price-note">Pre-order price. {esc(later_s)} after pre-order.</span>' if note else '')
+    # The note repeats both prices for sighted readers; the rbu-sr labels already say it to screen readers.
+    note_html = (f'<span class="rbu-price-note" aria-hidden="true">Pre-order price. {esc(later_s)} after pre-order.</span>'
+                 if note else '')
     return (f'<p class="{cls}"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>'
             f'{esc(later_s)}</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>'
             f'{esc(money(now, cur))}</strong>{note_html}</p>')
