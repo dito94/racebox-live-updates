@@ -1,0 +1,49 @@
+/* 30 home-evo: RaceBox EVO pre-order section on the home page, below the top photo.
+   Sits inside section.front-introduction (grey with the red centre line); the white card covers the line like the
+   live headings do, so the line runs from the photo into the card and on to "Introducing RaceBox". */
+.rbu-home-evo { position: relative; margin: 0 0 72px; padding: 0 20px; }
+.rbu-home-evo *, .rbu-home-evo *::before, .rbu-home-evo *::after { box-sizing: border-box; }
+.rbu-home-evo-card {
+  max-width: 960px; margin: 0 auto; padding: 44px 48px 40px; background: #fff; border-radius: 8px;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 48px;
+  grid-template-areas: "copy media" "buy media"; align-items: center;
+}
+.rbu-home-evo-copy { grid-area: copy; align-self: end; }
+.rbu-home-evo-media { grid-area: media; margin: 0; text-align: center; }
+.rbu-home-evo-buy { grid-area: buy; align-self: start; }
+.rbu-home-evo p { margin: 0; }
+.rbu-home-evo-flag { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font: .875rem/1.4 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-home-evo .rbu-home-evo-name {
+  margin: 14px 0 0; padding: 0; background: none; color: var(--rbu-ink); text-align: left;
+  font: 2.25rem/1.1 var(--rbu-font-light); letter-spacing: .18em; text-transform: uppercase;
+}
+.rbu-home-evo-name span { font-family: var(--rbu-font); }
+.rbu-home-evo .rbu-home-evo-tagline { margin-top: 14px; font: 1.25rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-home-evo .rbu-home-evo-lede { margin-top: 8px; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-home-evo-buy .rbu-price { margin-top: 24px; }
+.rbu-home-evo .rbu-home-evo-terms { margin-top: 12px; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-home-evo .rbu-home-evo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; margin-top: 22px; }
+.rbu-home-evo-link {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--rbu-ink);
+  font: 1rem/1.3 var(--rbu-font); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.rbu-home-evo-link::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); flex: none; }
+.rbu-home-evo-link:hover { color: var(--rbu-red-dark); text-decoration-thickness: 2px; }
+.rbu-home-evo-media img { display: block; width: 100%; max-width: 440px; height: auto; margin: 0 auto; }
+.rbu-home-evo-media figcaption { max-width: 360px; margin: 10px auto 0; font: .8125rem/1.45 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+@media (max-width: 1000px) {
+  .rbu-home-evo-card { padding: 36px 32px 32px; column-gap: 32px; }
+  .rbu-home-evo .rbu-home-evo-name { font-size: 1.875rem; }
+}
+@media (max-width: 699px) {
+  .rbu-home-evo { margin-bottom: 48px; padding: 0 16px; }
+  .rbu-home-evo-card { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "buy" "media"; padding: 28px 20px 24px; }
+  .rbu-home-evo .rbu-home-evo-name { font-size: 1.75rem; letter-spacing: .14em; }
+  .rbu-home-evo .rbu-home-evo-tagline { font-size: 1.125rem; }
+  .rbu-home-evo-buy .rbu-price { margin-top: 20px; }
+  .rbu-home-evo .rbu-home-evo-actions { justify-content: center; }
+  .rbu-home-evo .rbu-home-evo-actions .rbu-btn { flex: 1 1 100%; }
+  .rbu-home-evo-media { margin-top: 28px; }
+  .rbu-home-evo-media img { max-width: 320px; }
+}

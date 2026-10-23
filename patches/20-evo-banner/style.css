@@ -1,0 +1,61 @@
+/* 20 evo-banner: the RaceBox EVO pre-order bar in the header, right under the shipping banner.
+   The header is fixed, so the bar has a set height per width (--rbu-bar-h) and the nav and <main> move down by exactly
+   that much: nothing shifts after load and nothing is covered. One line from 768 px, two lines on phones, three below
+   360 px. Hidden when the window is very short (phones held sideways), where the fixed header already takes a third
+   of the screen. Quiet: violet wash, ink text, the price in the pre-order violet. */
+:root { --rbu-bar-h: 30px; }
+@media (max-width: 767px) { :root { --rbu-bar-h: 40px; } }
+@media (max-width: 359px) { :root { --rbu-bar-h: 56px; } }
+@media (max-height: 520px) { :root { --rbu-bar-h: 0px; } header .rbu-evo-bar { display: none; } }
+/* The offsets below need :has(), like the live header's own; without it the bar stays out of the way */
+@supports not selector(:has(a)) { header .rbu-evo-bar { display: none; } }
+
+header .rbu-evo-bar {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 1; box-sizing: border-box; height: var(--rbu-bar-h);
+  display: flex; align-items: center; justify-content: center; padding: 0 16px;
+  background: var(--rbu-violet-wash); border-bottom: 1px solid #ddd2f8;
+  font: 13px/16px var(--rbu-font-light); color: var(--rbu-ink); text-align: center;
+}
+header .shipping-info-banner + .rbu-evo-bar { top: 20px; }
+header .rbu-evo-bar-in { max-width: 100%; }
+header .rbu-evo-bar strong { font-family: var(--rbu-font); font-weight: normal; }
+
+/* The price is the shared block in its inline form (.rbu-price-inline, defined in 10 evo-page):
+   "$339.00 ($449.00 struck, after pre-order)" */
+header .rbu-evo-bar .rbu-price { font: inherit; color: inherit; }
+header .rbu-evo-bar .rbu-price-now { font: 14px/16px var(--rbu-font); color: var(--rbu-violet); }
+
+header .rbu-evo-bar-sep { color: var(--rbu-text-2); }
+/* One link, stretched over the whole bar */
+header .rbu-evo-bar a.rbu-evo-bar-link {
+  font-family: var(--rbu-font); color: var(--rbu-violet-dark); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;
+}
+header .rbu-evo-bar a.rbu-evo-bar-link::before { content: ""; position: absolute; inset: 0; }
+header .rbu-evo-bar a.rbu-evo-bar-link::after {
+  content: ""; display: inline-block; width: 5px; height: 5px; margin: 0 0 1px 6px; border: solid currentColor;
+  border-width: 1.5px 1.5px 0 0; transform: rotate(45deg);
+}
+header .rbu-evo-bar:hover a.rbu-evo-bar-link { text-decoration-thickness: 2px; }
+header .rbu-evo-bar:hover { background: #ebe3fc; }
+header .rbu-evo-bar a.rbu-evo-bar-link:focus { outline: none; }
+header .rbu-evo-bar:focus-within { outline: 2px solid var(--rbu-ink); outline-offset: -3px; }
+
+/* The live header moves down by the bar's height: the nav (logo, menu, cart) and the page under the fixed header */
+header:has(.rbu-evo-bar) > nav.top { top: var(--rbu-bar-h); }
+header:has(.shipping-info-banner):has(.rbu-evo-bar) > nav.top { top: calc(20px + var(--rbu-bar-h)); }
+body header:has(.rbu-evo-bar) ~ main { margin-top: calc(65px + var(--rbu-bar-h)); }
+body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: calc(85px + var(--rbu-bar-h)); }
+@media (min-width: 939px) {
+  body header:has(.rbu-evo-bar) ~ main { margin-top: calc(100px + var(--rbu-bar-h)); }
+  body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: calc(120px + var(--rbu-bar-h)); }
+}
+
+/* Phones: price on the first line, ship date and link on the second. "RaceBox" before EVO is left to screen readers
+   so the first line fits a 360 px screen. */
+@media (max-width: 767px) {
+  header .rbu-evo-bar { padding: 0 12px; font-size: 12.5px; }
+  header .rbu-evo-bar .rbu-price-now { font-size: 13.5px; }
+  header .rbu-evo-bar-brand { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  header .rbu-evo-bar-tail { display: block; margin-top: 4px; }
+  header .rbu-evo-bar-tail > .rbu-evo-bar-sep:first-child { display: none; }
+}

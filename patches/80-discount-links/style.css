@@ -1,0 +1,28 @@
+/* 80 discount-links: the notice that confirms a code from a link (saved, applied, couldn't be applied).
+   Fixed under the header (the script sets top from the header's real height), so it never moves the page.
+   Above page content and the "Get 10% off!" button, below the open menu (header z-index 100) and the modals (200). */
+.rbu-toast {
+  position: fixed; z-index: 90; top: 128px; right: 20px; width: 420px; max-width: calc(100% - 32px); box-sizing: border-box;
+  display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 16px; border-radius: 8px;
+  background: var(--rbu-ink); color: #fff; box-shadow: 0 10px 30px rgba(0, 0, 0, .22);
+  font: 15px/1.45 var(--rbu-font-light); text-align: left; animation: rbu-toast-in .22s ease-out;
+}
+.rbu-toast-icon { flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px; color: #fff; }
+.rbu-toast-icon svg { display: block; width: 22px; height: 22px; }
+.rbu-toast--ok .rbu-toast-icon { color: #6fdc98; }      /* green tick, 10.5:1 on the ink */
+.rbu-toast-msg { flex: 1; min-width: 0; margin: 0; padding: 9px 0; }
+.rbu-toast-code { font-family: var(--rbu-font); font-weight: normal; letter-spacing: .05em; overflow-wrap: anywhere; }
+.rbu-toast-close {
+  flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; margin: 0; padding: 0;
+  border: 0; border-radius: 4px; background: none; color: #fff; cursor: pointer;
+}
+.rbu-toast-close:hover { background: rgba(255, 255, 255, .12); }
+.rbu-toast-close:focus { box-shadow: none; }
+.rbu-toast-close:focus-visible { outline: 2px solid #fff; outline-offset: -3px; }
+.rbu-toast-close svg { display: block; width: 18px; height: 18px; }
+@media (max-width: 1000px) {
+  .rbu-toast { top: 94px; left: 16px; right: 16px; width: auto; max-width: none; }
+}
+@keyframes rbu-toast-in { from { opacity: 0; transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .rbu-toast { animation: none; } }
+@media print { .rbu-toast { display: none; } }

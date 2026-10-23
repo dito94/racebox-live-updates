@@ -1,0 +1,212 @@
+/* 10 evo-page: the RaceBox EVO page (/products/racebox-evo), its store card and its menu links.
+   The live look: RaceBox-Light uppercase spaced headings, the pale pink and grey section bands, red ring bullets.
+   Headings and links use the darker brand red (#c4161c): the live red (#ea2127) is only 4:1 on white, below AA for
+   text this size. Violet marks pre-order (price, badge, button) and nothing else. */
+
+/* ---- Page frame ---------------------------------------------------------------------------------------------- */
+.rbu-evo-page main *, .rbu-evo-page main *::before, .rbu-evo-page main *::after { box-sizing: border-box; }
+.rbu-evo-page main p { margin: 0; }
+.rbu-evo-page main a { color: var(--rbu-red-dark); text-decoration: underline; text-underline-offset: 3px; }
+.rbu-evo-page main a:hover { text-decoration-thickness: 2px; }
+.rbu-evo-page main a:focus-visible,
+.rbu-evo-page main summary:focus-visible,
+.rbu-evo-table-scroll:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; box-shadow: 0 0 0 4px #fff; }
+
+.rbu-evo-band { padding: 20px 20px 56px; background: #fff; }
+.rbu-evo-band--pink { background: #fdeae3; }
+.rbu-evo-band--grey { background: var(--rbu-grey); }
+.rbu-evo-band--mist { background: var(--rbu-line); }
+/* Section titles: the live section heading (uppercase, spaced, centred) in the darker red */
+.rbu-evo-page .rbu-evo-band > h2 {
+  margin: 0 0 12px; padding: 10px 20px 0; color: var(--rbu-red-dark); text-align: center;
+  font: 1.2em/32px var(--rbu-font-light); letter-spacing: 5px; text-transform: uppercase; background: none;
+}
+.rbu-evo-wrap { max-width: 960px; margin: 0 auto; }
+.rbu-evo-intro { max-width: 640px; margin: 0 auto 32px !important; text-align: center; font: 1.0625rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-small { margin-top: 16px !important; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-h3 { margin: 40px 0 0; font: 1.0625rem/1.4 var(--rbu-font); color: var(--rbu-ink); text-transform: none; }
+/* A text link with a chevron, 44 px tall */
+.rbu-evo-page main a.rbu-evo-more {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--rbu-ink);
+  font: 1rem/1.3 var(--rbu-font); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.rbu-evo-page main a.rbu-evo-more::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); flex: none; }
+.rbu-evo-page main a.rbu-evo-more:hover { color: var(--rbu-red-dark); text-decoration-thickness: 2px; }
+
+/* ---- Hero: name, price, Pre-order and the key terms on the first screen ------------------------------------- */
+.rbu-evo-page main section.rbu-evo-hero { padding: 44px 20px 48px; background: var(--rbu-grey); }
+.rbu-evo-hero-in {
+  max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  grid-template-areas: "copy media" "buy media"; column-gap: 56px; align-items: center;
+}
+.rbu-evo-hero-copy { grid-area: copy; align-self: end; }
+.rbu-evo-hero-media { grid-area: media; margin: 0; text-align: center; }
+.rbu-evo-buy { grid-area: buy; align-self: start; }
+.rbu-evo-flag { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font: .875rem/1.4 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-page .rbu-evo-hero .rbu-evo-name {
+  margin: 14px 0 0; padding: 0; background: none; color: var(--rbu-ink); text-align: left;
+  font: 2.75rem/1.1 var(--rbu-font-light); letter-spacing: .18em; text-transform: uppercase;
+}
+.rbu-evo-name span { font-family: var(--rbu-font); }
+.rbu-evo-tagline { margin-top: 14px !important; font: 1.375rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-evo-lede { margin-top: 8px !important; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-buy .rbu-price { margin-top: 24px; }
+.rbu-evo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; margin-top: 20px; }
+.rbu-evo-actions form { margin: 0; }
+.rbu-btn.rbu-evo-cta { min-height: 52px; margin: 0; padding: 0 36px; font-size: 1.0625rem; }
+.rbu-evo-page .rbu-evo-keyterms { margin: 18px 0 0; padding-left: 0; font-size: .9375rem; color: var(--rbu-ink); }
+.rbu-evo-page .rbu-evo-keyterms li { margin-bottom: 6px; }
+.rbu-evo-page .rbu-evo-currency { margin-top: 12px; font: .8125rem/1.45 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-hero-media img { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
+.rbu-evo-hero-media figcaption { max-width: 380px; margin: 10px auto 0; font: .8125rem/1.45 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+/* ---- What's new ------------------------------------------------------------------------------------------------ */
+.rbu-evo-new { list-style: none; margin: 0 auto; padding: 0; max-width: 1120px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.rbu-evo-new li { padding: 24px 22px 26px; background: #fff; border-radius: 8px; }
+.rbu-evo-new-n { display: block; font: 1.75rem/1 var(--rbu-font-light); letter-spacing: .08em; color: var(--rbu-red-dark); }
+.rbu-evo-new h3 { margin: 16px 0 8px; font: 1.0625rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-evo-new p { font: .9375rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+/* The photo: a dark band like the live "topimg" banners, with an honest caption */
+.rbu-evo-page main section.rbu-evo-photo { padding: 0; background: #020202; }
+.rbu-evo-photo figure { margin: 0 auto; max-width: 1120px; text-align: center; }
+.rbu-evo-photo img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: cover; }
+.rbu-evo-photo figcaption { padding: 10px 20px 14px; font: .8125rem/1.45 var(--rbu-font-light); color: #c9c9cf; }
+
+/* ---- How pre-ordering works ------------------------------------------------------------------------------------ */
+.rbu-evo-steps { list-style: none; margin: 8px 0 28px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.rbu-evo-steps li { position: relative; padding-top: 14px; font: .875rem/1.35 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-steps li::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; border-radius: 2px; background: #c9c9d3; }
+.rbu-evo-steps li.is-now { color: var(--rbu-ink); font-family: var(--rbu-font); }
+.rbu-evo-steps li.is-now::before { background: var(--rbu-violet); }
+.rbu-evo-terms { margin: 0; border-top: 1px solid #d6d6de; }
+.rbu-evo-terms > div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 4px 24px; padding: 16px 0; border-bottom: 1px solid #d6d6de; }
+.rbu-evo-terms dt { font: 1rem/1.45 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-evo-terms dd { margin: 0; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-ink); }
+.rbu-evo-page .rbu-evo-buying { margin: 12px 0 0; padding-left: 0; columns: 2; column-gap: 40px; font-size: .9375rem; }
+.rbu-evo-page .rbu-evo-buying li { break-inside: avoid; }
+.rbu-evo-switch { margin-top: 8px !important; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+/* ---- Tables: EVO vs RaceBox and the specs ---------------------------------------------------------------------- */
+.rbu-evo-table-scroll { overflow-x: auto; }
+.rbu-evo-table { width: 100%; border-collapse: collapse; font: 1rem/1.45 var(--rbu-font-light); color: var(--rbu-ink); background: #fff; }
+.rbu-evo-table th, .rbu-evo-table td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid #e4e4ec; }
+.rbu-evo-table tbody th { font-family: var(--rbu-font); font-weight: normal; width: 34%; }
+.rbu-evo-table thead th { font: .875rem/1.3 var(--rbu-font); letter-spacing: .08em; text-transform: uppercase; color: var(--rbu-text-2); border-bottom: 2px solid #e4e4ec; }
+.rbu-evo-vs thead th:last-child { color: var(--rbu-violet); }
+.rbu-evo-vs td:last-child, .rbu-evo-vs thead th:last-child { background: var(--rbu-violet-wash); }
+.rbu-evo-vs tbody th { width: 28%; }
+.rbu-evo-link-row { margin-top: 12px !important; text-align: center; }
+.rbu-evo-specs { border-radius: 8px; overflow: hidden; }
+.rbu-evo-specs tr:last-child th, .rbu-evo-specs tr:last-child td { border-bottom: 0; }
+.rbu-evo-tba { color: var(--rbu-text-2); font-family: var(--rbu-font); letter-spacing: .04em; }
+
+/* ---- FAQ ------------------------------------------------------------------------------------------------------- */
+.rbu-evo-faq { max-width: 760px; border-top: 1px solid #d6d6de; }
+.rbu-evo-faq-item { border-bottom: 1px solid #d6d6de; }
+.rbu-evo-faq-item > summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 12px 2px;
+  list-style: none; cursor: pointer; font: 1.0625rem/1.4 var(--rbu-font); color: var(--rbu-ink);
+}
+.rbu-evo-faq-item > summary::-webkit-details-marker { display: none; }
+.rbu-evo-faq-item > summary::after {
+  content: ""; flex: none; width: 9px; height: 9px; margin-right: 6px; border: solid var(--rbu-red-dark);
+  border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-2px, -2px); transition: transform .2s ease;
+}
+.rbu-evo-faq-item[open] > summary::after { transform: rotate(225deg) translate(-2px, -2px); }
+.rbu-evo-faq-item > summary:hover { text-decoration: underline; text-decoration-color: var(--rbu-red); text-underline-offset: 4px; }
+.rbu-evo-faq-item > p { padding: 0 2px 18px; max-width: 680px; font: 1rem/1.55 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+/* ---- Need it sooner? ------------------------------------------------------------------------------------------- */
+.rbu-evo-sooner { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 16px; }
+.rbu-evo-sooner > div { padding: 28px; background: #fff; border-radius: 8px; }
+.rbu-evo-sooner-main { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; align-items: center; }
+.rbu-evo-sooner-main img { width: 160px; height: auto; }
+.rbu-evo-sooner h3 { margin: 0 0 8px; font: 1.1875rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-evo-sooner p { font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-rb-price { margin-top: 8px !important; font: 1.375rem/1.3 var(--rbu-font) !important; color: var(--rbu-ink) !important; }
+.rbu-evo-page main .rbu-btn.rbu-evo-sooner-btn { margin-top: 16px; color: var(--rbu-ink); text-decoration: none; }
+.rbu-evo-sooner-side .rbu-evo-more { margin-top: 8px; }
+
+/* ---- The inline EVO price (sticky bar here, the header bar in 20 evo-banner) ------------------------------------
+   The shared price block without its note, read as "$339.00 ($449.00 struck, after pre-order)": the pre-order price
+   first, then the struck price with its words. The words are visual only (alt text ""); screen readers already hear
+   "Price after pre-order" from the block itself. */
+.rbu-price-inline .rbu-price { display: inline-flex; flex-direction: row-reverse; align-items: baseline; gap: .3em; margin: 0; font-size: inherit; line-height: inherit; }
+.rbu-price-inline .rbu-price-later { margin: 0; color: var(--rbu-text-2); }
+.rbu-price-inline .rbu-price-later::before { content: "("; content: "(" / ""; display: inline-block; }
+.rbu-price-inline .rbu-price-later::after { content: "after pre-order)"; content: "after pre-order)" / ""; display: inline-block; margin-left: .3em; }
+
+/* ---- Sticky bar (the live bottom-popup-element, phones only like on every product page) ------------------------ */
+.rbu-evo-sticky { z-index: 50; }
+.rbu-evo-sticky > div { align-items: center; gap: 12px; }
+#add-to-cart-popup.rbu-evo-sticky .left { flex: 1 1 auto; min-width: 0; white-space: normal; line-height: 1.3; }
+.rbu-evo-sticky .left .rbu-price { flex-direction: column-reverse; align-items: flex-start; gap: 2px; }
+.rbu-evo-sticky .left .rbu-price-now { font-size: 1.25rem; line-height: 1.1; }
+.rbu-evo-sticky .left .rbu-price-later { font: .78125rem/1.3 var(--rbu-font-light); white-space: nowrap; }
+/* Stacked on two lines, the struck price needs no brackets: "$449.00 after pre-order" */
+.rbu-evo-sticky .left .rbu-price-later::before { content: none; }
+.rbu-evo-sticky .left .rbu-price-later::after { content: "after pre-order"; content: "after pre-order" / ""; }
+.rbu-evo-sticky .right { flex: none; }
+.rbu-evo-sticky .right form { margin: 0; }
+.rbu-evo-sticky button.submit { margin: 0; padding: 6px 18px; font-size: 1.0625em; }
+
+/* Violet version of the live pill button (store card and sticky bar), with a 44 px tall hit area */
+button.submit.rbu-submit-pre { position: relative; background: var(--rbu-violet); border-color: var(--rbu-violet); }
+button.submit.rbu-submit-pre:hover { background: var(--rbu-violet-dark); border-color: var(--rbu-violet-dark); }
+button.submit.rbu-submit-pre:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; }
+button.submit.rbu-submit-pre::after { content: ""; position: absolute; left: 0; right: 0; top: -5px; bottom: -5px; }
+
+/* ---- Store card ------------------------------------------------------------------------------------------------ */
+div.products-list > div.rbu-card-evo .rbu-card-status { margin: 20px 0; text-align: center; font: .9375rem/1.4 var(--rbu-font-light); color: var(--rbu-text-2); }
+div.products-list > div.rbu-card-evo .rbu-card-status .rbu-badge { margin-right: 6px; vertical-align: 1px; }
+div.products-list > div.rbu-card-evo .rbu-price { margin: 0 0 16px; text-align: center; font-size: 1rem; }
+div.products-list > div.rbu-card-evo .rbu-price-later { font-size: 18px; }
+div.products-list > div.rbu-card-evo .rbu-price-now { font-size: 24px; }
+div.products-list > div.rbu-card-evo .rbu-price-note { font-size: .8125rem; }
+
+/* ---- Header menu: the flat product list (from 1460 px) gains "Racebox EVO". Between 1460 and 1599 px the items
+   sit a little closer so the list still fits on one line instead of wrapping under the logo. ---- */
+@media (min-width: 1460px) and (max-width: 1599px) {
+  header nav.top .micon > ul > li { margin: 0 2px; }
+  header nav.top .micon > ul > li > a { padding: 0 11px; }
+}
+
+/* ---- Phones and tablets ---------------------------------------------------------------------------------------- */
+@media (max-width: 1000px) {
+  .rbu-evo-hero-in { column-gap: 32px; }
+  .rbu-evo-page .rbu-evo-hero .rbu-evo-name { font-size: 2.25rem; }
+  .rbu-evo-new { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 699px) {
+  .rbu-evo-page main section.rbu-evo-hero { padding: 24px 16px 32px; }
+  .rbu-evo-hero-in { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "buy" "media"; }
+  .rbu-evo-page .rbu-evo-hero .rbu-evo-name { margin-top: 10px; font-size: 1.875rem; letter-spacing: .14em; }
+  .rbu-evo-tagline { margin-top: 8px !important; font-size: 1.125rem; }
+  .rbu-evo-lede { display: none; }
+  .rbu-evo-buy .rbu-price { margin-top: 16px; }
+  .rbu-evo-actions { margin-top: 16px; gap: 4px 20px; }
+  .rbu-evo-actions form, .rbu-btn.rbu-evo-cta { width: 100%; }
+  .rbu-evo-page .rbu-evo-keyterms { margin-top: 14px; font-size: .875rem; }
+  .rbu-evo-hero-media { margin-top: 28px; }
+  .rbu-evo-hero-media img { max-width: 340px; }
+  .rbu-evo-band { padding: 16px 16px 44px; }
+  .rbu-evo-page .rbu-evo-band > h2 { padding: 10px 0 0; letter-spacing: 4px; }
+  .rbu-evo-new { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .rbu-evo-new li { padding: 20px 18px; }
+  .rbu-evo-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px; }
+  .rbu-evo-terms > div { grid-template-columns: minmax(0, 1fr); }
+  .rbu-evo-page .rbu-evo-buying { columns: 1; }
+  .rbu-evo-table th, .rbu-evo-table td { padding: 12px 10px; font-size: .9375rem; }
+  .rbu-evo-sooner { grid-template-columns: minmax(0, 1fr); }
+  .rbu-evo-sooner > div { padding: 22px 18px; }
+  .rbu-evo-sooner-main { grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: start; }
+  .rbu-evo-sooner-main img { width: 96px; }
+  #add-to-cart-popup.rbu-evo-sticky { padding: 12px 16px 12px 48px; background-position: 12px center; }
+}
+@media (max-width: 359px) {
+  .rbu-evo-sticky .left .rbu-price-later { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rbu-evo-faq-item > summary::after { transition: none; }
+}
