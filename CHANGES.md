@@ -45,6 +45,10 @@ Ships March 2027. All EVO facts come from one file, [patches/evo.json](patches/e
 6. Smaller ones, each described in its CTO.md: the Mini note shows twice on desktop (top block and next to the
    price); accessory pages repeat their intro below the new top block on desktop; the home EVO section starts below
    the first screen on desktop (the bar carries the offer there); EVO photos are the current RaceBox, captioned.
+7. **Site red for small text.** The live red #ea2127 is 4.42:1 against white, just under the WCAG AA 4.5:1 for small
+   text, on every footer link and See More link. The new footer "RaceBox EVO" link and the EVO card's See More match
+   their neighbours, so they inherit it. A site-wide fix is a slightly darker red for small text (#e32026 reaches
+   4.7:1 and looks the same; the new buttons already use it).
 
 **Back end (CTO)**
 7. Create the EVO product (339 / 449, USD and EUR; other currencies need prices before they can show EVO) and put
