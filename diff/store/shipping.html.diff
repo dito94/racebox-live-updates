@@ -1,0 +1,161 @@
+--- original/store/shipping.html
++++ patched/store/shipping.html
+@@ -3,6 +3,7 @@
+ <head>
+ 	<title>Store | RaceBox</title>
+ 	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
+ 		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/favicon.ico" rel="shortcut icon" />
+@@ -11,6 +12,8 @@
+ 	</head>
+ <body class="page-front">
+ 	<header>
++			<!-- rb-updates: 20 evo-banner -->
++			<div class="rbu-evo-bar"><div class="rbu-evo-bar-in rbu-price-inline"><span class="rbu-evo-bar-lead"><strong><span class="rbu-evo-bar-brand">RaceBox </span>EVO</strong> pre-order:</span> <p class="rbu-price rbu-price--pre rbu-price--sm"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong></p><span class="rbu-evo-bar-tail"><span class="rbu-evo-bar-sep" aria-hidden="true"> &middot; </span><span>Ships March&nbsp;2027<span class="rbu-sr">.</span></span><span class="rbu-evo-bar-sep" aria-hidden="true"> &middot; </span><a class="rbu-evo-bar-link" href="/products/racebox-evo">Pre-order EVO</a></span></div></div>
+ 		<nav class="top">
+ 			<a href="/" class="logo"></a>
+ 			<a href="/store/checkout" class="cart"></a>
+@@ -21,6 +24,8 @@
+ 										<li><a  href="/">Home</a></li>
+ 
+ 					<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -31,6 +36,8 @@
+ 						<label for="menu_products_cb">Products</label>
+ 						<ul>
+ 							<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++							<!-- rb-updates: 10 evo-page -->
++							<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -66,7 +73,7 @@
+ 				<div class="content products-list">
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox.png" alt="RaceBox"/></div>
+-				<h3>RaceBox</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB01">RaceBox</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Completely standalone</li><li>Record hours of drag runs and track sessions</li><li>Clear display with easy navigation</li>				</ul>
+@@ -87,7 +94,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-mini.png" alt="RaceBox Mini"/></div>
+-				<h3>RaceBox Mini</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB02">RaceBox Mini</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>25Hz GPS Update Rate</li><li>Splash resistant, built to last</li><li>Over 20 hours battery life</li>				</ul>
+@@ -108,7 +115,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-mini-s.png" alt="RaceBox Mini S"/></div>
+-				<h3>RaceBox Mini S</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB08">RaceBox Mini S</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Over 2 hours standalone storage</li><li>25Hz GPS Update Rate</li><li>Splash resistant, built to last</li><li>Over 20 hours battery life</li>				</ul>
+@@ -128,7 +135,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-micro-200.png" alt="RaceBox Micro"/></div>
+-				<h3>RaceBox Micro</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB12">RaceBox Micro</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Wide input voltage range</li><li>Over 2 hours of standalone storage</li><li>25Hz GPS Update Rate</li><li>DIY friendly</li>				</ul>
+@@ -152,7 +159,7 @@
+ 				<div class="content products-list">
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/raebox-mini-accessories.png" alt="Spare RaceBox Mini Accessories"/></div>
+-				<h3>Spare RaceBox Mini Accessories</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB03">Spare RaceBox Mini Accessories</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Hook&#039;n&#039;loop self-adhesive tape</li><li>Scratch-protect self-adhesive tape</li><li>High-grip temperature-resistant silicone pad</li><li>USB-C to USB-A charging cable</li><li>USB-C Water/Dust covers for extra protection</li>				</ul>
+@@ -172,7 +179,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-mini-hook-n-loop-tapes.png" alt="RaceBox Mini Hook&#039;n&#039;loop Tapes"/></div>
+-				<h3>RaceBox Mini Hook&#039;n&#039;loop Tapes</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB07">RaceBox Mini Hook&#039;n&#039;loop Tapes</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Designed to perfectly fit the RaceBox Mini</li><li>Set of 5</li><li>3M self-adhesive backing</li><li>Temperature resistant</li>				</ul>
+@@ -192,7 +199,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-mini-carry-case.png" alt="RaceBox Mini / Mini S Carry Case"/></div>
+-				<h3>RaceBox Mini / Mini S Carry Case</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB09">RaceBox Mini / Mini S Carry Case</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Hardshell case</li><li>Soft interior</li><li>Accessories Pouch</li><li>Included with Mini and Mini S</li>				</ul>
+@@ -212,7 +219,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-carry-case.png" alt="RaceBox Carry Case"/></div>
+-				<h3>RaceBox Carry Case</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB10">RaceBox Carry Case</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Hardshell case</li><li>Soft interior</li><li>Accessories Pouch</li><li>For RaceBox, not Mini or Mini S</li>				</ul>
+@@ -232,7 +239,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-magnetic-usb-cable.png" alt="RaceBox Magnetic USB Cable"/></div>
+-				<h3>RaceBox Magnetic USB Cable</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB06">RaceBox Magnetic USB Cable</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Right angle USB Type-C</li><li>Magnetic Quick Release</li><li>High-quality brading</li><li>LED power indicator</li><li>Length - 1m (3.3ft)</li>				</ul>
+@@ -252,7 +259,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-gps-antenna.png" alt="Replacement RaceBox External GPS Antenna"/></div>
+-				<h3>Replacement RaceBox External GPS Antenna</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB04">Replacement RaceBox External GPS Antenna</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Magnetic mount</li><li>IP67 rated enclosure</li><li>SMA Connector</li><li>Supports GPS/GLONASS/SBAS</li><li>Not Compatible with RaceBox Mini</li>				</ul>
+@@ -272,7 +279,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-suction-cup.png" alt="Replacement RaceBox Suction Cup"/></div>
+-				<h3>Replacement RaceBox Suction Cup</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB05">Replacement RaceBox Suction Cup</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Quick mount &amp; release</li><li>Automotive grade silicone</li><li>Two axis adjustment</li><li>Compatible with GoPro</li><li>Not Compatible with RaceBox Mini</li>				</ul>
+@@ -292,7 +299,7 @@
+ 							</div>
+ 											  			<div>
+ 				<div class="img"><img src="/product-image/racebox-micro-case.png" alt="RaceBox Micro Spare Cases"/></div>
+-				<h3>RaceBox Micro Spare Cases</h3>
++				<!-- rb-updates: 60 store-cards --><h3><a class="rbu-card-link" href="/products/sku/RB14">RaceBox Micro Spare Cases</a></h3>
+ 
+                 <ul class="reddot">
+ 				<li>Designed to perfectly fit the RaceBox Micro</li><li>Set of 3 cases</li><li>Clear plastic</li><li>Access to the physical button</li>				</ul>
+@@ -336,6 +343,8 @@
+ 				<ul>
+ 									<li><a href="/features">Features</a></li>
+ 					<li><a href="/products/racebox">RaceBox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li><a href="/products/racebox-evo">RaceBox EVO</a></li>
+ 					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
+ 					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
+ 					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
+@@ -448,5 +457,6 @@
+ </div>
+ 
+ <script defer src="/assets/v-1776405836/js/country-select.js" nonce="JrmtEPkjguSzeY7gTtAtuc4FJkw="></script>
++<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
+ </body>
+ </html>

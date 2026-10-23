@@ -1,0 +1,288 @@
+--- original/products/racebox-evo.html
++++ patched/products/racebox-evo.html
+@@ -0,0 +1,285 @@
++<!doctype html>
++<html lang="en">
++<head>
++	<title>RaceBox EVO Pre-order: 25 Hz Standalone Lap Timer | RaceBox</title>
++	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
++		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
++	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
++	<link href="/favicon.ico" rel="shortcut icon" />
++	<link href="/favicon.ico" rel="icon" sizes="16x16 32x32 64x64" />
++	<meta name="viewport" content="width=device-width, initial-scale=1">
++
++	<meta name="description" content="Pre-order RaceBox EVO, the standalone lap timer and drag meter with its own colour screen, now with 25 Hz GPS. $339.00 pre-order price, $449.00 after pre-order. Ships March 2027.">
++	<link rel="canonical" href="https://www.racebox.pro/products/racebox-evo">
++	<meta property="og:title" content="RaceBox EVO Pre-order: 25 Hz Standalone Lap Timer | RaceBox">
++	<meta property="og:description" content="Pre-order RaceBox EVO, the standalone lap timer and drag meter with its own colour screen, now with 25 Hz GPS. $339.00 pre-order price, $449.00 after pre-order. Ships March 2027.">
++	<meta property="og:url" content="https://www.racebox.pro/products/racebox-evo">
++	<script type="application/ld+json">
++{
++ "@context": "https://schema.org/",
++ "@type": "Product",
++ "name": "RaceBox EVO",
++ "brand": {
++  "@type": "Brand",
++  "name": "RaceBox"
++ },
++ "image": [
++  "https://www.racebox.pro/assets/rb-updates/img/evo-angle-800.png"
++ ],
++ "description": "RaceBox EVO is the next generation of the original standalone RaceBox: the same windscreen-mounted unit with its own colour screen, now with 25 Hz GPS, a larger battery and more internal storage. Lap timing and drag runs on the device, no phone needed.",
++ "sku": "EVO_SKU",
++ "offers": {
++  "@type": "Offer",
++  "availability": "https://schema.org/PreOrder",
++  "availabilityStarts": "2027-03-01",
++  "priceCurrency": "USD",
++  "price": 339,
++  "itemCondition": "https://schema.org/NewCondition",
++  "url": "https://www.racebox.pro/products/racebox-evo"
++ }
++}
++	</script>
++</head>
++<body class="page-front rbu-evo-page">
++	<header>
++		<nav class="top">
++			<a href="/" class="logo"></a>
++			<a href="/store/checkout" class="cart"></a>
++			<div class="micon">
++				<input type="checkbox" />
++				<span></span><span></span><span></span>
++				<ul>
++										<li><a  href="/">Home</a></li>
++
++					<li class="product-single"><a href="/products/racebox">Racebox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li class="product-single"><a class="current" href="/products/racebox-evo">Racebox EVO</a></li>
++					<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
++					<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
++					<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
++					<li class="product-single"><a  href="/products/mobile-app">Mobile App</a></li>
++
++					<li class="product-many">
++						<input type="checkbox" id="menu_products_cb" />
++						<label for="menu_products_cb">Products</label>
++						<ul>
++							<li class="product-single"><a href="/products/racebox">Racebox</a></li>
++							<!-- rb-updates: 10 evo-page -->
++							<li class="product-single"><a class="current" href="/products/racebox-evo">Racebox EVO</a></li>
++							<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
++							<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
++							<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
++							<li class="product-single"><a  href="/products/mobile-app">Mobile App</a></li>
++						</ul>
++					</li>
++
++					<li><a  href="/info">Info &amp; Support</a></li>
++											<li><a  href="/webapp/login">Login</a></li>
++										<li><a  class="buy" href="/store/">Buy RaceBox</a></li>
++				</ul>
++			</div>
++		</nav>
++												<div class="shipping-info-banner">
++										<span>Free shipping to United States for all orders  over $300.00.</span>
++									</div>
++						</header>
++	
++	<main>
++<!-- rb-updates: 10 evo-page -->
++<section class="rbu-evo-hero" aria-labelledby="rbu-evo-title">
++	<div class="rbu-evo-hero-in">
++		<div class="rbu-evo-hero-copy">
++			<p class="rbu-evo-flag"><span class="rbu-badge">Pre-order</span> <span>Ships March&nbsp;2027</span></p>
++			<h1 class="rbu-evo-name" id="rbu-evo-title">RaceBox <span>EVO</span></h1>
++			<p class="rbu-evo-tagline">The RaceBox you know. Now at 25&nbsp;Hz.</p>
++			<p class="rbu-evo-lede">Built-in screen, 25&nbsp;Hz GPS, bigger battery and more storage. No phone needed at the track.</p>
++		</div>
++		<figure class="rbu-evo-hero-media">
++			<picture>
++				<source type="image/webp" srcset="/assets/rb-updates/img/evo-angle-400.webp 400w, /assets/rb-updates/img/evo-angle-800.webp 800w, /assets/rb-updates/img/evo-angle-1200.webp 1200w" sizes="(min-width: 1001px) 520px, (min-width: 700px) 44vw, 64vw" />
++				<img src="/assets/rb-updates/img/evo-angle-800.png" width="800" height="463" fetchpriority="high" decoding="async" alt="The current RaceBox, angled, with the lap timer on its screen" />
++			</picture>
++			<figcaption>Photos show the current RaceBox. EVO keeps the same shape; EVO photos follow before shipping.</figcaption>
++		</figure>
++		<div class="rbu-evo-buy" id="rbu-evo-buy">
++			<p class="rbu-price rbu-price--pre rbu-price--lg"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note">Pre-order price. $449.00 after pre-order.</span></p>
++			<div class="rbu-evo-actions">
++				<form method="post" action="/store/add-to-cart" class="js-add-to-cart" data-sku="EVO_SKU" data-name="RaceBox EVO" data-price="339" data-currency="USD"><input type="hidden" name="product" value="EVO_PRODUCT_ID" /><button class="rbu-btn rbu-btn--pre rbu-evo-cta">Pre-order now</button></form>
++				<a class="rbu-evo-more rbu-focus" href="#rbu-evo-how">How pre-ordering works</a>
++			</div>
++			<ul class="reddot rbu-evo-keyterms"><li>Paid in full at checkout, at the pre-order price.</li><li>Cancel any time before it ships for a full refund.</li><li>We email production updates while you wait.</li></ul>
++			<p class="price-note rbu-evo-currency">The price is in <strong>US Dollars</strong> and  is valid for <strong>United States</strong>.</p>
++		</div>
++	</div>
++</section>
++<!-- rb-updates: 10 evo-page -->
++<section class="rbu-evo-band rbu-evo-band--pink" aria-labelledby="rbu-evo-new-title">
++	<h2 id="rbu-evo-new-title">What's new</h2>
++	<p class="rbu-evo-intro">Same shape you know. Now at 25&nbsp;Hz.</p>
++	<ol class="rbu-evo-new"><li><span class="rbu-evo-new-n" aria-hidden="true">01</span><h3>25 Hz, on the dash</h3><p>25&nbsp;Hz GPS instead of 10&nbsp;Hz, with live lap, sector and drag results on its own colour screen.</p></li><li><span class="rbu-evo-new-n" aria-hidden="true">02</span><h3>Bigger battery</h3><p>A larger battery than the original RaceBox. Capacity and runtime are confirmed before shipping.</p></li><li><span class="rbu-evo-new-n" aria-hidden="true">03</span><h3>More storage</h3><p>More room for sessions on the device itself. The final figure is confirmed before shipping.</p></li><li><span class="rbu-evo-new-n" aria-hidden="true">04</span><h3>Same shape you know</h3><p>The windscreen-mounted design and four-button controls of the original RaceBox.</p></li></ol>
++</section>
++<div class="rbu-evo-photo">
++	<figure>
++		<picture>
++			<source type="image/webp" srcset="/assets/rb-updates/img/evo-windscreen-640.webp 640w, /assets/rb-updates/img/evo-windscreen-1024.webp 1024w, /assets/rb-updates/img/evo-windscreen-1600.webp 1600w, /assets/rb-updates/img/evo-windscreen-2048.webp 2048w" sizes="100vw" />
++			<img src="/assets/rb-updates/img/evo-windscreen-1024.jpg" width="1024" height="683" loading="lazy" decoding="async" alt="The current RaceBox on its windscreen suction mount, above a car's infotainment screen" />
++		</picture>
++		<figcaption>Photos show the current RaceBox. EVO keeps the same shape; EVO photos follow before shipping.</figcaption>
++	</figure>
++</div>
++<!-- rb-updates: 10 evo-page -->
++<section class="rbu-evo-band rbu-evo-band--grey" id="rbu-evo-how" aria-labelledby="rbu-evo-how-title">
++	<h2 id="rbu-evo-how-title">How pre-ordering works</h2>
++	<div class="rbu-evo-wrap">
++		<ol class="rbu-evo-steps" aria-label="Pre-order steps"><li class="is-now">Pre-order today</li><li>Production updates by email</li><li>Ships March&nbsp;2027</li><li>Delivered</li></ol>
++		<dl class="rbu-evo-terms"><div><dt>Payment</dt><dd>Paid in full at checkout, at the pre-order price.</dd></div><div><dt>Cancelling</dt><dd>Cancel any time before it ships for a full refund. <a href="/contact-us">Contact us</a> with your order number. After delivery you still have 14 days to change your mind.</dd></div><div><dt>Updates</dt><dd>We email production updates while you wait. If the ship date moves, we email you the new date before the old one passes.</dd></div><div><dt>Delivery</dt><dd>Ships March&nbsp;2027.</dd></div></dl>
++		<h3 class="rbu-evo-h3">Buying from RaceBox</h3>
++		<ul class="reddot rbu-evo-buying"><li>14 days money back</li><li>Secure payment via <strong>PayPal</strong> or <strong>Credit Card</strong></li><li>Delivery via <strong>DHL</strong></li><li>Shipped from <strong>European Union</strong></li><li>Import duties and taxes will be calculated during checkout and included in the final price.</li><li>Free shipping to United States for orders over $300.00.</li><li>No registration is required to order</li></ul>
++		<p class="rbu-evo-switch">Not purchasing in United States? <a href="#" class="country-select-open-button" data-current-selected="US">Switch&nbsp;country</a></p>
++	</div>
++</section>
++<!-- rb-updates: 10 evo-page -->
++<section class="rbu-evo-band" aria-labelledby="rbu-evo-vs-title">
++	<h2 id="rbu-evo-vs-title">EVO or RaceBox?</h2>
++	<div class="rbu-evo-wrap">
++		<p class="rbu-evo-intro">Same windscreen-mounted shape and four-button controls. EVO moves to 25&nbsp;Hz GPS.</p>
++		<div class="rbu-evo-table-scroll" role="region" aria-label="RaceBox and RaceBox EVO compared" tabindex="0">
++			<table class="rbu-evo-table rbu-evo-vs">
++				<thead><tr><th scope="col"><span class="rbu-sr">Feature</span></th><th scope="col">RaceBox</th><th scope="col">RaceBox EVO</th></tr></thead>
++				<tbody><tr><th scope="row">GPS update rate</th><td>10&nbsp;Hz</td><td>25&nbsp;Hz</td></tr><tr><th scope="row">Battery</th><td>Up to 8 hours driving, Wi-Fi off</td><td>Larger, figure TBA</td></tr><tr><th scope="row">Storage</th><td>256 drag and 128 track sessions</td><td>More, figure TBA</td></tr><tr><th scope="row">Availability</th><td>Dispatch within <strong>5 business days</strong></td><td>Pre-order, ships March&nbsp;2027</td></tr></tbody>
++			</table>
++		</div>
++		<p class="rbu-evo-link-row"><a class="rbu-evo-more rbu-focus" href="/products/racebox#evo-vs-racebox">See EVO and RaceBox side by side</a></p>
++	</div>
++</section>
++<!-- rb-updates: 10 evo-page -->
++<section class="rbu-evo-band rbu-evo-band--pink" aria-labelledby="rbu-evo-specs-title">
++	<h2 id="rbu-evo-specs-title">Specifications</h2>
++	<div class="rbu-evo-wrap">
++		<table class="rbu-evo-table rbu-evo-specs">
++			<caption class="rbu-sr">RaceBox EVO specifications</caption>
++			<tbody><tr><th scope="row">Display</th><td>Colour screen. Size and resolution <span class="rbu-evo-tba">TBA</span></td></tr><tr><th scope="row">GNSS update rate</th><td>25&nbsp;Hz</td></tr><tr><th scope="row">Standalone use</th><td>Yes: on-device lap timer, drag meter and history</td></tr><tr><th scope="row">Battery</th><td>Larger than the original RaceBox. Final figure <span class="rbu-evo-tba">TBA</span></td></tr><tr><th scope="row">Storage</th><td>Larger than the original RaceBox. Final figure <span class="rbu-evo-tba">TBA</span></td></tr><tr><th scope="row">App</th><td>RaceBox app for iOS and Android</td></tr><tr><th scope="row">App connection</th><td><span class="rbu-evo-tba">TBA</span></td></tr><tr><th scope="row">Third-party apps</th><td><span class="rbu-evo-tba">TBA</span></td></tr><tr><th scope="row">Accessory fit</th><td><span class="rbu-evo-tba">TBA</span>, confirmed before shipping</td></tr><tr><th scope="row">Ships</th><td>March&nbsp;2027</td></tr></tbody>
++		</table>
++		<p class="rbu-evo-small">Figures marked TBA are confirmed before EVO ships. For the current RaceBox, see its <a href="/products/racebox/tech-specs">technical specifications</a>.</p>
++	</div>
++</section>
++<!-- rb-updates: 10 evo-page -->
++<section class="rbu-evo-band" aria-labelledby="rbu-evo-faq-title">
++	<h2 id="rbu-evo-faq-title">Pre-order questions</h2>
++	<div class="rbu-evo-wrap rbu-evo-faq"><details class="rbu-evo-faq-item" open><summary>When does RaceBox EVO ship?</summary><p>March&nbsp;2027. You can cancel any time before it ships for a full refund.</p></details><details class="rbu-evo-faq-item"><summary>Will I be charged now?</summary><p>Yes. Pre-orders are paid in full at checkout, at the pre-order price.</p></details><details class="rbu-evo-faq-item"><summary>Can I cancel my pre-order?</summary><p>Yes, any time before it ships, for a full refund of everything you paid. Contact us with your order number. After delivery you still have 14 days to change your mind.</p></details><details class="rbu-evo-faq-item"><summary>Will you keep me updated while I wait?</summary><p>Yes. We email production updates while you wait. If the ship date moves, we email you the new date before the old one passes: keep your place or cancel for a full refund.</p></details><details class="rbu-evo-faq-item"><summary>Should I wait for EVO or buy the RaceBox now?</summary><p>If you want it before March&nbsp;2027, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz. EVO adds 25&nbsp;Hz GPS, a larger battery and more storage. On a motorcycle, the Mini S is the better fit: EVO is built for cars.</p></details><details class="rbu-evo-faq-item"><summary>Will my RaceBox accessories fit EVO?</summary><p>EVO has the same shape as the original RaceBox. Which accessories fit is confirmed before it ships.</p></details><details class="rbu-evo-faq-item"><summary>What will EVO cost after pre-order?</summary><p>449 (USD or EUR) once pre-orders close. Pre-orders pay 339.</p></details></div>
++</section>
++<!-- rb-updates: 10 evo-page -->
++<section class="rbu-evo-band rbu-evo-band--mist" aria-labelledby="rbu-evo-sooner-title">
++	<h2 id="rbu-evo-sooner-title">Need it sooner?</h2>
++	<div class="rbu-evo-wrap rbu-evo-sooner">
++		<div class="rbu-evo-sooner-main">
++			<img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" />
++			<div>
++				<h3>RaceBox ships now</h3>
++				<p>If you want it before March&nbsp;2027, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz.</p>
++				<p class="rbu-evo-rb-price">$399.00</p>
++				<a class="rbu-btn rbu-btn--ghost rbu-evo-sooner-btn" href="/products/racebox">See the RaceBox</a>
++			</div>
++		</div>
++		<div class="rbu-evo-sooner-side">
++			<h3>On a motorcycle?</h3>
++			<p>EVO is built for cars. On a motorcycle, the Mini&nbsp;S is the better fit.</p>
++			<a class="rbu-evo-more rbu-focus" href="/products/racebox-mini-s">See the RaceBox Mini S</a>
++		</div>
++	</div>
++</section>
++<!-- rb-updates: 10 evo-page -->
++<div id="add-to-cart-popup" class="bottom-popup-element cart-icon rbu-evo-sticky" data-track-element-id="rbu-evo-buy">
++	<div>
++		<div class="left rbu-price-inline"><p class="rbu-price rbu-price--pre rbu-price--sm"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong></p></div>
++		<div class="right">
++			<form method="post" action="/store/add-to-cart" class="js-add-to-cart" data-sku="EVO_SKU" data-name="RaceBox EVO" data-price="339" data-currency="USD"><input type="hidden" name="product" value="EVO_PRODUCT_ID" /><button class="submit rbu-submit-pre">Pre-order</button></form>
++		</div>
++	</div>
++</div>
++<div class="js-track-product-view hidden" style="display: none;" data-product="{&quot;name&quot;:&quot;RaceBox EVO&quot;,&quot;sku&quot;:&quot;EVO_SKU&quot;,&quot;price&quot;:339,&quot;currency&quot;:&quot;USD&quot;,&quot;googleCategory&quot;:&quot;Electronics &gt; GPS Tracking Devices&quot;}"></div>
++</main>
++	
++	<footer>
++		<div class="c">
++			<div class="lc logo"></div>
++			<div class="mc uc">
++				<ul>
++									<li><a href="/features">Features</a></li>
++					<li><a href="/products/racebox">RaceBox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li><a href="/products/racebox-evo">RaceBox EVO</a></li>
++					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
++					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
++					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
++					<li><a href="/products/mobile-app">RaceBox App</a></li>
++				</ul>
++				<ul>
++					<li><a href="/info/tracks">Tracks Database</a></li>
++					<li><a href="/info">Info &amp; Support</a></li>
++					<li><a href="/contact-us">Contact us</a></li>
++					<li><a href="/info/faq">FAQ</a></li>
++				</ul>
++			</div>
++			<div class="rc">
++				Follow us
++				<div class="followus">
++					<a href="https://www.facebook.com/RaceBox.Pro/" target="_blank" class="fb"></a>
++					<a href="https://www.instagram.com/racebox.pro/" target="_blank" class="inst"></a>
++					<a href="https://www.youtube.com/channel/UCLsVI6Nzo5PZHkbyAaLwUvA" target="_blank" class="yt"></a>
++				</div>
++			</div>
++		</div>
++		<div class="c pp">
++			<div class="lc">
++				<a href="/info/privacy-policy">Privacy Policy</a>
++			</div>
++			<ul class="mc ul">
++				<li><a href="/info/terms-and-conditions">Terms and Conditions</a></li>
++				<li><a href="/info/warranty">Warranty</a></li>
++				<li><a href="#" class="cookie-consent-popup-trigger">Cookies Settings</a></li>
++			</ul>
++			<div class="rc">
++				<span>Copyright &copy; 2020-2026 RaceBox</span>
++			</div>
++		</div>
++	</footer>
++
++	<script src="/assets/v-1776405836/js/js.cookie.min.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
++	<script src="/assets/v-1776405836/js/jquery.min.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
++	<script src="/assets/v-1776405836/js/err.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
++	<script nonce="ZYbI46GO6phrxYtGvZsgifdz5eM=">
++		window.privacyPolicyUrl = "\/info\/privacy-policy";
++	</script>
++	<script src="/assets/v-1776405836/js/cookie-consent.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
++	<script src="/assets/v-1776405836/js/main-menu.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
++	    <script nonce="ZYbI46GO6phrxYtGvZsgifdz5eM=">
++        window.trackingConfig = {"googleAnalyticsIds":["AW-1043149484","G-G2J5N15SF8"],"facebookIds":["603126063791663"],"redditIds":["a2_fvuqt3dzbvjg"],"tiktokIds":["CSL0IH3C77UFLUH9T6N0"],"clarityProjectId":"ytwe0rb7mv","twitterConfigs":[{"pixelId":"opvlb","pageVisitEvent":"tw-opvlb-opvlh","addToCartEvent":"tw-opvlb-opvlu","checkoutStartEvent":"tw-opvlb-opvlx","checkoutCompleteEvent":"tw-opvlb-opvm2","productViewEvent":"tw-opvlb-opvlj"}]};
++    </script>
++        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1043149484" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM=" crossorigin></script>
++            <script src="/store-assets/js/analytics.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM=" crossorigin></script>
++    
++<!-- rb-updates: 10 evo-page: no newsletter popup on this page -->
++						<script src="/assets/v-1776405836/js/bottom-popup-element.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
++					<div class="modal-container" id="country-select-modal" data-countries-url="/ajax/countries">
++	<div>
++		<div class="header">
++			<span class="close">&times;</span>			<h3>Choose your country</h3>
++		</div>
++		<div class="contents">
++			<div class="loading">Loading...</div>
++			<div class="loaded">
++				<form method="post" action="/ajax/country-switch">
++					<select name="country"> </select>
++					<button class="submit">Select</button>
++				</form>
++			</div>
++		</div>
++	</div>
++</div>
++
++<script defer src="/assets/v-1776405836/js/country-select.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
++<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
++</body>
++</html>

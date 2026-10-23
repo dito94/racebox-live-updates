@@ -103,4 +103,5 @@ Use test codes from the store admin: one valid (10%), one invalid, one that does
 - Empty checkout: checkout.js still builds `CheckoutForm` without `#checkout-form`, so its first sync posts to `/store/undefined`.
 - `newsletter-subscribe-popup.js` throws when storage is blocked (`typeof localStorage` throws), so the popup breaks in those browsers.
 - The store hero `<img>` has no width and height. That causes an occasional layout shift of about 0.17 on load, on the original pages too (Clarity reports CLS 0.18).
+- The notice in the order summary pushes the cart content down when it appears, about a second after load. That adds a layout shift of about 0.015 on a phone and 0.005 on a laptop (measured with the rebuilt checkout page). The checkout page already shifts by about 0.055 on a phone without any code, from the header image and the "Proceed" button area loading.
 - The mirror has no back end, so the checkout tests used a page rebuilt from the selectors checkout.js uses and a mocked cart endpoint. The staging run above is the real check.

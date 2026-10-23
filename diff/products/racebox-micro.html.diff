@@ -1,0 +1,92 @@
+--- original/products/racebox-micro.html
++++ patched/products/racebox-micro.html
+@@ -3,6 +3,7 @@
+ <head>
+ 	<title>Micro | RaceBox</title>
+ 	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
+ 		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/favicon.ico" rel="shortcut icon" />
+@@ -50,6 +51,8 @@
+ </head>
+ <body class="page-front">
+ 	<header>
++			<!-- rb-updates: 20 evo-banner -->
++			<div class="rbu-evo-bar"><div class="rbu-evo-bar-in rbu-price-inline"><span class="rbu-evo-bar-lead"><strong><span class="rbu-evo-bar-brand">RaceBox </span>EVO</strong> pre-order:</span> <p class="rbu-price rbu-price--pre rbu-price--sm"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong></p><span class="rbu-evo-bar-tail"><span class="rbu-evo-bar-sep" aria-hidden="true"> &middot; </span><span>Ships March&nbsp;2027<span class="rbu-sr">.</span></span><span class="rbu-evo-bar-sep" aria-hidden="true"> &middot; </span><a class="rbu-evo-bar-link" href="/products/racebox-evo">Pre-order EVO</a></span></div></div>
+ 		<nav class="top">
+ 			<a href="/" class="logo"></a>
+ 			<a href="/store/checkout" class="cart"></a>
+@@ -60,6 +63,8 @@
+ 										<li><a  href="/">Home</a></li>
+ 
+ 					<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 					<li class="product-single"><a class="current" href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -70,6 +75,8 @@
+ 						<label for="menu_products_cb">Products</label>
+ 						<ul>
+ 							<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++							<!-- rb-updates: 10 evo-page -->
++							<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 							<li class="product-single"><a class="current" href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -88,7 +95,37 @@
+ 									</div>
+ 						</header>
+ 	
+-	<main>    <section class="top-banner front-video" role="banner">
++	<main>    <!-- rb-updates: 50 pdp-first-screen -->
++<section class="rbu-pdp" aria-labelledby="rbu-pdp-name">
++	<div class="rbu-pdp-in">
++		<div class="rbu-pdp-media"><img src="/product-image/racebox-micro-200.png" alt="RaceBox Micro" width="200" height="200" /></div>
++		<div class="rbu-pdp-body">
++			<h1 class="rbu-pdp-name" id="rbu-pdp-name">RaceBox Micro</h1>
++			<ul class="reddot rbu-pdp-points">
++				<li>Wide input voltage range</li>
++				<li>Over 2 hours of standalone storage</li>
++				<li>25Hz GPS Update Rate</li>
++				<li>DIY friendly</li>
++			</ul>
++			<div class="rbu-pdp-buy">
++				<p class="rbu-pdp-offer">Limited Time Offer</p>
++				<div class="rbu-pdp-price-row">
++					<p class="rbu-pdp-price"><s><span class="rbu-sr">Regular price </span>$139.00</s> <strong><span class="rbu-sr">Offer price </span>$129.00</strong></p>
++					<p class="rbu-pdp-stock">Limited Stock</p>
++				</div>
++				<div class="rbu-pdp-actions">
++					<form method="post" action="/store/add-to-cart" class="js-add-to-cart" data-sku="RB12" data-name="RaceBox Micro" data-price="129" data-currency="USD">
++						<input type="hidden" name="product" value="661d19bf9ad23ab2b500043b" />
++						<button class="submit">Add to cart</button>
++					</form>
++					<a class="rbu-pdp-more" href="#buy-section">Delivery, payment and returns</a>
++				</div>
++				<p class="rbu-pdp-note">The price is in <strong>US Dollars</strong> and is valid for <strong>United States</strong>. <a href="#" class="country-select-open-button" data-current-selected="US">Switch&nbsp;country</a></p>
++			</div>
++		</div>
++	</div>
++</section>
++<section class="top-banner front-video" role="banner">
+                                     <video autoplay muted playsinline loop poster="/assets/v-1776405836/video/racebox-micro/header-image-1920.jpg">
+             <source src="/assets/v-1776405836/video/racebox-micro/header-1920.webm" type="video/webm" />
+             <source src="/assets/v-1776405836/video/racebox-micro/header-1920.ogv" type="video/ogg" />
+@@ -286,6 +323,8 @@
+ 				<ul>
+ 									<li><a href="/features">Features</a></li>
+ 					<li><a href="/products/racebox">RaceBox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li><a href="/products/racebox-evo">RaceBox EVO</a></li>
+ 					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
+ 					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
+ 					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
+@@ -356,5 +395,6 @@
+ </div>
+ 
+ <script defer src="/assets/v-1776405836/js/country-select.js" nonce="rnwPpPikAvcdMaPRbyv2a8Pfqz0="></script>
++<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
+ </body>
+ </html>

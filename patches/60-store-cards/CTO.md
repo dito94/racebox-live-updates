@@ -25,6 +25,7 @@ Nothing else in the card changes. See More and Add to cart stay exactly as they 
 **CSS.** `rb-updates.css`, section `60-store-cards/style.css`. How it works:
 - The name link's `::after` stretches over the whole card (`position:absolute; inset:0`). The card is already `position:relative` in main.css.
 - `.buttons` sits above it (`z-index:2`), so See More and Add to cart work as before.
+- `.buttons::before` adds a safety margin around the two buttons: 8px above, 10px left and right, 16px below (the card has 20px padding at the bottom). It has `z-index:-1`, so it sits behind the buttons but above the stretched link. A tap that just misses a button does nothing, as on the original page, instead of opening the product. Taps further away (image, name, bullets, price) open the product.
 - `isolation:isolate` on each card keeps the stretched link inside its card, under the fixed header and the "Get 10% off!" button.
 - Hover: the existing grey card, the name underlined in brand red, the photo grows 5%. Keyboard focus: a 2px ink ring around the whole card. No photo motion with "reduce motion".
 
@@ -36,6 +37,7 @@ Nothing else in the card changes. See More and Add to cart stay exactly as they 
 - [ ] /store/ on a phone: tap a photo, a name, a bullet and a price on several cards. Each opens that product.
 - [ ] Tap See More: opens the product. Tap Add to cart: adds to cart, does not open the product page.
 - [ ] Tap the gap between See More and Add to cart: nothing happens (no accidental navigation next to the buttons).
+- [ ] Tap about 6 px beside Add to cart, and about 10 px below it: nothing happens, you stay on /store/. Tap the price: the product opens.
 - [ ] Desktop: hover a card. Grey card, red underline under the name, photo grows slightly.
 - [ ] Keyboard: Tab through the store. Each card gives name, See More, Add to cart, with a visible ring on the card.
 - [ ] Ctrl/Cmd+click and long-press on a photo: "open in new tab" works.

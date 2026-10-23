@@ -1,0 +1,54 @@
+--- original/info/racebox-user-manual/troubleshooting.html
++++ patched/info/racebox-user-manual/troubleshooting.html
+@@ -3,6 +3,7 @@
+ <head>
+ 	<title>User Manual - Troubleshooting | RaceBox</title>
+ 	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
+ 		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/favicon.ico" rel="shortcut icon" />
+@@ -11,6 +12,8 @@
+ 	</head>
+ <body class="">
+ 	<header>
++			<!-- rb-updates: 20 evo-banner -->
++			<div class="rbu-evo-bar"><div class="rbu-evo-bar-in rbu-price-inline"><span class="rbu-evo-bar-lead"><strong><span class="rbu-evo-bar-brand">RaceBox </span>EVO</strong> pre-order:</span> <p class="rbu-price rbu-price--pre rbu-price--sm"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong></p><span class="rbu-evo-bar-tail"><span class="rbu-evo-bar-sep" aria-hidden="true"> &middot; </span><span>Ships March&nbsp;2027<span class="rbu-sr">.</span></span><span class="rbu-evo-bar-sep" aria-hidden="true"> &middot; </span><a class="rbu-evo-bar-link" href="/products/racebox-evo">Pre-order EVO</a></span></div></div>
+ 		<nav class="top">
+ 			<a href="/" class="logo"></a>
+ 			<a href="/store/checkout" class="cart"></a>
+@@ -21,6 +24,8 @@
+ 										<li><a  href="/">Home</a></li>
+ 
+ 					<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -31,6 +36,8 @@
+ 						<label for="menu_products_cb">Products</label>
+ 						<ul>
+ 							<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++							<!-- rb-updates: 10 evo-page -->
++							<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -119,6 +126,8 @@
+ 				<ul>
+ 									<li><a href="/features">Features</a></li>
+ 					<li><a href="/products/racebox">RaceBox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li><a href="/products/racebox-evo">RaceBox EVO</a></li>
+ 					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
+ 					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
+ 					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
+@@ -213,5 +222,6 @@
+ </div>
+ <a href="#" class="newsletter-popup-trigger fixed ">Get 10% off!</a>
+ <script src="/assets/v-1776405836/js/newsletter-subscribe-popup.js" nonce="jLNSrtSoMckRhyYTVNhxfkT+nfI="></script>
+-			</body>
++			<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
++</body>
+ </html>

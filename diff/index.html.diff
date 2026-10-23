@@ -1,0 +1,87 @@
+--- original/index.html
++++ patched/index.html
+@@ -3,6 +3,7 @@
+ <head>
+ 	<title>RaceBox</title>
+ 	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
+ 		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/favicon.ico" rel="shortcut icon" />
+@@ -11,6 +12,8 @@
+ 	</head>
+ <body class="page-front">
+ 	<header>
++			<!-- rb-updates: 20 evo-banner -->
++			<div class="rbu-evo-bar"><div class="rbu-evo-bar-in rbu-price-inline"><span class="rbu-evo-bar-lead"><strong><span class="rbu-evo-bar-brand">RaceBox </span>EVO</strong> pre-order:</span> <p class="rbu-price rbu-price--pre rbu-price--sm"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong></p><span class="rbu-evo-bar-tail"><span class="rbu-evo-bar-sep" aria-hidden="true"> &middot; </span><span>Ships March&nbsp;2027<span class="rbu-sr">.</span></span><span class="rbu-evo-bar-sep" aria-hidden="true"> &middot; </span><a class="rbu-evo-bar-link" href="/products/racebox-evo">Pre-order EVO</a></span></div></div>
+ 		<nav class="top">
+ 			<a href="/" class="logo"></a>
+ 			<a href="/store/checkout" class="cart"></a>
+@@ -21,6 +24,8 @@
+ 										<li><a class="current" href="/">Home</a></li>
+ 
+ 					<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -31,6 +36,8 @@
+ 						<label for="menu_products_cb">Products</label>
+ 						<ul>
+ 							<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++							<!-- rb-updates: 10 evo-page -->
++							<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -64,6 +71,32 @@
+ </picture>
+ 
+ 	</div>
++	<!-- rb-updates: 30 home-evo -->
++	<section class="rbu-home-evo" aria-labelledby="rbu-home-evo-title">
++		<div class="rbu-home-evo-card">
++			<div class="rbu-home-evo-copy">
++				<p class="rbu-home-evo-flag"><span class="rbu-badge">Pre-order</span> <span>Ships March 2027</span></p>
++				<h2 class="rbu-home-evo-name" id="rbu-home-evo-title">RaceBox <span>EVO</span></h2>
++				<p class="rbu-home-evo-tagline">The RaceBox you know. Now at 25&nbsp;Hz.</p>
++				<p class="rbu-home-evo-lede">Built-in screen, 25&nbsp;Hz GPS, bigger battery and more storage.</p>
++			</div>
++			<figure class="rbu-home-evo-media">
++				<picture>
++					<source type="image/webp" srcset="/assets/rb-updates/img/home-evo-cut-racebox-angle-400.webp 400w, /assets/rb-updates/img/home-evo-cut-racebox-angle-800.webp 800w" sizes="(min-width: 1001px) 440px, (min-width: 700px) 50vw, 86vw" />
++					<img src="/assets/rb-updates/img/home-evo-cut-racebox-angle-800.png" width="800" height="463" loading="lazy" decoding="async" alt="The current RaceBox, angled, with the lap timer on its screen" />
++				</picture>
++				<figcaption>Photos show the current RaceBox. EVO keeps the same shape; EVO photos follow before shipping.</figcaption>
++			</figure>
++			<div class="rbu-home-evo-buy">
++				<p class="rbu-price rbu-price--pre rbu-price--lg"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note">Pre-order price. $449.00 after pre-order.</span></p>
++				<p class="rbu-home-evo-actions">
++					<a class="rbu-btn rbu-btn--pre" href="/products/racebox-evo">Pre-order EVO</a>
++					<a class="rbu-home-evo-link rbu-focus" href="/products/racebox#evo-vs-racebox">Compare with the RaceBox</a>
++				</p>
++				<p class="rbu-home-evo-terms">Paid in full at checkout, at the pre-order price. Cancel any time before it ships for a full refund.</p>
++			</div>
++		</div>
++	</section>
+ 	<h1><a id="what-is-racebox"></a>Introducing RaceBox</h1>
+ 	
+ 	<p class="t l chrono">RaceBox is the most modern and precise way to measure the performance stats of your vehicle. Measuring 0-100km/h acceleration, 1/4 mile times or laps around your favorite race circuit has never been easier. Join the RaceBox family today and all this will be just a press of a button away from you.</p>
+@@ -145,6 +178,8 @@
+ 				<ul>
+ 									<li><a href="/features">Features</a></li>
+ 					<li><a href="/products/racebox">RaceBox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li><a href="/products/racebox-evo">RaceBox EVO</a></li>
+ 					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
+ 					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
+ 					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
+@@ -239,5 +274,6 @@
+ </div>
+ <a href="#" class="newsletter-popup-trigger fixed ">Get 10% off!</a>
+ <script src="/assets/v-1776405836/js/newsletter-subscribe-popup.js" nonce="2dMomI4oUPmZwx0IrCmHlY8oTZU="></script>
+-			</body>
++			<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
++</body>
+ </html>

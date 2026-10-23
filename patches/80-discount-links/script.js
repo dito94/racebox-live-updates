@@ -134,6 +134,10 @@
       slot.parent.insertBefore(t, slot.before);
       toast = t;
     } else {
+      // A named region, so the toast is inside a landmark like the rest of the page (inside the order summary the
+      // notice is already inside <main>).
+      t.setAttribute('role', 'region');
+      t.setAttribute('aria-label', 'Discount code');
       // Right after the header, so Dismiss comes early in the tab order; it is position: fixed, so nothing moves.
       var header = document.querySelector('body > header');
       if (header && header.parentNode) header.parentNode.insertBefore(t, header.nextSibling);

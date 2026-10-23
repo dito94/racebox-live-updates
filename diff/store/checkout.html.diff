@@ -1,0 +1,45 @@
+--- original/store/checkout.html
++++ patched/store/checkout.html
+@@ -3,6 +3,7 @@
+ <head>
+ 	<title>Checkout | RaceBox</title>
+ 	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=dd9bf7652d" type="text/css" rel="stylesheet" media="all" />
+ 		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+ 	<link href="/favicon.ico" rel="shortcut icon" />
+@@ -21,6 +22,8 @@
+ 										<li><a  href="/">Home</a></li>
+ 
+ 					<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 					<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -31,6 +34,8 @@
+ 						<label for="menu_products_cb">Products</label>
+ 						<ul>
+ 							<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
++							<!-- rb-updates: 10 evo-page -->
++							<li class="product-single"><a  href="/products/racebox-evo">Racebox EVO</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+ 							<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+@@ -84,6 +89,8 @@
+ 				<ul>
+ 									<li><a href="/features">Features</a></li>
+ 					<li><a href="/products/racebox">RaceBox</a></li>
++					<!-- rb-updates: 10 evo-page -->
++					<li><a href="/products/racebox-evo">RaceBox EVO</a></li>
+ 					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
+ 					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
+ 					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
+@@ -135,5 +142,6 @@
+             <script src="/store-assets/js/analytics.js" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc=" crossorigin></script>
+     
+ 								<script src="/assets/v-1776405836/js/store/checkout.js" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc="></script>
+-					</body>
++					<script src="/assets/rb-updates/rb-updates.js?v=dd9bf7652d" defer></script>
++</body>
+ </html>
