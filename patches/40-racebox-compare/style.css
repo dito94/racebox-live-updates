@@ -42,13 +42,17 @@
 .rbu-cmp .rbu-price { font-size: 1rem; }
 .rbu-cmp .rbu-price-note { font-family: var(--rbu-font-light); }
 .rbu-cmp form.js-add-to-cart { margin: 0; }
-/* The live add-to-cart form, drawn like the EVO button next to it (same height, radius and type) */
-.rbu-cmp form.js-add-to-cart button.submit {
-  display: inline-flex; align-items: center; justify-content: center; height: auto; min-height: 44px; margin: 0; padding: 0 1.4em;
-  border: 0; border-radius: var(--rbu-radius); font: 1rem/1 var(--rbu-font); text-transform: none; background: var(--rbu-red-dark); color: #fff;
+/* Both buttons in the last row use the live button shape (main.css button.submit: pill, uppercase RaceBox-Regular),
+   so the table's Add to cart looks like the buy section's, the sticky Add to cart bar's and the first-screen one's,
+   and Pre-order EVO matches it in violet. 44 px tall for touch. */
+.rbu-cmp form.js-add-to-cart button.submit, .rbu-cmp .rbu-cmp-buy .rbu-btn {
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; height: auto; min-height: 44px;
+  margin: 0; padding: 0 30px; border: 0; border-radius: 22px; font: 1.125rem/1.1 var(--rbu-font); letter-spacing: normal;
+  text-transform: uppercase; text-decoration: none; color: #fff;
 }
-/* dark red: white text on the brand red #ea2127 is 4.4:1, under the 4.5:1 AA minimum for 16px text */
-.rbu-cmp form.js-add-to-cart button.submit:hover { background: #a3121a; }
+/* The live red #ea2127 gives white text 4.4:1; #e32026 looks the same and reaches 4.7:1 (WCAG AA) */
+.rbu-cmp form.js-add-to-cart button.submit:not(:disabled) { background: #e32026; }
+.rbu-cmp form.js-add-to-cart button.submit:not(:disabled):hover { background: var(--rbu-red-dark); }
 .rbu-cmp form.js-add-to-cart button.submit:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; box-shadow: 0 0 0 4px #fff; }
 
 .rbu-cmp .rbu-cmp-note { max-width: 960px; margin: 16px auto 0; padding: 4px 0; background: #f1f1f3; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
@@ -78,5 +82,11 @@
   .rbu-cmp-table tbody td::before { content: attr(data-label); content: attr(data-label) / ""; display: block; margin-bottom: 2px; font: .6875rem/1.3 var(--rbu-font-light); letter-spacing: .08em; text-transform: uppercase; color: var(--rbu-text-2); }
   .rbu-cmp-buy th { padding-top: 16px; }
   .rbu-cmp-buy td { padding-top: 10px; padding-bottom: 18px; }
-  .rbu-cmp .rbu-cmp-buy .rbu-btn, .rbu-cmp .rbu-cmp-buy button.submit { width: 100%; padding: 0 10px; white-space: normal; text-align: center; line-height: 1.2; }
+  .rbu-cmp .rbu-cmp-buy .rbu-btn, .rbu-cmp .rbu-cmp-buy button.submit { width: 100%; padding: 6px 10px; font-size: .9375rem; white-space: normal; text-align: center; line-height: 1.2; }
+}
+
+/* main.css sets html { scroll-behavior: smooth }, so the link from the home page and the EVO page glides about
+   2,500 px down to this table. Jump instead when the visitor asks for less motion. (Site-wide: belongs in 00-core.) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }

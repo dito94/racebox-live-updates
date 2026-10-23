@@ -1,7 +1,10 @@
 /* 30 home-evo: RaceBox EVO pre-order section on the home page, below the top photo.
    Sits inside section.front-introduction (grey with the red centre line); the white card covers the line like the
    live headings do, so the line runs from the photo into the card and on to "Introducing RaceBox". */
-.rbu-home-evo { position: relative; margin: 0 0 72px; padding: 0 20px; }
+/* The negative top margin takes the photo's 72 px bottom margin (main.css .topimg) down to 32 px: the red line still runs
+   from the photo into the card, and on phones and tablets the price, Pre-order EVO and "Compare with the RaceBox" sit
+   higher in the first screen, clear of the live fixed "Get 10% off!" tab at 390 x 844 and 768 x 1024. */
+.rbu-home-evo { position: relative; margin: -40px 0 72px; padding: 0 20px; }
 .rbu-home-evo *, .rbu-home-evo *::before, .rbu-home-evo *::after { box-sizing: border-box; }
 .rbu-home-evo-card {
   max-width: 960px; margin: 0 auto; padding: 44px 48px 40px; background: #fff; border-radius: 8px;
