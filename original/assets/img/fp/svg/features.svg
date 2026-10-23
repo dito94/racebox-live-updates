@@ -1,0 +1,3070 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256"
+   height="64"
+   viewBox="0 0 67.733334 16.933334"
+   version="1.1"
+   id="svg3861"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   sodipodi:docname="features.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs3855">
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect10"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="round"
+       line_width="1"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect8"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="round"
+       line_width="1.000002"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+    <inkscape:path-effect
+       effect="join_type"
+       id="path-effect7"
+       is_visible="true"
+       lpeversion="1"
+       linecap_type="round"
+       line_width="1.000002"
+       linejoin_type="extrp_arc"
+       miter_limit="100"
+       attempt_force_join="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="11.2"
+     inkscape:cx="217.90179"
+     inkscape:cy="35.535714"
+     inkscape:document-units="px"
+     inkscape:current-layer="Layer_1-7"
+     showgrid="true"
+     showguides="true"
+     units="px"
+     inkscape:window-width="1862"
+     inkscape:window-height="1016"
+     inkscape:window-x="58"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:guide-bbox="true"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid5047"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px"
+       visible="true" />
+    <sodipodi:guide
+       position="33.866667,12.170834"
+       orientation="1,0"
+       id="guide5583"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="42.333333,12.964584"
+       orientation="1,0"
+       id="guide6397"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="46.566668,17.4625"
+       orientation="1,0"
+       id="guide6399"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="42.597918,8.4666668"
+       orientation="0,1"
+       id="guide6401"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="50.530692,15.456864"
+       orientation="1,0"
+       id="guide1"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="59.258666,11.838508"
+       orientation="1,0"
+       id="guide8"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3858">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-280.06664)">
+    <g
+       id="g3867"
+       transform="matrix(0.26458333,0,0,0.26458333,-0.2645833,280.19894)">
+      <path
+         id="path3863"
+         d="m 17,0.5 c -5.611,0 -10.161,4.549 -10.161,10.161 0,1.562 0.266,3.084 0.99,4.354 C 15.549,28.564 17,30.5 17,30.5 c 0,0 1.451,-1.936 9.17,-15.484 0.726,-1.271 0.991,-2.793 0.991,-4.354 C 27.161,5.049 22.611,0.5 17,0.5 Z"
+         stroke-miterlimit="10"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      <circle
+         id="circle3865"
+         r="4.3540001"
+         cy="10.661"
+         cx="17"
+         stroke-miterlimit="10"
+         style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </g>
+    <g
+       id="g3891"
+       transform="matrix(0.26458333,0,0,0.26458333,8.2020966,279.74461)">
+      <g
+         id="g3887">
+        <circle
+           id="circle3879"
+           r="3.75"
+           cy="17.438"
+           cx="17"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <path
+           id="path3881"
+           d="m 9.5,17.438 c 0,-4.137 3.366,-7.5 7.5,-7.5 4.135,0 7.5,3.363 7.5,7.5"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <path
+           id="path3883"
+           d="m 5.75,17.438 c 0,-6.203 5.048,-11.25 11.25,-11.25 6.201,0 11.25,5.047 11.25,11.25"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <path
+           id="path3885"
+           d="m 2,17.438 c 0,-8.271 6.731,-15 15,-15 8.27,0 15,6.729 15,15"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <line
+         id="line3889"
+         y2="32"
+         x2="16.5"
+         y1="22"
+         x1="16.5"
+         stroke-miterlimit="10"
+         style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+    </g>
+    <g
+       id="g4095"
+       transform="matrix(0.26458333,0,0,0.26458333,16.670086,279.66977)">
+      <g
+         display="none"
+         id="Layer_1"
+         style="display:none">
+        <path
+           id="path3907"
+           d="M 32.018,5.732 C 31.53,5.244 31.14,5.5 30.5,5.5 H 4.5 C 3.86,5.5 2.97,5.244 2.482,5.732 1.994,6.221 1.5,6.36 1.5,7 v 21 c 0,0.64 0.494,1.779 0.982,2.268 C 2.97,30.756 3.86,31.5 4.5,31.5 h 26 c 0.64,0 1.03,-0.744 1.518,-1.232 C 32.506,29.779 32.5,28.64 32.5,28 V 7 c 0,-0.64 0.006,-0.779 -0.482,-1.268 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <rect
+           id="rect3909"
+           height="16"
+           width="21"
+           stroke-miterlimit="10"
+           display="inline"
+           y="10.5"
+           x="6.5"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <g
+         id="Layer_2"
+         transform="translate(0,-2.9625496)">
+        <g
+           id="g3922">
+          <g
+             id="g3918">
+            <path
+               id="path3912"
+               d="m 11,25.42 c 1.758,-1.756 3,-3 6,-3 3,0 4.242,1.242 6,3"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path3914"
+               d="m 6.5,20.92 c 2.93,-2.928 6,-4.5 10.5,-4.5 4.5,0 7.57,1.57 10.5,4.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path3916"
+               d="m 2,16.42 c 4.059,-4.059 9,-6 15,-6 6,0 10.857,1.857 15,6"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <path
+             id="path3920"
+             d="m 17.766,30.5 c -0.424,-0.424 -1.108,-0.424 -1.532,0"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_3"
+         style="display:none">
+        <g
+           id="g3929"
+           display="inline"
+           style="display:inline">
+          <path
+             id="path3925"
+             d="m 17,0.5 c -5.611,0 -10.161,4.549 -10.161,10.161 0,1.562 0.266,3.084 0.99,4.354 C 15.549,28.564 17,30.5 17,30.5 c 0,0 1.451,-1.936 9.17,-15.484 0.726,-1.271 0.991,-2.793 0.991,-4.354 C 27.161,5.049 22.611,0.5 17,0.5 Z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          <circle
+             id="circle3927"
+             r="4.3540001"
+             cy="10.661"
+             cx="17"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_4"
+         style="display:none">
+        <g
+           id="g3944"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g3940">
+            <circle
+               id="circle3932"
+               r="3.75"
+               cy="17.438"
+               cx="17"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path3934"
+               d="m 9.5,17.438 c 0,-4.137 3.366,-7.5 7.5,-7.5 4.135,0 7.5,3.363 7.5,7.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path3936"
+               d="m 5.75,17.438 c 0,-6.203 5.048,-11.25 11.25,-11.25 6.201,0 11.25,5.047 11.25,11.25"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path3938"
+               d="m 2,17.438 c 0,-8.271 6.731,-15 15,-15 8.27,0 15,6.729 15,15"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <line
+             id="line3942"
+             y2="32"
+             x2="16.5"
+             y1="22"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_5"
+         style="display:none">
+        <g
+           id="g3955"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line3947"
+             y2="7"
+             x2="15.5"
+             y1="5"
+             x1="15.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line3949"
+             y2="7"
+             x2="17.5"
+             y1="5"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polyline
+             id="polyline3951"
+             points="12.5,11 12.5,1.5 20.5,1.5 20.5,11   "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <path
+             id="path3953"
+             d="m 22.5,28.479 c 0,1.604 -0.916,3.021 -2.561,3.021 h -6.023 c -1.023,0 -3.417,-0.583 -3.417,-3.021 V 10.5 h 12 v 17.979 z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_6"
+         style="display:none">
+        <g
+           id="g3966"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g3960">
+            <path
+               id="path3958"
+               d="m 27.5,29.5 c 0,1.104 -0.896,2 -2,2 h -22 c -1.104,0 -2,-0.896 -2,-2 v -11 c 0,-1.104 0.896,-2 2,-2 h 22 c 1.104,0 2,0.896 2,2 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+          <g
+             id="g3964">
+            <path
+               id="path3962"
+               d="m 27,20.5 h 3.161 c 0.55,0 1.339,-0.019 1.339,0.531 v 5.5 c 0,0.55 -0.789,0.969 -1.339,0.969 H 27"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+        </g>
+        <line
+           id="line3968"
+           y2="28.625"
+           x2="4.125"
+           y1="19.5"
+           x1="4.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line3970"
+           y2="28.625"
+           x2="8.125"
+           y1="19.5"
+           x1="8.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line3972"
+           y2="28.625"
+           x2="12.125"
+           y1="19.5"
+           x1="12.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line3974"
+           y2="28.625"
+           x2="16.125"
+           y1="19.5"
+           x1="16.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line3976"
+           y2="28.625"
+           x2="20.125"
+           y1="19.5"
+           x1="20.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line3978"
+           y2="28.625"
+           x2="24.125"
+           y1="19.5"
+           x1="24.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_7"
+         style="display:none">
+        <g
+           id="g3995"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line3981"
+             y2="5"
+             x2="5.5"
+             y1="13"
+             x1="5.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line3983"
+             y2="5"
+             x2="9.5"
+             y1="13"
+             x1="9.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line3985"
+             y2="5"
+             x2="13.5"
+             y1="13"
+             x1="13.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line3987"
+             y2="5"
+             x2="17.5"
+             y1="13"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line3989"
+             y2="5"
+             x2="21.5"
+             y1="13"
+             x1="21.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line3991"
+             y2="7"
+             x2="25.5"
+             y1="13"
+             x1="25.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polygon
+             id="polygon3993"
+             points="31.5,7.531 31.5,31.5 1.5,31.5 1.5,1.5 26,1.5 "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8"
+         style="display:none">
+        <g
+           id="g4012"
+           display="inline"
+           style="display:inline">
+          <circle
+             id="circle3998"
+             r="2.777"
+             cy="10.944"
+             cx="22.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <g
+             id="g4002">
+            <circle
+               id="circle4000"
+               r="2.777"
+               cy="22.033001"
+               cx="10.322"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <g
+             id="g4006">
+            <circle
+               id="circle4004"
+               r="2.777"
+               cy="27.587999"
+               cx="22.5"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <line
+             id="line4008"
+             y2="31.5"
+             x2="16.5"
+             y1="1.5"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4010"
+             y2="16.5"
+             x2="31.5"
+             y1="16.5"
+             x1="1.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8_copy"
+         style="display:none">
+        <path
+           id="path4015"
+           d="m 18.914,17.448 c 0.789,2.644 -0.717,5.43 -3.364,6.218 -2.643,0.79 -5.428,-0.718 -6.217,-3.361 -0.789,-2.644 0.717,-5.431 3.362,-6.218 2.643,-0.788 5.43,0.717 6.219,3.361 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4017"
+           y2="13.879"
+           x2="14.123"
+           y1="1.303"
+           x1="14.123"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4019"
+           y2="18.877001"
+           x2="31.697001"
+           y1="18.877001"
+           x1="19.124001"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4021"
+           y2="22.406"
+           x2="10.593"
+           y1="31.302999"
+           x1="1.697"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+    </g>
+    <g
+       id="g4285"
+       transform="matrix(0.26458335,0,0,0.26458226,25.135417,279.41408)">
+      <g
+         id="Layer_1-7">
+        <path
+           id="path4097"
+           d="M 32.018,5.732 C 31.53,5.244 31.14,5.5 30.5,5.5 H 4.5 C 3.86,5.5 2.97,5.244 2.482,5.732 1.994,6.221 1.5,6.36 1.5,7 v 21 c 0,0.64 0.494,1.779 0.982,2.268 C 2.97,30.756 3.86,31.5 4.5,31.5 h 26 c 0.64,0 1.03,-0.744 1.518,-1.232 C 32.506,29.779 32.5,28.64 32.5,28 V 7 c 0,-0.64 0.006,-0.779 -0.482,-1.268 z"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <rect
+           id="rect4099"
+           height="16"
+           width="21"
+           stroke-miterlimit="10"
+           y="10.5"
+           x="6.5"
+           style="fill:none;stroke:#ea2127;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none" />
+        <path
+           style="fill:none;stroke:#ea2127;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m 42.535978,11.846702 12.916072,13.10095 -6.452052,6.518845 V 5.3216165 l 6.452052,6.5250855 -12.916072,13.10095"
+           id="path1758"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccccc" />
+        <ellipse
+           style="fill:none;stroke:#ea2127;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+           id="path1"
+           cx="112.50323"
+           cy="18.285782"
+           rx="9.4007883"
+           ry="9.4008274" />
+        <ellipse
+           style="fill:none;stroke:#ea2127;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+           id="path1-2-9"
+           cx="125.05225"
+           cy="18.602682"
+           rx="2.8596375"
+           ry="2.8596494" />
+        <ellipse
+           style="fill:none;stroke:#ea2127;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:fill markers stroke"
+           id="path1-2"
+           cx="100.2696"
+           cy="18.647629"
+           rx="2.8596375"
+           ry="2.8596494" />
+        <path
+           id="text5-4"
+           style="font-size:11.683px;line-height:1.25;font-family:'Andale Mono';-inkscape-font-specification:'Andale Mono';letter-spacing:0px;word-spacing:0px;fill:none;stroke:#ea2127;stroke-width:1.00000202;stroke-dasharray:none"
+           d="m 118.13146,19.108378 h -3.38853 V 18.24128 h 3.38853 z m -5.41501,-0.127808 h -2.31036 v 2.333177 h -0.7473 V 18.98057 h -2.33889 v -0.747302 h 2.33889 v -2.338881 h 0.7473 v 2.338881 h 2.31036 z" />
+        <path
+           id="path8"
+           style="fill:none;fill-rule:nonzero;stroke:#ea2127;stroke-width:1.00000402;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="m 109.49464,41.822425 2.82885,-3.350123 2.62244,3.371612 m -5.49519,15.452981 2.82885,3.350123 2.62244,-3.371612 M 112.2897,38.724459 v 21.901964 m -10.72374,2.339521 h 20.47376 m -20.50939,-26.42822 21.05333,0.03177" />
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#ea2127;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect8"
+           width="19.016474"
+           height="7.7389684"
+           x="135.90155"
+           y="21.08427" />
+        <rect
+           style="fill:none;fill-opacity:1;stroke:#ea2127;stroke-width:0.970578;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:fill markers stroke"
+           id="rect9"
+           width="9.5186615"
+           height="11.484992"
+           x="140.7617"
+           y="9.6181545" />
+        <path
+           id="path10"
+           style="fill:none;fill-rule:nonzero;stroke:#ea2127;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+           d="m 154.96827,24.317214 c 0.27768,0.468003 1.91049,4.40692 1.91049,4.40692 m -20.99159,-4.378337 -2.03346,4.387951"
+           sodipodi:nodetypes="cccc" />
+      </g>
+      <g
+         display="none"
+         id="Layer_2-5"
+         style="display:none">
+        <g
+           id="g4112"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4108">
+            <path
+               id="path4102"
+               d="m 11,25.42 c 1.758,-1.756 3,-3 6,-3 3,0 4.242,1.242 6,3"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4104"
+               d="m 6.5,20.92 c 2.93,-2.928 6,-4.5 10.5,-4.5 4.5,0 7.57,1.57 10.5,4.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4106"
+               d="m 2,16.42 c 4.059,-4.059 9,-6 15,-6 6,0 10.857,1.857 15,6"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <path
+             id="path4110"
+             d="m 17.766,30.5 c -0.424,-0.424 -1.108,-0.424 -1.532,0"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_3-3"
+         style="display:none">
+        <g
+           id="g4119"
+           display="inline"
+           style="display:inline">
+          <path
+             id="path4115"
+             d="m 17,0.5 c -5.611,0 -10.161,4.549 -10.161,10.161 0,1.562 0.266,3.084 0.99,4.354 C 15.549,28.564 17,30.5 17,30.5 c 0,0 1.451,-1.936 9.17,-15.484 0.726,-1.271 0.991,-2.793 0.991,-4.354 C 27.161,5.049 22.611,0.5 17,0.5 Z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          <circle
+             id="circle4117"
+             r="4.3540001"
+             cy="10.661"
+             cx="17"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_4-5"
+         style="display:none">
+        <g
+           id="g4134"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4130">
+            <circle
+               id="circle4122"
+               r="3.75"
+               cy="17.438"
+               cx="17"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4124"
+               d="m 9.5,17.438 c 0,-4.137 3.366,-7.5 7.5,-7.5 4.135,0 7.5,3.363 7.5,7.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4126"
+               d="m 5.75,17.438 c 0,-6.203 5.048,-11.25 11.25,-11.25 6.201,0 11.25,5.047 11.25,11.25"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4128"
+               d="m 2,17.438 c 0,-8.271 6.731,-15 15,-15 8.27,0 15,6.729 15,15"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <line
+             id="line4132"
+             y2="32"
+             x2="16.5"
+             y1="22"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_5-6"
+         style="display:none">
+        <g
+           id="g4145"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4137"
+             y2="7"
+             x2="15.5"
+             y1="5"
+             x1="15.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4139"
+             y2="7"
+             x2="17.5"
+             y1="5"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polyline
+             id="polyline4141"
+             points="12.5,11 12.5,1.5 20.5,1.5 20.5,11   "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <path
+             id="path4143"
+             d="m 22.5,28.479 c 0,1.604 -0.916,3.021 -2.561,3.021 h -6.023 c -1.023,0 -3.417,-0.583 -3.417,-3.021 V 10.5 h 12 v 17.979 z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_6-2"
+         style="display:none">
+        <g
+           id="g4156"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4150">
+            <path
+               id="path4148"
+               d="m 27.5,29.5 c 0,1.104 -0.896,2 -2,2 h -22 c -1.104,0 -2,-0.896 -2,-2 v -11 c 0,-1.104 0.896,-2 2,-2 h 22 c 1.104,0 2,0.896 2,2 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+          <g
+             id="g4154">
+            <path
+               id="path4152"
+               d="m 27,20.5 h 3.161 c 0.55,0 1.339,-0.019 1.339,0.531 v 5.5 c 0,0.55 -0.789,0.969 -1.339,0.969 H 27"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+        </g>
+        <line
+           id="line4158"
+           y2="28.625"
+           x2="4.125"
+           y1="19.5"
+           x1="4.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4160"
+           y2="28.625"
+           x2="8.125"
+           y1="19.5"
+           x1="8.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4162"
+           y2="28.625"
+           x2="12.125"
+           y1="19.5"
+           x1="12.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4164"
+           y2="28.625"
+           x2="16.125"
+           y1="19.5"
+           x1="16.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4166"
+           y2="28.625"
+           x2="20.125"
+           y1="19.5"
+           x1="20.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4168"
+           y2="28.625"
+           x2="24.125"
+           y1="19.5"
+           x1="24.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_7-9"
+         style="display:none">
+        <g
+           id="g4185"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4171"
+             y2="5"
+             x2="5.5"
+             y1="13"
+             x1="5.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4173"
+             y2="5"
+             x2="9.5"
+             y1="13"
+             x1="9.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4175"
+             y2="5"
+             x2="13.5"
+             y1="13"
+             x1="13.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4177"
+             y2="5"
+             x2="17.5"
+             y1="13"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4179"
+             y2="5"
+             x2="21.5"
+             y1="13"
+             x1="21.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4181"
+             y2="7"
+             x2="25.5"
+             y1="13"
+             x1="25.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polygon
+             id="polygon4183"
+             points="31.5,31.5 1.5,31.5 1.5,1.5 26,1.5 31.5,7.531 "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8-1"
+         style="display:none">
+        <g
+           id="g4202"
+           display="inline"
+           style="display:inline">
+          <circle
+             id="circle4188"
+             r="2.777"
+             cy="10.944"
+             cx="22.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <g
+             id="g4192">
+            <circle
+               id="circle4190"
+               r="2.777"
+               cy="22.033001"
+               cx="10.322"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <g
+             id="g4196">
+            <circle
+               id="circle4194"
+               r="2.777"
+               cy="27.587999"
+               cx="22.5"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <line
+             id="line4198"
+             y2="31.5"
+             x2="16.5"
+             y1="1.5"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4200"
+             y2="16.5"
+             x2="31.5"
+             y1="16.5"
+             x1="1.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8_copy-2"
+         style="display:none">
+        <path
+           id="path4205"
+           d="m 18.914,17.448 c 0.789,2.644 -0.717,5.43 -3.364,6.218 -2.643,0.79 -5.428,-0.718 -6.217,-3.361 -0.789,-2.644 0.717,-5.431 3.362,-6.218 2.643,-0.788 5.43,0.717 6.219,3.361 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4207"
+           y2="13.879"
+           x2="14.123"
+           y1="1.303"
+           x1="14.123"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4209"
+           y2="18.877001"
+           x2="31.697001"
+           y1="18.877001"
+           x1="19.124001"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4211"
+           y2="22.406"
+           x2="10.593"
+           y1="31.302999"
+           x1="1.697"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+    </g>
+    <g
+       id="g4475"
+       transform="matrix(0.26458333,0,0,0.26458333,-1.6672784,288.4866)">
+      <g
+         display="none"
+         id="Layer_1-70"
+         style="display:none">
+        <path
+           id="path4287"
+           d="M 32.018,5.732 C 31.53,5.244 31.14,5.5 30.5,5.5 H 4.5 C 3.86,5.5 2.97,5.244 2.482,5.732 1.994,6.221 1.5,6.36 1.5,7 v 21 c 0,0.64 0.494,1.779 0.982,2.268 C 2.97,30.756 3.86,31.5 4.5,31.5 h 26 c 0.64,0 1.03,-0.744 1.518,-1.232 C 32.506,29.779 32.5,28.64 32.5,28 V 7 c 0,-0.64 0.006,-0.779 -0.482,-1.268 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <rect
+           id="rect4289"
+           height="16"
+           width="21"
+           stroke-miterlimit="10"
+           display="inline"
+           y="10.5"
+           x="6.5"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_2-9"
+         style="display:none">
+        <g
+           id="g4302"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4298">
+            <path
+               id="path4292"
+               d="m 11,25.42 c 1.758,-1.756 3,-3 6,-3 3,0 4.242,1.242 6,3"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4294"
+               d="m 6.5,20.92 c 2.93,-2.928 6,-4.5 10.5,-4.5 4.5,0 7.57,1.57 10.5,4.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4296"
+               d="m 2,16.42 c 4.059,-4.059 9,-6 15,-6 6,0 10.857,1.857 15,6"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <path
+             id="path4300"
+             d="m 17.766,30.5 c -0.424,-0.424 -1.108,-0.424 -1.532,0"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_3-36"
+         style="display:none">
+        <g
+           id="g4309"
+           display="inline"
+           style="display:inline">
+          <path
+             id="path4305"
+             d="m 17,0.5 c -5.611,0 -10.161,4.549 -10.161,10.161 0,1.562 0.266,3.084 0.99,4.354 C 15.549,28.564 17,30.5 17,30.5 c 0,0 1.451,-1.936 9.17,-15.484 0.726,-1.271 0.991,-2.793 0.991,-4.354 C 27.161,5.049 22.611,0.5 17,0.5 Z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          <circle
+             id="circle4307"
+             r="4.3540001"
+             cy="10.661"
+             cx="17"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_4-0"
+         style="display:none">
+        <g
+           id="g4324"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4320">
+            <circle
+               id="circle4312"
+               r="3.75"
+               cy="17.438"
+               cx="17"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4314"
+               d="m 9.5,17.438 c 0,-4.137 3.366,-7.5 7.5,-7.5 4.135,0 7.5,3.363 7.5,7.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4316"
+               d="m 5.75,17.438 c 0,-6.203 5.048,-11.25 11.25,-11.25 6.201,0 11.25,5.047 11.25,11.25"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4318"
+               d="m 2,17.438 c 0,-8.271 6.731,-15 15,-15 8.27,0 15,6.729 15,15"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <line
+             id="line4322"
+             y2="32"
+             x2="16.5"
+             y1="22"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_6-6"
+         style="display:none">
+        <g
+           id="g4346"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4340">
+            <path
+               id="path4338"
+               d="m 27.5,29.5 c 0,1.104 -0.896,2 -2,2 h -22 c -1.104,0 -2,-0.896 -2,-2 v -11 c 0,-1.104 0.896,-2 2,-2 h 22 c 1.104,0 2,0.896 2,2 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+          <g
+             id="g4344">
+            <path
+               id="path4342"
+               d="m 27,20.5 h 3.161 c 0.55,0 1.339,-0.019 1.339,0.531 v 5.5 c 0,0.55 -0.789,0.969 -1.339,0.969 H 27"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+        </g>
+        <line
+           id="line4348"
+           y2="28.625"
+           x2="4.125"
+           y1="19.5"
+           x1="4.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4350"
+           y2="28.625"
+           x2="8.125"
+           y1="19.5"
+           x1="8.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4352"
+           y2="28.625"
+           x2="12.125"
+           y1="19.5"
+           x1="12.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4354"
+           y2="28.625"
+           x2="16.125"
+           y1="19.5"
+           x1="16.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4356"
+           y2="28.625"
+           x2="20.125"
+           y1="19.5"
+           x1="20.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4358"
+           y2="28.625"
+           x2="24.125"
+           y1="19.5"
+           x1="24.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_7-1"
+         style="display:none">
+        <g
+           id="g4375"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4361"
+             y2="5"
+             x2="5.5"
+             y1="13"
+             x1="5.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4363"
+             y2="5"
+             x2="9.5"
+             y1="13"
+             x1="9.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4365"
+             y2="5"
+             x2="13.5"
+             y1="13"
+             x1="13.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4367"
+             y2="5"
+             x2="17.5"
+             y1="13"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4369"
+             y2="5"
+             x2="21.5"
+             y1="13"
+             x1="21.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4371"
+             y2="7"
+             x2="25.5"
+             y1="13"
+             x1="25.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polygon
+             id="polygon4373"
+             points="1.5,31.5 1.5,1.5 26,1.5 31.5,7.531 31.5,31.5 "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8-8"
+         style="display:none">
+        <g
+           id="g4392"
+           display="inline"
+           style="display:inline">
+          <circle
+             id="circle4378"
+             r="2.777"
+             cy="10.944"
+             cx="22.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <g
+             id="g4382">
+            <circle
+               id="circle4380"
+               r="2.777"
+               cy="22.033001"
+               cx="10.322"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <g
+             id="g4386">
+            <circle
+               id="circle4384"
+               r="2.777"
+               cy="27.587999"
+               cx="22.5"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <line
+             id="line4388"
+             y2="31.5"
+             x2="16.5"
+             y1="1.5"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4390"
+             y2="16.5"
+             x2="31.5"
+             y1="16.5"
+             x1="1.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8_copy-7"
+         style="display:none">
+        <path
+           id="path4395"
+           d="m 18.914,17.448 c 0.789,2.644 -0.717,5.43 -3.364,6.218 -2.643,0.79 -5.428,-0.718 -6.217,-3.361 -0.789,-2.644 0.717,-5.431 3.362,-6.218 2.643,-0.788 5.43,0.717 6.219,3.361 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4397"
+           y2="13.879"
+           x2="14.123"
+           y1="1.303"
+           x1="14.123"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4399"
+           y2="18.877001"
+           x2="31.697001"
+           y1="18.877001"
+           x1="19.124001"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4401"
+           y2="22.406"
+           x2="10.593"
+           y1="31.302999"
+           x1="1.697"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+    </g>
+    <g
+       id="g4665"
+       transform="matrix(0.26458333,0,0,0.26458333,8.334375,286.41664)">
+      <g
+         display="none"
+         id="Layer_1-9"
+         style="display:none">
+        <path
+           id="path4477"
+           d="M 32.018,5.732 C 31.53,5.244 31.14,5.5 30.5,5.5 H 4.5 C 3.86,5.5 2.97,5.244 2.482,5.732 1.994,6.221 1.5,6.36 1.5,7 v 21 c 0,0.64 0.494,1.779 0.982,2.268 C 2.97,30.756 3.86,31.5 4.5,31.5 h 26 c 0.64,0 1.03,-0.744 1.518,-1.232 C 32.506,29.779 32.5,28.64 32.5,28 V 7 c 0,-0.64 0.006,-0.779 -0.482,-1.268 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <rect
+           id="rect4479"
+           height="16"
+           width="21"
+           stroke-miterlimit="10"
+           display="inline"
+           y="10.5"
+           x="6.5"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_2-2"
+         style="display:none">
+        <g
+           id="g4492"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4488">
+            <path
+               id="path4482"
+               d="m 11,25.42 c 1.758,-1.756 3,-3 6,-3 3,0 4.242,1.242 6,3"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4484"
+               d="m 6.5,20.92 c 2.93,-2.928 6,-4.5 10.5,-4.5 4.5,0 7.57,1.57 10.5,4.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4486"
+               d="m 2,16.42 c 4.059,-4.059 9,-6 15,-6 6,0 10.857,1.857 15,6"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <path
+             id="path4490"
+             d="m 17.766,30.5 c -0.424,-0.424 -1.108,-0.424 -1.532,0"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_3-0"
+         style="display:none">
+        <g
+           id="g4499"
+           display="inline"
+           style="display:inline">
+          <path
+             id="path4495"
+             d="m 17,0.5 c -5.611,0 -10.161,4.549 -10.161,10.161 0,1.562 0.266,3.084 0.99,4.354 C 15.549,28.564 17,30.5 17,30.5 c 0,0 1.451,-1.936 9.17,-15.484 0.726,-1.271 0.991,-2.793 0.991,-4.354 C 27.161,5.049 22.611,0.5 17,0.5 Z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          <circle
+             id="circle4497"
+             r="4.3540001"
+             cy="10.661"
+             cx="17"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_4-2"
+         style="display:none">
+        <g
+           id="g4514"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4510">
+            <circle
+               id="circle4502"
+               r="3.75"
+               cy="17.438"
+               cx="17"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4504"
+               d="m 9.5,17.438 c 0,-4.137 3.366,-7.5 7.5,-7.5 4.135,0 7.5,3.363 7.5,7.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4506"
+               d="m 5.75,17.438 c 0,-6.203 5.048,-11.25 11.25,-11.25 6.201,0 11.25,5.047 11.25,11.25"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4508"
+               d="m 2,17.438 c 0,-8.271 6.731,-15 15,-15 8.27,0 15,6.729 15,15"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <line
+             id="line4512"
+             y2="32"
+             x2="16.5"
+             y1="22"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_5-3"
+         style="display:none">
+        <g
+           id="g4525"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4517"
+             y2="7"
+             x2="15.5"
+             y1="5"
+             x1="15.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4519"
+             y2="7"
+             x2="17.5"
+             y1="5"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polyline
+             id="polyline4521"
+             points="12.5,11 12.5,1.5 20.5,1.5 20.5,11   "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <path
+             id="path4523"
+             d="m 22.5,28.479 c 0,1.604 -0.916,3.021 -2.561,3.021 h -6.023 c -1.023,0 -3.417,-0.583 -3.417,-3.021 V 10.5 h 12 v 17.979 z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         id="Layer_6-7">
+        <g
+           id="g4536">
+          <g
+             id="g4530">
+            <path
+               id="path4528"
+               d="m 27.5,29.5 c 0,1.104 -0.896,2 -2,2 h -22 c -1.104,0 -2,-0.896 -2,-2 v -11 c 0,-1.104 0.896,-2 2,-2 h 22 c 1.104,0 2,0.896 2,2 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+          <g
+             id="g4534">
+            <path
+               id="path4532"
+               d="m 27,20.5 h 3.161 c 0.55,0 1.339,-0.019 1.339,0.531 v 5.5 c 0,0.55 -0.789,0.969 -1.339,0.969 H 27"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+        </g>
+        <line
+           id="line4538"
+           y2="28.625"
+           x2="4.125"
+           y1="19.5"
+           x1="4.125"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4540"
+           y2="28.625"
+           x2="8.125"
+           y1="19.5"
+           x1="8.125"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4542"
+           y2="28.625"
+           x2="12.125"
+           y1="19.5"
+           x1="12.125"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4544"
+           y2="28.625"
+           x2="16.125"
+           y1="19.5"
+           x1="16.125"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4546"
+           y2="28.625"
+           x2="20.125"
+           y1="19.5"
+           x1="20.125"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4548"
+           y2="28.625"
+           x2="24.125"
+           y1="19.5"
+           x1="24.125"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_7-5"
+         style="display:none">
+        <g
+           id="g4565"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4551"
+             y2="5"
+             x2="5.5"
+             y1="13"
+             x1="5.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4553"
+             y2="5"
+             x2="9.5"
+             y1="13"
+             x1="9.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4555"
+             y2="5"
+             x2="13.5"
+             y1="13"
+             x1="13.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4557"
+             y2="5"
+             x2="17.5"
+             y1="13"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4559"
+             y2="5"
+             x2="21.5"
+             y1="13"
+             x1="21.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4561"
+             y2="7"
+             x2="25.5"
+             y1="13"
+             x1="25.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polygon
+             id="polygon4563"
+             points="26,1.5 31.5,7.531 31.5,31.5 1.5,31.5 1.5,1.5 "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8-9"
+         style="display:none">
+        <g
+           id="g4582"
+           display="inline"
+           style="display:inline">
+          <circle
+             id="circle4568"
+             r="2.777"
+             cy="10.944"
+             cx="22.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <g
+             id="g4572">
+            <circle
+               id="circle4570"
+               r="2.777"
+               cy="22.033001"
+               cx="10.322"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <g
+             id="g4576">
+            <circle
+               id="circle4574"
+               r="2.777"
+               cy="27.587999"
+               cx="22.5"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <line
+             id="line4578"
+             y2="31.5"
+             x2="16.5"
+             y1="1.5"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4580"
+             y2="16.5"
+             x2="31.5"
+             y1="16.5"
+             x1="1.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8_copy-22"
+         style="display:none">
+        <path
+           id="path4585"
+           d="m 18.914,17.448 c 0.789,2.644 -0.717,5.43 -3.364,6.218 -2.643,0.79 -5.428,-0.718 -6.217,-3.361 -0.789,-2.644 0.717,-5.431 3.362,-6.218 2.643,-0.788 5.43,0.717 6.219,3.361 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4587"
+           y2="13.879"
+           x2="14.123"
+           y1="1.303"
+           x1="14.123"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4589"
+           y2="18.877001"
+           x2="31.697001"
+           y1="18.877001"
+           x1="19.124001"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4591"
+           y2="22.406"
+           x2="10.593"
+           y1="31.302999"
+           x1="1.697"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+    </g>
+    <g
+       id="g4855"
+       transform="matrix(0.26458333,0,0,0.26458333,16.801042,288.40102)">
+      <g
+         display="none"
+         id="Layer_1-8"
+         style="display:none">
+        <path
+           id="path4667"
+           d="M 32.018,5.732 C 31.53,5.244 31.14,5.5 30.5,5.5 H 4.5 C 3.86,5.5 2.97,5.244 2.482,5.732 1.994,6.221 1.5,6.36 1.5,7 v 21 c 0,0.64 0.494,1.779 0.982,2.268 C 2.97,30.756 3.86,31.5 4.5,31.5 h 26 c 0.64,0 1.03,-0.744 1.518,-1.232 C 32.506,29.779 32.5,28.64 32.5,28 V 7 c 0,-0.64 0.006,-0.779 -0.482,-1.268 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <rect
+           id="rect4669"
+           height="16"
+           width="21"
+           stroke-miterlimit="10"
+           display="inline"
+           y="10.5"
+           x="6.5"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_2-97"
+         style="display:none">
+        <g
+           id="g4682"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4678">
+            <path
+               id="path4672"
+               d="m 11,25.42 c 1.758,-1.756 3,-3 6,-3 3,0 4.242,1.242 6,3"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4674"
+               d="m 6.5,20.92 c 2.93,-2.928 6,-4.5 10.5,-4.5 4.5,0 7.57,1.57 10.5,4.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4676"
+               d="m 2,16.42 c 4.059,-4.059 9,-6 15,-6 6,0 10.857,1.857 15,6"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <path
+             id="path4680"
+             d="m 17.766,30.5 c -0.424,-0.424 -1.108,-0.424 -1.532,0"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_3-361"
+         style="display:none">
+        <g
+           id="g4689"
+           display="inline"
+           style="display:inline">
+          <path
+             id="path4685"
+             d="m 17,0.5 c -5.611,0 -10.161,4.549 -10.161,10.161 0,1.562 0.266,3.084 0.99,4.354 C 15.549,28.564 17,30.5 17,30.5 c 0,0 1.451,-1.936 9.17,-15.484 0.726,-1.271 0.991,-2.793 0.991,-4.354 C 27.161,5.049 22.611,0.5 17,0.5 Z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          <circle
+             id="circle4687"
+             r="4.3540001"
+             cy="10.661"
+             cx="17"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_4-29"
+         style="display:none">
+        <g
+           id="g4704"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4700">
+            <circle
+               id="circle4692"
+               r="3.75"
+               cy="17.438"
+               cx="17"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4694"
+               d="m 9.5,17.438 c 0,-4.137 3.366,-7.5 7.5,-7.5 4.135,0 7.5,3.363 7.5,7.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4696"
+               d="m 5.75,17.438 c 0,-6.203 5.048,-11.25 11.25,-11.25 6.201,0 11.25,5.047 11.25,11.25"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4698"
+               d="m 2,17.438 c 0,-8.271 6.731,-15 15,-15 8.27,0 15,6.729 15,15"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <line
+             id="line4702"
+             y2="32"
+             x2="16.5"
+             y1="22"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_5-31"
+         style="display:none">
+        <g
+           id="g4715"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4707"
+             y2="7"
+             x2="15.5"
+             y1="5"
+             x1="15.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4709"
+             y2="7"
+             x2="17.5"
+             y1="5"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polyline
+             id="polyline4711"
+             points="12.5,11 12.5,1.5 20.5,1.5 20.5,11   "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <path
+             id="path4713"
+             d="m 22.5,28.479 c 0,1.604 -0.916,3.021 -2.561,3.021 h -6.023 c -1.023,0 -3.417,-0.583 -3.417,-3.021 V 10.5 h 12 v 17.979 z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_6-9"
+         style="display:none">
+        <g
+           id="g4726"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4720">
+            <path
+               id="path4718"
+               d="m 27.5,29.5 c 0,1.104 -0.896,2 -2,2 h -22 c -1.104,0 -2,-0.896 -2,-2 v -11 c 0,-1.104 0.896,-2 2,-2 h 22 c 1.104,0 2,0.896 2,2 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+          <g
+             id="g4724">
+            <path
+               id="path4722"
+               d="m 27,20.5 h 3.161 c 0.55,0 1.339,-0.019 1.339,0.531 v 5.5 c 0,0.55 -0.789,0.969 -1.339,0.969 H 27"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+        </g>
+        <line
+           id="line4728"
+           y2="28.625"
+           x2="4.125"
+           y1="19.5"
+           x1="4.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4730"
+           y2="28.625"
+           x2="8.125"
+           y1="19.5"
+           x1="8.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4732"
+           y2="28.625"
+           x2="12.125"
+           y1="19.5"
+           x1="12.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4734"
+           y2="28.625"
+           x2="16.125"
+           y1="19.5"
+           x1="16.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4736"
+           y2="28.625"
+           x2="20.125"
+           y1="19.5"
+           x1="20.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4738"
+           y2="28.625"
+           x2="24.125"
+           y1="19.5"
+           x1="24.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+      <g
+         id="Layer_7-4">
+        <g
+           id="g4755">
+          <line
+             id="line4741"
+             y2="5"
+             x2="5.5"
+             y1="13"
+             x1="5.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4743"
+             y2="5"
+             x2="9.5"
+             y1="13"
+             x1="9.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4745"
+             y2="5"
+             x2="13.5"
+             y1="13"
+             x1="13.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4747"
+             y2="5"
+             x2="17.5"
+             y1="13"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4749"
+             y2="5"
+             x2="21.5"
+             y1="13"
+             x1="21.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4751"
+             y2="7"
+             x2="25.5"
+             y1="13"
+             x1="25.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polygon
+             id="polygon4753"
+             points="31.5,7.531 31.5,31.5 1.5,31.5 1.5,1.5 26,1.5 "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8-7"
+         style="display:none">
+        <g
+           id="g4772"
+           display="inline"
+           style="display:inline">
+          <circle
+             id="circle4758"
+             r="2.777"
+             cy="10.944"
+             cx="22.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <g
+             id="g4762">
+            <circle
+               id="circle4760"
+               r="2.777"
+               cy="22.033001"
+               cx="10.322"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <g
+             id="g4766">
+            <circle
+               id="circle4764"
+               r="2.777"
+               cy="27.587999"
+               cx="22.5"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <line
+             id="line4768"
+             y2="31.5"
+             x2="16.5"
+             y1="1.5"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4770"
+             y2="16.5"
+             x2="31.5"
+             y1="16.5"
+             x1="1.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8_copy-8"
+         style="display:none">
+        <path
+           id="path4775"
+           d="m 18.914,17.448 c 0.789,2.644 -0.717,5.43 -3.364,6.218 -2.643,0.79 -5.428,-0.718 -6.217,-3.361 -0.789,-2.644 0.717,-5.431 3.362,-6.218 2.643,-0.788 5.43,0.717 6.219,3.361 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4777"
+           y2="13.879"
+           x2="14.123"
+           y1="1.303"
+           x1="14.123"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4779"
+           y2="18.877001"
+           x2="31.697001"
+           y1="18.877001"
+           x1="19.124001"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4781"
+           y2="22.406"
+           x2="10.593"
+           y1="31.302999"
+           x1="1.697"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+    </g>
+    <g
+       id="g5045"
+       transform="matrix(0.26458333,0,0,0.26458333,25.267708,288.40102)">
+      <g
+         display="none"
+         id="Layer_1-4"
+         style="display:none">
+        <path
+           id="path4857"
+           d="M 32.018,5.732 C 31.53,5.244 31.14,5.5 30.5,5.5 H 4.5 C 3.86,5.5 2.97,5.244 2.482,5.732 1.994,6.221 1.5,6.36 1.5,7 v 21 c 0,0.64 0.494,1.779 0.982,2.268 C 2.97,30.756 3.86,31.5 4.5,31.5 h 26 c 0.64,0 1.03,-0.744 1.518,-1.232 C 32.506,29.779 32.5,28.64 32.5,28 V 7 c 0,-0.64 0.006,-0.779 -0.482,-1.268 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <rect
+           id="rect4859"
+           height="16"
+           width="21"
+           stroke-miterlimit="10"
+           display="inline"
+           y="10.5"
+           x="6.5"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_2-50"
+         style="display:none">
+        <g
+           id="g4872"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4868">
+            <path
+               id="path4862"
+               d="m 11,25.42 c 1.758,-1.756 3,-3 6,-3 3,0 4.242,1.242 6,3"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4864"
+               d="m 6.5,20.92 c 2.93,-2.928 6,-4.5 10.5,-4.5 4.5,0 7.57,1.57 10.5,4.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4866"
+               d="m 2,16.42 c 4.059,-4.059 9,-6 15,-6 6,0 10.857,1.857 15,6"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <path
+             id="path4870"
+             d="m 17.766,30.5 c -0.424,-0.424 -1.108,-0.424 -1.532,0"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_3-3610"
+         style="display:none">
+        <g
+           id="g4879"
+           display="inline"
+           style="display:inline">
+          <path
+             id="path4875"
+             d="m 17,0.5 c -5.611,0 -10.161,4.549 -10.161,10.161 0,1.562 0.266,3.084 0.99,4.354 C 15.549,28.564 17,30.5 17,30.5 c 0,0 1.451,-1.936 9.17,-15.484 0.726,-1.271 0.991,-2.793 0.991,-4.354 C 27.161,5.049 22.611,0.5 17,0.5 Z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          <circle
+             id="circle4877"
+             r="4.3540001"
+             cy="10.661"
+             cx="17"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_4-6"
+         style="display:none">
+        <g
+           id="g4894"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4890">
+            <circle
+               id="circle4882"
+               r="3.75"
+               cy="17.438"
+               cx="17"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4884"
+               d="m 9.5,17.438 c 0,-4.137 3.366,-7.5 7.5,-7.5 4.135,0 7.5,3.363 7.5,7.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4886"
+               d="m 5.75,17.438 c 0,-6.203 5.048,-11.25 11.25,-11.25 6.201,0 11.25,5.047 11.25,11.25"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4888"
+               d="m 2,17.438 c 0,-8.271 6.731,-15 15,-15 8.27,0 15,6.729 15,15"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <line
+             id="line4892"
+             y2="32"
+             x2="16.5"
+             y1="22"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_5-32"
+         style="display:none">
+        <g
+           id="g4905"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4897"
+             y2="7"
+             x2="15.5"
+             y1="5"
+             x1="15.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4899"
+             y2="7"
+             x2="17.5"
+             y1="5"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polyline
+             id="polyline4901"
+             points="12.5,11 12.5,1.5 20.5,1.5 20.5,11   "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <path
+             id="path4903"
+             d="m 22.5,28.479 c 0,1.604 -0.916,3.021 -2.561,3.021 h -6.023 c -1.023,0 -3.417,-0.583 -3.417,-3.021 V 10.5 h 12 v 17.979 z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_6-0"
+         style="display:none">
+        <g
+           id="g4916"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4910">
+            <path
+               id="path4908"
+               d="m 27.5,29.5 c 0,1.104 -0.896,2 -2,2 h -22 c -1.104,0 -2,-0.896 -2,-2 v -11 c 0,-1.104 0.896,-2 2,-2 h 22 c 1.104,0 2,0.896 2,2 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+          <g
+             id="g4914">
+            <path
+               id="path4912"
+               d="m 27,20.5 h 3.161 c 0.55,0 1.339,-0.019 1.339,0.531 v 5.5 c 0,0.55 -0.789,0.969 -1.339,0.969 H 27"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+        </g>
+        <line
+           id="line4918"
+           y2="28.625"
+           x2="4.125"
+           y1="19.5"
+           x1="4.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4920"
+           y2="28.625"
+           x2="8.125"
+           y1="19.5"
+           x1="8.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4922"
+           y2="28.625"
+           x2="12.125"
+           y1="19.5"
+           x1="12.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4924"
+           y2="28.625"
+           x2="16.125"
+           y1="19.5"
+           x1="16.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4926"
+           y2="28.625"
+           x2="20.125"
+           y1="19.5"
+           x1="20.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4928"
+           y2="28.625"
+           x2="24.125"
+           y1="19.5"
+           x1="24.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_7-6"
+         style="display:none">
+        <g
+           id="g4945"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4931"
+             y2="5"
+             x2="5.5"
+             y1="13"
+             x1="5.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4933"
+             y2="5"
+             x2="9.5"
+             y1="13"
+             x1="9.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4935"
+             y2="5"
+             x2="13.5"
+             y1="13"
+             x1="13.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4937"
+             y2="5"
+             x2="17.5"
+             y1="13"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4939"
+             y2="5"
+             x2="21.5"
+             y1="13"
+             x1="21.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4941"
+             y2="7"
+             x2="25.5"
+             y1="13"
+             x1="25.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polygon
+             id="polygon4943"
+             points="1.5,1.5 26,1.5 31.5,7.531 31.5,31.5 1.5,31.5 "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         id="Layer_8-15">
+        <g
+           id="g4962">
+          <circle
+             id="circle4948"
+             r="2.777"
+             cy="10.944"
+             cx="22.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <g
+             id="g4952">
+            <circle
+               id="circle4950"
+               r="2.777"
+               cy="22.033001"
+               cx="10.322"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <g
+             id="g4956">
+            <circle
+               id="circle4954"
+               r="2.777"
+               cy="27.587999"
+               cx="22.5"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10;stroke-dasharray:1.936, 0.968" />
+          </g>
+          <line
+             id="line4958"
+             y2="31.5"
+             x2="16.5"
+             y1="1.5"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4960"
+             y2="16.5"
+             x2="31.5"
+             y1="16.5"
+             x1="1.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8_copy-5"
+         style="display:none">
+        <path
+           id="path4965"
+           d="m 18.914,17.448 c 0.789,2.644 -0.717,5.43 -3.364,6.218 -2.643,0.79 -5.428,-0.718 -6.217,-3.361 -0.789,-2.644 0.717,-5.431 3.362,-6.218 2.643,-0.788 5.43,0.717 6.219,3.361 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4967"
+           y2="13.879"
+           x2="14.123"
+           y1="1.303"
+           x1="14.123"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4969"
+           y2="18.877001"
+           x2="31.697001"
+           y1="18.877001"
+           x1="19.124001"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4971"
+           y2="22.406"
+           x2="10.593"
+           y1="31.302999"
+           x1="1.697"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+    </g>
+    <g
+       transform="matrix(0.26458333,0,0,0.26458333,-0.13202703,288.40102)"
+       id="Layer_5-62">
+      <g
+         id="g4335">
+        <line
+           id="line4327"
+           y2="7"
+           x2="15.5"
+           y1="5"
+           x1="15.5"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4329"
+           y2="7"
+           x2="17.5"
+           y1="5"
+           x1="17.5"
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <polyline
+           id="polyline4331"
+           points="12.5,11 12.5,1.5 20.5,1.5 20.5,11   "
+           stroke-miterlimit="10"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <path
+           id="path4333"
+           d="m 22.5,28.479 c 0,1.604 -0.916,3.021 -2.561,3.021 h -6.023 c -1.023,0 -3.417,-0.583 -3.417,-3.021 V 10.5 h 12 v 17.979 z"
+           stroke-miterlimit="10"
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+    </g>
+    <g
+       id="g5045-3"
+       transform="matrix(0.26458334,0,0,0.26458334,33.866667,288.42218)">
+      <g
+         display="none"
+         id="Layer_1-4-6"
+         style="display:none">
+        <path
+           id="path4857-7"
+           d="M 32.018,5.732 C 31.53,5.244 31.14,5.5 30.5,5.5 H 4.5 C 3.86,5.5 2.97,5.244 2.482,5.732 1.994,6.221 1.5,6.36 1.5,7 v 21 c 0,0.64 0.494,1.779 0.982,2.268 C 2.97,30.756 3.86,31.5 4.5,31.5 h 26 c 0.64,0 1.03,-0.744 1.518,-1.232 C 32.506,29.779 32.5,28.64 32.5,28 V 7 c 0,-0.64 0.006,-0.779 -0.482,-1.268 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        <rect
+           id="rect4859-5"
+           height="16"
+           width="21"
+           stroke-miterlimit="10"
+           display="inline"
+           y="10.5"
+           x="6.5"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_2-50-3"
+         style="display:none">
+        <g
+           id="g4872-5"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4868-6">
+            <path
+               id="path4862-2"
+               d="m 11,25.42 c 1.758,-1.756 3,-3 6,-3 3,0 4.242,1.242 6,3"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4864-9"
+               d="m 6.5,20.92 c 2.93,-2.928 6,-4.5 10.5,-4.5 4.5,0 7.57,1.57 10.5,4.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4866-1"
+               d="m 2,16.42 c 4.059,-4.059 9,-6 15,-6 6,0 10.857,1.857 15,6"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <path
+             id="path4870-2"
+             d="m 17.766,30.5 c -0.424,-0.424 -1.108,-0.424 -1.532,0"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_3-3610-7"
+         style="display:none">
+        <g
+           id="g4879-0"
+           display="inline"
+           style="display:inline">
+          <path
+             id="path4875-9"
+             d="m 17,0.5 c -5.611,0 -10.161,4.549 -10.161,10.161 0,1.562 0.266,3.084 0.99,4.354 C 15.549,28.564 17,30.5 17,30.5 c 0,0 1.451,-1.936 9.17,-15.484 0.726,-1.271 0.991,-2.793 0.991,-4.354 C 27.161,5.049 22.611,0.5 17,0.5 Z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          <circle
+             id="circle4877-3"
+             r="4.3540001"
+             cy="10.661"
+             cx="17"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_4-6-6"
+         style="display:none">
+        <g
+           id="g4894-0"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4890-6">
+            <circle
+               id="circle4882-2"
+               r="3.75"
+               cy="17.438"
+               cx="17"
+               stroke-miterlimit="10"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4884-6"
+               d="m 9.5,17.438 c 0,-4.137 3.366,-7.5 7.5,-7.5 4.135,0 7.5,3.363 7.5,7.5"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4886-1"
+               d="m 5.75,17.438 c 0,-6.203 5.048,-11.25 11.25,-11.25 6.201,0 11.25,5.047 11.25,11.25"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+            <path
+               id="path4888-8"
+               d="m 2,17.438 c 0,-8.271 6.731,-15 15,-15 8.27,0 15,6.729 15,15"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+          </g>
+          <line
+             id="line4892-7"
+             y2="32"
+             x2="16.5"
+             y1="22"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_5-32-9"
+         style="display:none">
+        <g
+           id="g4905-2"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4897-0"
+             y2="7"
+             x2="15.5"
+             y1="5"
+             x1="15.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4899-2"
+             y2="7"
+             x2="17.5"
+             y1="5"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polyline
+             id="polyline4901-3"
+             points="12.5,11 12.5,1.5 20.5,1.5 20.5,11   "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <path
+             id="path4903-7"
+             d="m 22.5,28.479 c 0,1.604 -0.916,3.021 -2.561,3.021 h -6.023 c -1.023,0 -3.417,-0.583 -3.417,-3.021 V 10.5 h 12 v 17.979 z"
+             stroke-miterlimit="10"
+             inkscape:connector-curvature="0"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_6-0-5"
+         style="display:none">
+        <g
+           id="g4916-9"
+           display="inline"
+           style="display:inline">
+          <g
+             id="g4910-2">
+            <path
+               id="path4908-2"
+               d="m 27.5,29.5 c 0,1.104 -0.896,2 -2,2 h -22 c -1.104,0 -2,-0.896 -2,-2 v -11 c 0,-1.104 0.896,-2 2,-2 h 22 c 1.104,0 2,0.896 2,2 z"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+          <g
+             id="g4914-8">
+            <path
+               id="path4912-9"
+               d="m 27,20.5 h 3.161 c 0.55,0 1.339,-0.019 1.339,0.531 v 5.5 c 0,0.55 -0.789,0.969 -1.339,0.969 H 27"
+               stroke-miterlimit="10"
+               inkscape:connector-curvature="0"
+               style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          </g>
+        </g>
+        <line
+           id="line4918-7"
+           y2="28.625"
+           x2="4.125"
+           y1="19.5"
+           x1="4.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4920-3"
+           y2="28.625"
+           x2="8.125"
+           y1="19.5"
+           x1="8.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4922-6"
+           y2="28.625"
+           x2="12.125"
+           y1="19.5"
+           x1="12.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4924-1"
+           y2="28.625"
+           x2="16.125"
+           y1="19.5"
+           x1="16.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4926-2"
+           y2="28.625"
+           x2="20.125"
+           y1="19.5"
+           x1="20.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4928-9"
+           y2="28.625"
+           x2="24.125"
+           y1="19.5"
+           x1="24.125"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+      <g
+         display="none"
+         id="Layer_7-6-3"
+         style="display:none">
+        <g
+           id="g4945-1"
+           display="inline"
+           style="display:inline">
+          <line
+             id="line4931-9"
+             y2="5"
+             x2="5.5"
+             y1="13"
+             x1="5.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4933-4"
+             y2="5"
+             x2="9.5"
+             y1="13"
+             x1="9.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4935-7"
+             y2="5"
+             x2="13.5"
+             y1="13"
+             x1="13.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4937-8"
+             y2="5"
+             x2="17.5"
+             y1="13"
+             x1="17.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4939-4"
+             y2="5"
+             x2="21.5"
+             y1="13"
+             x1="21.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4941-5"
+             y2="7"
+             x2="25.5"
+             y1="13"
+             x1="25.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <polygon
+             id="polygon4943-0"
+             points="31.5,7.531 31.5,31.5 1.5,31.5 1.5,1.5 26,1.5 "
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         id="Layer_8-15-3"
+         transform="translate(-0.4999994,-0.07999322)">
+        <g
+           id="g4962-6">
+          <line
+             id="line4958-0"
+             y2="31.5"
+             x2="16.5"
+             y1="1.5"
+             x1="16.5"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+          <line
+             id="line4960-6"
+             y2="16.420006"
+             x2="31"
+             y1="16.420006"
+             x1="1.0000007"
+             stroke-miterlimit="10"
+             style="fill:none;stroke:#ea2127;stroke-width:1;stroke-miterlimit:10" />
+        </g>
+      </g>
+      <g
+         display="none"
+         id="Layer_8_copy-5-1"
+         style="display:none">
+        <path
+           id="path4965-5"
+           d="m 18.914,17.448 c 0.789,2.644 -0.717,5.43 -3.364,6.218 -2.643,0.79 -5.428,-0.718 -6.217,-3.361 -0.789,-2.644 0.717,-5.431 3.362,-6.218 2.643,-0.788 5.43,0.717 6.219,3.361 z"
+           stroke-miterlimit="10"
+           display="inline"
+           inkscape:connector-curvature="0"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4967-5"
+           y2="13.879"
+           x2="14.123"
+           y1="1.303"
+           x1="14.123"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4969-4"
+           y2="18.877001"
+           x2="31.697001"
+           y1="18.877001"
+           x1="19.124001"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+        <line
+           id="line4971-7"
+           y2="22.406"
+           x2="10.593"
+           y1="31.302999"
+           x1="1.697"
+           stroke-miterlimit="10"
+           display="inline"
+           style="display:inline;fill:none;stroke:#ea2127;stroke-miterlimit:10" />
+      </g>
+      <path
+         style="fill:none;stroke:#ea2127;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 24.000001,23.420007 c -3,5 -11.494925,5.820749 -16.4949247,0.820749 -5,-5 -4.1262684,-12.820749 1.1995561,-16.7046325 C 12.318,4.9010577 20.000001,3.4200068 24.000001,10.420007"
+         id="path5794"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cssc" />
+      <path
+         style="fill:none;stroke:#ea2127;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 18,8.420007 6,2 v -6"
+         id="path5796"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g6395"
+         transform="matrix(0.13142906,0,0,0.13142906,37.504455,-22.080425)"
+         style="stroke-width:7.60867;stroke-miterlimit:4;stroke-dasharray:none">
+        <path
+           sodipodi:nodetypes="csssc"
+           inkscape:connector-curvature="0"
+           id="path6349"
+           d="m 19.232138,69.259937 c -26.4272917,0 -45.300612,15.096374 -45.152362,33.585903 0.21917,27.33487 23.8513603,47.84542 105.568151,47.56127 80.703923,-0.28082 106.699243,-23.40249 106.239093,-47.25177 -0.32845,-17.027449 -17.4059,-33.895403 -45.71736,-33.895403"
+           style="fill:none;stroke:#ea2127;stroke-width:7.60867;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <path
+           sodipodi:nodetypes="cccccccc"
+           inkscape:connector-curvature="0"
+           id="path6351"
+           d="m 57.17856,-46.781315 h 45.04235 V 35.63427 h 37.94875 L 79.857127,87.502961 19.232138,35.63427 H 57.17856 Z"
+           style="fill:none;stroke:#ea2127;stroke-width:7.60867;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+      <g
+         id="g7643">
+        <path
+           sodipodi:nodetypes="csccc"
+           inkscape:connector-curvature="0"
+           id="path7524"
+           d="m 41.000001,3.4200069 c -0.55804,1.986633 -4.08385,5.9944431 -4.05354,8.5634251 0.0287,2.434129 2.35673,4.091414 4.05354,4.065222 1.68923,-0.02646 3.94736,-1.642204 3.96169,-4.087521 0.0157,-2.674923 -3.33781,-6.6031731 -3.96169,-8.5411261 z"
+           style="fill:none;stroke:#ea2127;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:6;stroke-dasharray:none;stroke-opacity:1" />
+        <path
+           sodipodi:nodetypes="csccc"
+           inkscape:connector-curvature="0"
+           id="path7524-6"
+           d="m 48.000003,18.420007 c -0.55803,1.986633 -4.08384,5.994444 -4.05354,8.563427 0.0287,2.434129 2.35673,4.091414 4.05354,4.065222 1.68924,-0.02646 3.94737,-1.642205 3.96169,-4.087522 0.0157,-2.674922 -3.33781,-6.603174 -3.96169,-8.541127 z"
+           style="fill:none;stroke:#ea2127;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:6;stroke-dasharray:none;stroke-opacity:1" />
+        <path
+           sodipodi:nodetypes="csccc"
+           inkscape:connector-curvature="0"
+           id="path7524-6-6"
+           d="m 57.000001,9.4200069 c -0.55803,1.9866331 -4.08384,5.9944441 -4.05354,8.5634271 0.0287,2.434129 2.35673,4.091414 4.05354,4.065222 1.68924,-0.02646 3.94737,-1.642205 3.96169,-4.087522 0.0157,-2.674922 -3.33781,-6.603174 -3.96169,-8.5411271 z"
+           style="fill:none;stroke:#ea2127;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:6;stroke-dasharray:none;stroke-opacity:1" />
+      </g>
+    </g>
+  </g>
+</svg>

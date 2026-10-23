@@ -1,0 +1,49 @@
+{
+ "_note": "Single source for every RaceBox EVO fact on the patched pages. Prices from the owner (23 Oct 2026); everything else from the redesign's products.json/faq.json, which the owner supplied. Placeholders in CAPITALS must be set by the CTO.",
+ "name": "RaceBox EVO",
+ "path": "/products/racebox-evo",
+ "sku": "EVO_SKU",
+ "productId": "EVO_PRODUCT_ID",
+ "preorderPrice": {"USD": 339, "EUR": 339},
+ "priceAfterPreorder": {"USD": 449, "EUR": 449},
+ "shipWindow": "March 2027",
+ "availabilityStarts": "2027-03-01",
+ "tagline": "The RaceBox you know. Now at 25 Hz.",
+ "oneLiner": "Built-in screen, 25 Hz GPS, bigger battery and more storage.",
+ "description": "RaceBox EVO is the next generation of the original standalone RaceBox: the same windscreen-mounted unit with its own colour screen, now with 25 Hz GPS, a larger battery and more internal storage. Lap timing and drag runs on the device, no phone needed.",
+ "chips": ["25 Hz GPS", "Built-in screen", "No phone needed"],
+ "highlights": [
+  {"title": "25 Hz, on the dash", "body": "25 Hz GPS instead of 10 Hz, with live lap, sector and drag results on its own colour screen."},
+  {"title": "Bigger battery", "body": "A larger battery than the original RaceBox. Capacity and runtime are confirmed before shipping."},
+  {"title": "More storage", "body": "More room for sessions on the device itself. The final figure is confirmed before shipping."},
+  {"title": "Same shape you know", "body": "The windscreen-mounted design and four-button controls of the original RaceBox."}
+ ],
+ "specs": [
+  ["Display", "Colour screen. Size and resolution TBA"],
+  ["GNSS update rate", "25 Hz"],
+  ["Standalone use", "Yes: on-device lap timer, drag meter and history"],
+  ["Battery", "Larger than the original RaceBox. Final figure TBA"],
+  ["Storage", "Larger than the original RaceBox. Final figure TBA"],
+  ["App", "RaceBox app for iOS and Android"],
+  ["App connection", "TBA"],
+  ["Third-party apps", "TBA"],
+  ["Accessory fit", "TBA, confirmed before shipping"],
+  ["Ships", "March 2027"]
+ ],
+ "terms": [
+  "Ships March 2027.",
+  "Paid in full at checkout, at the pre-order price.",
+  "Cancel any time before it ships for a full refund.",
+  "We email production updates while you wait. If the ship date moves, we email you the new date before the old one passes."
+ ],
+ "faq": [
+  ["When does RaceBox EVO ship?", "March 2027. You can cancel any time before it ships for a full refund."],
+  ["Will I be charged now?", "Yes. Pre-orders are paid in full at checkout, at the pre-order price."],
+  ["Can I cancel my pre-order?", "Yes, any time before it ships, for a full refund of everything you paid. Contact us with your order number. After delivery you still have 14 days to change your mind."],
+  ["Will you keep me updated while I wait?", "Yes. We email production updates while you wait. If the ship date moves, we email you the new date before the old one passes: keep your place or cancel for a full refund."],
+  ["Should I wait for EVO or buy the RaceBox now?", "If you want it before March 2027, the RaceBox ships now, with the same shape and controls at 10 Hz. EVO adds 25 Hz GPS, a larger battery and more storage. On a motorcycle, the Mini S is the better fit: EVO is built for cars."],
+  ["Will my RaceBox accessories fit EVO?", "EVO has the same shape as the original RaceBox. Which accessories fit is confirmed before it ships."],
+  ["What will EVO cost after pre-order?", "449 (USD or EUR) once pre-orders close. Pre-orders pay 339."]
+ ],
+ "imageNote": "Photos show the current RaceBox. EVO keeps the same shape; EVO photos follow before shipping."
+}
