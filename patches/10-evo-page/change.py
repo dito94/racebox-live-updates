@@ -109,7 +109,7 @@ def whats_new(e):
 	<p class="rbu-evo-intro">Two and a half times the update rate. Same RaceBox.</p>
 	<ol class="rbu-evo-new">{items}</ol>
 </section>
-<section class="rbu-evo-photo" aria-label="Photo">
+<div class="rbu-evo-photo">
 	<figure>
 		<picture>
 			<source type="image/webp" srcset="{IMG}/evo-windscreen-640.webp 640w, {IMG}/evo-windscreen-1024.webp 1024w, {IMG}/evo-windscreen-1600.webp 1600w" sizes="(min-width: 1001px) 960px, 100vw" />
@@ -117,7 +117,7 @@ def whats_new(e):
 		</picture>
 		<figcaption>{rbu.esc(e['imageNote'])}</figcaption>
 	</figure>
-</section>'''
+</div>'''
 
 
 def how(e, cur, rb):
@@ -293,15 +293,18 @@ def store_card(e, cur):
 
 # Menu and footer -----------------------------------------------------------------------------------------------------
 
-MENU = re.compile(r'(<li class="product-single"><a\s+(?:class="current"\s+)?href="/products/racebox">Racebox</a></li>)')
+MENU = re.compile(r'([ \t]*)(<li class="product-single"><a\s+(?:class="current"\s+)?href="/products/racebox">Racebox</a></li>)')
 FOOTER = '<li><a href="/products/racebox">RaceBox</a></li>'
 
 
 def links(html, rel):
     cur_attr = 'class="current" ' if rel == PAGE else ' '
-    item = (f'\n\t\t\t\t\t{MARK}\n\t\t\t\t\t<li class="product-single"><a {cur_attr}href="{rbu.evo()["path"]}">'
-            f'Racebox EVO</a></li>')
-    html = rbu.re_sub(html, MENU.pattern, lambda m: m.group(1) + item, count=2, where=rel)
+
+    def item(m):
+        ind = m.group(1)
+        return (f'{ind}{m.group(2)}\n{ind}{MARK}\n{ind}<li class="product-single"><a {cur_attr}'
+                f'href="{rbu.evo()["path"]}">Racebox EVO</a></li>')
+    html = rbu.re_sub(html, MENU.pattern, item, count=2, where=rel)
     return rbu.insert_after(html, FOOTER, f'\n\t\t\t\t\t{MARK}\n\t\t\t\t\t<li><a href="{rbu.evo()["path"]}">RaceBox EVO</a></li>',
                             where=rel)
 

@@ -68,7 +68,7 @@
 .rbu-evo-new p { font: .9375rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
 
 /* The photo: a dark band like the live "topimg" banners, with an honest caption */
-.rbu-evo-page main section.rbu-evo-photo { padding: 0; background: #020202; }
+.rbu-evo-photo { padding: 0; background: #020202; border-bottom: 2px solid #fff; }
 .rbu-evo-photo figure { margin: 0 auto; max-width: 1120px; text-align: center; }
 .rbu-evo-photo img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: cover; }
 .rbu-evo-photo figcaption { padding: 10px 20px 14px; font: .8125rem/1.45 var(--rbu-font-light); color: #c9c9cf; }

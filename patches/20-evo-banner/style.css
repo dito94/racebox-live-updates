@@ -6,9 +6,7 @@
 :root { --rbu-bar-h: 30px; }
 @media (max-width: 767px) { :root { --rbu-bar-h: 40px; } }
 @media (max-width: 359px) { :root { --rbu-bar-h: 56px; } }
-@media (max-height: 520px) { :root { --rbu-bar-h: 0px; } header .rbu-evo-bar { display: none; } }
-/* The offsets below need :has(), like the live header's own; without it the bar stays out of the way */
-@supports not selector(:has(a)) { header .rbu-evo-bar { display: none; } }
+@media (max-height: 520px) { :root { --rbu-bar-h: 0px; } }
 
 header .rbu-evo-bar {
   position: absolute; top: 0; left: 0; right: 0; z-index: 1; box-sizing: border-box; height: var(--rbu-bar-h);
@@ -59,3 +57,8 @@ body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: ca
   header .rbu-evo-bar-tail { display: block; margin-top: 4px; }
   header .rbu-evo-bar-tail > .rbu-evo-bar-sep:first-child { display: none; }
 }
+
+/* Hidden on very short windows (phones held sideways, 200% zoom on a laptop) and in browsers without :has(), which
+   the header offsets need (as the live header's own do). Last, so it wins over the rules above. */
+@media (max-height: 520px) { header .rbu-evo-bar { display: none; } }
+@supports not selector(:has(a)) { header .rbu-evo-bar { display: none; } }
