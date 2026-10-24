@@ -321,7 +321,8 @@ def apply(site):
     rb = racebox_facts(tpl)
     cur = rb['cur']
     now, later = rbu.evo_prices(cur)
-    main = (hero(e, cur, rb) + whats_new(e) + how(e, cur, rb) + versus(e, rb) + specs(e) + faq(e, cur) + sooner(e, rb)
+    # "Need it sooner?" straight after the hero (owner): anyone who can't wait for EVO sees the RaceBox that ships now
+    main = (hero(e, cur, rb) + sooner(e, rb) + whats_new(e) + how(e, cur, rb) + versus(e, rb) + specs(e) + faq(e, cur)
             + sticky(e, cur))
     site.new_page(
         PAGE, TEMPLATE,

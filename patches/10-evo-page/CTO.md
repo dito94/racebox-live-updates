@@ -91,6 +91,26 @@ The Product JSON-LD has no reviews or rating (EVO has none yet). Its Offer is `P
 	</div>
 </section>
 <!-- rb-updates: 10 evo-page -->
+<section class="rbu-evo-band rbu-evo-band--mist" aria-labelledby="rbu-evo-sooner-title">
+	<h2 id="rbu-evo-sooner-title">Need it sooner?</h2>
+	<div class="rbu-evo-wrap rbu-evo-sooner">
+		<div class="rbu-evo-sooner-main">
+			<img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" />
+			<div>
+				<h3>RaceBox ships now</h3>
+				<p>If you want it before March&nbsp;2027, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz.</p>
+				<p class="rbu-evo-rb-price">{{racebox_price}}</p>
+				<a class="rbu-btn rbu-btn--ghost rbu-evo-sooner-btn" href="/products/racebox">See the RaceBox</a>
+			</div>
+		</div>
+		<div class="rbu-evo-sooner-side">
+			<h3>On a motorcycle?</h3>
+			<p>EVO is built for cars. On a motorcycle, the Mini&nbsp;S is the better fit.</p>
+			<a class="rbu-evo-more rbu-focus" href="/products/racebox-mini-s">See the RaceBox Mini S</a>
+		</div>
+	</div>
+</section>
+<!-- rb-updates: 10 evo-page -->
 <section class="rbu-evo-band rbu-evo-band--pink" aria-labelledby="rbu-evo-new-title">
 	<h2 id="rbu-evo-new-title">What's new</h2>
 	<p class="rbu-evo-intro">Same shape you know. Now at 25&nbsp;Hz.</p>
@@ -147,26 +167,6 @@ The Product JSON-LD has no reviews or rating (EVO has none yet). Its Offer is `P
 	<div class="rbu-evo-wrap rbu-evo-faq"><details class="rbu-evo-faq-item" open><summary>When does RaceBox EVO ship?</summary><p>March&nbsp;2027. You can cancel any time before it ships for a full refund.</p></details><details class="rbu-evo-faq-item"><summary>Will I be charged now?</summary><p>Yes. Pre-orders are paid in full at checkout, at the pre-order price.</p></details><details class="rbu-evo-faq-item"><summary>Can I cancel my pre-order?</summary><p>Yes, any time before it ships, for a full refund of everything you paid. Contact us with your order number. After delivery you still have 14 days to change your mind.</p></details><details class="rbu-evo-faq-item"><summary>Will you keep me updated while I wait?</summary><p>Yes. We email production updates while you wait. If the ship date moves, we email you the new date before the old one passes: keep your place or cancel for a full refund.</p></details><details class="rbu-evo-faq-item"><summary>Should I wait for EVO or buy the RaceBox now?</summary><p>If you want it before March&nbsp;2027, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz. EVO adds 25&nbsp;Hz GPS, a larger battery and more storage. On a motorcycle, the Mini S is the better fit: EVO is built for cars.</p></details><details class="rbu-evo-faq-item"><summary>Will my RaceBox accessories fit EVO?</summary><p>EVO has the same shape as the original RaceBox. Which accessories fit is confirmed before it ships.</p></details><details class="rbu-evo-faq-item"><summary>What will EVO cost after pre-order?</summary><p>{{evo_price_after}} once pre-orders close. Pre-orders pay {{evo_preorder_price}}.</p></details></div>
 </section>
 <!-- rb-updates: 10 evo-page -->
-<section class="rbu-evo-band rbu-evo-band--mist" aria-labelledby="rbu-evo-sooner-title">
-	<h2 id="rbu-evo-sooner-title">Need it sooner?</h2>
-	<div class="rbu-evo-wrap rbu-evo-sooner">
-		<div class="rbu-evo-sooner-main">
-			<img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" />
-			<div>
-				<h3>RaceBox ships now</h3>
-				<p>If you want it before March&nbsp;2027, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz.</p>
-				<p class="rbu-evo-rb-price">{{racebox_price}}</p>
-				<a class="rbu-btn rbu-btn--ghost rbu-evo-sooner-btn" href="/products/racebox">See the RaceBox</a>
-			</div>
-		</div>
-		<div class="rbu-evo-sooner-side">
-			<h3>On a motorcycle?</h3>
-			<p>EVO is built for cars. On a motorcycle, the Mini&nbsp;S is the better fit.</p>
-			<a class="rbu-evo-more rbu-focus" href="/products/racebox-mini-s">See the RaceBox Mini S</a>
-		</div>
-	</div>
-</section>
-<!-- rb-updates: 10 evo-page -->
 <div id="add-to-cart-popup" class="bottom-popup-element cart-icon rbu-evo-sticky" data-track-element-id="rbu-evo-buy">
 	<div>
 		<div class="left rbu-price-inline"><p class="rbu-price rbu-price--pre rbu-price--sm"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>{{evo_price_after}}</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>{{evo_preorder_price}}</strong></p></div>
@@ -179,6 +179,7 @@ The Product JSON-LD has no reviews or rating (EVO has none yet). Its Offer is `P
 ```
 
 Notes on the page:
+- "Need it sooner?" comes straight after the hero (owner's request), so anyone who can't wait for EVO sees the RaceBox that ships now, and the Mini S for motorcycles, before the EVO details.
 - The first screen (desktop and phone) holds the name, tagline, price, the violet Pre-order button, the ship month and the key terms. The photo comes after it on phones.
 - The price block (`.rbu-price`) is the shared one from 00 core. The struck price is labelled "after pre-order" in words and for screen readers. It must never read "was", "save" or "% off".
 - `#add-to-cart-popup` is the live sticky bar. Like on every product page, main.css shows it on phones only. It tracks `#rbu-evo-buy` (the hero buy block).
