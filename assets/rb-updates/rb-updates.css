@@ -1,0 +1,744 @@
+/* ---- 00-core/style.css ---- */
+/* RaceBox site updates (Oct 2026). Everything new uses the rbu- prefix so it can't collide with main.css.
+   Colours and fonts are the live site's own (main.css): red #ea2127, ink #2c2c2c, greys #f1f1f3 / #e4e4ec,
+   RaceBox-Regular and RaceBox-Light. Violet comes from the redesign, where it marks pre-orders and nothing else. */
+:root {
+  --rbu-red: #ea2127;          /* live brand red: marks and large text */
+  --rbu-red-aa: #e32026;       /* same red, 4.7:1 under white text (#ea2127 is 4.4:1, under AA) */
+  --rbu-red-dark: #c4161c;
+  --rbu-ink: #2c2c2c;
+  --rbu-text-2: #4d4d4f;       /* secondary text, 8.6:1 on white */
+  --rbu-grey: #f1f1f3;
+  --rbu-line: #e4e4ec;
+  --rbu-violet: #6d3fd6;       /* pre-order only (redesign token), 6.3:1 on white */
+  --rbu-violet-dark: #5631ad;
+  --rbu-violet-wash: #f1ecfd;
+  --rbu-radius: 4px;
+  --rbu-font: RaceBox-Regular, Arial, sans-serif;
+  --rbu-font-light: RaceBox-Light, Arial, sans-serif;
+  --rbu-desktop: 1001px;       /* the live site's desktop breakpoint (main.css: max-width 1000px is mobile) */
+}
+
+/* Visually hidden text for screen readers */
+.rbu-sr { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* EVO price: struck price after pre-order, bold pre-order price, then the words that explain both */
+.rbu-price { margin: 0; font-family: var(--rbu-font); color: var(--rbu-ink); line-height: 1.3; }
+.rbu-price-later { color: var(--rbu-text-2); margin-right: .25em; }
+.rbu-price-now { font-weight: normal; font-size: 1.25em; color: var(--rbu-ink); }
+.rbu-price--pre .rbu-price-now { color: var(--rbu-violet); }
+.rbu-price-note { display: block; font-size: .8125rem; color: var(--rbu-text-2); margin-top: .2em; }
+.rbu-price--lg .rbu-price-now { font-size: 2rem; }
+.rbu-price--lg .rbu-price-later { font-size: 1.125rem; }
+.rbu-price--sm { font-size: .9375rem; }
+
+/* Pre-order badge and button */
+.rbu-badge { display: inline-block; font: .75rem/1 var(--rbu-font); letter-spacing: .06em; text-transform: uppercase; padding: .4em .6em; border-radius: var(--rbu-radius); background: var(--rbu-violet-wash); color: var(--rbu-violet); }
+/* Same pill shape and capitals as the live button.submit, at the 44 px target size */
+.rbu-btn { display: inline-flex; align-items: center; justify-content: center; gap: .5em; min-height: 44px; padding: 0 1.6em; border: 0; border-radius: 22px; font: 1rem/1 var(--rbu-font); text-transform: uppercase; letter-spacing: .02em; text-decoration: none; cursor: pointer; background: var(--rbu-red-aa); color: #fff; }
+.rbu-btn:hover { background: var(--rbu-red-dark); color: #fff; }
+a.rbu-btn:hover { text-decoration: none; } /* beats main.css a:hover { text-decoration: underline } */
+.rbu-btn--pre { background: var(--rbu-violet); }
+.rbu-btn--pre:hover { background: var(--rbu-violet-dark); }
+.rbu-btn--ghost { background: transparent; color: var(--rbu-ink); box-shadow: inset 0 0 0 1px currentColor; }
+.rbu-btn--ghost:hover { background: var(--rbu-grey); color: var(--rbu-ink); }
+.rbu-btn:focus-visible, .rbu-focus:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; box-shadow: 0 0 0 4px #fff; }
+
+/* ---- 10-evo-page/style.css ---- */
+/* 10 evo-page: the RaceBox EVO page (/products/racebox-evo), its store card and its menu links.
+   The live look: RaceBox-Light uppercase spaced headings, the pale pink and grey section bands, red ring bullets.
+   Headings and links use the darker brand red (#c4161c): the live red (#ea2127) is only 4:1 on white, below AA for
+   text this size. Violet marks pre-order (price, badge, button) and nothing else. */
+
+/* ---- Page frame ---------------------------------------------------------------------------------------------- */
+.rbu-evo-page main *, .rbu-evo-page main *::before, .rbu-evo-page main *::after { box-sizing: border-box; }
+.rbu-evo-page main p { margin: 0; }
+.rbu-evo-page main a { color: var(--rbu-red-dark); text-decoration: underline; text-underline-offset: 3px; }
+.rbu-evo-page main a:hover { text-decoration-thickness: 2px; }
+.rbu-evo-page main a:focus-visible,
+.rbu-evo-page main summary:focus-visible,
+.rbu-evo-table-scroll:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; box-shadow: 0 0 0 4px #fff; }
+
+.rbu-evo-band { padding: 20px 20px 56px; background: #fff; }
+.rbu-evo-band--pink { background: #fdeae3; }
+.rbu-evo-band--grey { background: var(--rbu-grey); }
+.rbu-evo-band--mist { background: var(--rbu-line); }
+/* Section titles: the live section heading (uppercase, spaced, centred) in the darker red */
+.rbu-evo-page .rbu-evo-band > h2 {
+  margin: 0 0 12px; padding: 10px 20px 0; color: var(--rbu-red-dark); text-align: center;
+  font: 1.2em/32px var(--rbu-font-light); letter-spacing: 5px; text-transform: uppercase; background: none;
+}
+.rbu-evo-wrap { max-width: 960px; margin: 0 auto; }
+.rbu-evo-intro { max-width: 640px; margin: 0 auto 32px !important; text-align: center; font: 1.0625rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-small { margin-top: 16px !important; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-h3 { margin: 40px 0 0; font: 1.0625rem/1.4 var(--rbu-font); color: var(--rbu-ink); text-transform: none; }
+/* A text link with a chevron, 44 px tall */
+.rbu-evo-page main a.rbu-evo-more {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--rbu-ink);
+  font: 1rem/1.3 var(--rbu-font); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.rbu-evo-page main a.rbu-evo-more::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); flex: none; }
+.rbu-evo-page main a.rbu-evo-more:hover { color: var(--rbu-red-dark); text-decoration-thickness: 2px; }
+
+/* ---- Hero: name, price, Pre-order and the key terms on the first screen ------------------------------------- */
+.rbu-evo-page main section.rbu-evo-hero { padding: 44px 20px 48px; background: var(--rbu-grey); }
+.rbu-evo-hero-in {
+  max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  grid-template-areas: "copy media" "buy media"; column-gap: 56px; align-items: center;
+}
+.rbu-evo-hero-copy { grid-area: copy; align-self: end; }
+.rbu-evo-hero-media { grid-area: media; margin: 0; text-align: center; }
+.rbu-evo-buy { grid-area: buy; align-self: start; }
+.rbu-evo-flag { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font: .875rem/1.4 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-page .rbu-evo-hero .rbu-evo-name {
+  margin: 14px 0 0; padding: 0; background: none; color: var(--rbu-ink); text-align: left;
+  font: 2.75rem/1.1 var(--rbu-font-light); letter-spacing: .18em; text-transform: uppercase;
+}
+.rbu-evo-name span { font-family: var(--rbu-font); }
+.rbu-evo-tagline { margin-top: 14px !important; font: 1.375rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-evo-lede { margin-top: 8px !important; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-buy .rbu-price { margin-top: 24px; }
+.rbu-evo-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; margin-top: 20px; }
+.rbu-evo-actions form { margin: 0; }
+.rbu-btn.rbu-evo-cta { min-height: 52px; margin: 0; padding: 0 36px; font-size: 1.0625rem; }
+.rbu-evo-page .rbu-evo-keyterms { margin: 18px 0 0; padding-left: 0; font-size: .9375rem; color: var(--rbu-ink); }
+.rbu-evo-page .rbu-evo-keyterms li { margin-bottom: 6px; }
+.rbu-evo-page .rbu-evo-currency { margin-top: 12px; font: .8125rem/1.45 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-hero-media img { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
+.rbu-evo-hero-media figcaption { max-width: 380px; margin: 10px auto 0; font: .8125rem/1.45 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+/* ---- What's new ------------------------------------------------------------------------------------------------ */
+.rbu-evo-new { list-style: none; margin: 0 auto; padding: 0; max-width: 1120px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.rbu-evo-new li { padding: 24px 22px 26px; background: #fff; border-radius: 8px; }
+.rbu-evo-new-n { display: block; font: 1.75rem/1 var(--rbu-font-light); letter-spacing: .08em; color: var(--rbu-red-dark); }
+.rbu-evo-new h3 { margin: 16px 0 8px; font: 1.0625rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-evo-new p { font: .9375rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+/* Desktop: the same 40 px side margin as the product-page hero (50 pdp-first-screen .rbu-pdp) until the 1120 px frame fits */
+@media (min-width: 1001px) {
+  .rbu-evo-page main section.rbu-evo-hero { padding-left: 40px; padding-right: 40px; }
+  .rbu-evo-new { width: calc(100% - 40px); }
+}
+
+/* The photo: full width like the live "topimg" banners (cropped to 560 px tall on wide screens, the RaceBox stays in
+   view), with an honest caption on a dark strip under it */
+.rbu-evo-photo { padding: 0; background: #020202; border-bottom: 2px solid #fff; }
+.rbu-evo-photo figure { margin: 0; text-align: center; }
+.rbu-evo-photo img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: cover; object-position: 50% 24%; }
+.rbu-evo-photo figcaption { max-width: 1120px; margin: 0 auto; padding: 10px 20px 14px; font: .8125rem/1.45 var(--rbu-font-light); color: #c9c9cf; }
+
+/* ---- How pre-ordering works ------------------------------------------------------------------------------------ */
+.rbu-evo-steps { list-style: none; margin: 8px 0 28px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.rbu-evo-steps li { position: relative; padding-top: 14px; font: .875rem/1.35 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-steps li::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; border-radius: 2px; background: #c9c9d3; }
+.rbu-evo-steps li.is-now { color: var(--rbu-ink); font-family: var(--rbu-font); }
+.rbu-evo-steps li.is-now::before { background: var(--rbu-violet); }
+.rbu-evo-terms { margin: 0; border-top: 1px solid #d6d6de; }
+.rbu-evo-terms > div { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 4px 24px; padding: 16px 0; border-bottom: 1px solid #d6d6de; }
+.rbu-evo-terms dt { font: 1rem/1.45 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-evo-terms dd { margin: 0; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-ink); }
+.rbu-evo-page .rbu-evo-buying { margin: 12px 0 0; padding-left: 0; columns: 2; column-gap: 40px; font-size: .9375rem; }
+.rbu-evo-page .rbu-evo-buying li { break-inside: avoid; }
+.rbu-evo-switch { margin-top: 8px !important; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+/* ---- Tables: EVO vs RaceBox and the specs ---------------------------------------------------------------------- */
+.rbu-evo-table-scroll { overflow-x: auto; }
+.rbu-evo-table { width: 100%; border-collapse: collapse; font: 1rem/1.45 var(--rbu-font-light); color: var(--rbu-ink); background: #fff; }
+.rbu-evo-table th, .rbu-evo-table td { padding: 13px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid #e4e4ec; }
+.rbu-evo-table tbody th { font-family: var(--rbu-font); font-weight: normal; width: 34%; }
+.rbu-evo-table thead th { font: .875rem/1.3 var(--rbu-font); letter-spacing: .08em; text-transform: uppercase; color: var(--rbu-text-2); border-bottom: 2px solid #e4e4ec; }
+.rbu-evo-vs thead th:last-child { color: var(--rbu-violet); }
+.rbu-evo-vs td:last-child, .rbu-evo-vs thead th:last-child { background: var(--rbu-violet-wash); }
+.rbu-evo-vs tbody th { width: 28%; }
+.rbu-evo-link-row { margin-top: 12px !important; text-align: center; }
+.rbu-evo-specs { border-radius: 8px; overflow: hidden; }
+.rbu-evo-specs tr:last-child th, .rbu-evo-specs tr:last-child td { border-bottom: 0; }
+.rbu-evo-tba { color: var(--rbu-text-2); font-family: var(--rbu-font); letter-spacing: .04em; }
+
+/* ---- FAQ ------------------------------------------------------------------------------------------------------- */
+.rbu-evo-faq { max-width: 760px; border-top: 1px solid #d6d6de; }
+.rbu-evo-faq-item { border-bottom: 1px solid #d6d6de; }
+.rbu-evo-faq-item > summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 12px 2px;
+  list-style: none; cursor: pointer; font: 1.0625rem/1.4 var(--rbu-font); color: var(--rbu-ink);
+}
+.rbu-evo-faq-item > summary::-webkit-details-marker { display: none; }
+.rbu-evo-faq-item > summary::after {
+  content: ""; flex: none; width: 9px; height: 9px; margin-right: 6px; border: solid var(--rbu-red-dark);
+  border-width: 0 2px 2px 0; transform: rotate(45deg) translate(-2px, -2px); transition: transform .2s ease;
+}
+.rbu-evo-faq-item[open] > summary::after { transform: rotate(225deg) translate(-2px, -2px); }
+.rbu-evo-faq-item > summary:hover { text-decoration: underline; text-decoration-color: var(--rbu-red); text-underline-offset: 4px; }
+.rbu-evo-faq-item > p { padding: 0 2px 18px; max-width: 680px; font: 1rem/1.55 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+/* ---- Need it sooner? ------------------------------------------------------------------------------------------- */
+.rbu-evo-sooner { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 16px; }
+.rbu-evo-sooner > div { padding: 28px; background: #fff; border-radius: 8px; }
+.rbu-evo-sooner-main { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; align-items: center; }
+.rbu-evo-sooner-main img { width: 160px; height: auto; }
+.rbu-evo-sooner h3 { margin: 0 0 8px; font: 1.1875rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-evo-sooner p { font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-evo-rb-price { margin-top: 8px !important; font: 1.375rem/1.3 var(--rbu-font) !important; color: var(--rbu-ink) !important; }
+.rbu-evo-page main .rbu-btn.rbu-evo-sooner-btn { margin-top: 16px; color: var(--rbu-ink); text-decoration: none; }
+.rbu-evo-sooner-side .rbu-evo-more { margin-top: 8px; }
+
+/* ---- The inline EVO price (sticky bar here, the header bar in 20 evo-banner) ------------------------------------
+   The shared price block without its note, read as "$339.00 ($449.00 struck, after pre-order)": the pre-order price
+   first, then the struck price with its words. The words are visual only (alt text ""); screen readers already hear
+   "Price after pre-order" from the block itself. */
+.rbu-price-inline .rbu-price { display: inline-flex; flex-direction: row-reverse; align-items: baseline; gap: .3em; margin: 0; font-size: inherit; line-height: inherit; }
+.rbu-price-inline .rbu-price-later { margin: 0; color: var(--rbu-text-2); }
+.rbu-price-inline .rbu-price-later::before { content: "("; content: "(" / ""; display: inline-block; }
+.rbu-price-inline .rbu-price-later::after { content: "after pre-order)"; content: "after pre-order)" / ""; display: inline-block; margin-left: .3em; }
+
+/* ---- Sticky bar (the live bottom-popup-element, phones only like on every product page) ------------------------ */
+.rbu-evo-sticky { z-index: 50; }
+/* While the bar is off screen (until the hero has scrolled away; always from 1000 px, where main.css keeps it at
+   bottom: -200px) its button must not take keyboard focus. visibility leaves the tab order; it flips after the slide. */
+#add-to-cart-popup.rbu-evo-sticky { visibility: hidden; transition: bottom .5s ease, visibility 0s linear .5s; }
+#add-to-cart-popup.rbu-evo-sticky.visible { visibility: visible; transition: bottom .5s ease, visibility 0s linear 0s; }
+@media (min-width: 1000px) { #add-to-cart-popup.rbu-evo-sticky, #add-to-cart-popup.rbu-evo-sticky.visible { visibility: hidden; } }
+.rbu-evo-sticky > div { align-items: center; gap: 12px; }
+#add-to-cart-popup.rbu-evo-sticky .left { flex: 1 1 auto; min-width: 0; white-space: normal; line-height: 1.3; }
+.rbu-evo-sticky .left .rbu-price { flex-direction: column-reverse; align-items: flex-start; gap: 2px; }
+.rbu-evo-sticky .left .rbu-price-now { font-size: 1.25rem; line-height: 1.1; }
+.rbu-evo-sticky .left .rbu-price-later { font: .78125rem/1.3 var(--rbu-font-light); white-space: nowrap; }
+/* Stacked on two lines, the struck price needs no brackets: "$449.00 after pre-order" */
+.rbu-evo-sticky .left .rbu-price-later::before { content: none; }
+.rbu-evo-sticky .left .rbu-price-later::after { content: "after pre-order"; content: "after pre-order" / ""; }
+.rbu-evo-sticky .right { flex: none; }
+.rbu-evo-sticky .right form { margin: 0; }
+.rbu-evo-sticky button.submit { margin: 0; padding: 6px 18px; font-size: 1.0625em; }
+
+/* Violet version of the live pill button (store card and sticky bar), with a 44 px tall hit area */
+button.submit.rbu-submit-pre { position: relative; background: var(--rbu-violet); border-color: var(--rbu-violet); }
+button.submit.rbu-submit-pre:hover { background: var(--rbu-violet-dark); border-color: var(--rbu-violet-dark); }
+button.submit.rbu-submit-pre:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; }
+button.submit.rbu-submit-pre::after { content: ""; position: absolute; left: 0; right: 0; top: -5px; bottom: -5px; }
+
+/* ---- Store card ------------------------------------------------------------------------------------------------ */
+/* The status row and the price block take the same room as the live cards' "Limited Stock" row (19 px + 20 px margins)
+   and price line, so the rows line up across a row of cards. */
+div.products-list > div.rbu-card-evo .rbu-card-status {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0 6px; min-height: 19px; margin: 20px 0;
+  text-align: center; font: .9375rem/19px var(--rbu-font-light); color: var(--rbu-text-2);
+}
+div.products-list > div.rbu-card-evo .rbu-card-status .rbu-badge { margin: -2px 0; }
+div.products-list > div.rbu-card-evo .rbu-price { margin: 0 0 6px; font-size: 1rem; }
+@media (min-width: 1001px) { div.products-list > div.rbu-card-evo .rbu-price { text-align: center; } }
+div.products-list > div.rbu-card-evo .rbu-price-later { font-size: 18px; }
+div.products-list > div.rbu-card-evo .rbu-price-now { font-size: 24px; }
+div.products-list > div.rbu-card-evo .rbu-price-note { font-size: .8125rem; }
+
+/* ---- Header menu: the flat product list (from 1460 px) gains "Racebox EVO". Between 1460 and 1599 px the items
+   sit a little closer so the list still fits on one line instead of wrapping under the logo. ---- */
+@media (min-width: 1460px) and (max-width: 1599px) {
+  header nav.top .micon > ul > li { margin: 0 2px; }
+  header nav.top .micon > ul > li > a { padding: 0 11px; }
+}
+
+/* ---- Phone menu: with the extra "Racebox EVO" item the open list is taller than a sideways phone. It scrolls inside
+   the window instead of running off the bottom (live: overflow hidden, max-height 500 px). 100px = shipping banner +
+   nav top; --rbu-bar-h (set by 20 evo-banner, 0 when that set is absent) is the pre-order bar. ---- */
+@media (max-width: 940px) {
+  header nav.top .micon > input:checked ~ ul {
+    max-height: min(500px, calc(100vh - 100px - var(--rbu-bar-h, 0px)));
+    max-height: min(500px, calc(100dvh - 100px - var(--rbu-bar-h, 0px)));
+    overflow: hidden auto; overscroll-behavior: contain;
+  }
+}
+
+/* ---- Jumping to a section of this page ------------------------------------------------------------------------- */
+/* main.css hides and shifts any :target (a trick for old empty <a id> markers). Undo it here, or the hero link "How
+   pre-ordering works" lands on a blank screen. */
+.rbu-evo-page main :target { position: static; top: auto; visibility: visible; }
+/* The fixed header is 115 px tall (86 px on phones). Links and backward Tab (WCAG 2.4.11) leave the target clear of it,
+   with a 10 px gap. There is no pre-order bar on this page, so no --rbu-bar-h here. */
+html:has(body.rbu-evo-page) { scroll-padding-top: 125px; }
+@media (max-width: 940px) { html:has(body.rbu-evo-page) { scroll-padding-top: 96px; } }
+/* The phone sticky bar (up to 81 px tall, shown from the end of the hero to the bottom of the page) must not hide what Tab scrolls to (WCAG 2.4.11). */
+@media (max-width: 999px) { html:has(body.rbu-evo-page) { scroll-padding-bottom: 90px; } }
+
+/* ---- Phones and tablets ---------------------------------------------------------------------------------------- */
+@media (max-width: 1000px) {
+  .rbu-evo-hero-in { column-gap: 32px; }
+  .rbu-evo-page .rbu-evo-hero .rbu-evo-name { font-size: 2.25rem; }
+  .rbu-evo-new { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 699px) {
+  .rbu-evo-page main section.rbu-evo-hero { padding: 24px 16px 32px; }
+  .rbu-evo-hero-in { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "buy" "media"; }
+  .rbu-evo-page .rbu-evo-hero .rbu-evo-name { margin-top: 10px; font-size: 1.875rem; letter-spacing: .14em; }
+  .rbu-evo-tagline { margin-top: 8px !important; font-size: 1.125rem; }
+  .rbu-evo-lede { display: none; }
+  .rbu-evo-buy .rbu-price { margin-top: 16px; }
+  .rbu-evo-actions { margin-top: 16px; gap: 4px 20px; }
+  .rbu-evo-actions form, .rbu-btn.rbu-evo-cta { width: 100%; }
+  .rbu-evo-page .rbu-evo-keyterms { margin-top: 14px; font-size: .875rem; }
+  .rbu-evo-hero-media { margin-top: 28px; }
+  .rbu-evo-hero-media img { max-width: 340px; }
+  .rbu-evo-band { padding: 16px 16px 44px; }
+  .rbu-evo-page .rbu-evo-band > h2 { padding: 10px 0 0; letter-spacing: 4px; }
+  .rbu-evo-new { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .rbu-evo-new li { padding: 20px 18px; }
+  .rbu-evo-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px; }
+  .rbu-evo-terms > div { grid-template-columns: minmax(0, 1fr); }
+  .rbu-evo-page .rbu-evo-buying { columns: 1; }
+  .rbu-evo-table th, .rbu-evo-table td { padding: 12px 10px; font-size: .9375rem; }
+  .rbu-evo-sooner { grid-template-columns: minmax(0, 1fr); }
+  .rbu-evo-sooner > div { padding: 22px 18px; }
+  .rbu-evo-sooner-main { grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: start; }
+  .rbu-evo-sooner-main img { width: 96px; }
+  #add-to-cart-popup.rbu-evo-sticky { padding: 12px 16px 12px 48px; background-position: 12px center; }
+}
+@media (max-width: 359px) {
+  .rbu-evo-sticky .left .rbu-price-later { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rbu-evo-faq-item > summary::after { transition: none; }
+}
+
+/* ---- 20-evo-banner/style.css ---- */
+/* 20 evo-banner: the RaceBox EVO pre-order bar in the header, right under the shipping banner.
+   The live header is fixed, with the shipping banner and the nav placed by hand (absolute / top: 20px). With the bar the
+   header is laid out in normal flow instead: shipping banner, bar, nav, one under the other, so each follows the real
+   height of the one above. The bar's height is a minimum (--rbu-bar-h, per width): at normal text spacing it is exactly
+   that, so nothing shifts after load and <main> clears it. If a visitor's own text spacing (WCAG 1.4.12) makes the bar
+   taller, it grows and pushes the nav down instead of overlapping it. One line from 768 px, two lines on phones, three
+   below 360 px. 44 px tall on phones and touch screens, 30 px with a mouse. Hidden when the window is very short
+   (phones held sideways, 200% zoom on a laptop), where the fixed header already takes a third of the screen.
+   Quiet: violet wash, ink text, the price in the pre-order violet. */
+:root { --rbu-bar-h: 30px; }
+@media (max-width: 767px), (pointer: coarse) { :root { --rbu-bar-h: 44px; } }
+@media (max-width: 359px) { :root { --rbu-bar-h: 58px; } }
+@media (max-height: 520px) { :root { --rbu-bar-h: 0px; } }
+
+/* The header in normal flow. The bar is the first child in the HTML (first for keyboard users, as on screen) but
+   shown second: banner (order 1), bar (2), nav (3). The live offsets (banner absolute, nav top: 20px) are undone. */
+header:has(.rbu-evo-bar) { display: flex; flex-direction: column; height: auto; }
+/* In flow the banner is as tall as its text (min 16 px + its 2 px padding, 20 px as today); its own font matches the text's
+   so no stray strut makes it 21 px */
+header:has(.rbu-evo-bar) > .shipping-info-banner { order: 1; position: static; height: auto; min-height: 16px; font: 12px/16px "RaceBox-Light", "RaceBox", sans-serif; }
+header:has(.rbu-evo-bar) > .rbu-evo-bar { order: 2; }
+header:has(.rbu-evo-bar) > nav.top { order: 3; }
+header:has(.rbu-evo-bar):has(.shipping-info-banner) > nav.top { top: 0; }
+/* A flex item contains its floats. The floated logo (38 px with its -2 px top margin) would make the desktop nav 3 px
+   taller than today (98 px, not 95 px), so its margin box is trimmed to the 35 px menu line. The logo itself is unchanged. */
+@media (min-width: 941px) { header:has(.rbu-evo-bar) > nav.top .logo { margin-bottom: -3px; } }
+/* The live Android app strip (not on these pages today) keeps its place under the nav */
+header:has(.rbu-evo-bar) > .android-app-link { order: 4; }
+header:has(.rbu-evo-bar):has(.shipping-info-banner) > .android-app-link { top: 10px; }
+
+/* Capped at the screen width: where page content is wider than a phone (Mini, Mini S, Micro, return instructions), mobile browsers widen the fixed header to 484-596 px, which would centre the bar's text partly off screen. */
+header .rbu-evo-bar {
+  position: relative; box-sizing: border-box; min-height: var(--rbu-bar-h); max-width: 100vw;
+  display: flex; align-items: center; justify-content: center; padding: 2px 16px;
+  background: var(--rbu-violet-wash); border-bottom: 1px solid #ddd2f8;
+  font: 13px/16px var(--rbu-font-light); color: var(--rbu-ink); text-align: center;
+}
+header .rbu-evo-bar-in { max-width: 100%; }
+header .rbu-evo-bar strong { font-family: var(--rbu-font); font-weight: normal; }
+
+/* The price is the shared block in its inline form (.rbu-price-inline, defined in 10 evo-page):
+   "$339.00 ($449.00 struck, after pre-order)" */
+header .rbu-evo-bar .rbu-price { font: inherit; color: inherit; }
+header .rbu-evo-bar .rbu-price-now { font: 14px/16px var(--rbu-font); color: var(--rbu-violet); }
+
+header .rbu-evo-bar-sep { color: var(--rbu-text-2); }
+/* One link, stretched over the whole bar */
+header .rbu-evo-bar a.rbu-evo-bar-link {
+  font-family: var(--rbu-font); color: var(--rbu-violet-dark); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap;
+}
+header .rbu-evo-bar a.rbu-evo-bar-link::before { content: ""; position: absolute; inset: 0; }
+header .rbu-evo-bar a.rbu-evo-bar-link::after {
+  content: ""; display: inline-block; width: 5px; height: 5px; margin: 0 0 1px 6px; border: solid currentColor;
+  border-width: 1.5px 1.5px 0 0; transform: rotate(45deg);
+}
+header .rbu-evo-bar:hover a.rbu-evo-bar-link { text-decoration-thickness: 2px; }
+header .rbu-evo-bar:hover { background: #ebe3fc; }
+header .rbu-evo-bar a.rbu-evo-bar-link:focus { outline: none; }
+header .rbu-evo-bar:focus-within { outline: 2px solid var(--rbu-ink); outline-offset: -3px; }
+
+/* <main> clears the fixed header: the live offsets plus the bar, plus --rbu-hdr-grow (set by script.js: how much the bar
+   and the shipping banner have grown past their normal height because of the visitor's own text spacing, WCAG 1.4.12;
+   0 at normal spacing). Same :has() selectors main.css uses. At normal text spacing this is exact (no layout shift). */
+body header:has(.rbu-evo-bar) ~ main { margin-top: calc(65px + var(--rbu-bar-h) + var(--rbu-hdr-grow, 0px)); }
+body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: calc(85px + var(--rbu-bar-h) + var(--rbu-hdr-grow, 0px)); }
+@media (min-width: 939px) {
+  body header:has(.rbu-evo-bar) ~ main { margin-top: calc(100px + var(--rbu-bar-h) + var(--rbu-hdr-grow, 0px)); }
+  body header:has(.shipping-info-banner):has(.rbu-evo-bar) ~ main { margin-top: calc(120px + var(--rbu-bar-h) + var(--rbu-hdr-grow, 0px)); }
+}
+
+/* Live anchor jumps: main.css shifts every :target up by the old header height (169 px; 90 px up to 940 px wide; 205 px for the /features headings). Add the bar, or the linked heading lands under the taller header. */
+body header:has(.rbu-evo-bar) ~ main :target, body header:has(.rbu-evo-bar) ~ main .hash-target { top: calc(-169px - var(--rbu-bar-h) - var(--rbu-hdr-grow, 0px)); }
+body.page-features header:has(.rbu-evo-bar) ~ main h2 a:target { top: calc(-205px - var(--rbu-bar-h) - var(--rbu-hdr-grow, 0px)); }
+@media (max-width: 940px) {
+  body header:has(.rbu-evo-bar) ~ main :target, body header:has(.rbu-evo-bar) ~ main .hash-target,
+  body.page-features header:has(.rbu-evo-bar) ~ main h2 a:target { top: calc(-90px - var(--rbu-bar-h) - var(--rbu-hdr-grow, 0px)); }
+}
+
+/* Phones: price on the first line, ship date and link on the second. "RaceBox" before EVO is left to screen readers
+   so the first line fits a 360 px screen. */
+@media (max-width: 767px) {
+  header .rbu-evo-bar { padding: 2px 12px; font-size: 12.5px; }
+  header .rbu-evo-bar .rbu-price-now { font-size: 13.5px; }
+  header .rbu-evo-bar-brand { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  header .rbu-evo-bar-tail { display: block; margin-top: 4px; }
+  header .rbu-evo-bar-tail > .rbu-evo-bar-sep:first-child { display: none; }
+}
+
+/* Hidden on very short windows (phones held sideways, 200% zoom on a laptop) and in browsers without :has(), which
+   the header layout and offsets need (as the live header's own do). Last, so it wins over the rules above. */
+@media (max-height: 520px) { header .rbu-evo-bar { display: none; } }
+@supports not selector(:has(a)) { header .rbu-evo-bar { display: none; } }
+
+/* ---- 30-home-evo/style.css ---- */
+/* 30 home-evo: the home page opens with a dark RaceBox EVO launch hero (all screen sizes), in place of the large photo.
+   Live fonts (RaceBox-Light capitals for the name, RaceBox-Regular text); violet marks the pre-order, as everywhere.
+   Colours on the dark band: text #fff and #c3c8cf (11:1), pre-order price #c4adff (9.8:1), caption #a3aab4 (8.1:1). */
+.rbu-home-hero {
+  position: relative; overflow: hidden; color: #fff; padding: 56px 40px 64px;
+  background: radial-gradient(55% 75% at 74% 52%, rgba(109, 63, 214, .42) 0%, rgba(109, 63, 214, 0) 70%), #0e1013;
+}
+.rbu-home-hero *, .rbu-home-hero *::before, .rbu-home-hero *::after { box-sizing: border-box; }
+.rbu-home-hero-in {
+  max-width: 1120px; min-height: min(560px, calc(100vh - 200px)); margin: 0 auto;
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); column-gap: 48px; align-items: center;
+}
+.rbu-home-hero p { margin: 0; }
+.rbu-home-hero-flag { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font: .9375rem/1.4 var(--rbu-font-light); color: #c3c8cf; }
+.rbu-home-hero .rbu-badge { background: rgba(196, 173, 255, .16); color: #d9cbff; }
+.rbu-home-hero .rbu-home-hero-name {
+  margin: 18px 0 0; padding: 0; background: none; color: #fff; text-align: left;
+  font: 3.25rem/1.05 var(--rbu-font-light); letter-spacing: .16em; text-transform: uppercase;
+}
+.rbu-home-hero-name span { font-family: var(--rbu-font); }
+.rbu-home-hero .rbu-home-hero-tagline { margin-top: 18px; font: 1.375rem/1.35 var(--rbu-font); color: #fff; }
+.rbu-home-hero .rbu-home-hero-lede { margin-top: 8px; font: 1.0625rem/1.5 var(--rbu-font-light); color: #c3c8cf; }
+/* The shared price block, recoloured for the dark band */
+.rbu-home-hero .rbu-price { margin-top: 26px; color: #fff; }
+.rbu-home-hero .rbu-price-later { color: #c3c8cf; }
+.rbu-home-hero .rbu-price--pre .rbu-price-now { color: #c4adff; }
+.rbu-home-hero .rbu-price-note { color: #c3c8cf; }
+.rbu-home-hero .rbu-home-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 28px; margin-top: 24px; }
+.rbu-home-hero .rbu-btn--pre { min-height: 52px; padding: 0 36px; font-size: 1.0625rem; }
+.rbu-home-hero .rbu-btn--pre:hover { background: #7f55ea; }
+.rbu-home-hero-link {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: #fff;
+  font: 1rem/1.3 var(--rbu-font); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.rbu-home-hero-link::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); flex: none; }
+.rbu-home-hero-link:hover { color: #d9cbff; text-decoration-thickness: 2px; }
+.rbu-home-hero a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; box-shadow: none; }
+.rbu-home-hero .rbu-home-hero-terms { margin-top: 18px; max-width: 460px; font: .875rem/1.5 var(--rbu-font-light); color: #c3c8cf; }
+.rbu-home-hero-media { margin: 0; text-align: center; }
+.rbu-home-hero-media img { display: block; width: 100%; max-width: 600px; height: auto; margin: 0 auto; }
+.rbu-home-hero-media figcaption { max-width: 380px; margin: 14px auto 0; font: .8125rem/1.45 var(--rbu-font-light); color: #a3aab4; }
+
+/* "Introducing RaceBox" lost the photo that sat above it (main.css gives page-front banner sections no top padding) */
+.rbu-home-hero + section.front-introduction { padding-top: 72px; }
+
+@media (max-width: 1000px) {
+  .rbu-home-hero { padding: 40px 32px 48px; }
+  .rbu-home-hero-in { column-gap: 32px; min-height: 0; }
+  .rbu-home-hero .rbu-home-hero-name { font-size: 2.5rem; }
+}
+@media (max-width: 699px) {
+  /* Phones: the offer first (price and Pre-order EVO in the first screen), the photo after it */
+  .rbu-home-hero { padding: 28px 20px 36px; background: radial-gradient(90% 45% at 50% 82%, rgba(109, 63, 214, .40) 0%, rgba(109, 63, 214, 0) 70%), #0e1013; }
+  .rbu-home-hero-in { grid-template-columns: minmax(0, 1fr); }
+  .rbu-home-hero .rbu-home-hero-name { margin-top: 14px; font-size: 2.125rem; letter-spacing: .12em; }
+  .rbu-home-hero .rbu-home-hero-tagline { margin-top: 12px; font-size: 1.1875rem; }
+  .rbu-home-hero .rbu-home-hero-lede { font-size: 1rem; }
+  .rbu-home-hero .rbu-price { margin-top: 18px; }
+  .rbu-home-hero .rbu-home-hero-actions { margin-top: 18px; gap: 6px 0; }
+  .rbu-home-hero .rbu-home-hero-actions .rbu-btn { flex: 1 1 100%; }
+  .rbu-home-hero-link { margin: 0 auto; }
+  .rbu-home-hero .rbu-home-hero-terms { margin-top: 12px; }
+  .rbu-home-hero-media { margin-top: 28px; }
+  .rbu-home-hero-media img { max-width: 360px; }
+  .rbu-home-hero + section.front-introduction { padding-top: 48px; }
+}
+
+/* ---- 40-racebox-compare/style.css ---- */
+/* 40 racebox-compare: RaceBox vs RaceBox EVO table on the RaceBox page, after "The technology".
+   Same section rhythm as the live page: tinted band, red centre line, spaced uppercase heading that masks the line.
+   On phones the table stacks (row label full width, RaceBox and EVO side by side); the ARIA roles in the markup keep
+   it a table for screen readers when the display changes. */
+.rbu-cmp {
+  padding: 20px 20px 40px; text-align: left;
+  background: linear-gradient(#ea2127, #ea2127) 50% 0 / 1px 100% no-repeat, #f1f1f3;
+  scroll-margin-top: calc(130px + var(--rbu-bar-h, 0px)); /* fixed header (115 px) + EVO bar + 15 px gap */
+}
+/* The live :target rule hides and shifts any linked element (main.css offset-anchor trick); keep this one in place. */
+#evo-vs-racebox:target { display: block; position: relative; top: auto; visibility: visible; }
+.rbu-cmp *, .rbu-cmp *::before, .rbu-cmp *::after { box-sizing: border-box; }
+.rbu-cmp h2 {
+  margin: 0 auto 16px; padding: 0 20px; background: #f1f1f3; color: var(--rbu-red-dark); text-align: center;
+  font: 1.2em/32px var(--rbu-font-light); letter-spacing: 5px; text-transform: uppercase;
+}
+.rbu-cmp p { margin: 0; }
+.rbu-cmp .rbu-cmp-lede {
+  max-width: 720px; margin: 0 auto 30px; padding: 8px 0; background: #f1f1f3; text-align: center;
+  font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-ink);
+}
+.rbu-cmp-card { max-width: 960px; margin: 0 auto; background: #fff; border-radius: 8px; }
+.rbu-cmp-table { width: 100%; border-collapse: collapse; table-layout: fixed; font: 1rem/1.45 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-cmp-table th, .rbu-cmp-table td { padding: 16px 24px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rbu-line); }
+.rbu-cmp-table tbody tr:last-child > * { border-bottom: 0; }
+.rbu-cmp-table thead th { padding-top: 22px; padding-bottom: 18px; vertical-align: top; font: 1rem/1.3 var(--rbu-font-light); letter-spacing: .14em; text-transform: uppercase; }
+.rbu-cmp-table thead th a { display: inline-flex; align-items: center; min-height: 44px; color: var(--rbu-ink); text-decoration: underline; text-underline-offset: 4px; }
+.rbu-cmp-table thead th a:hover { color: var(--rbu-violet); }
+.rbu-cmp-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; min-height: 44px; }
+.rbu-cmp-table thead .rbu-badge { letter-spacing: .06em; }
+.rbu-cmp-corner { width: 26%; }
+.rbu-cmp-table tbody th { font: .9375rem/1.45 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-cmp-table .rbu-cmp-evo { background: #f8f5fe; }
+.rbu-cmp-table thead .rbu-cmp-evo { border-radius: 0 8px 0 0; }
+.rbu-cmp-table tbody tr:last-child .rbu-cmp-evo { border-radius: 0 0 8px 0; }
+.rbu-cmp-up { display: block; margin-top: 4px; font: .75rem/1.3 var(--rbu-font); letter-spacing: .08em; text-transform: uppercase; color: var(--rbu-red-dark); }
+
+/* Last row: price, availability and the buy buttons */
+.rbu-cmp-buy th, .rbu-cmp-buy td { padding-top: 22px; padding-bottom: 26px; }
+.rbu-cmp .rbu-cmp-price { font: 1.25em/1.3 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-cmp .rbu-cmp-avail { margin: 6px 0 16px; font: .875rem/1.45 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-cmp .rbu-price { font-size: 1rem; }
+.rbu-cmp .rbu-price-note { font-family: var(--rbu-font-light); }
+.rbu-cmp form.js-add-to-cart { margin: 0; }
+/* Both buttons in the last row use the live button look (main.css button.submit: pill, uppercase RaceBox-Regular, 19.2 px),
+   so the table's Add to cart matches the buy section's, the sticky Add to cart bar's and the first-screen one's, and
+   Pre-order EVO matches it in violet. 44 px tall for touch (the live one is 34). */
+.rbu-cmp form.js-add-to-cart button.submit, .rbu-cmp .rbu-cmp-buy .rbu-btn {
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; height: auto; min-height: 44px;
+  margin: 0; padding: 0 30px; border: 0; border-radius: 22px; font: 1.2rem/1.1 var(--rbu-font); letter-spacing: normal;
+  text-transform: uppercase; text-decoration: none; color: #fff;
+}
+/* The live red #ea2127 gives white text 4.4:1; #e32026 looks the same and reaches 4.7:1 (WCAG AA) */
+.rbu-cmp form.js-add-to-cart button.submit:not(:disabled) { background: #e32026; }
+.rbu-cmp form.js-add-to-cart button.submit:not(:disabled):hover { background: var(--rbu-red-dark); }
+.rbu-cmp form.js-add-to-cart button.submit:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; box-shadow: 0 0 0 4px #fff; }
+
+.rbu-cmp .rbu-cmp-note { max-width: 960px; margin: 16px auto 0; padding: 4px 0; background: #f1f1f3; font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-cmp .rbu-cmp-note a { padding: 14px 0; color: var(--rbu-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 1000px) {
+  .rbu-cmp { background-position: 50px 0, 0 0; }
+  .rbu-cmp h2 { text-align: left; padding-left: 30px; }
+  .rbu-cmp .rbu-cmp-lede, .rbu-cmp .rbu-cmp-note { margin-left: 0; text-align: left; padding-left: 30px; }
+  .rbu-cmp-table th, .rbu-cmp-table td { padding-left: 16px; padding-right: 16px; }
+  /* narrower columns: keep "Pre-order EVO" on one line from 700 px */
+  .rbu-cmp form.js-add-to-cart button.submit, .rbu-cmp .rbu-cmp-buy .rbu-btn { padding: 0 22px; }
+}
+@media (max-width: 940px) { .rbu-cmp { scroll-margin-top: calc(96px + var(--rbu-bar-h, 0px)); } } /* phone header (86 px) + EVO bar + 10 px gap */
+
+/* Phones: stack each row; the two products stay side by side */
+@media (max-width: 699px) {
+  .rbu-cmp { padding: 20px 16px 32px; }
+  .rbu-cmp h2 { padding-left: 14px; }
+  .rbu-cmp .rbu-cmp-lede, .rbu-cmp .rbu-cmp-note { padding-left: 14px; }
+  .rbu-cmp-table, .rbu-cmp-table thead, .rbu-cmp-table tbody { display: block; }
+  .rbu-cmp-table tr { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-bottom: 1px solid var(--rbu-line); }
+  .rbu-cmp-table tbody tr:last-child { border-bottom: 0; }
+  .rbu-cmp-table th, .rbu-cmp-table td { display: block; border-bottom: 0; padding: 10px 14px 14px; }
+  .rbu-cmp-table thead .rbu-cmp-corner { display: none; }
+  .rbu-cmp-table thead th { padding: 18px 14px 12px; letter-spacing: .1em; font-size: .9375rem; }
+  .rbu-cmp-table tbody th { grid-column: 1 / -1; padding: 14px 14px 0; font-size: .8125rem; letter-spacing: .06em; text-transform: uppercase; }
+  .rbu-cmp-table tbody .rbu-cmp-evo { background: none; box-shadow: inset 2px 0 0 #e7defc; }
+  .rbu-cmp-table thead .rbu-cmp-evo { background: #f8f5fe; border-radius: 0 8px 0 0; }
+  .rbu-cmp-table tbody td::before { content: attr(data-label); content: attr(data-label) / ""; display: block; margin-bottom: 2px; font: .6875rem/1.3 var(--rbu-font-light); letter-spacing: .08em; text-transform: uppercase; color: var(--rbu-text-2); }
+  .rbu-cmp-buy th { padding-top: 16px; }
+  .rbu-cmp-buy td { padding-top: 10px; padding-bottom: 18px; }
+  .rbu-cmp .rbu-cmp-buy .rbu-btn, .rbu-cmp form.js-add-to-cart button.submit { width: 100%; padding: 6px 8px; font-size: .875rem; white-space: normal; text-align: center; line-height: 1.2; }
+}
+
+/* main.css sets html { scroll-behavior: smooth }, so the link from the home page and the EVO page glides about
+   2,500 px down to this table. Jump instead when the visitor asks for less motion. (Site-wide: belongs in 00-core.) */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ---- 50-pdp-first-screen/style.css ---- */
+/* 50 pdp-first-screen: product hero at the top of every product page (desktop only).
+   Phones (max-width 1000px, the site's breakpoint) never see it: the top banner stays first there, as today. */
+.rbu-pdp { display: block; background: #fff; padding: 28px 40px 32px; border-bottom: 0; }
+@media (max-width: 1000px) { .rbu-pdp { display: none; } }
+.rbu-pdp-in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; max-width: 1120px; margin: 0 auto; }
+
+/* Image panel on the site's light grey. Accessory pages show the store card's PNG, which is 200 x 200, so it is shown at
+   200: any larger and it goes soft. */
+.rbu-pdp-media { display: flex; align-items: center; justify-content: center; min-height: 280px; background: var(--rbu-grey); border-radius: var(--rbu-radius); }
+.rbu-pdp-media img { display: block; width: 200px; max-width: 100%; height: auto; }
+/* RaceBox, Mini, Mini S, Micro: a high-resolution cut-out (800 px PNG, webp up to 1200 w) fills the panel. The image is
+   absolutely placed inside the panel (88% wide, 85% tall, object-fit: contain), so it never makes the block taller:
+   the panel is as high as the text column next to it, and at least 280 px. */
+.rbu-pdp-media--cut { position: relative; }
+.rbu-pdp-media--cut img { position: absolute; left: 6%; top: 7.5%; width: 88%; max-width: none; height: 85%; object-fit: contain; }
+
+/* Name, key points, price, Add to cart */
+.rbu-pdp-body { align-self: center; text-align: left; }
+.rbu-pdp .rbu-pdp-name { margin: 0 0 14px; padding: 0; font: 1.875rem/1.25 var(--rbu-font-light); letter-spacing: .12em; text-transform: uppercase; color: var(--rbu-ink); text-align: left; }
+.rbu-pdp .rbu-pdp-points { margin: 0 0 18px; padding-left: 0; font-size: .9375rem; color: var(--rbu-ink); }
+.rbu-pdp .rbu-pdp-points li { margin-bottom: 4px; }
+.rbu-pdp-buy { padding-top: 16px; border-top: 1px solid var(--rbu-line); }
+.rbu-pdp .rbu-pdp-offer { margin: 0 0 2px; font: .75rem/1.4 var(--rbu-font); letter-spacing: .2em; text-transform: uppercase; color: var(--rbu-red-dark); }
+.rbu-pdp-price-row { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 20px; row-gap: 4px; }
+.rbu-pdp .rbu-pdp-price { margin: 0; font: 2rem/1.2 var(--rbu-font); color: var(--rbu-red); }
+.rbu-pdp-price s { margin-right: .3em; font-size: 1.125rem; color: var(--rbu-text-2); }
+.rbu-pdp-price strong { font-weight: normal; }
+.rbu-pdp .rbu-pdp-stock { display: inline-flex; align-items: center; gap: 8px; margin: 0; font: .8125rem/1.4 var(--rbu-font); letter-spacing: .08em; text-transform: uppercase; color: var(--rbu-red-dark); }
+.rbu-pdp-stock::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.rbu-pdp-actions { display: flex; flex-wrap: wrap; align-items: center; column-gap: 24px; row-gap: 10px; margin-top: 14px; }
+.rbu-pdp .js-add-to-cart { margin: 0; }
+.rbu-pdp button.submit { height: 48px; min-width: 220px; margin: 0; padding: 0 36px; border-radius: 24px; font-size: 1.125rem; line-height: 1; }
+/* The live red #ea2127 gives white text 4.4:1; #e32026 looks the same and reaches 4.7:1 (WCAG AA) */
+.rbu-pdp button.submit:not(:disabled) { background: #e32026; border-color: #e32026; }
+.rbu-pdp button.submit:not(:disabled):hover { background: var(--rbu-red-dark); border-color: var(--rbu-red-dark); }
+.rbu-pdp button.submit:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 3px; }
+.rbu-pdp-more { display: inline-flex; align-items: center; min-height: 44px; font: .9375rem/1.3 var(--rbu-font); color: var(--rbu-ink); text-decoration: underline; text-underline-offset: 3px; }
+.rbu-pdp-more::after { content: ""; width: 6px; height: 6px; margin: -3px 0 0 9px; border: solid currentColor; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+.rbu-pdp-more:hover { color: var(--rbu-red-dark); }
+.rbu-pdp .rbu-pdp-note { margin: 16px 0 0; font: .8125rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-pdp-note a { color: var(--rbu-red-dark); text-decoration: underline; text-underline-offset: 2px; }
+/* "Switch country" is 15 px tall as text: give it a 44 px tall hit area without moving anything (the focus ring
+   stays tight around the words) */
+.rbu-pdp-note a.country-select-open-button { position: relative; }
+.rbu-pdp-note a.country-select-open-button::after { content: ""; position: absolute; left: -4px; right: -4px; top: 50%; height: 44px; transform: translateY(-50%); }
+.rbu-pdp a:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; border-radius: 2px; }
+
+/* The hero links to #buy-section. main.css hides any :target (an old anchor trick for <a id> markers), which would
+   hide the whole buy section; keep it visible and stop it under the fixed header instead. */
+#buy-section:target { position: static; top: auto; visibility: visible; }
+/* The fixed header is 115 px tall (86 px below 940 px), so the section stops 5 px under it. Change set 20 puts the EVO
+   bar inside the header and sets --rbu-bar-h (30 px on desktop, 44 on phones and touch screens, 58 below 360 px); the
+   fallback 0 keeps this correct when that set is absent. Rule for the CTO: any anchor target under the fixed header adds
+   var(--rbu-bar-h). */
+#buy-section { scroll-margin-top: calc(120px + var(--rbu-bar-h, 0px)); }
+@media (max-width: 940px) { #buy-section { scroll-margin-top: calc(90px + var(--rbu-bar-h, 0px)); } }
+/* The purchase-details link jumps a long way down; main.css scrolls smoothly, which reduced-motion users opt out of */
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Accessory pages: the intro's one-line description, under the name */
+.rbu-pdp-sub { margin: -2px 0 14px; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+
+/* Desktop page flow. Without this the full-width header video or photo sat right under the product block.
+   Device pages (RaceBox, Mini, Mini S, Micro): product block, then the description, then the header video or photo,
+   which takes the place of the photo that opens "The technology" (hidden on desktop, so two large pictures never sit
+   back to back). The video becomes a cropped band. Only the visual order changes: the video has no focusable content,
+   so keyboard and screen-reader order stay hero, description, specs.
+   Accessory pages: the header photo is the same generic RaceBox shot on all eight, and the intro section repeats the
+   product block (name, image, points), so both are hidden on desktop; the block shows the intro's subtitle and all
+   points. Phones are untouched (the block itself is hidden there). Browsers without :has() keep today's order. */
+@media (min-width: 1001px) {
+  main:has(> .rbu-pdp--device) { display: flex; flex-direction: column; }
+  main:has(> .rbu-pdp--device) > .rbu-pdp { order: -3; }
+  main:has(> .rbu-pdp--device) > section.what-racebox-does { order: -2; }
+  main:has(> .rbu-pdp--device) > section.top-banner { order: -1; }
+  main:has(> .rbu-pdp--device) > section.top-banner video,
+  main:has(> .rbu-pdp--device) > section.top-banner img { display: block; width: 100%; height: min(72vh, 640px); max-height: none; object-fit: cover; }
+  main:has(> .rbu-pdp--device) > section.tech-specs.with-banner > .topimg { display: none; }
+  main:has(> .rbu-pdp--device) > section.tech-specs.with-banner { padding-top: 72px; }
+  main:has(> .rbu-pdp--accessory) > section.top-banner,
+  main:has(> .rbu-pdp--accessory) > section.other-product-info { display: none; }
+  .rbu-pdp--accessory { padding-bottom: 56px; }
+}
+
+/* ---- 60-store-cards/style.css ---- */
+/* 60 store-cards: the whole store card opens its product page.
+   The product name is the card's one link (.rbu-card-link). Its ::after stretches over the card, so a tap on the
+   image, name, bullets or price follows it. See More and Add to cart are lifted above it, with a small margin
+   around them, and work as before.
+   main.css already gives the card a pointer cursor and a grey rounded hover; this makes that promise true. */
+div.products-list > div { isolation: isolate; }          /* keeps the stretched link inside its card, under fixed bars */
+.rbu-card-link { color: inherit; text-decoration: none; }
+.rbu-card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 20px; }
+div.products-list > div .buttons { position: relative; z-index: 2; }
+/* A safety margin around the two buttons: a slightly missed tap does nothing, as on the original, instead of opening
+   the product. z-index -1 keeps this area behind the buttons (inside .buttons' own stacking context) but above the
+   stretched link, so the buttons stay clickable. It stops short of the card edge at the bottom (card padding 20px). */
+div.products-list > div .buttons::before { content: ""; position: absolute; z-index: -1; inset: -8px -10px -16px; }
+
+/* Hover and keyboard focus on the card: the name is underlined in the brand red, the photo lifts a little */
+.rbu-card-link:hover, .rbu-card-link:focus-visible {
+  color: inherit; text-decoration: underline; text-decoration-color: var(--rbu-red);
+  text-decoration-thickness: 2px; text-underline-offset: 5px;
+}
+div.products-list > div .img img { transition: transform .3s ease; }
+div.products-list > div:has(.rbu-card-link:hover) .img img,
+div.products-list > div:has(.rbu-card-link:focus-visible) .img img { transform: translateY(-50%) translateX(-50%) scale(1.05); }
+
+/* Focus ring around the whole card (the link's stretched area), the same rounded shape as the hover */
+.rbu-card-link:focus { outline: none; }
+.rbu-card-link:focus-visible::after { outline: 2px solid var(--rbu-ink); outline-offset: -2px; box-shadow: inset 0 0 0 4px #fff; }
+div.products-list > div:has(.rbu-card-link:focus-visible) { background-color: #e4e4ec; border-radius: 20px; }
+/* Browsers without :focus-visible still get a visible ring */
+@supports not selector(:focus-visible) {
+  .rbu-card-link:focus::after { outline: 2px solid var(--rbu-ink); outline-offset: -2px; }
+}
+
+/* See More: a visible focus ring (main.css has none for links) */
+div.products-list > div .buttons a.see-more:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 3px; border-radius: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  div.products-list > div .img img { transition: none; }
+  div.products-list > div:has(.rbu-card-link:hover) .img img,
+  div.products-list > div:has(.rbu-card-link:focus-visible) .img img { transform: translateY(-50%) translateX(-50%); }
+}
+
+/* ---- 70-mini-note/style.css ---- */
+/* 70 mini-note: a calm info note (grey panel, small "i"), not an alert. */
+.rbu-note { position: relative; margin: 0 0 16px; padding: 11px 14px 11px 42px; border-radius: var(--rbu-radius); background: var(--rbu-grey); font: .875rem/1.5 var(--rbu-font-light); color: var(--rbu-ink); text-align: left; }
+.rbu-note::before { content: ""; position: absolute; left: 14px; top: 13px; width: 18px; height: 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Ccircle cx='9' cy='9' r='8' fill='none' stroke='%234d4d4f' stroke-width='1.4'/%3E%3Cpath d='M9 8v5' stroke='%234d4d4f' stroke-width='1.6' stroke-linecap='round'/%3E%3Ccircle cx='9' cy='5.3' r='1' fill='%234d4d4f'/%3E%3C/svg%3E") no-repeat center / 18px 18px; }
+.rbu-note a { color: var(--rbu-ink); text-decoration: underline; text-underline-offset: 2px; }
+.rbu-note a:hover { color: var(--rbu-red-dark); }
+.rbu-note a:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; border-radius: 2px; }
+
+/* Buy section (grey #e4e4ec): white panel under the price, centred like the rest of the section on desktop */
+section.buy .rbu-note--buy { max-width: 440px; margin: 0 auto 4px; background: #fff; }
+@media (max-width: 1000px) { section.buy .rbu-note--buy { max-width: none; margin: 0 0 4px; } }
+
+/* Desktop hero (change set 50): between the key points and the price */
+.rbu-pdp .rbu-note--pdp { margin: -4px 0 18px; }
+
+/* Comparison table: the note spans the Mini and Mini S columns, right under "Built-in storage" */
+section.compare table tbody tr.rbu-compare-note td { padding-top: 0; padding-bottom: 14px; vertical-align: top; }
+section.compare table tbody tr.rbu-compare-note .rbu-note { margin: 0; background: #fff; font-size: .8125rem; line-height: 1.45; }
+@media (max-width: 600px) {
+  section.compare table tbody tr.rbu-compare-note .rbu-note { padding: 8px 10px; }
+  section.compare table tbody tr.rbu-compare-note .rbu-note::before { display: none; }
+}
+
+/* ---- 80-discount-links/style.css ---- */
+/* 80 discount-links: the notice that confirms a code from a link (saved, applied, couldn't be applied).
+   Two forms, one look:
+   - toast (every page except checkout): fixed under the header (the script sets top from the header's real height),
+     so it never moves the page; it closes by itself. Above page content and the "Get 10% off!" button, below the open
+     menu (header z-index 100) and the modals (200).
+   - in the page flow (.rbu-toast--flow, /store/checkout only): a block at the top of the order summary. It scrolls
+     with the page and stays until dismissed, so it never covers the form or the cart. */
+.rbu-toast {
+  position: fixed; z-index: 90; top: 128px; right: 20px; width: 420px; max-width: calc(100% - 32px); box-sizing: border-box;
+  display: flex; align-items: center; gap: 10px; padding: 6px 6px 6px 16px; border-radius: 8px;
+  background: var(--rbu-ink); color: #fff; box-shadow: 0 10px 30px rgba(0, 0, 0, .22);
+  font: 15px/1.45 var(--rbu-font-light); text-align: left; animation: rbu-toast-in .22s ease-out;
+}
+.rbu-toast-icon { flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px; color: #fff; }
+.rbu-toast-icon svg { display: block; width: 22px; height: 22px; }
+.rbu-toast--ok .rbu-toast-icon { color: #6fdc98; }      /* green tick, 10.5:1 on the ink */
+.rbu-toast-msg { flex: 1; min-width: 0; margin: 0; padding: 9px 0; }
+.rbu-toast-code { font-family: var(--rbu-font); font-weight: normal; letter-spacing: .05em; overflow-wrap: anywhere; }
+.rbu-toast-close {
+  flex: none; display: inline-grid; place-items: center; width: 44px; height: 44px; margin: 0; padding: 0;
+  border: 0; border-radius: 4px; background: none; color: #fff; cursor: pointer;
+}
+.rbu-toast-close:hover { background: rgba(255, 255, 255, .12); }
+.rbu-toast-close:focus { box-shadow: none; }
+.rbu-toast-close:focus-visible { outline: 2px solid #fff; outline-offset: -3px; }
+.rbu-toast-close svg { display: block; width: 18px; height: 18px; }
+@media (max-width: 1000px) {
+  .rbu-toast { top: 94px; left: 16px; right: 16px; width: auto; max-width: calc(100vw - 32px); }
+}
+.rbu-toast.rbu-toast--flow {
+  position: static; z-index: auto; width: auto; max-width: none; margin: 0 0 14px; box-shadow: none; animation: none;
+}
+@keyframes rbu-toast-in { from { opacity: 0; transform: translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { .rbu-toast { animation: none; } }
+@media print { .rbu-toast { display: none; } }
