@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Checkout | RaceBox</title>
+	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
+	<link href="/assets/rb-updates/rb-updates.css?v=8153dfe0df" type="text/css" rel="stylesheet" media="all" />
+		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
+	<link href="/favicon.ico" rel="shortcut icon" />
+	<link href="/favicon.ico" rel="icon" sizes="16x16 32x32 64x64" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+<body class="">
+	<header>
+		<nav class="top">
+			<a href="/" class="logo"></a>
+			<a href="/store/checkout" class="cart"></a>
+			<div class="micon">
+				<input type="checkbox" />
+				<span></span><span></span><span></span>
+				<ul>
+										<li><a  href="/">Home</a></li>
+
+					<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
+					<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+					<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+					<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+					<li class="product-single"><a  href="/products/mobile-app">Mobile App</a></li>
+
+					<li class="product-many">
+						<input type="checkbox" id="menu_products_cb" />
+						<label for="menu_products_cb">Products</label>
+						<ul>
+							<li class="product-single"><a  href="/products/racebox">Racebox</a></li>
+							<li class="product-single"><a  href="/products/racebox-mini">Racebox Mini</a></li>
+							<li class="product-single"><a  href="/products/racebox-mini-s">Racebox Mini S</a></li>
+							<li class="product-single"><a  href="/products/racebox-micro">Racebox Micro</a></li>
+							<li class="product-single"><a  href="/products/mobile-app">Mobile App</a></li>
+						</ul>
+					</li>
+
+					<li><a  href="/info">Info &amp; Support</a></li>
+											<li><a  href="/webapp/login">Login</a></li>
+										<li><a  class="buy" href="/store/">Buy RaceBox</a></li>
+				</ul>
+			</div>
+		</nav>
+												<div class="shipping-info-banner">
+										<span>Free shipping to United States for all orders  over $300.00.</span>
+									</div>
+						</header>
+	
+	<main>	<section class="top-banner" role="banner"><picture>
+																					<source media="(min-width:1281px)" srcset="/assets/v-1776405835/img/hdrs/6-1920w.webp 1920w" sizes="1920px" type="image/webp" />
+			<source media="(min-width:1281px)" srcset="/assets/v-1776405835/img/hdrs/6-1920w.jpg 1920w" sizes="1920px" type="image/jpeg" />
+																		<source media="(min-width:1001px)" srcset="/assets/v-1776405835/img/hdrs/6-1280w.webp 1280w" sizes="1280px" type="image/webp" />
+			<source media="(min-width:1001px)" srcset="/assets/v-1776405835/img/hdrs/6-1280w.jpg 1280w" sizes="1280px" type="image/jpeg" />
+																		<source media="(min-width:501px)" srcset="/assets/v-1776405835/img/hdrs/6-1000w.webp 1000w" sizes="1000px" type="image/webp" />
+			<source media="(min-width:501px)" srcset="/assets/v-1776405835/img/hdrs/6-1000w.jpg 1000w" sizes="1000px" type="image/jpeg" />
+																		<source  srcset="/assets/v-1776405835/img/hdrs/6-500w.webp 500w" sizes="500px" type="image/webp" />
+			<source  srcset="/assets/v-1776405835/img/hdrs/6-500w.jpg 500w" sizes="500px" type="image/jpeg" />
+									<img src="/assets/v-1776405835/img/hdrs/6-1920w.jpg" alt=""/>
+</picture>
+</section>
+<section class="centered-content mb40 checkout">
+	<h1>Checkout</h1>
+	<div class="c layout">
+	        <div class="form">
+		<form id="checkout-form" method="post" action="/store/checkout/ajax">
+			<h3>Shipping address</h3>
+			<div id="shippingAddressFields">
+				<div class="row"><select class="country-select" name="shippingCountry" aria-label="Country"><option value="US" selected>United States</option><option value="DE">Germany</option></select></div>
+				<div class="row"><input type="text" id="inpShippingName" name="shippingName" required><label for="inpShippingName">Full name</label></div>
+				<div class="row subregion-select shipping"><input type="text" id="inpShippingState" name="shippingState" autocomplete="address-level1" aria-label="State"></div>
+				<div class="row"><input type="text" id="inpShippingZip" name="shippingZip"><label for="inpShippingZip">Postal code</label></div>
+				<div class="row"><div class="phone-input"><input type="tel" id="inpShippingPhone" name="shippingPhone"><label for="inpShippingPhone">Phone</label></div></div>
+			</div>
+			<div class="row cbcontainer"><input type="checkbox" id="issueBusinessInvoiceCheckbox" name="businessInvoice"><label for="issueBusinessInvoiceCheckbox">I need a business invoice</label></div>
+			<div><fieldset id="invoiceFields"><legend>Invoice</legend><div class="row"><select class="country-select" name="invoiceCountry" aria-label="Invoice country"><option value="US" selected>United States</option></select></div><div class="row subregion-select company"><input type="text" name="invoiceState" aria-label="Invoice state"></div></fieldset></div>
+			<div id="shipping-data-container"></div>
+			<div class="submit"><button class="submit">Proceed</button><span>Please wait</span></div>
+		</form>
+	</div>
+		<div class="cart">
+			<h3>Your order</h3>
+			<div class="product" data-product-sku="RB08">
+				<div class="thumb"><img src="/product-image/racebox-mini-s.png" alt="RaceBox Mini S"></div>
+				<h4>RaceBox Mini S</h4>
+				<div class="price_row quantity-container"><span class="lbl">Quantity</span><span class="cnt"><button class="decrement" aria-label="One less">-</button><input type="text" value="1" aria-label="Quantity"><button class="increment" aria-label="One more">+</button></span></div>
+				<div class="price_row"><span class="lbl">Price</span><span class="price regular-price strike">$319.00</span></div>
+				<div class="price_row"><span class="lbl">Limited time offer</span><span class="price promotional-price">$289.00</span></div>
+				<div class="price_row discount_code_row hidden"><span class="lbl">Discount code <span></span></span><span class="price"></span></div>
+				<div class="price_row discount hidden"><span class="lbl">Discounted price</span><span class="price"></span></div>
+				<div class="price_row volume_discount_row hidden"><span class="lbl">Volume discount</span><span class="price"></span></div>
+				<div class="price_row total"><span class="lbl">Total</span><span class="price">$289.00</span></div>
+			</div>
+			<div class="price_row shipping_price hidden"><span class="lbl">Shipping</span><span class="price"></span></div>
+			<p class="shipping_price_next_step_info">Shipping is calculated from your address.</p>
+			<div class="price_row discount_code_row hidden"><span class="lbl">Discount code applied<a href="#">Remove</a></span></div>
+			<div class="discount_code_button"><a href="#">I have a discount code</a></div>
+			<div class="price_row cart_total"><span class="lbl">Total</span><span class="price">$289.00</span></div>
+		</div>
+	</div>
+		</div>
+		<div class="c pp">
+			<div class="lc">
+				<a href="/info/privacy-policy">Privacy Policy</a>
+			</div>
+			<ul class="mc ul">
+				<li><a href="/info/terms-and-conditions">Terms and Conditions</a></li>
+				<li><a href="/info/warranty">Warranty</a></li>
+				<li><a href="#" class="cookie-consent-popup-trigger">Cookies Settings</a></li>
+			</ul>
+			<div class="rc">
+				<span>Copyright &copy; 2020-2026 RaceBox</span>
+			</div>
+		</div>
+	</footer>
+
+	<script src="/assets/v-1776405836/js/js.cookie.min.js" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc="></script>
+	<script src="/assets/v-1776405836/js/jquery.min.js" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc="></script>
+	<script src="/assets/v-1776405836/js/err.js" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc="></script>
+	<script nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc=">
+		window.privacyPolicyUrl = "\/info\/privacy-policy";
+	</script>
+	<script src="/assets/v-1776405836/js/cookie-consent.js" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc="></script>
+	<script src="/assets/v-1776405836/js/main-menu.js" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc="></script>
+	    <script nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc=">
+        window.trackingConfig = {"googleAnalyticsIds":["AW-1043149484","G-G2J5N15SF8"],"facebookIds":["603126063791663"],"redditIds":["a2_fvuqt3dzbvjg"],"tiktokIds":["CSL0IH3C77UFLUH9T6N0"],"clarityProjectId":"ytwe0rb7mv","twitterConfigs":[{"pixelId":"opvlb","pageVisitEvent":"tw-opvlb-opvlh","addToCartEvent":"tw-opvlb-opvlu","checkoutStartEvent":"tw-opvlb-opvlx","checkoutCompleteEvent":"tw-opvlb-opvm2","productViewEvent":"tw-opvlb-opvlj"}]};
+    </script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1043149484" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc=" crossorigin></script>
+            <script src="/store-assets/js/analytics.js" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc=" crossorigin></script>
+    
+								<script src="/assets/v-1776405836/js/store/checkout.js" nonce="LoqLWgPCjH+Hmi1Xqzay4Ta49Lc="></script>
+					<script src="/assets/rb-updates/rb-updates.js?v=8153dfe0df" defer></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "racebox-live-updates-qa",
+  "private": true,
+  "description": "Browser checks for the racebox.pro quick updates (run npm install here, then node <script>)",
+  "dependencies": {
+    "axe-core": "^4.10.2",
+    "playwright-core": "1.56"
+  }
+}
