@@ -11,10 +11,10 @@ each change set into the PHP templates following its `patches/NN-name/CTO.md`.
 | Change set | What it does |
 |---|---|
 | 00-core | Shared `rb-updates.css` / `rb-updates.js`, tokens, the EVO price block, pill buttons |
-| 10-evo-page | New `/products/racebox-evo` pre-order page; EVO card first in the store; "Racebox EVO" in menu and footer |
+| 10-evo-page | New `/products/racebox-evo` pre-order page ("Need it sooner?" RaceBox card right after its hero); EVO card first in the store; "Racebox EVO" in menu and footer |
 | 20-evo-banner | Slim EVO pre-order bar under the shipping banner (not on home, checkout or the EVO page) |
 | 30-home-evo | The home page opens with a dark EVO pre-order hero in place of the large photo (all screen sizes) |
-| 40-racebox-compare | "RaceBox vs RaceBox EVO" table on `/products/racebox#evo-vs-racebox` |
+| 40-racebox-compare | "Can you wait?" EVO pre-order card at the top of `/products/racebox`; "RaceBox vs RaceBox EVO" table at `#evo-vs-racebox` |
 | 50-pdp-first-screen | Desktop: name, photo, price and Add to cart first on every product page; device pages move the header video below the description; accessory pages hide the generic photo and the repeated intro. Phones unchanged |
 | 60-store-cards | Whole store card image and name link to the product page |
 | 70-mini-note | "The Mini records only while your phone stays connected. The Mini S also records on its own." on the Mini page and `/products` |

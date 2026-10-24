@@ -97,8 +97,38 @@ def table_html(html):
 '''
 
 
+def wait_html(html):
+    """"Can you wait?": the reverse of the EVO page's "Need it sooner?" (owner's request), at the top of the page.
+    Desktop: straight under the product block (style.css moves it there); phones: under the header video."""
+    e = rbu.evo()
+    cur = rbu.page_currency(html)
+    ship = rbu.esc(e['shipWindow']).replace(' ', '&nbsp;')
+    path = rbu.esc(e['path'])
+    # Copy from evo.json: shipWindow, the FAQ answer "Should I wait for EVO or buy the RaceBox now?" and the tagline
+    return f'''<!-- rb-updates: 40 racebox-compare -->
+<section class="rbu-wait" aria-labelledby="rbu-wait-title">
+	<div class="rbu-wait-in">
+		<div class="rbu-wait-text">
+			<p class="rbu-wait-flag"><span class="rbu-badge">Pre-order</span> <span>Ships {ship}</span></p>
+			<h2 id="rbu-wait-title">Can you wait until {ship}?</h2>
+			<p>Pre-order RaceBox&nbsp;EVO: the same shape and controls, with 25&nbsp;Hz GPS, a larger battery and more storage.</p>
+		</div>
+		<div class="rbu-wait-buy">
+			{rbu.evo_price_html(cur, note=True)}
+			<div class="rbu-wait-actions">
+				<a class="rbu-btn rbu-btn--pre" href="{path}">Pre-order EVO</a>
+				<a class="rbu-wait-more rbu-focus" href="#evo-vs-racebox">Compare with EVO</a>
+			</div>
+		</div>
+	</div>
+</section>
+'''
+
+
 def apply(site):
     def edit(html, rel):
+        # After the header video (desktop: after the product block, see style.css), before "What RaceBox does"
+        html = rbu.insert_before(html, '<section class="what-racebox-does" role="main">', wait_html(html), where=rel)
         # After "The technology" (section.tech-specs), before "What's in the box"
         return rbu.insert_before(html, '<section class="whats-in-the-box" role="main">', table_html(html), where=rel)
     site.edit('products/racebox.html', edit)

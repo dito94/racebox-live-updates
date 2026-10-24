@@ -4,7 +4,7 @@
  <head>
  	<title>Case Study - Tuning for Drag | RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=d1fa4e0bc5" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=0cbe5acf28" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -49,6 +49,6 @@
  });
  </script>
 -	</body>
-+	<script src="/assets/rb-updates/rb-updates.js?v=d1fa4e0bc5" defer></script>
++	<script src="/assets/rb-updates/rb-updates.js?v=0cbe5acf28" defer></script>
 +</body>
  </html>

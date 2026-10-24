@@ -93,3 +93,27 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* "Can you wait?" at the top of the RaceBox page: the reverse of the EVO page's "Need it sooner?".
+   Desktop: straight under the product block (50 puts the block at order -3; same order, later in the source, so it
+   follows it and comes before the description). Phones: under the header video, before "What RaceBox does". */
+main > section.rbu-wait { padding: 0 40px 32px; background: #fff; } /* main > (section) beats main.css's 72 px top padding on sections */
+.rbu-wait *, .rbu-wait *::before, .rbu-wait *::after { box-sizing: border-box; }
+.rbu-wait-in {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px 48px; align-items: center;
+  max-width: 1120px; margin: 0 auto; padding: 24px 32px; background: var(--rbu-violet-wash); border-radius: 8px;
+}
+.rbu-wait p { margin: 0; }
+.rbu-wait-flag { display: flex; align-items: center; gap: 10px; margin-bottom: 8px !important; font: .875rem/1.4 var(--rbu-font-light); color: var(--rbu-ink); }
+.rbu-wait-flag .rbu-badge { background: #fff; }
+.rbu-wait h2 { margin: 0 0 6px; font: 1.375rem/1.3 var(--rbu-font); color: var(--rbu-ink); letter-spacing: 0; text-transform: none; text-align: left; }
+.rbu-wait-text > p:last-child { max-width: 56ch; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-ink); }
+.rbu-wait-buy .rbu-price-note { color: var(--rbu-ink); }
+.rbu-wait-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 14px; }
+.rbu-wait-more { display: inline-flex; align-items: center; min-height: 44px; color: var(--rbu-ink); font: 1rem/1.3 var(--rbu-font); text-decoration: underline; text-underline-offset: 3px; }
+.rbu-wait-more:hover { color: var(--rbu-violet-dark); }
+@media (min-width: 1001px) { main:has(> .rbu-pdp--device) > .rbu-wait { order: -3; } }
+@media (max-width: 1000px) {
+  main > section.rbu-wait { padding: 24px 20px; }
+  .rbu-wait-in { grid-template-columns: minmax(0, 1fr); padding: 22px 20px; }
+}

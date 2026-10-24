@@ -4,7 +4,7 @@
 @media (max-width: 1000px) { .rbu-pdp { display: none; } }
 .rbu-pdp-in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; max-width: 1120px; margin: 0 auto; }
 
-/* Image panel on the site's light grey. Accessory pages show the store card's PNG, which is 200 x 200, so it is shown at
+/* Image panel, no background: the photos sit on the page white. Accessory pages show the store card's PNG, which is 200 x 200, so it is shown at
    200: any larger and it goes soft. */
 .rbu-pdp-media { display: flex; align-items: center; justify-content: center; min-height: 280px; background: transparent; }  /* photos are transparent cut-outs: no panel, they sit on the page white */
 .rbu-pdp-media img { display: block; width: 200px; max-width: 100%; height: auto; }
