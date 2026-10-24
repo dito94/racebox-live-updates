@@ -98,27 +98,31 @@ def table_html(html):
 
 
 def wait_html(html):
-    """"Can you wait?": the reverse of the EVO page's "Need it sooner?" (owner's request), at the top of the page.
-    Desktop: straight under the product block (style.css moves it there); phones: under the header video."""
+    """"Can you wait?": the reverse of the EVO page's "Need it sooner?" (owner's request), in the same .rbu-alt design
+    (CSS in 10-evo-page). Desktop: straight under the product block (style.css moves it there); phones: under the header
+    video. Copy from evo.json: shipWindow, prices, the FAQ answer "Should I wait for EVO or buy the RaceBox now?" and
+    imageNote (the photo is the current RaceBox)."""
     e = rbu.evo()
     cur = rbu.page_currency(html)
     ship = rbu.esc(e['shipWindow']).replace(' ', '&nbsp;')
     path = rbu.esc(e['path'])
-    # Copy from evo.json: shipWindow, the FAQ answer "Should I wait for EVO or buy the RaceBox now?" and the tagline
     return f'''<!-- rb-updates: 40 racebox-compare -->
-<section class="rbu-wait" aria-labelledby="rbu-wait-title">
-	<div class="rbu-wait-in">
-		<div class="rbu-wait-text">
-			<p class="rbu-wait-flag"><span class="rbu-badge">Pre-order</span> <span>Ships {ship}</span></p>
-			<h2 id="rbu-wait-title">Can you wait until {ship}?</h2>
-			<p>Pre-order RaceBox&nbsp;EVO: the same shape and controls, with 25&nbsp;Hz GPS, a larger battery and more storage.</p>
-		</div>
-		<div class="rbu-wait-buy">
-			{rbu.evo_price_html(cur, note=True)}
-			<div class="rbu-wait-actions">
+<section class="rbu-alt" aria-labelledby="rbu-alt-title">
+	<h2 id="rbu-alt-title">Can you wait?</h2>
+	<div class="rbu-alt-in">
+		<div class="rbu-alt-main">
+			<figure class="rbu-alt-media"><img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" /><figcaption>Photo shows the current RaceBox</figcaption></figure>
+			<div>
+				<h3>Pre-order RaceBox&nbsp;EVO</h3>
+				<p>If you can wait until {ship}, you can pre-order RaceBox&nbsp;EVO: the same shape and controls, with 25&nbsp;Hz GPS, a larger battery and more storage.</p>
+				{rbu.evo_price_html(cur, note=True)}
 				<a class="rbu-btn rbu-btn--pre" href="{path}">Pre-order EVO</a>
-				<a class="rbu-wait-more rbu-focus" href="#evo-vs-racebox">Compare with EVO</a>
 			</div>
+		</div>
+		<div class="rbu-alt-side">
+			<h3>Not sure which?</h3>
+			<p>See what EVO changes, row by row, before you choose.</p>
+			<a class="rbu-alt-more" href="#evo-vs-racebox">Compare RaceBox and EVO</a>
 		</div>
 	</div>
 </section>

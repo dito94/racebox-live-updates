@@ -209,25 +209,26 @@ def faq(e, cur):
 
 
 def sooner(e, rb):
+    """"Need it sooner?": the RaceBox ships now. Shared .rbu-alt design, mirrored by 40's "Can you wait?"."""
     ship = nb(e['shipWindow'])
     return f'''
 {MARK}
-<section class="rbu-evo-band rbu-evo-band--mist" aria-labelledby="rbu-evo-sooner-title">
-	<h2 id="rbu-evo-sooner-title">Need it sooner?</h2>
-	<div class="rbu-evo-wrap rbu-evo-sooner">
-		<div class="rbu-evo-sooner-main">
-			<img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" />
+<section class="rbu-alt" aria-labelledby="rbu-alt-title">
+	<h2 id="rbu-alt-title">Need it sooner?</h2>
+	<div class="rbu-alt-in">
+		<div class="rbu-alt-main">
+			<figure class="rbu-alt-media"><img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" /></figure>
 			<div>
 				<h3>RaceBox ships now</h3>
-				<p>If you want it before {ship}, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz.</p>
-				<p class="rbu-evo-rb-price">{rb['price']}</p>
-				<a class="rbu-btn rbu-btn--ghost rbu-evo-sooner-btn" href="/products/racebox">See the RaceBox</a>
+				<p>If you need it before {ship}, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz.</p>
+				<p class="rbu-alt-price">{rb['price']}</p>
+				<a class="rbu-btn rbu-btn--ghost" href="/products/racebox">See the RaceBox</a>
 			</div>
 		</div>
-		<div class="rbu-evo-sooner-side">
+		<div class="rbu-alt-side">
 			<h3>On a motorcycle?</h3>
 			<p>EVO is built for cars. On a motorcycle, the Mini&nbsp;S is the better fit.</p>
-			<a class="rbu-evo-more rbu-focus" href="/products/racebox-mini-s">See the RaceBox Mini S</a>
+			<a class="rbu-alt-more" href="/products/racebox-mini-s">See the RaceBox Mini S</a>
 		</div>
 	</div>
 </section>'''

@@ -123,16 +123,47 @@
 .rbu-evo-faq-item > summary:hover { text-decoration: underline; text-decoration-color: var(--rbu-red); text-underline-offset: 4px; }
 .rbu-evo-faq-item > p { padding: 0 2px 18px; max-width: 680px; font: 1rem/1.55 var(--rbu-font-light); color: var(--rbu-text-2); }
 
-/* ---- Need it sooner? ------------------------------------------------------------------------------------------- */
-.rbu-evo-sooner { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 16px; }
-.rbu-evo-sooner > div { padding: 28px; background: #fff; border-radius: 8px; }
-.rbu-evo-sooner-main { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; align-items: center; }
-.rbu-evo-sooner-main img { width: 160px; height: auto; }
-.rbu-evo-sooner h3 { margin: 0 0 8px; font: 1.1875rem/1.35 var(--rbu-font); color: var(--rbu-ink); }
-.rbu-evo-sooner p { font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
-.rbu-evo-rb-price { margin-top: 8px !important; font: 1.375rem/1.3 var(--rbu-font) !important; color: var(--rbu-ink) !important; }
-.rbu-evo-page main .rbu-btn.rbu-evo-sooner-btn { margin-top: 16px; color: var(--rbu-ink); text-decoration: none; }
-.rbu-evo-sooner-side .rbu-evo-more { margin-top: 8px; }
+/* ---- Need it sooner? / Can you wait? (.rbu-alt) ------------------------------------------------------------------ */
+/* One design for both "the other product" sections: "Need it sooner?" on the EVO page (the RaceBox ships now) and
+   "Can you wait?" on the RaceBox page (40: pre-order EVO). Self-contained (not scoped to the EVO page), so 40 reuses it.
+   main > section beats main.css's 72 px top padding on sections. The button colour follows the product: violet only for
+   the EVO pre-order, outlined for the RaceBox. */
+main > section.rbu-alt { padding: 20px 20px 56px; background: var(--rbu-line); text-align: left; }
+.rbu-alt *, .rbu-alt *::before, .rbu-alt *::after { box-sizing: border-box; }
+.rbu-alt p { margin: 0; }
+.rbu-alt > h2 {
+  margin: 0 0 12px; padding: 10px 20px 0; color: var(--rbu-red-dark); text-align: center; background: none;
+  font: 1.2em/32px var(--rbu-font-light); letter-spacing: 5px; text-transform: uppercase;
+}
+.rbu-alt-in { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 16px; max-width: 960px; margin: 0 auto; }
+.rbu-alt-in > div { padding: 28px; background: #fff; border-radius: 8px; }
+.rbu-alt-main { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 24px; align-items: center; }
+.rbu-alt-media { margin: 0; }
+.rbu-alt-media img { display: block; width: 160px; height: auto; }
+.rbu-alt-media figcaption { margin-top: 6px; font: .75rem/1.4 var(--rbu-font-light); color: var(--rbu-text-2); text-align: center; }
+.rbu-alt h3 { margin: 0 0 8px; font: 1.1875rem/1.35 var(--rbu-font); color: var(--rbu-ink); text-transform: none; letter-spacing: 0; }
+.rbu-alt p { font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
+.rbu-alt .rbu-alt-price { margin-top: 8px; font: 1.375rem/1.3 var(--rbu-font); color: var(--rbu-ink); }
+.rbu-alt .rbu-price { margin-top: 8px; font-size: 1.1rem; }
+.rbu-alt .rbu-btn { margin-top: 16px; }
+.rbu-alt .rbu-btn--ghost, .rbu-alt .rbu-btn--ghost:hover { color: var(--rbu-ink); text-decoration: none; }
+.rbu-alt .rbu-btn--pre, .rbu-alt .rbu-btn--pre:hover { color: #fff; text-decoration: none; }
+/* A text link with a chevron, 44 px tall (same as .rbu-evo-more) */
+.rbu-alt a.rbu-alt-more {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 8px; color: var(--rbu-ink);
+  font: 1rem/1.3 var(--rbu-font); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px;
+}
+.rbu-alt a.rbu-alt-more::after { content: ""; width: 7px; height: 7px; border: solid currentColor; border-width: 1.5px 1.5px 0 0; transform: rotate(45deg); flex: none; }
+.rbu-alt a.rbu-alt-more:hover { color: var(--rbu-red-dark); text-decoration-thickness: 2px; }
+.rbu-alt a:focus-visible { outline: 2px solid var(--rbu-ink); outline-offset: 2px; box-shadow: 0 0 0 4px #fff; }
+@media (max-width: 699px) {
+  main > section.rbu-alt { padding: 16px 16px 44px; }
+  .rbu-alt > h2 { padding: 10px 0 0; letter-spacing: 4px; }
+  .rbu-alt-in { grid-template-columns: minmax(0, 1fr); }
+  .rbu-alt-in > div { padding: 22px 18px; }
+  .rbu-alt-main { grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: start; }
+  .rbu-alt-media img { width: 96px; }
+}
 
 /* ---- The inline EVO price (sticky bar here, the header bar in 20 evo-banner) ------------------------------------
    The shared price block without its note, read as "$339.00 ($449.00 struck, after pre-order)": the pre-order price
@@ -237,10 +268,6 @@ html:has(body.rbu-evo-page) { scroll-padding-top: 125px; }
   .rbu-evo-terms > div { grid-template-columns: minmax(0, 1fr); }
   .rbu-evo-page .rbu-evo-buying { columns: 1; }
   .rbu-evo-table th, .rbu-evo-table td { padding: 12px 10px; font-size: .9375rem; }
-  .rbu-evo-sooner { grid-template-columns: minmax(0, 1fr); }
-  .rbu-evo-sooner > div { padding: 22px 18px; }
-  .rbu-evo-sooner-main { grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: start; }
-  .rbu-evo-sooner-main img { width: 96px; }
   #add-to-cart-popup.rbu-evo-sticky { padding: 12px 16px 12px 48px; background-position: 12px center; }
 }
 @media (max-width: 359px) {

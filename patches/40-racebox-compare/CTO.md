@@ -99,10 +99,10 @@ out the screen size and the battery capacity until the owner confirms them, and 
 - [ ] Screen reader: it is announced as a table with a caption, column headers RaceBox / RaceBox EVO and a row header per row.
 - [ ] Keyboard: Tab goes RaceBox EVO link, Add to cart, Pre-order EVO, technical specifications, each with a dark focus ring.
 
-## 40b RaceBox page: "Can you wait until March 2027?"
+## 40b RaceBox page: "Can you wait?" (pre-order RaceBox EVO)
 
-**What and why:** the reverse of the EVO page's "Need it sooner?" (owner's request). Right at the top of the RaceBox page, a
-shopper who can wait sees that EVO is on pre-order, its price, and a way to pre-order or compare.
+**What and why:** the reverse of the EVO page's "Need it sooner?" (owner's request), in the same design. Right at the top of
+the RaceBox page: if you can wait until March 2027, you can pre-order RaceBox EVO; plus a link to the comparison table.
 
 **Template:** the RaceBox product page (`/products/racebox`).
 
@@ -114,36 +114,39 @@ block, later in the source). On phones it sits under the header video. Without `
 
 ```html
 <!-- rb-updates: 40 racebox-compare -->
-<section class="rbu-wait" aria-labelledby="rbu-wait-title">
-	<div class="rbu-wait-in">
-		<div class="rbu-wait-text">
-			<p class="rbu-wait-flag"><span class="rbu-badge">Pre-order</span> <span>Ships March&nbsp;2027</span></p>
-			<h2 id="rbu-wait-title">Can you wait until March&nbsp;2027?</h2>
-			<p>Pre-order RaceBox&nbsp;EVO: the same shape and controls, with 25&nbsp;Hz GPS, a larger battery and more storage.</p>
-		</div>
-		<div class="rbu-wait-buy">
-			<p class="rbu-price rbu-price--pre"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>{{evo_price_after}}</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>{{evo_preorder_price}}</strong><span class="rbu-price-note" aria-hidden="true">Pre-order price. {{evo_price_after}} after pre-order.</span></p>
-			<div class="rbu-wait-actions">
+<section class="rbu-alt" aria-labelledby="rbu-alt-title">
+	<h2 id="rbu-alt-title">Can you wait?</h2>
+	<div class="rbu-alt-in">
+		<div class="rbu-alt-main">
+			<figure class="rbu-alt-media"><img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" /><figcaption>Photo shows the current RaceBox</figcaption></figure>
+			<div>
+				<h3>Pre-order RaceBox&nbsp;EVO</h3>
+				<p>If you can wait until March&nbsp;2027, you can pre-order RaceBox&nbsp;EVO: the same shape and controls, with 25&nbsp;Hz GPS, a larger battery and more storage.</p>
+				<p class="rbu-price rbu-price--pre"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>{{evo_price_after}}</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>{{evo_preorder_price}}</strong><span class="rbu-price-note" aria-hidden="true">Pre-order price. {{evo_price_after}} after pre-order.</span></p>
 				<a class="rbu-btn rbu-btn--pre" href="/products/racebox-evo">Pre-order EVO</a>
-				<a class="rbu-wait-more rbu-focus" href="#evo-vs-racebox">Compare with EVO</a>
 			</div>
+		</div>
+		<div class="rbu-alt-side">
+			<h3>Not sure which?</h3>
+			<p>See what EVO changes, row by row, before you choose.</p>
+			<a class="rbu-alt-more" href="#evo-vs-racebox">Compare RaceBox and EVO</a>
 		</div>
 	</div>
 </section>
 ```
 
-**CSS:** the end of section `40-racebox-compare/style.css` (`.rbu-wait*`). The rule is `main > section.rbu-wait` so it
-beats main.css's 72 px top padding on sections. No JavaScript.
+**CSS:** the design is `.rbu-alt` in section `10-evo-page/style.css` (shared with "Need it sooner?" on the EVO page, so
+port 10 first). The end of section `40-racebox-compare/style.css` only places it on desktop. No JavaScript.
 
 **Facts:** ship month, prices and the sentence come from `patches/evo.json` (shipWindow, prices, and the FAQ answer
-"Should I wait for EVO or buy the RaceBox now?"). The Pre-order EVO button goes to the EVO page, so the pre-order terms are
+"Should I wait for EVO or buy the RaceBox now?"); the photo is the current RaceBox, captioned per `imageNote`. The Pre-order EVO button goes to the EVO page, so the pre-order terms are
 read before ordering, like the button in the table.
 
 **How to test**
-- [ ] Desktop 1280x720, 1440x900, 1920x1080: the violet card is straight under the price and Add to cart, before
-      "What RaceBox does", and lines up with the product block.
-- [ ] Phone 390 and tablet 768: the card is under the header video, one column, no sideways scrolling.
-- [ ] Pre-order EVO opens `/products/racebox-evo`; Compare with EVO scrolls to the comparison table.
+- [ ] Desktop 1280x720, 1440x900, 1920x1080: "Can you wait?" is straight under the price and Add to cart, before
+      "What RaceBox does", and looks the same as "Need it sooner?" on the EVO page (only the button colour differs).
+- [ ] Phone 390 and tablet 768: the section is under the header video, one column, no sideways scrolling.
+- [ ] Pre-order EVO opens `/products/racebox-evo`; Compare RaceBox and EVO scrolls to the comparison table.
 - [ ] EU visitor: prices in euros.
-- [ ] Keyboard: Tab reaches Pre-order EVO, then Compare with EVO, each with a dark focus ring.
+- [ ] Keyboard: Tab reaches Pre-order EVO, then Compare RaceBox and EVO, each with a dark focus ring.
 

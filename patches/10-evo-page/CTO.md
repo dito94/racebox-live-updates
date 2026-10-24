@@ -91,22 +91,22 @@ The Product JSON-LD has no reviews or rating (EVO has none yet). Its Offer is `P
 	</div>
 </section>
 <!-- rb-updates: 10 evo-page -->
-<section class="rbu-evo-band rbu-evo-band--mist" aria-labelledby="rbu-evo-sooner-title">
-	<h2 id="rbu-evo-sooner-title">Need it sooner?</h2>
-	<div class="rbu-evo-wrap rbu-evo-sooner">
-		<div class="rbu-evo-sooner-main">
-			<img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" />
+<section class="rbu-alt" aria-labelledby="rbu-alt-title">
+	<h2 id="rbu-alt-title">Need it sooner?</h2>
+	<div class="rbu-alt-in">
+		<div class="rbu-alt-main">
+			<figure class="rbu-alt-media"><img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" /></figure>
 			<div>
 				<h3>RaceBox ships now</h3>
-				<p>If you want it before March&nbsp;2027, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz.</p>
-				<p class="rbu-evo-rb-price">{{racebox_price}}</p>
-				<a class="rbu-btn rbu-btn--ghost rbu-evo-sooner-btn" href="/products/racebox">See the RaceBox</a>
+				<p>If you need it before March&nbsp;2027, the RaceBox ships now, with the same shape and controls at 10&nbsp;Hz.</p>
+				<p class="rbu-alt-price">{{racebox_price}}</p>
+				<a class="rbu-btn rbu-btn--ghost" href="/products/racebox">See the RaceBox</a>
 			</div>
 		</div>
-		<div class="rbu-evo-sooner-side">
+		<div class="rbu-alt-side">
 			<h3>On a motorcycle?</h3>
 			<p>EVO is built for cars. On a motorcycle, the Mini&nbsp;S is the better fit.</p>
-			<a class="rbu-evo-more rbu-focus" href="/products/racebox-mini-s">See the RaceBox Mini S</a>
+			<a class="rbu-alt-more" href="/products/racebox-mini-s">See the RaceBox Mini S</a>
 		</div>
 	</div>
 </section>
@@ -244,7 +244,7 @@ The phone menu (up to 940 px wide) has ten items now, which is taller than a pho
 
 ### CSS and JS
 
-`rb-updates.css`, section `10-evo-page/style.css`: page frame, hero, what's new, photo band, how pre-ordering works, tables, FAQ, need it sooner, the inline EVO price (`.rbu-price-inline`, also used by 20), sticky bar, violet pill button (`.rbu-submit-pre`), store card (its status row and price block take the same height as the live cards' "Limited Stock" row and price, so rows line up; the price is centred only from 1001 px, like the live price), header menu, phone menu, jumping to a section (`:target`, `scroll-padding-top`, and `scroll-padding-bottom`), phones. From 1001 px the hero and What's new keep a 40 px side margin, like the product-page hero (50 pdp-first-screen). Below 1000 px the page sets `scroll-padding-bottom: 90px` so a focused item clears the sticky bar (up to 81 px tall) instead of ending up under it (WCAG 2.4.11). No JS: the FAQ is `<details>`, the sticky bar uses the live `bottom-popup-element.js`.
+`rb-updates.css`, section `10-evo-page/style.css`: page frame, hero, what's new, photo band, how pre-ordering works, tables, FAQ, need it sooner (`.rbu-alt`, the shared design that 40's "Can you wait?" on the RaceBox page reuses), the inline EVO price (`.rbu-price-inline`, also used by 20), sticky bar, violet pill button (`.rbu-submit-pre`), store card (its status row and price block take the same height as the live cards' "Limited Stock" row and price, so rows line up; the price is centred only from 1001 px, like the live price), header menu, phone menu, jumping to a section (`:target`, `scroll-padding-top`, and `scroll-padding-bottom`), phones. From 1001 px the hero and What's new keep a 40 px side margin, like the product-page hero (50 pdp-first-screen). Below 1000 px the page sets `scroll-padding-bottom: 90px` so a focused item clears the sticky bar (up to 81 px tall) instead of ending up under it (WCAG 2.4.11). No JS: the FAQ is `<details>`, the sticky bar uses the live `bottom-popup-element.js`.
 
 ### Back end
 

@@ -4,7 +4,7 @@
  <head>
  	<title>RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=0cbe5acf28" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=9e8223b3e8" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -73,31 +73,34 @@
  					<video autoplay muted playsinline loop poster="/assets/v-1776405836/video/racebox/header-image-1920w.jpg">
  		<source src="/assets/v-1776405836/video/racebox/header-1920.webm"  type="video/webm" />
  		<source src="/assets/v-1776405836/video/racebox/header-1920-6.ogv" type="video/ogg" />
-@@ -126,6 +162,23 @@
+@@ -126,6 +162,26 @@
  	</video>
  </section>
  
 +<!-- rb-updates: 40 racebox-compare -->
-+<section class="rbu-wait" aria-labelledby="rbu-wait-title">
-+	<div class="rbu-wait-in">
-+		<div class="rbu-wait-text">
-+			<p class="rbu-wait-flag"><span class="rbu-badge">Pre-order</span> <span>Ships March&nbsp;2027</span></p>
-+			<h2 id="rbu-wait-title">Can you wait until March&nbsp;2027?</h2>
-+			<p>Pre-order RaceBox&nbsp;EVO: the same shape and controls, with 25&nbsp;Hz GPS, a larger battery and more storage.</p>
-+		</div>
-+		<div class="rbu-wait-buy">
-+			<p class="rbu-price rbu-price--pre"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note" aria-hidden="true">Pre-order price. $449.00 after pre-order.</span></p>
-+			<div class="rbu-wait-actions">
++<section class="rbu-alt" aria-labelledby="rbu-alt-title">
++	<h2 id="rbu-alt-title">Can you wait?</h2>
++	<div class="rbu-alt-in">
++		<div class="rbu-alt-main">
++			<figure class="rbu-alt-media"><img src="/product-image/racebox.png" width="200" height="200" loading="lazy" alt="" /><figcaption>Photo shows the current RaceBox</figcaption></figure>
++			<div>
++				<h3>Pre-order RaceBox&nbsp;EVO</h3>
++				<p>If you can wait until March&nbsp;2027, you can pre-order RaceBox&nbsp;EVO: the same shape and controls, with 25&nbsp;Hz GPS, a larger battery and more storage.</p>
++				<p class="rbu-price rbu-price--pre"><s class="rbu-price-later"><span class="rbu-sr">Price after pre-order: </span>$449.00</s> <strong class="rbu-price-now"><span class="rbu-sr">Pre-order price: </span>$339.00</strong><span class="rbu-price-note" aria-hidden="true">Pre-order price. $449.00 after pre-order.</span></p>
 +				<a class="rbu-btn rbu-btn--pre" href="/products/racebox-evo">Pre-order EVO</a>
-+				<a class="rbu-wait-more rbu-focus" href="#evo-vs-racebox">Compare with EVO</a>
 +			</div>
++		</div>
++		<div class="rbu-alt-side">
++			<h3>Not sure which?</h3>
++			<p>See what EVO changes, row by row, before you choose.</p>
++			<a class="rbu-alt-more" href="#evo-vs-racebox">Compare RaceBox and EVO</a>
 +		</div>
 +	</div>
 +</section>
  <section class="what-racebox-does" role="main">
  	<h1><a id="what-racebox-does"></a>What RaceBox Does</h1>
  	<p class="text">The most advanced measuring device in a <strong>completely standalone</strong> form. You don't need anything more than what comes in the package. Unbox it, mount it and enjoy the complete experience right away.</p>
-@@ -169,6 +222,32 @@
+@@ -169,6 +225,32 @@
  	<p class="text">See the full <a href="/products/racebox/tech-specs">technical specifications</a></p> 
  </section>
  
@@ -130,7 +133,7 @@
  <section class="whats-in-the-box" role="main">
  	<h1>What's in the box</h1>
  	<p class="text">RaceBox comes fully ready to use - minimal assembly required.</p>
-@@ -276,6 +355,8 @@
+@@ -276,6 +358,8 @@
  				<ul>
  									<li><a href="/features">Features</a></li>
  					<li><a href="/products/racebox">RaceBox</a></li>
@@ -139,10 +142,10 @@
  					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
  					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
  					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
-@@ -389,5 +470,6 @@
+@@ -389,5 +473,6 @@
  </div>
  
  <script defer src="/assets/v-1776405836/js/country-select.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
-+<script src="/assets/rb-updates/rb-updates.js?v=0cbe5acf28" defer></script>
++<script src="/assets/rb-updates/rb-updates.js?v=9e8223b3e8" defer></script>
  </body>
  </html>
