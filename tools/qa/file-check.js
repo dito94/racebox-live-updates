@@ -5,7 +5,7 @@ const root = process.argv[2];
 const pages = [];
 (function walk(d){ for (const f of fs.readdirSync(d)) { const p = path.join(d,f); if (fs.statSync(p).isDirectory()) walk(p); else if (f.endsWith('.html')) pages.push(p); } })(root);
 (async () => {
-  const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+  const b = await chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium' });
   const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
   await ctx.route(u => !u.href.startsWith('file:'), r => r.abort());
   const bad = new Set(); let errs = 0;

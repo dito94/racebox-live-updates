@@ -41,7 +41,7 @@ async function shot(page, url, vp, cropExpr) {
 }
 
 (async () => {
-  const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+  const b = await chromium.launch({ executablePath: process.env.CHROMIUM || '/opt/pw-browsers/chromium' });
   const ctx = await b.newContext({ deviceScaleFactor: 1 });
   await ctx.route(u => !(u.href.startsWith(ORIG) || u.href.startsWith(PATCH)), r => r.abort());
   const page = await ctx.newPage();

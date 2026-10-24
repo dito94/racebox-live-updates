@@ -70,6 +70,6 @@ currency, hidden input product=<id>), handled by store-assets/js/analytics.js an
 
 ## Testing toolkit
 Node + playwright-core + axe-core in tools/qa
-(run node from that folder or require with an absolute path). Chromium: /opt/pw-browsers/chromium-1194/chrome-linux/chrome.
+(run node from that folder or require with an absolute path). Chromium: /opt/pw-browsers/chromium (override with CHROMIUM=<path>).
 Pages have a viewport meta. Before/after: serve original/ too (tools/serve.py original <port>) to compare.
 Kill your servers when done: `pkill -f "serve.p[y] .* <port>"`.
