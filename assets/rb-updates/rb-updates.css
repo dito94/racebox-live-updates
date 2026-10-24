@@ -565,7 +565,7 @@ body.page-features header:has(.rbu-evo-bar) ~ main h2 a:target { top: calc(-205p
 
 /* Image panel on the site's light grey. Accessory pages show the store card's PNG, which is 200 x 200, so it is shown at
    200: any larger and it goes soft. */
-.rbu-pdp-media { display: flex; align-items: center; justify-content: center; min-height: 280px; background: var(--rbu-grey); border-radius: var(--rbu-radius); }
+.rbu-pdp-media { display: flex; align-items: center; justify-content: center; min-height: 280px; background: transparent; }  /* photos are transparent cut-outs: no panel, they sit on the page white */
 .rbu-pdp-media img { display: block; width: 200px; max-width: 100%; height: auto; }
 /* RaceBox, Mini, Mini S, Micro: a high-resolution cut-out (800 px PNG, webp up to 1200 w) fills the panel. The image is
    absolutely placed inside the panel (88% wide, 85% tall, object-fit: contain), so it never makes the block taller:
