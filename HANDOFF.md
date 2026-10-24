@@ -46,6 +46,10 @@ a pre-order in cart, emails and order pages; keep discount codes off pre-orders;
   and `patches/evo.json`; never POST to www.racebox.pro; WCAG 2.2 AA; check 390, 768, 1280x720, 1366x768, 1440x900,
   1920x1080).
 - Build a change set in isolation: `python3 tools/apply.py --only 10,20 --out /tmp/x` (00 is always included).
+- Hosted preview (owner's request, 24 Oct 2026): the `gh-pages` branch holds the disk preview made safe to host by
+  `tools/export_pages.py` (trackers emptied, gtag removed, a CSP that blocks every other domain, noindex). Rebuild:
+  `python3 tools/apply.py && python3 tools/export_preview.py --out /tmp/p && python3 tools/export_pages.py --src /tmp/p --out /tmp/pages`,
+  then replace the `gh-pages` branch contents with `/tmp/pages`.
 - Deliverables the owner liked: the before/after review page (`tools/qa/before-after.js`) and the zipped disk copy
   (`tools/export_preview.py --zip`). Don't host the copy at a shareable link: it is a full working copy of racebox.pro.
 - Model use agreed with the owner: read-only checks and QA that only reports on Haiku; applying agreed fixes, building
