@@ -15,7 +15,7 @@ each change set into the PHP templates following its `patches/NN-name/CTO.md`.
 | 20-evo-banner | Slim EVO pre-order bar under the shipping banner (not on home, checkout or the EVO page) |
 | 30-home-evo | The home page opens with a dark EVO pre-order hero in place of the large photo (all screen sizes) |
 | 40-racebox-compare | "Can you wait?" section (pre-order EVO, same design as the EVO page's "Need it sooner?") at the top of `/products/racebox`; "RaceBox vs RaceBox EVO" table at `#evo-vs-racebox` |
-| 50-pdp-first-screen | Desktop: name, photo, price and Add to cart first on every product page; device pages move the header video below the description; accessory pages hide the generic photo and the repeated intro. Phones unchanged |
+| 50-pdp-first-screen | Desktop: name, photo, price and Add to cart first on every product page; device pages show one real-world photo beside the description instead of the header video, so no picture repeats; accessory pages hide the generic photo and the repeated intro. Phones unchanged |
 | 60-store-cards | Whole store card image and name link to the product page |
 | 70-mini-note | "The Mini records only while your phone stays connected. The Mini S also records on its own." on the Mini page and `/products` |
 | 80-discount-links | `?code=XXXX` links save the code and apply it at checkout through the store's own `applyDiscountCode` |

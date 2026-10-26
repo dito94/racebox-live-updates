@@ -4,7 +4,7 @@
  <head>
  	<title>RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=3efcb7e651" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=3980e18737" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -73,7 +73,7 @@
  					<video autoplay muted playsinline loop poster="/assets/v-1776405836/video/racebox/header-image-1920w.jpg">
  		<source src="/assets/v-1776405836/video/racebox/header-1920.webm"  type="video/webm" />
  		<source src="/assets/v-1776405836/video/racebox/header-1920-6.ogv" type="video/ogg" />
-@@ -126,6 +162,26 @@
+@@ -126,14 +162,38 @@
  	</video>
  </section>
  
@@ -100,7 +100,19 @@
  <section class="what-racebox-does" role="main">
  	<h1><a id="what-racebox-does"></a>What RaceBox Does</h1>
  	<p class="text">The most advanced measuring device in a <strong>completely standalone</strong> form. You don't need anything more than what comes in the package. Unbox it, mount it and enjoy the complete experience right away.</p>
-@@ -169,6 +225,32 @@
++<div class="rbu-intro-feats">
++<!-- rb-updates: 50 pdp-first-screen -->
++<figure class="rbu-intro-photo" style="--rbu-pos: 25% 50%"><picture><img src="/assets/v-1776405836/video/racebox/header-image-1920w.jpg" width="3840" height="1634" loading="lazy" alt="" /></picture></figure>
+ 	<p class="t r in lap-timer">If you are the occasional track-day enthusiast, a semi-professional or just want to see how fast you can go around the track, we've got you covered. The "Lap Timer" functionality will allow you to measure your laps and improve your skills without ever having to stop and check your results. <a href="/features#lap-timer" title="Lap Timer Feature">Read More</a></p>
+ 	<p class="t r in drag-meter">The "Drag Meter" functionality presents you with virtually unlimited possibilities to measure all of your car's performance stats. No matter if you want to see how fast it accelerates, covers a certain distance or anything in between, you can measure it with RaceBox. <a href="/features#drag-meter" title="Drag Meter Feature">Read More</a></p>
+ 	<p class="t r in standalone">The RaceBox is completely standalone unit. It can be used without a smartphone connection at all. Setup your drag disciplines or even define your own tracks right on the unit itself.</p>
+ 	<p class="t r in predictive">Know your results in advance with our Predictive feature. Available for both Drag Meter distance runs and Lap Timer on any track. The device will study your driving and display estimates of your lap or drag run time before you have finished. <a href="/features#predictive" title="Predictive">Read More</a></p>
+ 	<p class="t r in history">All of this is stored as sessions internally in the device memory - you can always go back and analyze everything later. All you need to do is just go to the "History" menu and all the information is there - sorted for you by type, date, track and sessions. No need for SD cards. <a href="/features#history" title="History">Read More</a></p>
++	</div>
+ 	<p class="text">And the best thing is all the functionality does not stop here. We have many more features planned in mind that thanks to the design of our hardware and software will be released as free updates down the road. </p>
+ </section>
+ 
+@@ -169,6 +229,32 @@
  	<p class="text">See the full <a href="/products/racebox/tech-specs">technical specifications</a></p> 
  </section>
  
@@ -133,7 +145,7 @@
  <section class="whats-in-the-box" role="main">
  	<h1>What's in the box</h1>
  	<p class="text">RaceBox comes fully ready to use - minimal assembly required.</p>
-@@ -276,6 +358,8 @@
+@@ -276,6 +362,8 @@
  				<ul>
  									<li><a href="/features">Features</a></li>
  					<li><a href="/products/racebox">RaceBox</a></li>
@@ -142,10 +154,10 @@
  					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
  					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
  					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
-@@ -389,5 +473,6 @@
+@@ -389,5 +477,6 @@
  </div>
  
  <script defer src="/assets/v-1776405836/js/country-select.js" nonce="ZYbI46GO6phrxYtGvZsgifdz5eM="></script>
-+<script src="/assets/rb-updates/rb-updates.js?v=3efcb7e651" defer></script>
++<script src="/assets/rb-updates/rb-updates.js?v=3980e18737" defer></script>
  </body>
  </html>

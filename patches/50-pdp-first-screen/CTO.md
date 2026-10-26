@@ -1,7 +1,7 @@
 ## 50 Price and Add to cart in the first screen of every product page (desktop)
 
 **What and why:** on desktop, product pages opened with a full-screen video or photo; the price and Add to cart were only at the very bottom. A compact product block now opens the page (image, name, key points, price, Add to cart). The rest of the desktop page is calmer too (CSS only, see section 2):
-- **Device pages:** the block, then the description, then the video or photo (cropped to a band), then the specs.
+- **Device pages:** the block (product cut-out), then the description with one real-world photo on its left, then the specs. Each picture shows once (owner's choice, option A).
 - **Accessory pages:** one block, then the delivery details. The generic photo and the intro that repeats the product are hidden.
 
 Phones are unchanged.
@@ -118,16 +118,47 @@ In `rb-updates.css`, section `50-pdp-first-screen/style.css`. It holds:
 **Desktop page flow** (CSS only, min-width 1001px). It needs the modifier class on the section and `:has()`. Everything is inside the media query, so phones and tablets (1000 px and narrower) are untouched.
 
 Device pages (`main:has(> .rbu-pdp--device)`):
-- `<main>` becomes a flex column. The block gets `order: -3`, `section.what-racebox-does` `order: -2`, `section.top-banner` `order: -1`. Every other section keeps `order: 0`, so it follows in HTML order (specs, comparison table, box contents, the rest).
-- The video or photo in `section.top-banner` becomes a band: `display: block; width: 100%; height: min(72vh, 640px); max-height: none; object-fit: cover`. It is cropped, not squeezed.
-- The photo that opens `section.tech-specs` (`.topimg`) is hidden, so two large pictures never sit back to back. `section.tech-specs` gets 72 px of top padding, so its heading has room under the video.
-- Mini S and Micro: their description section draws the product photo again as a large decoration (main.css `.introducing-mini-s .with-s-bg::before` and `.what-is-racebox-micro .with-bg-image::before`). The product block just above already shows it, so it is hidden on desktop and the description reads like the RaceBox and Mini pages. It is absolutely placed, so nothing moves. Phones keep it.
+- `<main>` becomes a flex column. The block gets `order: -3`, `section.what-racebox-does` `order: -2`. Every other section keeps `order: 0`, so it follows in HTML order (specs, comparison table, box contents, the rest).
+- Hidden on desktop, so no picture repeats: the header video or photo (`section.top-banner`), the photo that opens `section.tech-specs` (`.topimg`; the specs get 72 px of top padding instead), and on the Mini S and Micro the second product cut-out that main.css draws in the description (`.introducing-mini-s .with-s-bg::before`, `.what-is-racebox-micro .with-bg-image::before`). Phones keep all of them.
+- The description shows one real-world photo on its left, beside the feature list (`.rbu-intro-photo`): absolutely placed left of the red labels, centred on the list, at most 600 px tall, rounded corners, `object-fit: cover` with a per-page crop (`--rbu-pos`). It never changes the section's height. It is `display: none` below 1001 px. main.css hides every `img` in the Micro intro, so the rule that shows it is more specific (`main:has(> .rbu-pdp--device) .rbu-intro-photo img`).
+
+The photo per page (all already on the live server; none is shown elsewhere on desktop any more):
+
+| Page | Photo | Crop (`--rbu-pos`) |
+|---|---|---|
+| RaceBox | the header video's still, `/assets/v-1776405836/video/racebox/header-image-1920w.jpg` (RaceBox on the dash) | `25% 50%` |
+| Mini | the specs photo, `/assets/v-1776405835/img/mini/ph6-1920w.webp` / `.jpg` (Mini beside a helmet) | `72% 50%` |
+| Mini S | the header photo, `/assets/v-1776405835/img/mini-s/ph2-1920w.webp` / `.jpg` (Mini S with gloves) | `62% 50%` |
+| Micro | the specs photo, `/assets/v-1776405835/img/micro/ph1-1920w.webp` / `.jpg` (board on a desk) | `50% 50%` |
+
+Template change: the feature paragraphs (`p.t.r.in`) need a wrapper with class `rbu-intro-feats`, with the figure as its first child. The Mini S and Micro already have one (`div.with-s-bg`, `div.with-bg-image`): add the class to it. On the RaceBox and Mini, wrap the run of feature paragraphs in a new `div` (main.css styles them as `section.what-racebox-does p.t`, so the wrapper changes nothing else). RaceBox:
+
+```html
+<div class="rbu-intro-feats">
+<!-- rb-updates: 50 pdp-first-screen -->
+<figure class="rbu-intro-photo" style="--rbu-pos: 25% 50%"><picture><img src="/assets/v-1776405836/video/racebox/header-image-1920w.jpg" width="3840" height="1634" loading="lazy" alt="" /></picture></figure>
+	<p class="t r in lap-timer">...</p>
+	...
+	<p class="t r in history">...</p>
+</div>
+```
+
+Mini S (the existing wrapper gets the class):
+
+```html
+<div class="with-s-bg rbu-intro-feats">
+<!-- rb-updates: 50 pdp-first-screen -->
+<figure class="rbu-intro-photo" style="--rbu-pos: 62% 50%"><picture><source type="image/webp" srcset="/assets/v-1776405835/img/mini-s/ph2-1920w.webp"><img src="/assets/v-1776405835/img/mini-s/ph2-1920w.jpg" width="1920" height="707" loading="lazy" alt="" /></picture></figure>
+	<p class="t r in lap-timer">...</p>
+	...
+</div>
+```
 
 Accessory pages (`main:has(> .rbu-pdp--accessory)`):
 - `section.top-banner` (the same generic photo on all eight pages) and `section.other-product-info` (repeats the product) are `display: none`.
 - `.rbu-pdp--accessory { padding-bottom: 56px; }` keeps the delivery details from sitting against the block.
 
-Only the visual order changes. In the HTML the order stays: block, video, description, specs. The moved video has no focusable content (it has no controls), so keyboard and screen-reader order stay hero, description, specs. Browsers without `:has()` ignore these rules and keep today's order: block, video, description, specs (accessory pages: block, photo, intro). Nothing breaks there.
+Only the visual order changes, and the photo is decorative (`alt=""`), so keyboard and screen-reader order stay block, description, specs. Browsers without `:has()` ignore these rules and keep today's order: block, video, description, specs (accessory pages: block, photo, intro); the intro photo stays hidden there. Nothing breaks.
 
 **Scroll margin rule (always applies):** `#buy-section { scroll-margin-top: calc(120px + var(--rbu-bar-h, 0px)); }`, and `calc(90px + var(--rbu-bar-h, 0px))` at `max-width: 940px`. Change set 20 puts the EVO banner inside the fixed header and sets `--rbu-bar-h` (30 px with a mouse from 768 px, 44 px on phones and touch screens, 58 px below 360 px, 0 on windows 520 px tall or less). The `0px` fallback keeps the page right when set 20 is not applied. Any other anchor target under the fixed header needs the same `var(--rbu-bar-h, 0px)`.
 
@@ -144,10 +175,9 @@ The four device pages also need the cut-out files uploaded (see "Image on the fo
 ### How to test
 
 - [ ] Desktop 1280x720, 1366x768, 1440x900, 1920x1080, 1024x768: name, image, price and Add to cart are visible without scrolling, also with the EVO banner (30 px) and with a 48 px banner. Check the four accessory pages with five points first (External GPS Antenna, Suction Cup, Spare Mini Accessories, Magnetic USB Cable): their block is the tallest now (subtitle and all points). On the Mini page the button bottom was at 551 px with a 48 px banner.
-- [ ] Desktop 1440x900, RaceBox, Mini, Mini S and Micro: the order down the page is product block, description (the `what-racebox-does` section), video or photo, then the specs. The video is a cropped band, about 640 px tall at most (72 % of the window height on a shorter window). No second large photo sits between it and the specs; the specs heading has 72 px of space above it.
+- [ ] Desktop 1024x768, 1280x720, 1440x900, 1920x1080, RaceBox, Mini, Mini S and Micro: the order down the page is product block, description, then the specs. The description has the page's photo on its left (table above), rounded, left of the red labels and not touching them, centred on the feature list. No header video or photo band, and no picture appears twice; the specs heading has 72 px of space above it.
 - [ ] Desktop 1440x900, any of the 8 accessory pages: one product block (name, subtitle, image, all of the card's points, price, Add to cart), then the delivery details straight after it. No generic photo, and no second copy of the name, image and points.
-- [ ] Desktop 1440x900, Mini S and Micro: the product photo shows once, in the product block. The description below has no large product picture on its left, like the RaceBox and Mini pages. Phones still show it.
-- [ ] Keyboard, desktop, a device page: Tab goes hero, description, specs, in that order (the video has nothing to focus). Screen reader: same order.
+- [ ] Keyboard, desktop, a device page: Tab goes hero, description, specs, in that order (the photo is decorative and has nothing to focus). Screen reader: same order.
 - [ ] Phones (390 px) and tablets (768 px), and 1000 px wide: look exactly as before (compare full-page screenshots). Device pages open with the video; accessory pages still show the photo and the intro. At 1001 px the new order starts.
 - [ ] A browser without `:has()` (or switch the flow rules off in devtools): the pages look as before the flow change; the hero still works.
 - [ ] Prices match the buy section on every product page. Struck price only on RaceBox, Mini, Mini S and Micro. Test one EU country: `349.00 €` format, "Euro" in the note.

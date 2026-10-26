@@ -4,9 +4,10 @@ A compact product hero goes at the top of <main>, before section.top-banner. It 
 the store card's image and bullets (store/index.html, the same product data) and the buy section's price, stock note,
 add-to-cart form and currency note. On phones (max-width 1000px, the site's breakpoint) the hero is hidden, so the top
 banner stays first and phones look exactly as today.
-Desktop layout (CSS only, style.css): on the four device pages the header video or photo moves below the product
-description and takes the place of the photo that opens the tech specs (that photo is hidden on desktop), so the page
-reads product, description, video, specs. On the eight accessory pages the generic header photo and the intro section
+Desktop layout: on the four device pages the product description shows one real-world photo on its left, beside the
+feature list (INTRO_PHOTOS); the header video or photo and the photo that opens the tech specs are hidden on desktop,
+and so is the second product cut-out the Mini S and Micro intros draw. Each picture shows once: product cut-out at the
+top, photo beside the description, then the specs. On the eight accessory pages the generic header photo and the intro section
 (which repeats the product) are hidden on desktop; the hero carries the intro's subtitle and all of the card's points.
 
 Everything is read from the live markup, so a changed template stops the build instead of printing a wrong price
@@ -46,6 +47,17 @@ CUTOUTS = {
     'products/racebox-mini.html': ('racebox-mini', (400, 800, 1200)),
     'products/racebox-mini-s.html': ('racebox-mini-s', (400, 800)),
     'products/racebox-micro.html': ('racebox-micro', (400, 800)),
+}
+
+# Device pages, desktop: the intro ("What RaceBox does" / "Introducing ...") shows one real-world photo on its left, beside
+# the feature list, in place of the full-width header band below it and (Mini S, Micro) the second product cut-out that
+# main.css draws there. Each is a photo the live page already serves and that desktop no longer shows elsewhere:
+# (path without -1920w/extension or the full jpg, has a webp twin, object-position for the frame's crop).
+INTRO_PHOTOS = {
+    'products/racebox.html': ('/assets/v-1776405836/video/racebox/header-image-1920w.jpg', False, '25% 50%'),  # video still
+    'products/racebox-mini.html': ('/assets/v-1776405835/img/mini/ph6-1920w', True, '72% 50%'),     # specs photo
+    'products/racebox-mini-s.html': ('/assets/v-1776405835/img/mini-s/ph2-1920w', True, '62% 50%'),  # header photo
+    'products/racebox-micro.html': ('/assets/v-1776405835/img/micro/ph1-1920w', True, '50% 50%'),    # specs photo
 }
 
 # The pristine store page: the card data (image, bullets) per SKU, as the server prints it on /store/.
@@ -186,6 +198,46 @@ def hero_html(card, b, cutout=None, subtitle=None):
         '</section>\n')
 
 
+def intro_photo_html(rel):
+    """<figure> for the intro's left side (desktop only, see style.css)."""
+    path, webp, pos = INTRO_PHOTOS[rel]
+    jpg = path if path.endswith('.jpg') else path + '.jpg'
+    f = os.path.join(rbu.LIVE, 'original', jpg.lstrip('/'))
+    if not os.path.isfile(f):
+        raise rbu.AnchorError(f'{rel}: intro photo {jpg} is not in the crawl')
+    with open(f, 'rb') as fh:
+        data = fh.read()
+    # JPEG size from the first SOF marker
+    i = 2
+    while True:
+        seg_len = struct.unpack('>H', data[i + 2:i + 4])[0]
+        if data[i + 1] in (0xC0, 0xC1, 0xC2):
+            h, w = struct.unpack('>HH', data[i + 5:i + 9])
+            break
+        i += 2 + seg_len
+    source = f'<source type="image/webp" srcset="{path}.webp">' if webp else ''
+    return (f'<!-- rb-updates: 50 pdp-first-screen -->\n'
+            f'<figure class="rbu-intro-photo" style="--rbu-pos: {pos}"><picture>{source}'
+            f'<img src="{jpg}" width="{w}" height="{h}" loading="lazy" alt="" /></picture></figure>\n')
+
+
+def add_intro_photo(html, rel):
+    """Mini S and Micro already wrap the feature list (.with-s-bg / .with-bg-image); RaceBox and Mini get a wrapper
+    around their run of feature paragraphs (main.css styles them as 'section.what-racebox-does p.t', so a wrapper
+    changes nothing)."""
+    fig = intro_photo_html(rel)
+    for cls in ('with-s-bg', 'with-bg-image'):
+        anchor = f'<div class="{cls}">'
+        if html.count(anchor) == 1:
+            return rbu.replace(html, anchor, f'<div class="{cls} rbu-intro-feats">\n{fig}', where=rel)
+    sec = _one(r'<section class="what-racebox-does" role="main">.*?</section>', html, rel, 'intro section')
+    run = re.findall(r'(?:[ \t]*<p class="t r in [^"]*">.*?</p>\s*)+', sec.group(0), re.S)
+    if len(run) != 1:
+        raise rbu.AnchorError(f'{rel}: intro feature paragraphs: {len(run)} runs, expected 1')
+    wrapped = f'<div class="rbu-intro-feats">\n{fig}{run[0].rstrip()}\n\t</div>\n\t'
+    return rbu.replace(html, run[0], wrapped, where=rel)
+
+
 def apply(site):
     cards = store_cards()
 
@@ -205,7 +257,8 @@ def apply(site):
             if intro.group(1) != card[1]:
                 raise rbu.AnchorError(f'{rel}: other-product-info h1 {intro.group(1)!r} is not the store card name {card[1]!r}')
             subtitle = re.sub(r'\s+', ' ', intro.group(2)).strip()
-        return rbu.insert_before(html, '<section class="top-banner', hero_html(card, b, cutout, subtitle), where=rel)
+        html = rbu.insert_before(html, '<section class="top-banner', hero_html(card, b, cutout, subtitle), where=rel)
+        return add_intro_photo(html, rel) if rel in INTRO_PHOTOS else html
 
     for rel in PAGES:
         site.edit(rel, edit)

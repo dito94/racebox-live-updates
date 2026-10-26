@@ -4,7 +4,7 @@
  <head>
  	<title>Mini | RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=3efcb7e651" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=3980e18737" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -73,7 +73,24 @@
  <section class="top-banner front-video" role="banner">
  					<video autoplay muted playsinline loop poster="/assets/v-1776405836/video/racebox-mini/header-image-1920w.jpg">
  		<source src="/assets/v-1776405836/video/racebox-mini/header-1920.webm"  type="video/webm" />
-@@ -268,6 +306,8 @@
+@@ -93,12 +131,15 @@
+ 		The most cutting-edge and precise timing gadget you can buy for your vehicle, featuring, for the first time, a 25Hz GPS!<br />
+ 		Support for any speed or distance drag discipline you can think of - 0-100km/h, 1/4 mile, stopping distance, standing or rolling starts. Or just measure laps around your favourite circuit, hill-climb or open track events.</p>
+ 
++<div class="rbu-intro-feats">
++<!-- rb-updates: 50 pdp-first-screen -->
++<figure class="rbu-intro-photo" style="--rbu-pos: 72% 50%"><picture><source type="image/webp" srcset="/assets/v-1776405835/img/mini/ph6-1920w.webp"><img src="/assets/v-1776405835/img/mini/ph6-1920w.jpg" width="1920" height="820" loading="lazy" alt="" /></picture></figure>
+ 	<p class="t r in lap-timer">If you are the occasional track-day enthusiast, a semi-professional or just want to see how fast you can go around the track, we've got you covered. The <strong>Lap Timer</strong> functionality will allow you to measure your laps and improve your skills without ever having to stop and check your results. <a href="/features#lap-timer" title="Lap Timer Feature">Read More</a></p>
+ 	<p class="t r in drag-meter">The <strong>Drag Meter</strong> functionality presents you with virtually unlimited possibilities to measure all of your car's performance stats. No matter if you want to see how fast it accelerates, covers a certain distance, or anything in between, you can measure it with RaceBox. <a href="/features#drag-meter" title="Drag Meter Feature">Read More</a></p>
+ 	<p class="t r in location">Packing latest generation <strong>25Hz GPS</strong> with accuracy as low as 10cm (4 inch) gives over <strong>99.5% measurement accuracy to a hundredth of a second</strong>, compared to official lap/drag timing equipment.</p>
+ 	<p class="t r in features">Heaps of exciting features to improve your driving like <strong>real-time result prediction, density altitude, bike lean angle, slope corrections, custom tracks, hill-climb mode, open-track mode, data comparison</strong> and more - see the full App description below.</p>
+ 	<p class="t r in hardware">Purpose-built hardware to match the needs of any vehicle - <strong>shock and splash resistant</strong>, multitude of mounting options, long battery life, integrated <strong>accelerometer and gyroscope</strong> just to name a few.</p>
+-	
++	</div>
+ 	<p class="text">
+ 		RaceBox Mini is <strong>not a standalone device</strong> and requires a constant connection to your mobile phone to record data.<br />
+ 		If that is what you need, check out <a href="/products/racebox-mini-s">RaceBox Mini S</a>
+@@ -268,6 +309,8 @@
  	<div class="content">
  					<h1>Limited Time Offer</h1>
  						<p class="limited-time-offer price">Get RaceBox Mini now for <strike>$249.00</strike> <strong>$219.00</strong></p>
@@ -82,7 +99,7 @@
  						
  					<p>
  				                                    <div class="availability-warning">Limited Stock</div>
-@@ -320,6 +360,8 @@
+@@ -320,6 +363,8 @@
  				<ul>
  									<li><a href="/features">Features</a></li>
  					<li><a href="/products/racebox">RaceBox</a></li>
@@ -91,10 +108,10 @@
  					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
  					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
  					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
-@@ -433,5 +475,6 @@
+@@ -433,5 +478,6 @@
  </div>
  
  <script defer src="/assets/v-1776405836/js/country-select.js" nonce="4XESaRJ8TRJbSSfpiI0izde/nrE="></script>
-+<script src="/assets/rb-updates/rb-updates.js?v=3efcb7e651" defer></script>
++<script src="/assets/rb-updates/rb-updates.js?v=3980e18737" defer></script>
  </body>
  </html>

@@ -4,7 +4,7 @@
  <head>
  	<title>Mini S | RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=3efcb7e651" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=3980e18737" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -73,7 +73,19 @@
  																					<source media="(min-width:1281px)" srcset="/assets/v-1776405835/img/mini-s/ph2-1920w.webp 1920w" sizes="1920px" type="image/webp" />
  			<source media="(min-width:1281px)" srcset="/assets/v-1776405835/img/mini-s/ph2-1920w.jpg 1920w" sizes="1920px" type="image/jpeg" />
  																		<source media="(min-width:1001px)" srcset="/assets/v-1776405835/img/mini-s/ph2-1280w.webp 1280w" sizes="1280px" type="image/webp" />
-@@ -338,6 +374,8 @@
+@@ -99,7 +135,10 @@
+         <p class="text">
+             A first-of-its-kind device that seamlessly integrates storage capabilities with all the other features of the RaceBox Mini, allowing you to
+             record sessions <strong>without requiring a constant Bluetooth connection</strong>.</p>
+-        <div class="with-s-bg">
++        <div class="with-s-bg rbu-intro-feats">
++<!-- rb-updates: 50 pdp-first-screen -->
++<figure class="rbu-intro-photo" style="--rbu-pos: 62% 50%"><picture><source type="image/webp" srcset="/assets/v-1776405835/img/mini-s/ph2-1920w.webp"><img src="/assets/v-1776405835/img/mini-s/ph2-1920w.jpg" width="1920" height="707" loading="lazy" alt="" /></picture></figure>
++
+             <p class="t r in lap-timer">If you are the occasional track-day enthusiast, a semi-professional, or just want to see how fast you can go around the track,
+                 we've got you covered. The <strong>Lap Timer</strong> functionality will allow you to measure your laps and improve your skills without ever having to stop and check
+                 your results. <a href="/features#lap-timer" title="Lap Timer Feature">Read More</a></p>
+@@ -338,6 +377,8 @@
  				<ul>
  									<li><a href="/features">Features</a></li>
  					<li><a href="/products/racebox">RaceBox</a></li>
@@ -82,10 +94,10 @@
  					<li><a href="/products/racebox-mini">RaceBox Mini</a></li>
  					<li><a href="/products/racebox-mini-s">RaceBox Mini S</a></li>
  					<li><a href="/products/racebox-micro">RaceBox Micro</a></li>
-@@ -452,5 +490,6 @@
+@@ -452,5 +493,6 @@
  </div>
  
  <script defer src="/assets/v-1776405836/js/country-select.js" nonce="c7+HC6SM2rcd7D75SEIkEloPA6c="></script>
-+<script src="/assets/rb-updates/rb-updates.js?v=3efcb7e651" defer></script>
++<script src="/assets/rb-updates/rb-updates.js?v=3980e18737" defer></script>
  </body>
  </html>
