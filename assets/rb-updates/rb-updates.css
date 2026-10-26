@@ -651,28 +651,35 @@ body.page-features header:has(.rbu-evo-bar) ~ main h2 a:target { top: calc(-205p
 /* Accessory pages: the intro's one-line description, under the name */
 .rbu-pdp-sub { margin: -2px 0 14px; font: 1rem/1.5 var(--rbu-font-light); color: var(--rbu-text-2); }
 
-/* Desktop page flow. Without this the full-width header video or photo sat right under the product block.
-   Device pages (RaceBox, Mini, Mini S, Micro): product block, then the description, then the header video or photo,
-   which takes the place of the photo that opens "The technology" (hidden on desktop, so two large pictures never sit
-   back to back). The video becomes a cropped band. Only the visual order changes: the video has no focusable content,
-   so keyboard and screen-reader order stay hero, description, specs.
-   Accessory pages: the header photo is the same generic RaceBox shot on all eight, and the intro section repeats the
-   product block (name, image, points), so both are hidden on desktop; the block shows the intro's subtitle and all
-   points. Phones are untouched (the block itself is hidden there). Browsers without :has() keep today's order. */
+/* Desktop page flow. Device pages (RaceBox, Mini, Mini S, Micro): product block (cut-out, price, Add to cart), then the
+   description with one real-world photo on its left (.rbu-intro-photo, beside the feature list), then the specs. So
+   each picture shows once: the full-width header video or photo and the photo that opens "The technology" are hidden,
+   and so is the second product cut-out that main.css draws in the Mini S and Micro intros (.with-s-bg::before,
+   .with-bg-image::before). Only the visual order changes; keyboard and screen-reader order stay hero, description,
+   specs. Accessory pages: the header photo is the same generic RaceBox shot on all eight, and the intro section
+   repeats the product block (name, image, points), so both are hidden on desktop; the block shows the intro's subtitle
+   and all points. Phones are untouched (the block and the photo are hidden there). Browsers without :has() keep
+   today's order. */
+.rbu-intro-photo { display: none; }
 @media (min-width: 1001px) {
   main:has(> .rbu-pdp--device) { display: flex; flex-direction: column; }
   main:has(> .rbu-pdp--device) > .rbu-pdp { order: -3; }
   main:has(> .rbu-pdp--device) > section.what-racebox-does { order: -2; }
-  main:has(> .rbu-pdp--device) > section.top-banner { order: -1; }
-  main:has(> .rbu-pdp--device) > section.top-banner video,
-  main:has(> .rbu-pdp--device) > section.top-banner img { display: block; width: 100%; height: min(72vh, 640px); max-height: none; object-fit: cover; }
+  main:has(> .rbu-pdp--device) > section.top-banner,
   main:has(> .rbu-pdp--device) > section.tech-specs.with-banner > .topimg { display: none; }
   main:has(> .rbu-pdp--device) > section.tech-specs.with-banner { padding-top: 72px; }
-  /* Mini S and Micro: the intro draws the product photo again as a large decoration (main.css .with-s-bg::before,
-     .with-bg-image::before). The product block right above already shows it, so hide the copy; the intro then reads
-     like the RaceBox and Mini pages (text on the red centre line). Absolutely placed, so nothing moves. */
   main:has(> .rbu-pdp--device) .introducing-mini-s .with-s-bg::before,
   main:has(> .rbu-pdp--device) .what-is-racebox-micro .with-bg-image::before { display: none; }
+  /* The photo sits left of the red labels (which start 145 px left of the centre line), centred on the feature list,
+     at most 600 px tall; it never makes the section taller (absolutely placed). */
+  .rbu-intro-feats { position: relative; }
+  main:has(> .rbu-pdp--device) .rbu-intro-photo {
+    display: block; position: absolute; top: 50%; transform: translateY(-50%); margin: 0;
+    left: max(40px, calc(50% - 640px)); right: calc(50% + 185px); height: min(calc(100% - 20px), 600px);
+    border-radius: 8px; overflow: hidden; background: var(--rbu-line);
+  }
+  /* main.css hides every img in the Micro (and, on phones, Mini S) intro: this selector is more specific */
+  main:has(> .rbu-pdp--device) .rbu-intro-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--rbu-pos, 50% 50%); }
   main:has(> .rbu-pdp--accessory) > section.top-banner,
   main:has(> .rbu-pdp--accessory) > section.other-product-info { display: none; }
   .rbu-pdp--accessory { padding-bottom: 56px; }
