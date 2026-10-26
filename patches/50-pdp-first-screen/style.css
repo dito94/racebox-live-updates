@@ -77,6 +77,11 @@
   main:has(> .rbu-pdp--device) > section.top-banner img { display: block; width: 100%; height: min(72vh, 640px); max-height: none; object-fit: cover; }
   main:has(> .rbu-pdp--device) > section.tech-specs.with-banner > .topimg { display: none; }
   main:has(> .rbu-pdp--device) > section.tech-specs.with-banner { padding-top: 72px; }
+  /* Mini S and Micro: the intro draws the product photo again as a large decoration (main.css .with-s-bg::before,
+     .with-bg-image::before). The product block right above already shows it, so hide the copy; the intro then reads
+     like the RaceBox and Mini pages (text on the red centre line). Absolutely placed, so nothing moves. */
+  main:has(> .rbu-pdp--device) .introducing-mini-s .with-s-bg::before,
+  main:has(> .rbu-pdp--device) .what-is-racebox-micro .with-bg-image::before { display: none; }
   main:has(> .rbu-pdp--accessory) > section.top-banner,
   main:has(> .rbu-pdp--accessory) > section.other-product-info { display: none; }
   .rbu-pdp--accessory { padding-bottom: 56px; }

@@ -4,7 +4,7 @@
  <head>
  	<title>RaceBox Mini Hook&#039;n&#039;loop Tapes | RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=9e8223b3e8" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=3efcb7e651" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -86,6 +86,6 @@
  </div>
  
  <script defer src="/assets/v-1776405836/js/country-select.js" nonce="24uj3NWIdIfWH91xP5PdT4lLGi4="></script>
-+<script src="/assets/rb-updates/rb-updates.js?v=9e8223b3e8" defer></script>
++<script src="/assets/rb-updates/rb-updates.js?v=3efcb7e651" defer></script>
  </body>
  </html>

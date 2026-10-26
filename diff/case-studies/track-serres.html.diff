@@ -4,7 +4,7 @@
  <head>
  	<title>Case Study - Track Experience | RaceBox</title>
  	<link href="/assets/v-1789126343/css/main.css" type="text/css" rel="stylesheet" media="all" />
-+	<link href="/assets/rb-updates/rb-updates.css?v=9e8223b3e8" type="text/css" rel="stylesheet" media="all" />
++	<link href="/assets/rb-updates/rb-updates.css?v=3efcb7e651" type="text/css" rel="stylesheet" media="all" />
  		<link href="/assets/fonts/racebox_regular-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/assets/fonts/racebox_light-webfont.woff2" crossorigin rel="preload" as="font" type="font/woff2" />
  	<link href="/favicon.ico" rel="shortcut icon" />
@@ -49,6 +49,6 @@
  });
  </script>
 -	</body>
-+	<script src="/assets/rb-updates/rb-updates.js?v=9e8223b3e8" defer></script>
++	<script src="/assets/rb-updates/rb-updates.js?v=3efcb7e651" defer></script>
 +</body>
  </html>
