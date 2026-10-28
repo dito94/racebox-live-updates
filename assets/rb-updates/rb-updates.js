@@ -34,6 +34,134 @@
   if (document.readyState !== 'loading') init(); else document.addEventListener('DOMContentLoaded', init);
 })();
 
+/* ---- 30-home-evo/script.js ---- */
+/* 30 home-evo: the home hero's RaceBox EVO renders take turns, a soft crossfade every 6 s (style.css fades the opacity).
+   After the page has loaded, the renders waiting in template.rbu-home-hero-more join the first one in its box, and
+   the pause button appears. WCAG 2.2.2: the button stops the slideshow (aria-pressed="true" = paused). It also waits
+   while the tab is hidden and goes on where it was. With reduced motion asked for it never starts (the other renders
+   are not even downloaded): the first render shows alone, as without script. A render only comes on once its file
+   has loaded. */
+(function () {
+  'use strict';
+  var DELAY = 6000;
+  var fig = document.querySelector('.rbu-home-hero .rbu-home-hero-media');
+  if (!fig || !window.matchMedia) return;
+  var box = fig.querySelector('.rbu-home-hero-slides');
+  var tpl = fig.querySelector('template.rbu-home-hero-more');
+  var btn = fig.querySelector('.rbu-home-hero-pause');
+  if (!box || !tpl || !('content' in tpl) || !btn) return;
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var slides = null, cur = 0, timer = null, due = 0, left = DELAY, paused = false, running = false;
+
+  function ready(i) {
+    var img = slides[i].querySelector('img');
+    return !!img && img.complete && img.naturalWidth > 0;
+  }
+  function show(i) {
+    for (var k = 0; k < slides.length; k++) slides[k].classList.toggle('rbu-is-on', k === i);
+    cur = i;
+  }
+  function next() {
+    timer = null;
+    var i = (cur + 1) % slides.length;
+    if (ready(i)) { show(i); left = DELAY; } else { left = 1000; } // not loaded yet: look again in a second
+    arm();
+  }
+  function arm() {
+    if (!running || paused || document.hidden || timer) return;
+    due = Date.now() + left;
+    timer = window.setTimeout(next, left);
+  }
+  function disarm() {
+    if (!timer) return;
+    window.clearTimeout(timer);
+    timer = null;
+    left = Math.max(1000, due - Date.now()); // the time this render still had, so it goes on where it was
+  }
+  function start() {
+    if (running || calm.matches) return;
+    if (!slides) {
+      box.appendChild(tpl.content.cloneNode(true)); // stacked in the same box, invisible until their turn
+      tpl.parentNode.removeChild(tpl);
+      slides = box.querySelectorAll('.rbu-home-hero-slide');
+    }
+    if (slides.length < 2) return;
+    running = true;
+    fig.classList.add('rbu-is-rotating');
+    btn.hidden = false;
+    arm();
+  }
+  function stop() {
+    disarm();
+    running = false;
+    left = DELAY;
+    if (slides) show(0);
+    fig.classList.remove('rbu-is-rotating');
+    btn.hidden = true;
+  }
+
+  btn.addEventListener('click', function () {
+    paused = !paused;
+    btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
+    if (paused) disarm(); else arm();
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) disarm(); else arm();
+  });
+  function onCalm() { if (calm.matches) stop(); else start(); }
+  if (calm.addEventListener) calm.addEventListener('change', onCalm);
+  else if (calm.addListener) calm.addListener(onCalm);
+
+  // After the page has loaded, so the first render and the rest of the first screen come first
+  if (document.readyState === 'complete') start();
+  else window.addEventListener('load', start);
+})();
+
+/* ---- 50-pdp-first-screen/script.js ---- */
+/* 50 pdp-first-screen: the live sticky Add to cart bar (#add-to-cart-popup) at every width, held back while the page's
+   hero Add to cart (or Pre-order) button is in view. The bar names its hero in data-rbu-hero (an element id: "rbu-pdp",
+   the info block on the 12 product pages; "rbu-evo-buy", the hero buy block on the RaceBox EVO page); the button is the
+   first form.js-add-to-cart button inside it. Without the attribute the script looks for the info block (.rbu-pdp).
+   The live bottom-popup-element.js still decides .visible (its tracked element is out of view); this only adds .rbu-cta
+   (the bar is managed) and toggles .rbu-cta-hold (the hero button is in view, below the fixed header). The CSS shows the
+   bar when it is .visible and not held. Without IntersectionObserver, or without a hero button, nothing is added and
+   the live behaviour stays. */
+(function () {
+  'use strict';
+  if (!('IntersectionObserver' in window)) return;
+  function init() {
+    var bar = document.getElementById('add-to-cart-popup');
+    if (!bar) return;
+    var id = bar.getAttribute('data-rbu-hero');
+    var hero = id ? document.getElementById(id) : document.querySelector('.rbu-pdp');
+    var btn = hero && hero.querySelector('.js-add-to-cart button');
+    if (!btn) return;
+    var header = document.querySelector('body > header');
+    var root = document.documentElement;
+    var io = null, top = -1;
+    function watch() {
+      // The part of the window under the fixed header doesn't count: a button behind the header is out of view.
+      var t = header ? Math.max(0, Math.round(header.getBoundingClientRect().bottom)) : 0;
+      root.style.setProperty('--rbu-cta-h', bar.offsetHeight + 'px');
+      if (t === top && io) return;
+      top = t;
+      if (io) io.disconnect();
+      io = new IntersectionObserver(function (entries) {
+        bar.classList.toggle('rbu-cta-hold', entries[entries.length - 1].isIntersecting);
+      }, { rootMargin: '-' + t + 'px 0px 0px 0px' });
+      io.observe(btn);
+    }
+    bar.classList.add('rbu-cta', 'rbu-cta-hold'); // held until the first check says the button is out of view
+    watch();
+    var timer;
+    window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(watch, 150); });
+    if (header && window.ResizeObserver) new ResizeObserver(function () { watch(); }).observe(header);
+  }
+  if (window.RBU && RBU.ready) RBU.ready(init);
+  else if (document.readyState !== 'loading') init();
+  else document.addEventListener('DOMContentLoaded', init);
+})();
+
 /* ---- 80-discount-links/script.js ---- */
 /* 80 discount-links: a link can carry a discount code, so customers never type one.
    Storefront pages: ?code=XXXX (also discount=, coupon=, promo=). The code is saved for 30 days (RBU.store), taken out
@@ -288,7 +416,8 @@
   // Waits for checkout.js (window.cart, window.checkoutForm; built on DOMContentLoaded) and for its first cart
   // sync to finish. CheckoutForm.postToServer aborts any request in flight, so posting the code while the
   // initial 'load' sync runs would cancel it. The form carries .loading until that sync settles, and the submit
-  // button carries .loading while any request is out.
+  // button carries .loading while any request is out. Without #checkout-form (an empty cart) checkout.js builds
+  // nothing since its 25 Oct 2026 version, so there is nothing to wait for.
   function whenCheckoutIdle(cb) {
     var until = Date.now() + 20000;
     (function poll() {
@@ -297,7 +426,7 @@
         var busy = form.element.hasClass('loading') || (form.submitButton && form.submitButton.hasClass('loading'));
         if (!busy) { cb(cart); return; }
       }
-      if (Date.now() > until) { cb(null); return; }
+      if (!document.getElementById('checkout-form') || Date.now() > until) { cb(null); return; }
       setTimeout(poll, 150);
     })();
   }
@@ -354,4 +483,51 @@
     if (ON_CHECKOUT) applyAtCheckout(code, !!fromLink, 0);
     else if (fromLink) say.saved(fromLink);
   });
+})();
+
+/* ---- 90-products-menu/script.js ---- */
+/* 90 products-menu: Escape closes the "Products" dropdown that hover or keyboard focus opened (WCAG 1.4.13), and
+   puts focus back on "Products". The menu works without this script; it only adds the Escape key. */
+(function () {
+  'use strict';
+  var li = document.querySelector('header nav.top .micon li.product-many');
+  if (!li) return;
+  var cb = li.querySelector('input[type="checkbox"]');
+  function reopen() { li.classList.remove('rbu-menu-shut'); }
+  li.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' && e.key !== 'Esc') return;
+    li.classList.add('rbu-menu-shut');
+    if (cb) { cb.checked = false; cb.focus(); }
+  });
+  li.addEventListener('focusout', function (e) { if (!li.contains(e.relatedTarget)) reopen(); });
+  li.addEventListener('mouseleave', reopen);
+  if (cb) cb.addEventListener('click', reopen);
+})();
+
+/* ---- 95-performance/script.js ---- */
+/* 95 performance: the product pages' header video (section.top-banner video: autoplay, muted, looping) shows its still
+   poster instead, and stops downloading, for visitors who ask for less motion (prefers-reduced-motion: reduce) or less
+   data (Save-Data). Everyone else sees the page exactly as before. */
+(function () {
+  'use strict';
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var save = navigator.connection && navigator.connection.saveData === true;
+  if (!calm && !save) return;
+  function still() {
+    var vids = document.querySelectorAll('section.top-banner video[autoplay]');
+    for (var i = 0; i < vids.length; i++) {
+      var v = vids[i];
+      if (!v.getAttribute('poster')) continue; // keep a video that has no still to show
+      v.autoplay = false;
+      v.removeAttribute('autoplay');
+      try { v.pause(); } catch (e) { /* not started */ }
+      var s = v.querySelectorAll('source');
+      for (var j = s.length - 1; j >= 0; j--) s[j].parentNode.removeChild(s[j]);
+      v.removeAttribute('src');
+      v.load(); // drops the download; the poster stays
+    }
+  }
+  if (window.RBU && RBU.ready) RBU.ready(still);
+  else if (document.readyState !== 'loading') still();
+  else document.addEventListener('DOMContentLoaded', still);
 })();
