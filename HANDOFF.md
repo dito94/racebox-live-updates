@@ -52,6 +52,3 @@ a pre-order in cart, emails and order pages; keep discount codes off pre-orders;
   then replace the `gh-pages` branch contents with `/tmp/pages`.
 - Deliverables the owner liked: the before/after review page (`tools/qa/before-after.js`) and the zipped disk copy
   (`tools/export_preview.py --zip`). Don't host the copy at a shareable link: it is a full working copy of racebox.pro.
-- Model use agreed with the owner: read-only checks and QA that only reports on Haiku; applying agreed fixes, building
-  from an agreed spec, running builds and checks on Sonnet; plans, new code without an agreed design, debugging, judging
-  alternatives, verifying findings and final review on Opus. Small changes are edited directly, without a workflow.
